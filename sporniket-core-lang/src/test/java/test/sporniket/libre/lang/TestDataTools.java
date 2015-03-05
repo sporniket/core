@@ -11,7 +11,7 @@ import com.sporniket.libre.lang.DataTools;
  * Test suite for {@link DataTools}.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

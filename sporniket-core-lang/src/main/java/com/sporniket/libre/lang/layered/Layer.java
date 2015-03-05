@@ -4,7 +4,7 @@ package com.sporniket.libre.lang.layered;
  * Container for a layer in a layered object.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

@@ -6,7 +6,7 @@ import java.util.Locale;
  * Models a service that returns a message from a given key.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

@@ -15,7 +15,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * If the filter is empty, there is no filtering.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

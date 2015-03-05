@@ -3,7 +3,7 @@
  *
  * This package serves as a reference implementation of common problem solutions.
  *
- * <p> &copy; Copyright 2002-2012 David Sporn</p>
+ * <p> &copy; Copyright 2002-2015 David Sporn</p>
  * <hr>
  *
  * <p>This file is part of <i>The Sporniket Core Library &#8211; lang</i>.

@@ -12,7 +12,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * Interface to implement in order to create a Factory that will be able to instanciate a fully defined {@link UserInterfaceAction}.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

@@ -11,7 +11,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
 /**
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

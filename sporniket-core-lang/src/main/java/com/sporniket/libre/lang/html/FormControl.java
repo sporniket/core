@@ -4,7 +4,7 @@ package com.sporniket.libre.lang.html;
  * Base class to generate form controls.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

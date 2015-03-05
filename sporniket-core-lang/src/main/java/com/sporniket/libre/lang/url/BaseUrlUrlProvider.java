@@ -7,7 +7,7 @@ import java.net.URL;
  * Implementation that prefixes the path with a base URL.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

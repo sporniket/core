@@ -14,7 +14,7 @@ package com.sporniket.libre.lang;
  * properties that cannot be accessed by any applet are in {@link SystemProperties.Private}
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 
@@ -47,7 +47,7 @@ public class SystemProperties
 	 * Access to properties forbidden in applets.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2012 David Sporn
+	 * &copy; Copyright 2002-2015 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -85,7 +85,7 @@ public class SystemProperties
 	 * Access to properties requiring a signed applet.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2012 David Sporn
+	 * &copy; Copyright 2002-2015 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

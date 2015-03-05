@@ -15,7 +15,7 @@ import com.sporniket.libre.lang.CollectionTools;
  * ResourceBundle based message provider.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

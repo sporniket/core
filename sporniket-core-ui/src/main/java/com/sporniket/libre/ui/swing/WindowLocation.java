@@ -9,7 +9,7 @@ import java.awt.Window;
  * Provides shortcut for setting window Location.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

@@ -4,7 +4,7 @@ package com.sporniket.libre.lang;
  * Special exception when a factory has not been completely initialized.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 

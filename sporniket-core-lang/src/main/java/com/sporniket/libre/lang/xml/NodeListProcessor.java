@@ -12,7 +12,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * A class that iterates over a {@link NodeList} and dispatch processing according to the node name of the current {@link Node}.
  * 
  * <p>
- * &copy; Copyright 2002-2012 David Sporn
+ * &copy; Copyright 2002-2015 David Sporn
  * </p>
  * <hr>
  * 
