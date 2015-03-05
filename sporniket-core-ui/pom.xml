@@ -12,11 +12,11 @@
 
 	<name>sporniket-core-ui</name>
 	<description>Useful classes for actual Swing UI projects</description>
-	<url>${url.base}/${project.artifactId}/${project.version}/</url>
+	<url>${url.base}/blob/master/${project.artifactId}</url>
 
 	<distributionManagement>
 		<site>
-			<id>sporniketcore.sf.net</id>
+			<id>localMvnSite</id>
 			<name>Sporniket Java Core Library - ui</name>
 			<url>${url.base.site.deploy}/${project.artifactId}/${project.version}</url>
 		</site>
@@ -60,7 +60,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.3</version>
+				<version>2.14</version>
 				<configuration>
 					<configLocation>../sporniket-core/checkstyle-custom.xml</configLocation>
 				</configuration>
