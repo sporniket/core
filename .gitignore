@@ -22,3 +22,9 @@ pom.xml.releaseBackup
 release.properties
 target/
 
+# generated maven site
+mvnsites/
+
+#old bin folders
+bin/
+
