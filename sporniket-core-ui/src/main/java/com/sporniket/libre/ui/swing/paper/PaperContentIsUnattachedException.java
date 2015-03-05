@@ -34,12 +34,13 @@ public class PaperContentIsUnattachedException extends Exception
 {
 
 	/**
-	 * serialVersionUID
+	 * Serialization ID
 	 */
 	private static final long serialVersionUID = -5115328250983496636L;
 
 	public PaperContentIsUnattachedException()
 	{
+		super();
 	}
 
 	public PaperContentIsUnattachedException(String message)

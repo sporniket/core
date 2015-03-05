@@ -35,46 +35,28 @@ public class FactoryNotReadyException extends Exception
 {
 
 	/**
-	 * serialVersionUID
+	 * Serialization ID
 	 */
 	private static final long serialVersionUID = -2902433785739078173L;
 
-	/*
-	 * 
-	 */
 	public FactoryNotReadyException()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @param message
-	 * 
-	 * @param cause
-	 */
 	public FactoryNotReadyException(String message, Throwable cause)
 	{
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @param message
-	 */
 	public FactoryNotReadyException(String message)
 	{
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @param cause
-	 */
 	public FactoryNotReadyException(Throwable cause)
 	{
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 }

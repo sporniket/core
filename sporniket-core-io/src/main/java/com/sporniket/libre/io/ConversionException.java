@@ -35,53 +35,29 @@ public class ConversionException extends RuntimeException
 {
 
 	/**
-	 * Serializable support.
+	 * Serialization ID
 	 * @since 12.06.01
 	 */
 	private static final long serialVersionUID = -5369859601325858923L;
 
-	/*
-	 * @see Exception
-	 */
 	public ConversionException()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @param message
-	 * 
-	 * @param cause
-	 * 
-	 * @see Exception
-	 */
 	public ConversionException(String message, Throwable cause)
 	{
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @param message
-	 * 
-	 * @see Exception
-	 */
 	public ConversionException(String message)
 	{
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @param cause
-	 * 
-	 * @see Exception
-	 */
 	public ConversionException(Throwable cause)
 	{
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 }

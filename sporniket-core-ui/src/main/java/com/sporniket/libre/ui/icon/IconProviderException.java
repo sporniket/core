@@ -12,27 +12,30 @@ package com.sporniket.libre.ui.icon;
  */
 public class IconProviderException extends Exception
 {
+	/**
+	 * Serialization ID
+	 * @since 15.03.00
+	 */
+	private static final long serialVersionUID = -3556988726228258984L;
+
 	public IconProviderException()
 	{
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	public IconProviderException(String message)
 	{
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
 	public IconProviderException(Throwable cause)
 	{
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	public IconProviderException(String message, Throwable cause)
 	{
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
 }

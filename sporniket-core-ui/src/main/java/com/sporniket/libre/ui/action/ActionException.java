@@ -38,8 +38,12 @@ public class ActionException extends RuntimeException
 {
 	private static final long serialVersionUID = 5822926965438887642L;
 
+	/**
+	 * Serialization ID
+	 */
 	public ActionException()
 	{
+		super();
 	}
 
 	public ActionException(String message)

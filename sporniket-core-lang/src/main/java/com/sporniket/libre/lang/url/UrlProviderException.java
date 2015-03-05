@@ -38,31 +38,28 @@ public class UrlProviderException extends Exception
 {
 
 	/**
-	 * serialVersionUID
+	 * Serialization ID
 	 */
 	private static final long serialVersionUID = 1487463211181628920L;
 
 	public UrlProviderException()
 	{
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	public UrlProviderException(String message)
 	{
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
 	public UrlProviderException(Throwable cause)
 	{
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	public UrlProviderException(String message, Throwable cause)
 	{
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
 }
