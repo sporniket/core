@@ -24,8 +24,8 @@ import javax.swing.KeyStroke;
  * respectively</li>
  * </ul>
  * 
- * <table align="center" border="1" cellspacing="0">
- * <colgroup span="2" width="0*" align="center" valign="middle">
+ * <table border="1" cellspacing="0">
+ * <caption>Keyboard mapping</caption>
  * <tr>
  * <th>Key</th>
  * <th>Code</th>
@@ -299,7 +299,7 @@ import javax.swing.KeyStroke;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -316,11 +316,11 @@ import javax.swing.KeyStroke;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */

@@ -10,7 +10,7 @@ import java.util.Map;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -27,11 +27,11 @@ import java.util.Map;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -45,7 +45,7 @@ public class FunctorFactory
 	 * @param methodName
 	 *            Name of the method, it must exist.
 	 * @return a Functor that call the specified method on the specified instance.
-	 * @throws Exception
+	 * @throws Exception if there is a problem to deal with.
 	 */
 	public static Functor instanciateFunctorAsAClassMethodWrapper(Class<?> instanceClass, String methodName) throws Exception
 	{
@@ -65,7 +65,7 @@ public class FunctorFactory
 	 * @param method
 	 *            the method to call.
 	 * @return a Functor that call the specified method on the specified instance.
-	 * @throws Exception
+	 * @throws Exception if there is a problem to deal with.
 	 */
 	public static Functor instanciateFunctorAsAMethodWrapper(final Object instance, final Method method) throws Exception
 	{
@@ -94,7 +94,7 @@ public class FunctorFactory
 	 * @param methodName
 	 *            Name of the method, it must exist.
 	 * @return a Functor that call the specified method on the specified instance.
-	 * @throws Exception
+	 * @throws Exception if there is a problem to deal with.
 	 */
 	public static Functor instanciateFunctorAsAnInstanceMethodWrapper(final Object instance, String methodName) throws Exception
 	{
@@ -114,7 +114,7 @@ public class FunctorFactory
 	 * @param methodName
 	 *            Name of the method, it must exist.
 	 * @return a Functor with parameter that call the specified method on the specified instance.
-	 * @throws Exception
+	 * @throws Exception if there is a problem to deal with.
 	 */
 	public static FunctorWithParameter instanciateFunctorWithParameterAsAClassMethodWrapper(Class<?> instanceClass,
 			String methodName) throws Exception
@@ -135,7 +135,7 @@ public class FunctorFactory
 	 * @param method
 	 *            the method to call.
 	 * @return a Functor with parameter that call the specified method on the specified instance.
-	 * @throws Exception
+	 * @throws Exception if there is a problem to deal with.
 	 */
 	public static FunctorWithParameter instanciateFunctorWithParameterAsAMethodWrapper(final Object instance, final Method method)
 			throws Exception
@@ -170,7 +170,7 @@ public class FunctorFactory
 	 * @param methodName
 	 *            Name of the method, it must exist.
 	 * @return a Functor with parameter that call the specified method on the specified instance.
-	 * @throws Exception
+	 * @throws Exception if there is a problem to deal with.
 	 */
 	public static FunctorWithParameter instanciateFunctorWithParameterAsAnInstanceMethodWrapper(final Object instance,
 			String methodName) throws Exception

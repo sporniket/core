@@ -15,7 +15,7 @@ import com.sporniket.libre.lang.url.UrlProviderException;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -32,11 +32,11 @@ import com.sporniket.libre.lang.url.UrlProviderException;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -78,7 +78,9 @@ public class Utils
 	 * @param locale
 	 *            the locale.
 	 * @param callbackProvider
-	 *            an instance that contains the method referenced as "callback"
+	 *            an instance that contains the method referenced as "callback".
+	 * @param urlProvider
+	 *            the url provider.
 	 * @return the given action instance, configured with data extracted from the message provider.
 	 */
 	public static UserInterfaceAction<URL> retrieveActionDefinitionFromMessageProvider(UserInterfaceAction<URL> action,

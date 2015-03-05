@@ -4,12 +4,12 @@
 package com.sporniket.libre.lang.url;
 
 /**
- * Raised by implementation of {@link UrlProviderInterface}.
+ * Raised by implementation of {@link UrlProvider}.
  * 
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -26,11 +26,11 @@ package com.sporniket.libre.lang.url;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -42,36 +42,23 @@ public class UrlProviderException extends Exception
 	 */
 	private static final long serialVersionUID = 1487463211181628920L;
 
-	/**
-	 * 
-	 */
 	public UrlProviderException()
 	{
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param message
-	 */
 	public UrlProviderException(String message)
 	{
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param cause
-	 */
 	public UrlProviderException(Throwable cause)
 	{
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param message
-	 * @param cause
-	 */
 	public UrlProviderException(String message, Throwable cause)
 	{
 		super(message, cause);

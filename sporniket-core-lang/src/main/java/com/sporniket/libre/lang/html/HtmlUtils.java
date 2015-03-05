@@ -13,7 +13,7 @@ import com.sporniket.libre.lang.sgml.SgmlUtils;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -30,11 +30,11 @@ import com.sporniket.libre.lang.sgml.SgmlUtils;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -44,11 +44,11 @@ public class HtmlUtils
 	/**
 	 * Attribute names reference.
 	 * 
-	 * <hr />
+	 * <hr>
 	 * <p>
 	 * &copy; Copyright 2002-2011 David Sporn &lt;david.sporn@sporniket.com&gt;
 	 * </p>
-	 * <hr />
+	 * <hr>
 	 * 
 	 * <p>
 	 * This file is part of Sporniket-core-lang
@@ -63,11 +63,11 @@ public class HtmlUtils
 	 * </p>
 	 * <p>
 	 * You should have received a copy of the GNU General Public License along with Sporniket-core-lang. If not, see
-	 * <http://www.gnu.org/licenses/>.
+	 * <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
 	 * </p>
-	 * <hr />
+	 * <hr>
 	 * 
-	 * @author David SPORN <david.sporn@sporniket.com>
+	 * @author David SPORN 
 	 * @version 15.02.00
 	 * @since 12.06.01
 	 */
@@ -76,11 +76,11 @@ public class HtmlUtils
 
 		/**
 		 * Attributes for form tag.
-		 * <hr />
+		 * <hr>
 		 * <p>
 		 * &copy; Copyright 2002-2011 David Sporn &lt;david.sporn@sporniket.com&gt;
 		 * </p>
-		 * <hr />
+		 * <hr>
 		 * 
 		 * <p>
 		 * This file is part of Sporniket-core-lang
@@ -96,11 +96,11 @@ public class HtmlUtils
 		 * </p>
 		 * <p>
 		 * You should have received a copy of the GNU General Public License along with Sporniket-core-lang. If not, see
-		 * <http://www.gnu.org/licenses/>.
+		 * <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
 		 * </p>
-		 * <hr />
+		 * <hr>
 		 * 
-		 * @author David SPORN <david.sporn@sporniket.com>
+		 * @author David SPORN 
 		 * @version 15.02.00
 		 * @since 12.06.01
 		 */
@@ -133,11 +133,11 @@ public class HtmlUtils
 	 * 
 	 * Some attribute are specially coded in HTML, like the <code>checked</code> attribute.
 	 * 
-	 * <hr />
+	 * <hr>
 	 * <p>
 	 * &copy; Copyright 2002-2011 David Sporn &lt;david.sporn@sporniket.com&gt;
 	 * </p>
-	 * <hr />
+	 * <hr>
 	 * 
 	 * <p>
 	 * This file is part of Sporniket-core-lang
@@ -152,11 +152,11 @@ public class HtmlUtils
 	 * </p>
 	 * <p>
 	 * You should have received a copy of the GNU General Public License along with Sporniket-core-lang. If not, see
-	 * <http://www.gnu.org/licenses/>.
+	 * <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
 	 * </p>
-	 * <hr />
+	 * <hr>
 	 * 
-	 * @author David SPORN <david.sporn@sporniket.com>
+	 * @author David SPORN 
 	 * @version 15.02.00
 	 * @since 12.06.01
 	 */
@@ -194,8 +194,8 @@ public class HtmlUtils
 	/**
 	 * Create a HTML paragraph from the given text.
 	 * 
-	 * @param value
-	 * @return
+	 * @param value the value to enclose in paragraph.
+	 * @return a HTML paragraphe.
 	 */
 	public static String encloseInParagraphe(String value)
 	{
@@ -209,8 +209,9 @@ public class HtmlUtils
 	/**
 	 * Generate the HTML code for an attribute.
 	 * 
-	 * @param value
-	 * @return
+	 * @param attributeName the name of the attribute.
+	 * @param value the value of the attribute.
+	 * @return the HTML attribute.
 	 */
 	public static String generateAttribute(String attributeName, String value)
 	{

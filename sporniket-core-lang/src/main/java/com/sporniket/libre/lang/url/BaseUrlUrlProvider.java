@@ -9,7 +9,7 @@ import java.net.URL;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -26,11 +26,11 @@ import java.net.URL;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -40,7 +40,7 @@ public class BaseUrlUrlProvider implements UrlProvider
 	private URL myBaseUrl = null;
 
 	/**
-	 * @param baseUrl
+	 * @param baseUrl base url.
 	 */
 	public BaseUrlUrlProvider(URL baseUrl)
 	{
@@ -86,7 +86,7 @@ public class BaseUrlUrlProvider implements UrlProvider
 	 * 
 	 * @param baseUrl
 	 *            the baseUrl to set
-	 * @throws MalformedURLException
+	 * @throws MalformedURLException if the url is malformed.
 	 */
 	public void setBaseUrl(String baseUrl) throws MalformedURLException
 	{

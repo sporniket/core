@@ -11,7 +11,7 @@ import com.sporniket.libre.lang.url.UrlProvider;
 import com.sporniket.libre.lang.url.UrlProviderException;
 
 /**
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  *
  * @version 15.02.00
  * @since 15.02.00
@@ -26,7 +26,7 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 
 	/**
 	 * Get iconProvider.
-	 * @return the iconProvider
+	 * @return the iconProvider.
 	 * @since 15.02.00
 	 */
 	private IconProvider<URL> getIconProvider()
@@ -38,7 +38,7 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 
 	/**
 	 * Get urlProvider.
-	 * @return the urlProvider
+	 * @return the urlProvider.
 	 * @since 15.02.00
 	 */
 	private UrlProvider getUrlProvider()
@@ -49,7 +49,7 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 
 
 	/**
-	 * @param urlProvider
+	 * @param urlProvider the url provider.
 	 * @since 15.02.00
 	 */
 	public IconProviderFromUrlProvider(UrlProvider urlProvider)

@@ -8,7 +8,7 @@ import java.util.Locale;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -25,11 +25,11 @@ import java.util.Locale;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -42,11 +42,7 @@ public interface MessageProviderInterface
 	 * 
 	 * @param key
 	 *            the key for retrieving the message.
-	 * @param locale
-	 *            the locale to get the appropriate translation of the message.
-	 * @param parameters
-	 *            optionnal parameter to embed in the message.
-	 * @return
+	 * @return the message
 	 */
 	public String getMessage(String key);
 
@@ -59,9 +55,7 @@ public interface MessageProviderInterface
 	 *            the key for retrieving the message.
 	 * @param locale
 	 *            the locale to get the appropriate translation of the message.
-	 * @param parameters
-	 *            optionnal parameter to embed in the message.
-	 * @return
+	 * @return the message
 	 */
 	public String getMessage(String key, Locale locale);
 
@@ -76,7 +70,7 @@ public interface MessageProviderInterface
 	 *            the locale to get the appropriate translation of the message.
 	 * @param parameters
 	 *            optionnal parameter to embed in the message.
-	 * @return
+	 * @return the message
 	 */
 	public String getMessage(String key, Locale locale, Object[] parameters);
 
@@ -87,11 +81,9 @@ public interface MessageProviderInterface
 	 * 
 	 * @param key
 	 *            the key for retrieving the message.
-	 * @param locale
-	 *            the locale to get the appropriate translation of the message.
 	 * @param parameters
 	 *            optionnal parameter to embed in the message.
-	 * @return
+	 * @return the message
 	 */
 	public String getMessage(String key, Object[] parameters);
 

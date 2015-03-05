@@ -9,7 +9,7 @@ package com.sporniket.libre.ui.action;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -26,56 +26,35 @@ package com.sporniket.libre.ui.action;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
 public class ActionException extends RuntimeException
 {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5822926965438887642L;
 
-	/**
-	 * 
-	 */
 	public ActionException()
 	{
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param message
-	 */
 	public ActionException(String message)
 	{
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param message
-	 * @param cause
-	 */
 	public ActionException(String message, Throwable cause)
 	{
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @param cause
-	 */
 	public ActionException(Throwable cause)
 	{
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 }

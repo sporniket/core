@@ -13,7 +13,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -30,11 +30,11 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -51,15 +51,21 @@ public class AdaptedActionFactory<IconLocationType> implements UserInterfaceActi
 
 	private IconProvider<IconLocationType> myIconProvider;
 
+	/**
+	 * self diagnostic flag, <code>true</code> when the factory is ready to use.
+	 */
 	private boolean myIsReady = false;
 
 	private MessageProviderInterface myMessageProvider = null;
 
+	/**
+	 * human friendly self diagnostic state message.
+	 */
 	private String myReasonWhyNotReady = NO_MESSAGE_PROVIDER + COMMA + NO_ICON_PROVIDER + DOT;
 
 	/**
-	 * @param urlProvider
-	 * @param messageProvider
+	 * @param messageProvider message provider.
+	 * @param iconProvider icon provider.
 	 */
 	public AdaptedActionFactory(MessageProviderInterface messageProvider,
 			IconProvider<IconLocationType> iconProvider)
@@ -77,6 +83,9 @@ public class AdaptedActionFactory<IconLocationType> implements UserInterfaceActi
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sporniket.libre.ui.action.UserInterfaceActionFactory#create(java.lang.String, java.lang.String, java.lang.String, java.lang.Object, java.lang.Object, java.util.Locale, com.sporniket.libre.lang.functor.Functor)
+	 */
 	public UserInterfaceAction<IconLocationType> create(String label, String description, String keyboardShortcut,
 			IconLocationType iconForMenu, IconLocationType iconForButton, Locale locale, Functor callback)
 			throws FactoryNotReadyException
@@ -95,18 +104,27 @@ public class AdaptedActionFactory<IconLocationType> implements UserInterfaceActi
 		return _action;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sporniket.libre.ui.action.UserInterfaceActionFactory#setIconProvider(com.sporniket.libre.ui.icon.IconProvider)
+	 */
 	public void setIconProvider(IconProvider<IconLocationType> iconProvider)
 	{
 		myIconProvider = iconProvider;
 		updateReadyness();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.sporniket.libre.ui.action.UserInterfaceActionFactory#setMessageProvider(com.sporniket.libre.lang.message.MessageProviderInterface)
+	 */
 	public void setMessageProvider(MessageProviderInterface messageProvider)
 	{
 		myMessageProvider = messageProvider;
 		updateReadyness();
 	}
 
+	/**
+	 * Do the self diagnostic, and update the status.
+	 */
 	private void updateReadyness()
 	{
 		StringBuffer _buffer = new StringBuffer();

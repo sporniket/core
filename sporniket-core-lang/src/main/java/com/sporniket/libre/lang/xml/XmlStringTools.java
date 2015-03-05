@@ -13,7 +13,7 @@ import org.w3c.dom.NodeList;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -30,11 +30,11 @@ import org.w3c.dom.NodeList;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -43,7 +43,7 @@ public class XmlStringTools
 	/**
 	 * This class encapsulate the serialization process of a {@link Node} into an XML snippet.
 	 * 
-	 * @author David SPORN <david.sporn@sporniket.com>
+	 * @author David SPORN 
 	 * 
 	 * @version 15.02.00
 	 * @since 12.06.01
@@ -79,7 +79,7 @@ public class XmlStringTools
 		/**
 		 * Convert the specified node into the corresponding xml stream.
 		 * 
-		 * @param source
+		 * @param source the node to convert.
 		 * @param buffer
 		 *            buffer to fill.
 		 * @return the specified buffer, or a new one if it is <code>null</code>, containing the xml code.
@@ -93,7 +93,7 @@ public class XmlStringTools
 		/**
 		 * Convert the children nodes of the specified node into the corresponding xml stream.
 		 * 
-		 * @param source
+		 * @param source the parent node of the nodes to convert.
 		 * @param buffer
 		 *            buffer to fill.
 		 * @return the specified buffer, or a new one if it is <code>null</code>, containing the xml code.
@@ -400,8 +400,6 @@ public class XmlStringTools
 	 *            the text to wrap
 	 * @param tag
 	 *            the tag to use
-	 * @param attributes
-	 *            the attribute map
 	 * @return the buffer
 	 */
 	public static StringBuffer appendTextInsideTag(StringBuffer buffer, String text, String tag)

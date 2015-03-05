@@ -14,7 +14,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -31,11 +31,11 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -71,7 +71,7 @@ public class NodeListProcessor
 	/**
 	 * Usual constructor, just provide the NodeList to work with.
 	 * 
-	 * @param source
+	 * @param source the node list to work with.
 	 */
 	public NodeListProcessor(NodeList source)
 	{
@@ -82,7 +82,7 @@ public class NodeListProcessor
 	/**
 	 * A constructor where one specify the starting position.
 	 * 
-	 * @param source
+	 * @param source the node list to work with.
 	 * @param position
 	 *            the index in the node list of the first node to scan.
 	 */
@@ -92,6 +92,10 @@ public class NodeListProcessor
 		setup(source, position);
 	}
 
+	/**
+	 * Add a default processing that will be applied when no specific processor is found.
+	 * @param processor the default processor.
+	 */
 	public void addDefaultProcessor(NodeProcessor processor)
 	{
 		if (null == processor)
@@ -101,6 +105,11 @@ public class NodeListProcessor
 		getActionPool().put(NODE_NAME__DEFAULT, processor);
 	}
 
+	/**
+	 * Add a specific processing that will be applied to nodes having the matching name.
+	 * @param nodeName the name of nodes that will be processed.
+	 * @param processor the processor.
+	 */
 	public void addProcessor(String nodeName, NodeProcessor processor)
 	{
 		if (null == processor)
@@ -114,6 +123,9 @@ public class NodeListProcessor
 		getActionPool().put(nodeName, processor);
 	}
 
+	/**
+	 * Perform the processing on the next available node.
+	 */
 	private void doProcessNext()
 	{
 		int _position = getPosition();
@@ -171,7 +183,7 @@ public class NodeListProcessor
 	/**
 	 * Test whether there are still Node to scan.
 	 * 
-	 * @return
+	 * @return <code>true</code> if there are still a Node to scan.
 	 */
 	public boolean hasMoreAvailableElement()
 	{
@@ -218,7 +230,7 @@ public class NodeListProcessor
 	/**
 	 * Specify the NodeList to work with, starting from the beginning.
 	 * 
-	 * @param source
+	 * @param source the node list to work with.
 	 */
 	public void setup(NodeList source)
 	{
@@ -228,7 +240,7 @@ public class NodeListProcessor
 	/**
 	 * Specify the NodeList to work with, and the starting position.
 	 * 
-	 * @param source
+	 * @param source the node list to work with.
 	 * @param position
 	 *            the index in the node list of the first node to scan.
 	 */

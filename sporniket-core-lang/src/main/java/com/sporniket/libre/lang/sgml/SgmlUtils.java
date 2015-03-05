@@ -11,7 +11,7 @@ import java.text.MessageFormat;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -28,11 +28,11 @@ import java.text.MessageFormat;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -43,9 +43,9 @@ public class SgmlUtils
 	/**
 	 * Generate an attribute of the specified name and value.
 	 * 
-	 * @param attributeName
-	 * @param value
-	 * @return
+	 * @param attributeName name of the attribute.
+	 * @param value value of the attribute.
+	 * @return the SGML code for an attribute.
 	 */
 	public static String generateAttribute(String attributeName, String value)
 	{

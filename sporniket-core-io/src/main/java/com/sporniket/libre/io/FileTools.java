@@ -19,7 +19,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; io</i>.
@@ -36,11 +36,11 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; io</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -50,12 +50,12 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a file using the given encoding.
 	 * 
-	 * @param source
+	 * @param source source file.
 	 * @param encoding
 	 *            can be <code>null</code>
-	 * @return
-	 * @throws FileNotFoundException
-	 * @throws UnsupportedEncodingException
+	 * @return the reader.
+	 * @throws FileNotFoundException if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForFile(File source, Encoding encoding) throws FileNotFoundException,
@@ -67,12 +67,12 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a file using the given encoding.
 	 * 
-	 * @param source
+	 * @param source source file.
 	 * @param encoding
 	 *            null or empty for using system encoding.
-	 * @return
-	 * @throws FileNotFoundException
-	 * @throws UnsupportedEncodingException
+	 * @return the reader.
+	 * @throws FileNotFoundException if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForFile(File source, String encoding) throws FileNotFoundException,
@@ -84,12 +84,12 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a InputStream using the given encoding.
 	 * 
-	 * @param source
+	 * @param source source stream.
 	 * @param encoding
 	 *            can be <code>null</code>
-	 * @return
-	 * @throws FileNotFoundException
-	 * @throws UnsupportedEncodingException
+	 * @return the reader.
+	 * @throws FileNotFoundException if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForInputStream(InputStream source, Encoding encoding) throws FileNotFoundException,
@@ -101,12 +101,12 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a InputStream using the given encoding.
 	 * 
-	 * @param source
+	 * @param source source stream.
 	 * @param encoding
 	 *            <code>null</code> or empty for using system encoding.
-	 * @return
-	 * @throws FileNotFoundException
-	 * @throws UnsupportedEncodingException
+	 * @return the reader.
+	 * @throws FileNotFoundException if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForInputStream(InputStream source, String encoding) throws FileNotFoundException,
@@ -125,6 +125,7 @@ public class FileTools
 	 * <li>The first level is a substring of the filename of the first <em>cellWidth</em>-th characters of the file name
 	 * <li>If the <em>depth</em> is not reached yet, the next level is a substring that has <em>cellWidth</em> more caracters than
 	 * its parent.
+	 * </ul>
 	 * 
 	 * @param workingDirectory
 	 *            The working directory into which the subdirectories will be created.

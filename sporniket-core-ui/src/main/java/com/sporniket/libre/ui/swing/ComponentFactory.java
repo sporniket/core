@@ -22,7 +22,7 @@ import com.sporniket.libre.lang.url.UrlProviderException;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -39,11 +39,11 @@ import com.sporniket.libre.lang.url.UrlProviderException;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -56,7 +56,7 @@ public class ComponentFactory extends Object
 	 *            the horizontal gap.
 	 * @param verticalGap
 	 *            the vertical gap.
-	 * @return
+	 * @return a scrollable panel.
 	 * @since 15.02.00
 	 */
 	public static FluidFlowPanelModel createFluidFlowPanel(int horizontalGap, int verticalGap)
@@ -68,7 +68,7 @@ public class ComponentFactory extends Object
 	/**
 	 * Create a panel that lays out components horizontally.
 	 * 
-	 * @return
+	 * @return a panel with an horizontal box layout.
 	 * @since 15.02.00
 	 */
 	public static JPanel createPanelWithHorizontalLayout()
@@ -81,7 +81,7 @@ public class ComponentFactory extends Object
 	/**
 	 * Create a panel that lays out components vertically.
 	 * 
-	 * @return
+	 * @return a panel with a vertical layout.
 	 * @since 15.02.00
 	 */
 	public static JPanel createPanelWithVerticalLayout()
@@ -99,7 +99,7 @@ public class ComponentFactory extends Object
 	 * @param fileName
 	 *            the name of the file.
 	 * @return an Icon.
-	 * @throws UrlProviderException
+	 * @throws UrlProviderException if there is a problem to deal with.
 	 */
 	public static Icon getImageIcon(ClassLoader objectLoader, String fileName) throws UrlProviderException
 	{
@@ -114,7 +114,7 @@ public class ComponentFactory extends Object
 	 * @param fileName
 	 *            the name of the file.
 	 * @return an Icon.
-	 * @throws UrlProviderException
+	 * @throws UrlProviderException if there is a problem to deal with.
 	 */
 	public static Icon getImageIcon(UrlProvider urlProvider, String fileName) throws UrlProviderException
 	{
@@ -125,8 +125,7 @@ public class ComponentFactory extends Object
 	/**
 	 * Create a custom JToolBar.
 	 * 
-	 * @return a JToolBar.
-	 * @see com.sporniket.libre.ui.swing.jdk4.JToolBar
+	 * @return a {@link com.sporniket.libre.ui.swing.JMenu}.
 	 */
 	public static JMenu newMenu()
 	{
@@ -136,8 +135,7 @@ public class ComponentFactory extends Object
 	/**
 	 * Create a custom JToolBar.
 	 * 
-	 * @return a JToolBar.
-	 * @see com.sporniket.libre.ui.swing.jdk4.JToolBar
+	 * @return a {@link com.sporniket.libre.ui.swing.JToolBar}.
 	 */
 	public static JToolBar newToolBar()
 	{

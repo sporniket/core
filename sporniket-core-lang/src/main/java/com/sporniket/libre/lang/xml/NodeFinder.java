@@ -17,7 +17,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -34,11 +34,11 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -59,7 +59,7 @@ public class NodeFinder
 	/**
 	 * Usual constructor, just provide the NodeList to work with.
 	 * 
-	 * @param source
+	 * @param source node list to scan.
 	 */
 	public NodeFinder(NodeList source)
 	{
@@ -70,7 +70,7 @@ public class NodeFinder
 	/**
 	 * A constructor where one specify the starting position.
 	 * 
-	 * @param source
+	 * @param source node list to scan.
 	 * @param position
 	 *            the index in the node list of the first node to scan.
 	 */
@@ -108,7 +108,7 @@ public class NodeFinder
 	/**
 	 * Test whether there are still Node to scan.
 	 * 
-	 * @return
+	 * @return <code>true</code> if there are still a node to scan.
 	 */
 	public boolean hasMoreAvailableElement()
 	{
@@ -144,7 +144,7 @@ public class NodeFinder
 	/**
 	 * Find the next node having the specified node name.
 	 * 
-	 * @param nodeName
+	 * @param nodeName name to look for.
 	 * @return <code>null</code> if there are no more node to scan and there was no matching node.
 	 */
 	public Node find(String nodeName)

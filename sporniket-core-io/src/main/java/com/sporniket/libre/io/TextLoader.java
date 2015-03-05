@@ -18,7 +18,7 @@ import java.util.Map;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; io</i>.
@@ -35,11 +35,11 @@ import java.util.Map;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; io</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -69,7 +69,7 @@ public class TextLoader
 	/**
 	 * Get the default instance.
 	 * 
-	 * @return
+	 * @return the default instance.
 	 */
 	public static TextLoader getInstance()
 	{
@@ -79,8 +79,8 @@ public class TextLoader
 	/**
 	 * Get a default instance for the given encoding.
 	 * 
-	 * @param encoding
-	 * @return
+	 * @param encoding the encoding to use.
+	 * @return the instance for the encoding.
 	 */
 	public static TextLoader getInstance(Encoding encoding)
 	{
@@ -153,10 +153,10 @@ public class TextLoader
 	/**
 	 * Load a text from the specified file and put it in the provided StringBuffer.
 	 * 
-	 * @param source
-	 * @param buffer
-	 * @return the buffer
-	 * @throws IOException
+	 * @param source source file.
+	 * @param buffer buffer to load text into.
+	 * @return the buffer.
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public StringBuffer append(File source, StringBuffer buffer) throws IOException
 	{
@@ -166,10 +166,10 @@ public class TextLoader
 	/**
 	 * Load a text from the specified file and put it in the provided StringBuffer.
 	 * 
-	 * @param source
-	 * @param buffer
+	 * @param source source stream.
+	 * @param buffer buffer to load text into.
 	 * @return the buffer
-	 * @throws IOException
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public StringBuffer append(InputStream source, StringBuffer buffer) throws IOException
 	{
@@ -180,10 +180,10 @@ public class TextLoader
 	/**
 	 * Load a text from the specified reader and put it in the provided StringBuffer.
 	 * 
-	 * @param source
-	 * @param buffer
+	 * @param source source reader.
+	 * @param buffer buffer to load text into.
 	 * @return the buffer
-	 * @throws IOException
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public StringBuffer append(Reader source, StringBuffer buffer) throws IOException
 	{
@@ -223,9 +223,9 @@ public class TextLoader
 	/**
 	 * Load a text from the specified File.
 	 * 
-	 * @param source
+	 * @param source source file.
 	 * @return the text
-	 * @throws IOException
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public String load(File source) throws IOException
 	{
@@ -235,9 +235,9 @@ public class TextLoader
 	/**
 	 * Load a text from the specified InputStream.
 	 * 
-	 * @param source
+	 * @param source source stream.
 	 * @return the text
-	 * @throws IOException
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public String load(InputStream source) throws IOException
 	{
@@ -247,9 +247,9 @@ public class TextLoader
 	/**
 	 * Load a text from the specified reader.
 	 * 
-	 * @param source
+	 * @param source source reader.
 	 * @return the text
-	 * @throws IOException
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public String load(Reader source) throws IOException
 	{
@@ -257,11 +257,11 @@ public class TextLoader
 	}
 
 	/**
-	 * Load a text file into a String.
+	 * Load a text file.
 	 * 
-	 * @param source
-	 * @return
-	 * @throws IOException
+	 * @param source source file.
+	 * @return the text.
+	 * @throws IOException if there is a problem to deal with.
 	 */
 	public String loadTextFile(File source) throws IOException
 	{

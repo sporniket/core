@@ -24,11 +24,11 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
  * }
  * </pre>
  * 
- * <hr />
+ * <hr>
  * <p>
  * &copy; Copyright David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * This library is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version
  * 3 as published by the Free Software Foundation.
@@ -39,7 +39,7 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
  * You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free
  * Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  * 
- * <hr />
+ * <hr>
  * 
  * @author David Sporn
  * @version 15.02.00

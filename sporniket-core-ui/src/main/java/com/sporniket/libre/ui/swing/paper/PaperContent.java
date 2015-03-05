@@ -8,7 +8,7 @@ import java.awt.Rectangle;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -25,11 +25,11 @@ import java.awt.Rectangle;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -75,7 +75,7 @@ public interface PaperContent
 	 * Physical bounds (in drawing unit). It changes with the PaperPane to which it is attached.
 	 * 
 	 * @return the physical bounds as a rectangle.
-	 * @throws PaperContentIsUnattachedException
+	 * @throws PaperContentIsUnattachedException if there is a problem to deal with.
 	 */
 	Rectangle getFullBounds() throws PaperContentIsUnattachedException;
 
@@ -83,7 +83,7 @@ public interface PaperContent
 	 * Physical bounds of the usefull zone (in drawing unit). It changes with the PaperPane to which it is attached.
 	 * 
 	 * @return the physical bounds as a rectangle.
-	 * @throws PaperContentIsUnattachedException
+	 * @throws PaperContentIsUnattachedException if there is a problem to deal with.
 	 */
 	Rectangle getCoreBounds() throws PaperContentIsUnattachedException;
 

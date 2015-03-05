@@ -11,7 +11,7 @@ import java.util.Date;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -28,11 +28,11 @@ import java.util.Date;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  * 
@@ -46,7 +46,7 @@ public class IsoParsableDateFormatter
 	 * <p>
 	 * &copy; Copyright 2002-2012 David Sporn
 	 * </p>
-	 * <hr />
+	 * <hr>
 	 * 
 	 * <p>
 	 * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -63,11 +63,11 @@ public class IsoParsableDateFormatter
 	 * 
 	 * <p>
 	 * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
-	 * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+	 * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
 	 * 
-	 * <hr />
+	 * <hr>
 	 * 
-	 * @author David SPORN <david.sporn@sporniket.com>
+	 * @author David SPORN 
 	 * @version 15.02.00
  * @since 12.06.01
 	 */
@@ -108,10 +108,10 @@ public class IsoParsableDateFormatter
 	/**
 	 * Formatter for a date.
 	 * 
-	 * @param year
-	 * @param month
-	 * @param day
-	 * @return
+	 * @param year [0..9999].
+	 * @param month [1..12].
+	 * @param day day of month [1..31].
+	 * @return the ISO formatted date.
 	 */
 	public static String format(Integer year, Integer month, Integer day)
 	{
@@ -125,10 +125,13 @@ public class IsoParsableDateFormatter
 	/**
 	 * Formatter for a date and time.
 	 * 
-	 * @param year
-	 * @param month
-	 * @param day
-	 * @return
+	 * @param year [0..9999].
+	 * @param month [1..12].
+	 * @param day day of month [1..31].
+	 * @param hour [0..23].
+	 * @param minute [0..59].
+	 * @param second [0..59].
+	 * @return the ISO formatted date and time.
 	 */
 	public static String format(Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second)
 	{
@@ -142,10 +145,14 @@ public class IsoParsableDateFormatter
 	/**
 	 * Formatter for a date and time up to milliseconds.
 	 * 
-	 * @param year
-	 * @param month
-	 * @param day
-	 * @return
+	 * @param year [0..9999].
+	 * @param month [1..12].
+	 * @param day day of month [1..31].
+	 * @param hour [0..23].
+	 * @param minute [0..59].
+	 * @param second [0..59].
+	 * @param millisecond [0..999].
+	 * @return the ISO formatted date and time.
 	 */
 	public static String format(Integer year, Integer month, Integer day, Integer hour, Integer minute, Integer second,
 			Integer millisecond)

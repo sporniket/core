@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 
 /**
  * Icon provider using the classloader.
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  *
  * @version 15.02.00
  * @since 15.02.00

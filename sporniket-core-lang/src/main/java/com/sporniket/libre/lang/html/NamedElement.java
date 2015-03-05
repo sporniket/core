@@ -10,7 +10,7 @@ import com.sporniket.libre.lang.Constants;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -27,11 +27,11 @@ import com.sporniket.libre.lang.Constants;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -66,7 +66,7 @@ class NamedElement implements Serializable
 	/**
 	 * Generate the id attribute html code.
 	 * 
-	 * @return
+	 * @return the HTML coding the id attribute.
 	 */
 	public String getHtmlCodeForIdAttribute()
 	{
@@ -76,7 +76,7 @@ class NamedElement implements Serializable
 	/**
 	 * Generate the name attribute html code.
 	 * 
-	 * @return
+	 * @return the HTML coding the name attribute.
 	 */
 	public String getHtmlCodeForNameAttribute()
 	{

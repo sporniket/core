@@ -18,7 +18,7 @@ import javax.swing.JFrame;
  * <p>
  * &copy; Copyright 2013 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -35,11 +35,11 @@ import javax.swing.JFrame;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * 
  * @version 15.02.00
  * @since 15.02.00
@@ -50,7 +50,7 @@ public class JFrameUtils
 	 * Query {@link Toolkit#getScreenInsets(GraphicsConfiguration)} and {@link GraphicsConfiguration#getBounds()} to compute the
 	 * bounds of a maximized JFrame.
 	 * 
-	 * @return
+	 * @return a rectangle describing the outer bounds of a maximised frame, for determining the screen size (this is not the full-screen size).
 	 * @since 15.02.00
 	 */
 	public static Rectangle getMaximisedFrameOuterBounds()
@@ -71,8 +71,8 @@ public class JFrameUtils
 	/**
 	 * Make the given {@link JFrame} maximized.
 	 * 
-	 * @param frame
-	 * @return
+	 * @param frame the frame to maximize.
+	 * @return the maximized frame.
 	 * @since 15.02.00
 	 */
 	public static JFrame maximizeFrame(JFrame frame)

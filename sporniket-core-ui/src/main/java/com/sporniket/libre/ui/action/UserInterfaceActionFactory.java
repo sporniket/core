@@ -9,12 +9,12 @@ import com.sporniket.libre.lang.url.UrlProvider;
 import com.sporniket.libre.ui.icon.IconProvider;
 
 /**
- * Interface to implement in order to create a Factory that will be able to instanciate a fully defined UserInterfaceAction.
+ * Interface to implement in order to create a Factory that will be able to instanciate a fully defined {@link UserInterfaceAction}.
  * 
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -31,11 +31,11 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -44,14 +44,15 @@ public interface UserInterfaceActionFactory<IconLocationType>
 	/**
 	 * Instanciate and configure an UserInterfaceAction
 	 * 
-	 * @param label
-	 * @param description
-	 * @param keyboardShortcut
-	 * @param iconForMenu
-	 * @param iconForButton
-	 * @param locale
-	 * @param callback
-	 * @return
+	 * @param label label for a menu or button.
+	 * @param description tooltip text.
+	 * @param keyboardShortcut keyboard shortcut.
+	 * @param iconForMenu icon to use in a menu.
+	 * @param iconForButton icon to in a button.
+	 * @param locale locale.
+	 * @param callback function to call when the user click on the menu or button linked to the action.
+	 * @return a {@link UserInterfaceAction}.
+	 * @throws FactoryNotReadyException if there is a problem to deal with.
 	 */
 	UserInterfaceAction<IconLocationType> create(String label, String description, String keyboardShortcut,
 			IconLocationType iconForMenu, IconLocationType iconForButton, Locale locale, Functor callback)
@@ -60,7 +61,7 @@ public interface UserInterfaceActionFactory<IconLocationType>
 	/**
 	 * Icon provider to use.
 	 * 
-	 * @param iconProvider
+	 * @param iconProvider the icon provider.
 	 * @since 15.02.00
 	 */
 	void setIconProvider(IconProvider<IconLocationType> iconProvider);
@@ -68,7 +69,7 @@ public interface UserInterfaceActionFactory<IconLocationType>
 	/**
 	 * Message provider to use.
 	 * 
-	 * @param messageProvider
+	 * @param messageProvider the message provider.
 	 */
 	void setMessageProvider(MessageProviderInterface messageProvider);
 }

@@ -17,7 +17,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -34,14 +34,14 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211; ui</i>.
- * If not, see <http://www.gnu.org/licenses/>. 2
+ * If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
  * @param <IconLocationType>
  *            type that store the location of the icon.
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -65,22 +65,26 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 	}
 
 	/**
+	 * Fully defined adapted action.
+	 * 
 	 * @param functor
+	 *            the callback.
 	 * @param messageProvider
-	 * @param urlProvider
+	 *            the message provider.
 	 * @param iconProvider
+	 *            the icon provider.
 	 * @since 15.02.00
 	 */
-	public AdaptedAction(Functor functor, MessageProviderInterface messageProvider, 
-			IconProvider<IconLocationType> iconProvider)
+	public AdaptedAction(Functor functor, MessageProviderInterface messageProvider, IconProvider<IconLocationType> iconProvider)
 	{
 		super(functor);
 		myMessageProvider = messageProvider;
 		myIconProvider = iconProvider;
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getCallback()
 	 */
 	public Functor getCallback()
@@ -88,8 +92,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getCallback();
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getIconForButton()
 	 */
 	public IconLocationType getIconForButton()
@@ -97,8 +102,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getIconForButton();
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getIconForMenu()
 	 */
 	public IconLocationType getIconForMenu()
@@ -106,8 +112,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getIconForMenu();
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getKeyboardShortcut()
 	 */
 	public String getKeyboardShortcut()
@@ -115,8 +122,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getKeyboardShortcut();
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getLabelDescription()
 	 */
 	public String getLabelDescription()
@@ -124,8 +132,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getLabelDescription();
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getLabelMessage()
 	 */
 	public String getLabelMessage()
@@ -133,8 +142,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getLabelMessage();
 	}
 
-	/**
-	 * @return
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#getLocale()
 	 */
 	public Locale getLocale()
@@ -142,9 +152,10 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return myUserInterfaceAction.getLocale();
 	}
 
-	/**
-	 * @return
-	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#isEnabled()
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.swing.AbstractAction#isEnabled()
 	 */
 	public boolean isEnabled()
 	{
@@ -170,8 +181,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		return null;
 	}
 
-	/**
-	 * @param callback
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setCallback(com.sporniket.libre.lang.functor.Functor)
 	 */
 	public void setCallback(Functor callback)
@@ -180,9 +192,10 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		setFunctor(getCallback());
 	}
 
-	/**
-	 * @param enabled
-	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setEnabled(boolean)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.swing.AbstractAction#setEnabled(boolean)
 	 */
 	public void setEnabled(boolean enabled)
 	{
@@ -190,9 +203,10 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		setEnabled(enabled);
 	}
 
-	/**
-	 * @param iconForButton
-	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setIconForButton(java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setIconForButton(java.lang.Object)
 	 */
 	public void setIconForButton(IconLocationType iconForButton)
 	{
@@ -204,9 +218,10 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		}
 	}
 
-	/**
-	 * @param iconForMenu
-	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setIconForMenu(java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setIconForMenu(java.lang.Object)
 	 */
 	public void setIconForMenu(IconLocationType iconForMenu)
 	{
@@ -218,8 +233,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		}
 	}
 
-	/**
-	 * @param keyboardShortcut
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setKeyboardShortcut(java.lang.String)
 	 */
 	public void setKeyboardShortcut(String keyboardShortcut)
@@ -235,8 +251,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		}
 	}
 
-	/**
-	 * @param labelDescription
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setLabelDescription(java.lang.String)
 	 */
 	public void setLabelDescription(String labelDescription)
@@ -245,8 +262,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		putValue(Action.SHORT_DESCRIPTION, myMessageProvider.getMessage(getLabelDescription(), getLocale()));
 	}
 
-	/**
-	 * @param labelMessage
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setLabelMessage(java.lang.String)
 	 */
 	public void setLabelMessage(String labelMessage)
@@ -255,8 +273,9 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		putValue(Action.NAME, myMessageProvider.getMessage(getLabelMessage(), getLocale()));
 	}
 
-	/**
-	 * @param locale
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.sporniket.libre.ui.action.UserInterfaceAction#setLocale(java.util.Locale)
 	 */
 	public void setLocale(Locale locale)
@@ -265,6 +284,12 @@ public class AdaptedAction<IconLocationType> extends FunctorBasedAction implemen
 		updateAction(this);
 	}
 
+	/**
+	 * Update a Swing {@link Action} with data from this instance.
+	 * 
+	 * @param action
+	 *            the action to update.
+	 */
 	public void updateAction(Action action)
 	{
 		action.putValue(Action.NAME, myMessageProvider.getMessage(getLabelMessage(), getLocale()));

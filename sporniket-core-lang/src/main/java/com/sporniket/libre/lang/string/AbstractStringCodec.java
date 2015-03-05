@@ -14,7 +14,7 @@ package com.sporniket.libre.lang.string;
  * <p>
  * &copy; Copyright 2002-2012 David Sporn
  * </p>
- * <hr />
+ * <hr>
  * 
  * <p>
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
@@ -31,11 +31,11 @@ package com.sporniket.libre.lang.string;
  * 
  * <p>
  * You should have received a copy of the GNU Lesser General Public License along with <i>The Sporniket Core Library &#8211;
- * lang</i>. If not, see <http://www.gnu.org/licenses/>. 2
+ * lang</i>. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  * 
- * <hr />
+ * <hr>
  * 
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN
  * @version 15.02.00
  * @since 12.06.01
  */
@@ -60,19 +60,20 @@ public abstract class AbstractStringCodec implements StringCodecInterface
 	 * Decode the data into the buffer.
 	 * 
 	 * @param data
+	 *            data to decode
 	 * @param buffer
 	 *            MUST be non null.
-	 * @return
+	 * @return the updated buffer.
 	 */
 	protected abstract StringBuffer doDecode(String data, StringBuffer buffer);
 
 	/**
 	 * Encode the data into the buffer.
 	 * 
-	 * @param data
+	 * @param data data to encode.
 	 * @param buffer
 	 *            MUST be non null.
-	 * @return
+	 * @return the updated buffer.
 	 */
 	protected abstract StringBuffer doEncode(String data, StringBuffer buffer);
 

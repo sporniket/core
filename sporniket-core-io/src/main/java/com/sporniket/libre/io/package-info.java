@@ -4,7 +4,7 @@
  * <p>There is a framework to write file conversion programs, with a specialization for converting text files.</p>
  * 
  * <p> &copy; Copyright 2002-2012 David Sporn</p>
- * <hr />
+ * <hr>
  *
  * <p>This file is part of <i>The Sporniket Core Library &#8211; io</i>.
  *
@@ -19,11 +19,11 @@
  * GNU Lesser General Public License for more details.
  *
  * <p>You should have received a copy of the GNU Lesser General Public License
- * along with <i>The Sporniket Core Library &#8211; io</i>.  If not, see <http://www.gnu.org/licenses/>. 2
+ * along with <i>The Sporniket Core Library &#8211; io</i>.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. 2
  *
- * <hr />
+ * <hr>
  *
- * @author David SPORN <david.sporn@sporniket.com>
+ * @author David SPORN 
  * @version 15.02.00
  * @since 12.06.01
  */
