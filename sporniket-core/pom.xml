@@ -18,6 +18,7 @@
 
 	<modules>
 		<module>../sporniket-core-lang</module>
+		<module>../sporniket-core-ml</module>
 		<module>../sporniket-core-io</module>
 		<module>../sporniket-core-ui</module>
 	</modules>
