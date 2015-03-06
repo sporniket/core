@@ -25,19 +25,16 @@ public class FileComparator
 
         /**
          * Comparator to sort by ascending order.
-         * @since 15.02.00
          */
         public static final ByAbsolutePath ASCENDING = new ByAbsolutePath();
 
         /**
          * Comparator to sort by descending order.
-         * @since 15.02.00
          */
         public static final ByAbsolutePath DESCENDING = new ByAbsolutePath(true);
 
         /**
          * If <code>true</code>, reverse the order of the comparator.
-         * @since 15.02.00
          */
         private boolean myReverse = false;
 

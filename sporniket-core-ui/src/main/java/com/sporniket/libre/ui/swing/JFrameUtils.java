@@ -51,7 +51,6 @@ public class JFrameUtils
 	 * bounds of a maximized JFrame.
 	 * 
 	 * @return a rectangle describing the outer bounds of a maximised frame, for determining the screen size (this is not the full-screen size).
-	 * @since 15.02.00
 	 */
 	public static Rectangle getMaximisedFrameOuterBounds()
 	{
@@ -73,7 +72,6 @@ public class JFrameUtils
 	 * 
 	 * @param frame the frame to maximize.
 	 * @return the maximized frame.
-	 * @since 15.02.00
 	 */
 	public static JFrame maximizeFrame(JFrame frame)
 	{

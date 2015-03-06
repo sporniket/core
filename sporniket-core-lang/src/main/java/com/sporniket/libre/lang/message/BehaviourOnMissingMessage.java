@@ -39,7 +39,6 @@ public interface BehaviourOnMissingMessage
 {
 	/**
 	 * Defines the default behaviour.
-	 * @since 15.02.00
 	 */
 	public static final BehaviourOnMissingMessage DEFAULT_BEHAVIOUR = new ReturnKey();
 
@@ -76,19 +75,13 @@ public interface BehaviourOnMissingMessage
 	 */
 	public static class ReturnKey implements BehaviourOnMissingMessage
 	{
-
-		/*
-		 * (non-Javadoc)
-		 * 
+		/* (non-Javadoc)
 		 * @see com.sporniket.libre.lang.message.BehaviourOnMissingMessage#getValueOnMissingMessage(java.lang.String)
-		 * 
-		 * @since 15.02.00
 		 */
 		public String getValueOnMissingMessage(String key)
 		{
 			return key;
 		}
-
 	}
 
 	/**
@@ -124,19 +117,13 @@ public interface BehaviourOnMissingMessage
 	 */
 	public static class ReturnNull implements BehaviourOnMissingMessage
 	{
-
-		/*
-		 * (non-Javadoc)
-		 * 
+		/* (non-Javadoc)
 		 * @see com.sporniket.libre.lang.message.BehaviourOnMissingMessage#getValueOnMissingMessage(java.lang.String)
-		 * 
-		 * @since 15.02.00
 		 */
 		public String getValueOnMissingMessage(String key)
 		{
 			return null;
 		}
-
 	}
 
 	/**
@@ -145,7 +132,6 @@ public interface BehaviourOnMissingMessage
 	 * @param key
 	 *            the message key.
 	 * @return a default value or something else.
-	 * @since 15.02.00
 	 */
 	String getValueOnMissingMessage(String key);
 }

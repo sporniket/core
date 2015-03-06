@@ -137,7 +137,6 @@ public class FileTools
 	 *            MUST be at least 1
 	 * @return a {@link File} describing the deepest directory to create, then you should use {@link File#mkdirs()} on it. If depth
 	 *         was 0, return the working directory.
-	 * @since 15.02.00
 	 */
 	//TODO tests
 	public static File createFileBalancingDirectoryDescriptor(File workingDirectory, String fileName, int depth, int cellWidth)

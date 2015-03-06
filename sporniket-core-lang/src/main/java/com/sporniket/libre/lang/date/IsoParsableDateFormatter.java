@@ -69,7 +69,7 @@ public class IsoParsableDateFormatter
 	 * 
 	 * @author David SPORN 
 	 * @version 15.02.00
- * @since 12.06.01
+	 * @since 12.06.01
 	 */
 	private static class FormatFragments
 	{

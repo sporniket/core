@@ -60,7 +60,6 @@ public class FluidFlowPanelModel
 
 		/**
 		 * @param panel
-		 * @since 15.02.00
 		 */
 		public PanelSizeUpdaterOnViewPortResize(JPanel panel)
 		{
@@ -102,7 +101,6 @@ public class FluidFlowPanelModel
 		 * Get panel.
 		 * 
 		 * @return the panel
-		 * @since 15.02.00
 		 */
 		private JPanel getPanel()
 		{
@@ -111,7 +109,6 @@ public class FluidFlowPanelModel
 
 		/**
 		 * @param e
-		 * @since 15.02.00
 		 */
 		private void handleEvent(ComponentEvent e)
 		{
@@ -121,8 +118,6 @@ public class FluidFlowPanelModel
 
 		/**
 		 * Compute the minimum size, the size and the preferred size of the panel to fit its parent.
-		 * 
-		 * @since 15.02.00
 		 */
 		private void updatePanelSizes()
 		{
@@ -179,7 +174,6 @@ public class FluidFlowPanelModel
 	 * @param flowLayout
 	 *            the flow layout to use by this panel.
 	 * @return the component.
-	 * @since 15.02.00
 	 */
 	public static final FluidFlowPanelModel createFluidFlowPanel(FlowLayout flowLayout)
 	{
@@ -193,22 +187,17 @@ public class FluidFlowPanelModel
 
 	/**
 	 * The panel that will contain the items.
-	 * 
-	 * @since 15.02.00
 	 */
 	public final JPanel myPanel;
 
 	/**
 	 * The {@link ScrollPane} that will allow to view all the items.
-	 * 
-	 * @since 15.02.00
 	 */
 	public final JScrollPane myScrollPane;
 
 	/**
 	 * @param panel
 	 * @param scrollPane
-	 * @since 15.02.00
 	 */
 	private FluidFlowPanelModel(JPanel panel, JScrollPane scrollPane)
 	{
@@ -220,7 +209,6 @@ public class FluidFlowPanelModel
 	 * Get panel.
 	 * 
 	 * @return the panel
-	 * @since 15.02.00
 	 */
 	public JPanel getPanel()
 	{
@@ -231,7 +219,6 @@ public class FluidFlowPanelModel
 	 * Get scrollPane.
 	 * 
 	 * @return the scrollPane
-	 * @since 15.02.00
 	 */
 	public JScrollPane getScrollPane()
 	{
@@ -240,8 +227,6 @@ public class FluidFlowPanelModel
 
 	/**
 	 * Revalidate the components.
-	 * 
-	 * @since 15.02.00
 	 */
 	public void revalidate()
 	{

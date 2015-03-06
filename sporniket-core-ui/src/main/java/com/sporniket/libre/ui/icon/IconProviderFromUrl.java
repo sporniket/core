@@ -22,7 +22,6 @@ public class IconProviderFromUrl implements IconProvider<URL>
 	
 	/**
 	 * @return
-	 * @since 15.02.00
 	 */
 	private Map<URL, ImageIcon> getCache()
 	{
@@ -31,7 +30,6 @@ public class IconProviderFromUrl implements IconProvider<URL>
 
 	/* (non-Javadoc)
 	 * @see com.sporniket.libre.ui.swing.IconProvider#retrieveIcon(java.lang.Object)
-	 * @since 15.02.00
 	 */
 	public ImageIcon retrieveIcon(URL location) throws IconProviderException
 	{

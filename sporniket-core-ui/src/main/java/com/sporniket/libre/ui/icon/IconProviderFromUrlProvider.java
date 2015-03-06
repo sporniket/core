@@ -27,7 +27,6 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 	/**
 	 * Get iconProvider.
 	 * @return the iconProvider.
-	 * @since 15.02.00
 	 */
 	private IconProvider<URL> getIconProvider()
 	{
@@ -39,7 +38,6 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 	/**
 	 * Get urlProvider.
 	 * @return the urlProvider.
-	 * @since 15.02.00
 	 */
 	private UrlProvider getUrlProvider()
 	{
@@ -50,7 +48,6 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 
 	/**
 	 * @param urlProvider the url provider.
-	 * @since 15.02.00
 	 */
 	public IconProviderFromUrlProvider(UrlProvider urlProvider)
 	{
@@ -61,7 +58,6 @@ public class IconProviderFromUrlProvider implements IconProvider<String>
 
 	/* (non-Javadoc)
 	 * @see com.sporniket.libre.ui.swing.IconProvider#retrieveIcon(java.lang.Object)
-	 * @since 15.02.00
 	 */
 	public ImageIcon retrieveIcon(String location) throws IconProviderException
 	{

@@ -43,7 +43,6 @@ public class DataTools
 	 * @param offset
 	 *            the offset.
 	 * @return <code>true</code> if the first bytes of buffer starting from offset are the same as the provided sequence.
-	 * @since 15.02.00
 	 */
 	public static final boolean matchSequence(byte[] sequence, byte[] buffer, int offset)
 	{
@@ -70,7 +69,6 @@ public class DataTools
 	 * @param buffer
 	 *            the buffer to test.
 	 * @return <code>true</code> if the first bytes of buffer the same as the provided sequence.
-	 * @since 15.02.00
 	 */
 	public static final boolean matchSequence(byte[] sequence, byte[] buffer)
 	{
@@ -83,7 +81,6 @@ public class DataTools
 	 * @param signedValue
 	 *            the signed value to convert.
 	 * @return the converted unsigned value.
-	 * @since 15.02.00
 	 */
 	public static long getUnsignedIntValue(int signedValue)
 	{
@@ -96,7 +93,6 @@ public class DataTools
 	 * @param signedValue
 	 *            the signed value to convert.
 	 * @return the converted unsigned value.
-	 * @since 15.02.00
 	 */
 	public static int getUnsignedShortValue(short signedValue)
 	{
@@ -109,7 +105,6 @@ public class DataTools
 	 * @param signedValue
 	 *            the signed value to convert.
 	 * @return the converted unsigned value.
-	 * @since 15.02.00
 	 */
 	public static int getUnsignedByteValue(byte signedValue)
 	{
@@ -124,7 +119,6 @@ public class DataTools
 	 * @param buffer
 	 *            the buffer to append the result into.
 	 * @return the updated buffer.
-	 * @since 15.02.00
 	 */
 	public static StringBuffer appendByteAsPaddedHexString(byte value, StringBuffer buffer)
 	{
@@ -143,7 +137,6 @@ public class DataTools
 	 * @param value
 	 *            the value to convert.
 	 * @return a padded hexadecimal string.
-	 * @since 15.02.00
 	 */
 	public static String convertToPaddedHexString(byte value)
 	{
@@ -159,7 +152,6 @@ public class DataTools
 	 * @param buffer
 	 *            the buffer to append the result into.
 	 * @return the updated buffer.
-	 * @since 15.02.00
 	 */
 	public static StringBuffer appendBytesAsPaddedHexString(byte[] values, StringBuffer buffer)
 	{
@@ -177,7 +169,6 @@ public class DataTools
 	 * @param values
 	 *            the value to convert.
 	 * @return a padded hexadecimal string.
-	 * @since 15.02.00
 	 */
 	public static String convertToPaddedHexString(byte[] values)
 	{

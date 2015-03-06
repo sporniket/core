@@ -88,7 +88,6 @@ public interface SwingComponentProvider<ComponentType extends JComponent, Parame
 	 * @param parameters
 	 *            the parameters for the creation of the component.
 	 * @return a Swing component.
-	 * @since 15.02.00
 	 */
 	ComponentType create(ParameterType parameters);
 }

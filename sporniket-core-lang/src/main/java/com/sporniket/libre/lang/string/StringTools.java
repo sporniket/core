@@ -46,85 +46,61 @@ public class StringTools
 
 	/**
 	 * Letters.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	/**
 	 * Lower case letters.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__ALPHA_LOW = "abcdefghijklmnopqrstuvwxyz";
 
 	/**
 	 * Upper case letters.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__ALPHA_UP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	/**
 	 * Letters and digits.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__ALPHANUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 	/**
 	 * Lower case letters and digits.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__ALPHANUM_LOW = "abcdefghijklmnopqrstuvwxyz0123456789";
 
 	/**
 	 * Upper case letter and digits.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__ALPHANUM_UP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	/**
 	 * Digits.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__DIGIT = "0123456789";
 
 	/**
 	 * Letter, digits and underscore.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__FILENAME = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-";
 
 	/**
 	 * Letter, digits, underscore and slash.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__FILEPATH_UNIX = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-/";
 
 	/**
 	 * Letter, digits, underscore and backslash.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__FILEPATH_WIN = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-\\";
 
 	/**
 	 * Digits, minus, dot and comma.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__NUMBER_FLOAT = "0123456789-.,";
 
 	/**
 	 * Digits and minus sign.
-	 * 
-	 * @since 12.06.01
 	 */
 	public static final String FILTER__NUMBER_INT = "0123456789-";
 
@@ -139,7 +115,6 @@ public class StringTools
 	 * @return the array of token (might be empty)
 	 * @see java.util.StringTokenizer
 	 * @see String#split(String)
-	 * @since 12.06.01
 	 */
 	public static String[] explode(final String source)
 	{
@@ -166,7 +141,6 @@ public class StringTools
 	 * @param filter
 	 *            the filtering String
 	 * @return the filtered String. If filter is empty, it returns the source.
-	 * @since 12.06.01
 	 */
 	public static String filterString(final String source, final String filter)
 	{
@@ -195,7 +169,6 @@ public class StringTools
 	 * @param value
 	 *            The String to test
 	 * @return true if the string is null or "empty"
-	 * @since 12.06.01
 	 */
 	public static boolean isEmptyString(String value)
 	{

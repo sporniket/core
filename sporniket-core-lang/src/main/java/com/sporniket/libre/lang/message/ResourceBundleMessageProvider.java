@@ -46,7 +46,6 @@ public class ResourceBundleMessageProvider implements MessageProviderInterface
 {
 	/**
 	 * How to deal with missing messages.
-	 * @since 15.02.00
 	 */
 	private BehaviourOnMissingMessage myBehaviourOnMissingMessage = BehaviourOnMissingMessage.DEFAULT_BEHAVIOUR;
 
@@ -67,7 +66,6 @@ public class ResourceBundleMessageProvider implements MessageProviderInterface
 	/**
 	 * @param resourceBundleName name of the resource bundle
 	 * @param behaviourOnMissingMessage behaviour to use when the resource message is missing.
-	 * @since 15.02.00
 	 */
 	public ResourceBundleMessageProvider(String resourceBundleName, BehaviourOnMissingMessage behaviourOnMissingMessage)
 	{
@@ -78,7 +76,6 @@ public class ResourceBundleMessageProvider implements MessageProviderInterface
 	/**
 	 * Get behaviourOnMissingMessage.
 	 * @return the behaviourOnMissingMessage
-	 * @since 15.02.00
 	 */
 	public BehaviourOnMissingMessage getBehaviourOnMissingMessage()
 	{
@@ -180,7 +177,6 @@ public class ResourceBundleMessageProvider implements MessageProviderInterface
 	/**
 	 * Change behaviourOnMissingMessage.
 	 * @param behaviourOnMissingMessage the new value of behaviourOnMissingMessage.
-	 * @since 15.02.00
 	 */
 	public void setBehaviourOnMissingMessage(BehaviourOnMissingMessage behaviourOnMissingMessage)
 	{
