@@ -108,25 +108,6 @@ public class XmlStringTools
 				{
 					Node _childNode = _children.item(_i);
 					doAppendNodeAsXmlStream(_childNode, _buffer);
-					//
-					// // here would be a good place to put your application logic
-					// // and do something based upon node type
-					// if (Node.CDATA_SECTION_NODE == _childNode.getNodeType())
-					// {
-					// appendCdataNodeAsXmlStream(_childNode, _buffer);
-					// }
-					// else if (Node.COMMENT_NODE == _childNode.getNodeType())
-					// {
-					// appendCommentNodeAsXmlStream(_childNode, _buffer);
-					// }
-					// else if (Node.TEXT_NODE == _childNode.getNodeType())
-					// {
-					// appendTextNodeAsXmlStream(_childNode, _buffer);
-					// }
-					// else
-					// {
-					// appendRegularNodeAsXmlStream(_childNode, _buffer);
-					// }
 				}
 			}
 
