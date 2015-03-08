@@ -153,11 +153,11 @@ public class TestKeyboardRepresentationTable extends TestCase
 	 * 
 	 * @param name
 	 *            value to retrieve
-	 * @return
-	 * @throws NoSuchFieldException
-	 * @throws SecurityException
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
+	 * @return the matching KeyEvent value.
+	 * @throws NoSuchFieldException if there is a problem to deal with.
+	 * @throws SecurityException if there is a problem to deal with.
+	 * @throws IllegalAccessException if there is a problem to deal with.
+	 * @throws IllegalArgumentException if there is a problem to deal with.
 	 */
 	public final int retrieveKeyEventConstant(String name) throws SecurityException, NoSuchFieldException,
 			IllegalArgumentException, IllegalAccessException
