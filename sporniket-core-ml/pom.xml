@@ -23,22 +23,26 @@
 		</site>
 	</distributionManagement>
 	<dependencies>
+		<!-- ===INTERNAL DEPENDENCIES=== -->
+		<dependency>
+			<groupId>com.sporniket.core</groupId>
+			<artifactId>sporniket-core-lang</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- ===EXTERNAL DEPENDENCIES (non test)=== -->
+
+		<!-- ===TEST DEPENDENCIES=== -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>com.sporniket.core</groupId>
-			<artifactId>sporniket-core-lang</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 	</dependencies>
 	<build>
-		<!-- For annotations and other Java5 stuff -->
 		<plugins>
+			<!-- Version of Java supported -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

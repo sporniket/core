@@ -22,6 +22,11 @@
 		</site>
 	</distributionManagement>
 	<dependencies>
+		<!-- ===INTERNAL DEPENDENCIES -->
+
+		<!-- ===EXTERNAL DEPENDENCIES (non test) -->
+
+		<!-- ===TEST DEPENDENCIES -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -30,8 +35,8 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<!-- For annotations and other Java5 stuff -->
 		<plugins>
+			<!-- Version of Java supported -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

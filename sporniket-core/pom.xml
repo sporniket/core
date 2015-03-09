@@ -30,9 +30,8 @@
 		<module>../sporniket-core-ui</module>
 	</modules>
 	<build>
-
-		<!-- For annotations and other Java5 stuff -->
 		<plugins>
+			<!-- Version of Java supported -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
