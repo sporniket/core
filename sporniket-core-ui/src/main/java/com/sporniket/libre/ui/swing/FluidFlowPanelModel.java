@@ -113,7 +113,7 @@ public class FluidFlowPanelModel
 		private void handleEvent(ComponentEvent e)
 		{
 			updatePanelSizes();
-			e.getComponent().revalidate();
+			e.getComponent().invalidate();
 		}
 
 		/**
