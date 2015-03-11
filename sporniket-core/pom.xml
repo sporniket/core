@@ -4,7 +4,7 @@
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core</artifactId>
 	<packaging>pom</packaging>
-	<version>15.03.00-jdk6</version>
+	<version>15.03.00.01-jdk6</version>
 	
 	<properties>
 		<url.base>https://github.com/sporniket/core</url.base>
