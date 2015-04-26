@@ -143,7 +143,6 @@
 	<scm>
 		<connection>scm:git:https://github.com/sporniket/core</connection>
 		<url>https://github.com/sporniket/core</url>
-		<tag>v15.03.00</tag>
 	</scm>
 	<issueManagement>
 		<system>GitHub.com</system>
