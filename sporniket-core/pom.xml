@@ -139,6 +139,10 @@
 			<name>Sporniket Java Core Library - Core</name>
 			<url>${url.base.site.deploy}/${project.artifactId}/${project.version}</url>
 		</site>
+		<repository>
+			<id>centralSonatype</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
 	</distributionManagement>
 	<scm>
 		<connection>scm:git:https://github.com/sporniket/core</connection>
