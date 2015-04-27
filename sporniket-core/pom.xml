@@ -18,7 +18,7 @@
 		<version.maven-javadoc-plugin>2.10.1</version.maven-javadoc-plugin>
 		<version.maven-surefire-report-plugin>2.18.1</version.maven-surefire-report-plugin>
 		<version.maven-pmd-plugin>3.4</version.maven-pmd-plugin>
-		<version.maven-release-plugin>2.5.1</version.maven-release-plugin>
+		<version.maven-release-plugin>2.5.2</version.maven-release-plugin>
 	</properties>
 
 	<name>sporniket-core</name>
@@ -78,6 +78,7 @@
 				<version>${version.maven-release-plugin}</version>
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<pushChanges>false</pushChanges>
 				</configuration>
 			</plugin>
 		</plugins>

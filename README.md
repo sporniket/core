@@ -4,7 +4,7 @@ Code that I deemed essential for my projects at one point.
 # How to use in your project with maven
 
 ## Build and install the library
-For now, sporniket-core is not deployed in a public repository. One MUST clone the git repository, build and install to the maven local repository.
+As of version 15.03.01, sporniket-core is deployed in a public repository. To get the latest available code, one must clone the git repository, build and install to the maven local repository.
 
 ```
 git clone https://github.com/sporniket/core.git
@@ -13,7 +13,7 @@ mvn install
 ```
 
 ## Add a dependency to your project
-Add one of the following dependencies in your pom file :
+Add the needed dependencies in your pom file :
 
 ```
 <dependency>
