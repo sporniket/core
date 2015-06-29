@@ -19,6 +19,7 @@ hs_err_pid*
 
 # Maven files
 pom.xml.releaseBackup
+pom.xml.versionsBackup
 release.properties
 target/
 
@@ -32,4 +33,9 @@ bin/
 .project
 .classpath
 .settings/
+
+#classical log/backup/tmp etc...
+*.log
+*.tmp
+*.bak
 

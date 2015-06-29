@@ -1,0 +1,13 @@
+diff --git a/sporniket-core/pom.xml b/sporniket-core/pom.xml
+index 91d73dc..e9b2cdb 100644
+--- a/sporniket-core/pom.xml
++++ b/sporniket-core/pom.xml
+@@ -9,7 +9,7 @@
+ 	<properties>
+ 		<url.base>https://github.com/sporniket/core</url.base>
+ 		<url.base.site.deploy>${project.baseUri}../mvnsites</url.base.site.deploy>
+-		<version.jdk>1.7</version.jdk>
++		<version.jdk>1.6</version.jdk>
+ 
+ 		<!-- maven plugins version -->
+ 		<version.maven-compiler-plugin>3.2</version.maven-compiler-plugin>

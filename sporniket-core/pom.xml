@@ -145,7 +145,7 @@
 		</repository>
 	</distributionManagement>
 	<scm>
-		<connection>scm:git:https://github.com/sporniket/core</connection>
+		<connection>scm:git:https://github.com/sporniket/core.git</connection>
 		<url>https://github.com/sporniket/core</url>
 	  <tag>HEAD</tag>
   </scm>
