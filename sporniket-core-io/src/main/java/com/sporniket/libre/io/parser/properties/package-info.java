@@ -5,11 +5,9 @@
  * <ul>
  * <li>A whitespace : ' ' (space) and tabulation.</li>
  * <li><code>name = value</code> : single line value identified by <code>name</code> ; any whitespace after '=' are stripped from the value.</li>
- * <li><code>name =>value</code> : single line value identified by <code>name</code> ; any whitespace after '=>' is part of the value.</li>
- * <li><code>name << endtag</code></li> : start of multiple line value identified by <code>name</code> ; the value start from the
- * next line until a line consisting of <code>endtag</code> surrounded with whitespaces or not (like heredoc syntax) ; any whitespace at the beginning of the lines are kept.
- * <li><code>name <<- endtag</code></li> : start of multiple line value identified by <code>name</code> ; the value start from the
- * next line until a line consisting of <code>endtag</code> surrounded with whitespaces or not (like heredoc syntax) ; any whitespace at the beginning of the lines are ignored.
+ * <li><code>name =&gt;value</code> : single line value identified by <code>name</code> ; any whitespace after '=&gt;' is part of the value.</li>
+ * <li><code>name &lt;&lt; endtag</code> : start of multiple line value identified by <code>name</code> ; the value start from the next line until a line consisting of <code>endtag</code> surrounded with whitespaces or not (like heredoc syntax) ; any whitespace at the beginning of the lines are kept.</li>
+ * <li><code>name &lt;&lt;- endtag</code> : start of multiple line value identified by <code>name</code> ; the value start from the next line until a line consisting of <code>endtag</code> surrounded with whitespaces or not (like heredoc syntax) ; any whitespace at the beginning of the lines are ignored.</li>
  * <li>When not inside a multiple line value, lines starting with '#' or containing spaces only are ignored ; any other lines are
  * errors</li>
  * </ul>
