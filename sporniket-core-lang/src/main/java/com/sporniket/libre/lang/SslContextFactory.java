@@ -89,7 +89,7 @@ public class SslContextFactory {
 	 */
 	public static final class Configuration {
 		/**
-		 * The algorithm of the key manager (default : default algorithm).
+		 * The algorithm of the key manager (default : default algorithm).
 		 */
 		private String myAlgorithmKeyManagerFactory = ConfigurationDefaultValues.ALGORITHM__KEY_MANAGER_FACTORY;
 		/**
@@ -110,7 +110,7 @@ public class SslContextFactory {
 		 */
 		private String myCaCertStorePath = ConfigurationDefaultValues.CA_CERT_STORE_PATH;
 		/**
-		 * The type of key store of ca certificates (default : the default
+		 * The type of key store of ca certificates (default : the default
 		 * keystore type).
 		 */
 		private String myCaCertStoreType = ConfigurationDefaultValues.KEY_STORE_TYPE;
