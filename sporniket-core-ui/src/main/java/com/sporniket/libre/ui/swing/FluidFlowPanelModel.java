@@ -10,6 +10,7 @@ import java.awt.event.ComponentListener;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -113,7 +114,16 @@ public class FluidFlowPanelModel
 		private void handleEvent(ComponentEvent e)
 		{
 			updatePanelSizes();
-			e.getComponent().revalidate();
+			final Component _component = e.getComponent();
+			if (_component instanceof JComponent)
+			{
+				JComponent _jComponent = (JComponent) _component;
+				_jComponent.revalidate();
+			}
+			else
+			{
+				_component.invalidate();
+			}
 		}
 
 		/**
