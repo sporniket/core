@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.sporniket.core</groupId>
 		<artifactId>sporniket-core</artifactId>
-		<version>15.09.00-jdk6</version>
+		<version>15.09.01-jdk6-SNAPSHOT</version>
 		<relativePath>../sporniket-core/pom.xml</relativePath>
 	</parent>
 
