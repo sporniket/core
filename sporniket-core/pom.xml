@@ -13,11 +13,11 @@
 		<version.jdk>1.8</version.jdk>
 
 		<!-- maven plugins version -->
-		<version.maven-compiler-plugin>3.2</version.maven-compiler-plugin>
-		<version.maven-source-plugin>2.4</version.maven-source-plugin>
-		<version.maven-javadoc-plugin>2.10.1</version.maven-javadoc-plugin>
-		<version.maven-surefire-report-plugin>2.18.1</version.maven-surefire-report-plugin>
-		<version.maven-pmd-plugin>3.4</version.maven-pmd-plugin>
+		<version.maven-compiler-plugin>3.5.1</version.maven-compiler-plugin>
+		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
+		<version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
+		<version.maven-surefire-report-plugin>2.19.1</version.maven-surefire-report-plugin>
+		<version.maven-pmd-plugin>3.6</version.maven-pmd-plugin>
 		<version.maven-release-plugin>2.5.2</version.maven-release-plugin>
 	</properties>
 
