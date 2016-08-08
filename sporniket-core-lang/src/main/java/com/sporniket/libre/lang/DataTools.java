@@ -27,7 +27,7 @@ package com.sporniket.libre.lang;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 15.02.00
  */
 public class DataTools

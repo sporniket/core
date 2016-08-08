@@ -33,7 +33,7 @@ import com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode;
  * <hr>
  * 
  * @author David SPORN
- * @version 15.09.00
+ * @version 16.08.00
  * @since 15.09.00
  */
 public class TestStringTools extends TestCase

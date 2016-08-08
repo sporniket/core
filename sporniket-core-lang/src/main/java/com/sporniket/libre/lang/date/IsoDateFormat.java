@@ -34,7 +34,7 @@ import java.text.SimpleDateFormat;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 12.06.01
  */
 // FIXME SimpleDateFormat is not thread safe, give access to the pattern, and provide function instanciating a dateformat using the

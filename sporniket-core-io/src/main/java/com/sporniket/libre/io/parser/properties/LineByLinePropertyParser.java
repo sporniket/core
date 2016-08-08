@@ -42,7 +42,7 @@ import com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode;
  * <hr>
  * 
  * @author David SPORN
- * @version 15.09.00
+ * @version 16.08.00
  * @since 15.09.00
  */
 public class LineByLinePropertyParser
@@ -75,7 +75,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 15.09.00
+	 * @version 16.08.00
 	 * @since 15.09.00
 	 */
 	private static final class CharacterPattern
@@ -121,7 +121,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 15.09.00
+	 * @version 16.08.00
 	 * @since 15.09.00
 	 */
 	private static enum FinalState
@@ -162,7 +162,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 15.09.00
+	 * @version 16.08.00
 	 * @since 15.09.00
 	 */
 	private static final class FollowUp
@@ -227,7 +227,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 15.09.00
+	 * @version 16.08.00
 	 * @since 15.09.00
 	 */
 	private static class State

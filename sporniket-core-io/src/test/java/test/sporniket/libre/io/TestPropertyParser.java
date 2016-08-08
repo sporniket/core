@@ -38,7 +38,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  * <hr>
  * 
  * @author David SPORN
- * @version 15.09.00
+ * @version 16.08.00
  * @since 15.09.00
  */
 public class TestPropertyParser extends TestCase

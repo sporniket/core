@@ -43,7 +43,7 @@ import javax.swing.JScrollPane;
  * 
  * @author David SPORN 
  * 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 15.02.00
  */
 public class FluidFlowPanelModel
@@ -51,7 +51,7 @@ public class FluidFlowPanelModel
 	/**
 	 * @author dsporn
 	 * 
-	 * @version 15.02.00
+	 * @version 16.08.00
 	 * @since 15.02.00
 	 */
 	private static class PanelSizeUpdaterOnViewPortResize implements ComponentListener, ContainerListener

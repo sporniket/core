@@ -10,7 +10,7 @@ import java.util.Comparator;
  * Enclosing type for various comparators.
  * @author dsporn
  *
- * @version 15.02.00
+ * @version 16.08.00
  * @since 15.02.00
  */
 public class FileComparator
@@ -18,7 +18,7 @@ public class FileComparator
 	/**
 	 * @author dsporn
 	 *
-	 * @version 15.02.00
+	 * @version 16.08.00
 	 * @since 15.02.00
 	 */
 	public static class ByAbsolutePath implements Comparator<File> {

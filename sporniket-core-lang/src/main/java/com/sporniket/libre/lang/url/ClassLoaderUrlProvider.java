@@ -30,7 +30,7 @@ import java.net.URL;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 12.06.01
  */
 public class ClassLoaderUrlProvider implements UrlProvider

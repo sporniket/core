@@ -36,7 +36,7 @@ import junit.framework.TestCase;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 15.02.00
  */
 public class TestFileTools extends TestCase

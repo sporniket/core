@@ -33,7 +33,7 @@ import java.io.File;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 12.09.01
  */
 public interface FileGenerator

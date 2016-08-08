@@ -35,7 +35,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 12.06.01
  */
 public class AdaptedActionFactory<IconLocationType> implements UserInterfaceActionFactory<IconLocationType>

@@ -33,7 +33,7 @@ import java.nio.charset.Charset;
  * <hr>
  * 
  * @author David SPORN 
- * @version 15.02.00
+ * @version 16.08.00
  * @since 12.06.01
  */
 public final class Constants
@@ -67,7 +67,7 @@ public final class Constants
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 15.02.00
+	 * @version 16.08.00
 	 * @since 12.06.01
 	 */
 	public static final class Empty
@@ -111,7 +111,7 @@ public final class Constants
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 15.02.00
+	 * @version 16.08.00
 	 * @since 12.06.01
 	 */
 	public static final class CharacterCodePoints
@@ -181,7 +181,7 @@ public final class Constants
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 15.02.00
+	 * @version 16.08.00
 	 * @since 15.02.00
 	 */
 	public static final class CharsetNames
@@ -216,7 +216,7 @@ public final class Constants
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 15.02.00
+	 * @version 16.08.00
 	 * @since 15.02.00
 	 */
 	public static final class HashAlgorithmNames
