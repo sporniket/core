@@ -9,7 +9,7 @@ import java.nio.charset.Charset;
  * Predefined constants.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 
@@ -43,7 +43,7 @@ public final class Constants
 	 * Constants defining what <em>empty</em> means, according to a data type.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -87,7 +87,7 @@ public final class Constants
 	 * Constants defining byte values for common technical us-ascii7 characters.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -157,7 +157,7 @@ public final class Constants
 	 * Charset names.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -192,7 +192,7 @@ public final class Constants
 	/**
 	 * Hash algorithm names.
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

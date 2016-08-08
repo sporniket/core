@@ -18,7 +18,7 @@ import com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode;
  * </p>
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 
@@ -51,7 +51,7 @@ public class LineByLinePropertyParser
 	 * Some special character patterns for the automaton.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -97,7 +97,7 @@ public class LineByLinePropertyParser
 	 * </p>
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -138,7 +138,7 @@ public class LineByLinePropertyParser
 	 * Automaton model : transition to a next state, only if it matches a pattern.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -203,7 +203,7 @@ public class LineByLinePropertyParser
 	 * Automaton state.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

@@ -17,7 +17,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * Utility class for file processing.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

@@ -7,7 +7,7 @@ import java.util.Locale;
  * Message provider that delegate to other message providers according to the key.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

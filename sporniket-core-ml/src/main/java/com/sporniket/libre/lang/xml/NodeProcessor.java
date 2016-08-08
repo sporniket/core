@@ -6,7 +6,7 @@ import org.w3c.dom.Node;
  * Encapsulate the processing of a {@link Node}, to be used by {@link NodeListProcessor}.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

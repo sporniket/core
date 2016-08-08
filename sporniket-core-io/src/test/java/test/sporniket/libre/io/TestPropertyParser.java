@@ -14,7 +14,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
 /**
  * Test case for {@link com.sporniket.libre.io.parser.properties.LineByLinePropertyParser}.
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

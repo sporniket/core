@@ -7,7 +7,7 @@ package com.sporniket.libre.ui.action;
  * Exception thrown when a processing fails.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

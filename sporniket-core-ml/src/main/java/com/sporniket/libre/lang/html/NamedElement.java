@@ -8,7 +8,7 @@ import com.sporniket.libre.lang.Constants;
  * Base class for an element having an name, and an id (the name and a suffix).
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

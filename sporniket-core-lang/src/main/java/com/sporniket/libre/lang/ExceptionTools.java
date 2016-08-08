@@ -13,7 +13,7 @@ import java.io.StringWriter;
  * Exception utilities, like extracting only a few lines of the StackTrace.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

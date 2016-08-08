@@ -7,7 +7,7 @@ package com.sporniket.libre.io.parser.properties;
  * Exception thrown when there is an error in the parsing of the provided input.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

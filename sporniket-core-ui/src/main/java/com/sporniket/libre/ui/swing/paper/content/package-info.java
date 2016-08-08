@@ -1,7 +1,7 @@
 /**
  * Ready to use content implementation for printing.
  * 
- * <p> &copy; Copyright 2002-2015 David Sporn</p>
+ * <p> &copy; Copyright 2002-2016 David Sporn</p>
  * <hr>
  *
  * <p>This file is part of <i>The Sporniket Core Library &#8211; ui</i>.

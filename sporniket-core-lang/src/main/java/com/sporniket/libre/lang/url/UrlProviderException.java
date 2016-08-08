@@ -7,7 +7,7 @@ package com.sporniket.libre.lang.url;
  * Raised by implementation of {@link UrlProvider}.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

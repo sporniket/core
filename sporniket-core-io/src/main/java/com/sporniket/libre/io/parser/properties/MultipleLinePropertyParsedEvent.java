@@ -11,7 +11,7 @@ package com.sporniket.libre.io.parser.properties;
  * </p>
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

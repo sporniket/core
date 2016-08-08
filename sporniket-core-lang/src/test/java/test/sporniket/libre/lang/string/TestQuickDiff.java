@@ -10,7 +10,7 @@ import com.sporniket.libre.lang.string.QuickDiff;
 /**
  * Test suite for {@link QuickDiff}.
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

@@ -11,7 +11,7 @@ import com.sporniket.libre.lang.DataTools;
  * String utilities.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 
@@ -44,7 +44,7 @@ public class StringTools
 	 * Mode for {@link StringTools#removeWhiteSpaces(String, SpaceRemovingMode)}.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

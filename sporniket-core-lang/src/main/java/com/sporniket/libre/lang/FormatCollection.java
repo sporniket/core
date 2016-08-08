@@ -4,7 +4,7 @@ package com.sporniket.libre.lang;
  * A class that stores often used format patterns.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

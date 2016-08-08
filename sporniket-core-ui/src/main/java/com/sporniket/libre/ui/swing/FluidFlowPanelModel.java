@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
  * avoid horizontal scrolling.
  * 
  * <p>
- * &copy; Copyright 2002-2013 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 
@@ -52,7 +52,7 @@ public class FluidFlowPanelModel
 	 * Listener for updating the panel size when the viewport is resized.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2013 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

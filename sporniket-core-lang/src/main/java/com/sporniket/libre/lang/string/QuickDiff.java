@@ -13,7 +13,7 @@ import java.util.List;
  * The typical use will be through {@link #reportDiff(String[], String[], boolean, boolean)}.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

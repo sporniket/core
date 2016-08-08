@@ -9,7 +9,7 @@ import java.text.MessageFormat;
  * Utility macro for sgml code generation.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

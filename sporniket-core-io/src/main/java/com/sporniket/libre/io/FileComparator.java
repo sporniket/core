@@ -10,7 +10,7 @@ import java.util.Comparator;
  * Enclosing type for various comparators.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 
@@ -43,7 +43,7 @@ public class FileComparator
 	 * Comparator by absolute path.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2015 David Sporn
+	 * &copy; Copyright 2002-2016 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

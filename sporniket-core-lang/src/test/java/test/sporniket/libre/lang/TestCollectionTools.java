@@ -10,7 +10,7 @@ import junit.framework.TestCase;
  * Test suite for {@link CollectionTools}.
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 

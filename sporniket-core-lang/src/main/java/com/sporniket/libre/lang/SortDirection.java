@@ -7,7 +7,7 @@ package com.sporniket.libre.lang;
  * Declares usual direction for sorting (ascending, descending).
  * 
  * <p>
- * &copy; Copyright 2002-2015 David Sporn
+ * &copy; Copyright 2002-2016 David Sporn
  * </p>
  * <hr>
  * 
