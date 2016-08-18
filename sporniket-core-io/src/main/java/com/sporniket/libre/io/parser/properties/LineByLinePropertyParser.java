@@ -418,7 +418,7 @@ public class LineByLinePropertyParser
 			}),// 8
 			new State(this, new FollowUp[]
 			{
-					new FollowUp("[-]", 9), new FollowUp(".", 10)
+					new FollowUp("[-]", 10), new FollowUp(".", 9)
 			}),// 9
 			new State(this, null)
 			{
