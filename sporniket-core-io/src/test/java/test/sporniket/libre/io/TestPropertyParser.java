@@ -114,7 +114,7 @@ public class TestPropertyParser extends TestCase
 
 	private static final String[] TEST_DESCRIPTION__MULTIPLE_LINE_PROPERIES__PROPERTY_VALUE__SOURCE =
 	{
-			"    line 1  ", "  line 2."
+			"\t line 1  ", "  line 2."
 	};
 
 	private static final String[] TEST_DESCRIPTION__MULTIPLE_LINE_PROPERTIES__LEFT_TRIM =
@@ -248,14 +248,15 @@ public class TestPropertyParser extends TestCase
 	public final void testErrorManagement()
 	{
 		final LineByLinePropertyParser _parser = new LineByLinePropertyParser();
-		
-		final String[] _correctLines = {
+
+		final String[] _correctLines =
+		{
 				TEST_DESCRIPTION__EMPTY_LINE[0],
 				TEST_DESCRIPTION__COMMENT__NO_SPACES[0],
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__EMPTY_VALUE[0],
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__EMPTY_VALUE[0]
 		};
-		for (String _correctLine:_correctLines)
+		for (String _correctLine : _correctLines)
 		{
 			doTestCorrectLine(_parser, _correctLine);
 		}
@@ -451,6 +452,10 @@ public class TestPropertyParser extends TestCase
 			String _got = dumpStringArray(_listener.myParsedValue);
 			fail("Property value does not match : \nexpected=\n" + _expected + "\ngot=\n" + _got + "\n");
 		}
+		String _expected = String.join("\n", expectedValue);
+		String _got = String.join("\n", _listener.myParsedValue);
+		assertEquals(_expected, _got);
+
 	}
 
 	private final void doTestSingleLine(String lineToParse, String expectedName, String expectedValue)
