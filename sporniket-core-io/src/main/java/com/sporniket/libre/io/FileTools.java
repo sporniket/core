@@ -3,14 +3,23 @@
  */
 package com.sporniket.libre.io;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
+import com.sporniket.libre.io.parser.properties.LineByLinePropertyParser;
+import com.sporniket.libre.io.parser.properties.MultipleLinePropertyParsedEvent;
+import com.sporniket.libre.io.parser.properties.PropertiesParsingListener;
+import com.sporniket.libre.io.parser.properties.SingleLinePropertyParsedEvent;
+import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
 import com.sporniket.libre.lang.string.StringTools;
 
 /**
@@ -40,7 +49,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.00
  * @since 12.06.01
  */
@@ -50,12 +59,15 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a file using the given encoding.
 	 * 
-	 * @param source source file.
+	 * @param source
+	 *            source file.
 	 * @param encoding
 	 *            can be <code>null</code>
 	 * @return the reader.
-	 * @throws FileNotFoundException if there is a problem to deal with.
-	 * @throws UnsupportedEncodingException if there is a problem to deal with.
+	 * @throws FileNotFoundException
+	 *             if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException
+	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForFile(File source, Encoding encoding) throws FileNotFoundException,
@@ -67,12 +79,15 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a file using the given encoding.
 	 * 
-	 * @param source source file.
+	 * @param source
+	 *            source file.
 	 * @param encoding
 	 *            null or empty for using system encoding.
 	 * @return the reader.
-	 * @throws FileNotFoundException if there is a problem to deal with.
-	 * @throws UnsupportedEncodingException if there is a problem to deal with.
+	 * @throws FileNotFoundException
+	 *             if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException
+	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForFile(File source, String encoding) throws FileNotFoundException,
@@ -84,12 +99,15 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a InputStream using the given encoding.
 	 * 
-	 * @param source source stream.
+	 * @param source
+	 *            source stream.
 	 * @param encoding
 	 *            can be <code>null</code>
 	 * @return the reader.
-	 * @throws FileNotFoundException if there is a problem to deal with.
-	 * @throws UnsupportedEncodingException if there is a problem to deal with.
+	 * @throws FileNotFoundException
+	 *             if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException
+	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForInputStream(InputStream source, Encoding encoding) throws FileNotFoundException,
@@ -101,12 +119,15 @@ public class FileTools
 	/**
 	 * Instanciate a Reader for a InputStream using the given encoding.
 	 * 
-	 * @param source source stream.
+	 * @param source
+	 *            source stream.
 	 * @param encoding
 	 *            <code>null</code> or empty for using system encoding.
 	 * @return the reader.
-	 * @throws FileNotFoundException if there is a problem to deal with.
-	 * @throws UnsupportedEncodingException if there is a problem to deal with.
+	 * @throws FileNotFoundException
+	 *             if there is a problem to deal with.
+	 * @throws UnsupportedEncodingException
+	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
 	public static Reader createReaderForInputStream(InputStream source, String encoding) throws FileNotFoundException,
@@ -138,7 +159,7 @@ public class FileTools
 	 * @return a {@link File} describing the deepest directory to create, then you should use {@link File#mkdirs()} on it. If depth
 	 *         was 0, return the working directory.
 	 */
-	//TODO tests
+	// TODO tests
 	public static File createFileBalancingDirectoryDescriptor(File workingDirectory, String fileName, int depth, int cellWidth)
 	{
 		if (depth < 0)
@@ -149,9 +170,10 @@ public class FileTools
 		{
 			throw new IllegalArgumentException("cellWidth must be greater or equal to 1");
 		}
-		if (fileName.length() < (depth*cellWidth))
+		if (fileName.length() < (depth * cellWidth))
 		{
-			throw new IllegalArgumentException("fileName must be at least "+(depth*cellWidth)+" chars, has only "+fileName.length()+" ["+fileName+"].");
+			throw new IllegalArgumentException("fileName must be at least " + (depth * cellWidth) + " chars, has only "
+					+ fileName.length() + " [" + fileName + "].");
 		}
 		int _subNameLength = cellWidth;
 		File _targetFile = workingDirectory;
@@ -161,5 +183,49 @@ public class FileTools
 			_subNameLength += cellWidth;
 		}
 		return _targetFile;
+	}
+
+	/**
+	 * Load a properties file from the specified source supporting multiple line values.
+	 * 
+	 * @param source
+	 * @param encoding
+	 * @param newline
+	 * @return
+	 * @throws IOException
+	 * @throws SyntaxErrorException
+	 * @see LineByLinePropertyParser
+	 */
+	public static Map<String, String> loadProperties(InputStream source, Encoding encoding, String newline) throws IOException,
+			SyntaxErrorException
+	{
+		final Map<String, String> _result = new HashMap<String, String>();
+		PropertiesParsingListener _listener = new PropertiesParsingListener()
+		{
+			@Override
+			public void onSingleLinePropertyParsed(SingleLinePropertyParsedEvent event)
+			{
+				_result.put(event.getName(), event.getValue());
+			}
+
+			@Override
+			public void onMultipleLinePropertyParsed(MultipleLinePropertyParsedEvent event)
+			{
+				_result.put(event.getName(), String.join(newline, event.getValue()));
+			}
+		};
+
+		BufferedReader _reader = new BufferedReader(createReaderForInputStream(source, encoding));
+		LineByLinePropertyParser _parser = new LineByLinePropertyParser();
+		_parser.addListener(_listener);
+
+		for (String _line = _reader.readLine(); _line != null;)
+		{
+			_parser.parseLine(_line);
+			_line = _reader.readLine();
+		}
+		_reader.close();
+
+		return _result;
 	}
 }
