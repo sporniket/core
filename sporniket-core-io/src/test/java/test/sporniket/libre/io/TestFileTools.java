@@ -4,8 +4,13 @@
 package test.sporniket.libre.io;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
 
+import com.sporniket.libre.io.Encoding;
 import com.sporniket.libre.io.FileTools;
+import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
 
 import junit.framework.TestCase;
 
@@ -72,6 +77,16 @@ public class TestFileTools extends TestCase
 		{
 			//ok
 		}
+	}
+	
+	public final void testLoadProperties() throws IOException, SyntaxErrorException
+	{
+		InputStream _fileLocation = getClass().getClassLoader().getResourceAsStream("test/filetools/SampleProperties.properties");
+		Map<String, String> _properties = FileTools.loadProperties(_fileLocation, Encoding.ISO_8859_1, "\n");
+		assertEquals("I am trimed at the begining ", _properties.get("trimed.value"));
+		assertEquals(" I am untrimed at the begining ", _properties.get("untrimed.value"));
+		assertEquals("bla blah \ntrimed ! ", _properties.get("trimed.multiline.value"));
+		assertEquals("	bla blah \n	trimed ! ", _properties.get("untrimed.multiline.value"));
 	}
 
 }
