@@ -1,14 +1,14 @@
 package com.sporniket.libre.io;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.LineNumberReader;
+import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
@@ -256,33 +256,6 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 	}
 
 	/**
-	 * Close the input stream.
-	 * 
-	 * @throws IOException
-	 *             if a problem occurs.
-	 */
-	private void closeInputFile() throws IOException
-	{
-		myLineReader.close();
-		myBufferedReader.close();
-		myStreamReader.close();
-		myInputStream.close();
-	}
-
-	/**
-	 * Close the outpuStream.
-	 * 
-	 * @throws IOException
-	 *             if a problem occurs.
-	 */
-	private void closeOutputFile() throws IOException
-	{
-		myBufferedWriter.close();
-		myStreamWriter.close();
-		myOutputStream.close();
-	}
-
-	/**
 	 * The file conversion process.
 	 * 
 	 * @param inputFileName
@@ -303,22 +276,6 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 		closeOutputFile();
 		closeInputFile();
 	}
-
-	/**
-	 * The real processing.
-	 * <p>
-	 * Subclass of this class <b>must</b> implement this method instead of <tt>convertFile()</tt>.
-	 * 
-	 * @param reader
-	 *            the input stream.
-	 * @param writer
-	 *            the output stream.
-	 * @throws IOException
-	 *             if a I/O problem occurs.
-	 * @throws ConversionException
-	 *             if a conversion problem occurs.
-	 */
-	protected abstract void doConvertFile(LineNumberReader reader, Writer writer) throws IOException, ConversionException;
 
 	/**
 	 * Return the encoding code for the input file.
@@ -361,6 +318,81 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 	}
 
 	/**
+	 * Set the encoding code for the input file.
+	 * <p>
+	 * This should be the preferred MIME name of the encoding.
+	 * 
+	 * @param encodingName
+	 *            The new encoding scheme.
+	 * @throws UnsupportedEncodingException
+	 *             This exception is thrown if the encoding is not registered in the properties file <i>EncodingNames</i>.
+	 */
+	public final void setInputEncoding(final String encodingName) throws UnsupportedEncodingException
+	{
+		myInputEncodingCode = translateEncoding(encodingName);
+		myInputEncoding = encodingName;
+	}
+
+	/**
+	 * Set the encoding code for the output file.
+	 * <p>
+	 * This should be the preferred MIME name of the encoding.
+	 * 
+	 * @param encodingName
+	 *            The new encoding scheme.
+	 * @throws UnsupportedEncodingException
+	 *             This exception is thrown if the encoding is not registered in the properties file <i>EncodingNames</i>.
+	 */
+	public final void setOutputEncoding(final String encodingName) throws UnsupportedEncodingException
+	{
+		myOutputEncodingCode = translateEncoding(encodingName);
+		myOutputEncoding = encodingName;
+	}
+
+	/**
+	 * The real processing.
+	 * <p>
+	 * Subclass of this class <b>must</b> implement this method instead of <tt>convertFile()</tt>.
+	 * 
+	 * @param reader
+	 *            the input stream.
+	 * @param writer
+	 *            the output stream.
+	 * @throws IOException
+	 *             if a I/O problem occurs.
+	 * @throws ConversionException
+	 *             if a conversion problem occurs.
+	 */
+	protected abstract void doConvertFile(LineNumberReader reader, Writer writer) throws IOException, ConversionException;
+
+	/**
+	 * Close the input stream.
+	 * 
+	 * @throws IOException
+	 *             if a problem occurs.
+	 */
+	private void closeInputFile() throws IOException
+	{
+		myLineReader.close();
+		myBufferedReader.close();
+		myStreamReader.close();
+		myInputStream.close();
+	}
+
+	/**
+	 * Close the outpuStream.
+	 * 
+	 * @throws IOException
+	 *             if a problem occurs.
+	 */
+	private void closeOutputFile() throws IOException
+	{
+		myBufferedWriter.close();
+		myStreamWriter.close();
+		myOutputStream.close();
+	}
+
+	/**
 	 * Prepare the input stream.
 	 * 
 	 * @param inputFileName
@@ -391,37 +423,5 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 		myOutputStream = new java.io.FileOutputStream(myOutputFile);
 		myStreamWriter = new java.io.OutputStreamWriter(myOutputStream, getOutputEncodingCode());
 		myBufferedWriter = new java.io.BufferedWriter(myStreamWriter);
-	}
-
-	/**
-	 * Set the encoding code for the input file.
-	 * <p>
-	 * This should be the preferred MIME name of the encoding.
-	 * 
-	 * @param encodingName
-	 *            The new encoding scheme.
-	 * @throws UnsupportedEncodingException
-	 *             This exception is thrown if the encoding is not registered in the properties file <i>EncodingNames</i>.
-	 */
-	public final void setInputEncoding(final String encodingName) throws UnsupportedEncodingException
-	{
-		myInputEncodingCode = translateEncoding(encodingName);
-		myInputEncoding = encodingName;
-	}
-
-	/**
-	 * Set the encoding code for the output file.
-	 * <p>
-	 * This should be the preferred MIME name of the encoding.
-	 * 
-	 * @param encodingName
-	 *            The new encoding scheme.
-	 * @throws UnsupportedEncodingException
-	 *             This exception is thrown if the encoding is not registered in the properties file <i>EncodingNames</i>.
-	 */
-	public final void setOutputEncoding(final String encodingName) throws UnsupportedEncodingException
-	{
-		myOutputEncodingCode = translateEncoding(encodingName);
-		myOutputEncoding = encodingName;
 	}
 }

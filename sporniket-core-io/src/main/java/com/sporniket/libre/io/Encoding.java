@@ -30,7 +30,7 @@ package com.sporniket.libre.io;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.00
  * @since 12.06.01
  */
@@ -40,83 +40,71 @@ public enum Encoding
 	// FIXME build mapping and parser to get the enum from iso/sun old io/sun new io name.
 
 	/**
-	 * US ASCII
-	 */
-	US_ASCII("us-ascii", "ASCII", "US-ASCII")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_1("iso-8859-1", "ISO8859_1", "ISO-8859-1")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_2("iso-8859-2", "ISO8859_2", "ISO-8859-2")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_3("iso-8859-3", "ISO8859_3", "ISO-8859-3")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_4("iso-8859-4", "ISO8859_4", "ISO-8859-4")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_5("iso-8859-5", "ISO8859_5", "ISO-8859-5")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_6("iso-8859-6", "ISO8859_6", "ISO-8859-6")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_7("iso-8859-7", "ISO8859_7", "ISO-8859-7")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_8("iso-8859-8", "ISO8859_8", "ISO-8859-8")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_9("iso-8859-9", "ISO8859_9", "ISO-8859-9")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_13("iso-8859-13", "ISO8859_13", "ISO-8859-13")
-	/**
-	 * ISO latin.
-	 */
-	,
-	ISO_8859_15("iso-8859-15", "ISO8859_15", "ISO-8859-15")
-	/**
 	 * ISO Japan.
 	 */
-	,
-	ISO_2022_JP("iso-2022-jp", "ISO2022JP", "ISO-2022-JP");
+	ISO_2022_JP("iso-2022-jp", "ISO2022JP", "ISO-2022-JP"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_1("iso-8859-1", "ISO8859_1", "ISO-8859-1"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_13("iso-8859-13", "ISO8859_13", "ISO-8859-13"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_15("iso-8859-15", "ISO8859_15", "ISO-8859-15"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_2("iso-8859-2", "ISO8859_2", "ISO-8859-2"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_3("iso-8859-3", "ISO8859_3", "ISO-8859-3"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_4("iso-8859-4", "ISO8859_4", "ISO-8859-4"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_5("iso-8859-5", "ISO8859_5", "ISO-8859-5"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_6("iso-8859-6", "ISO8859_6", "ISO-8859-6"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_7("iso-8859-7", "ISO8859_7", "ISO-8859-7"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_8("iso-8859-8", "ISO8859_8", "ISO-8859-8"),
+	/**
+	 * ISO latin.
+	 */
+	ISO_8859_9("iso-8859-9", "ISO8859_9", "ISO-8859-9"),
+	/**
+	 * US ASCII
+	 */
+	US_ASCII("us-ascii", "ASCII", "US-ASCII");
 	/**
 	 * Encoding designation in ISO naming convention.
 	 */
 	private String myIsoName;
 
 	/**
-	 * Encoding designation in Sun java.lang.io package.
-	 */
-	private String mySunOldIoName;
-
-	/**
 	 * Encoding designation in Sun java.lang.nio package.
 	 */
 	private String mySunNewIoName;
+
+	/**
+	 * Encoding designation in Sun java.lang.io package.
+	 */
+	private String mySunOldIoName;
 
 	/**
 	 * @param isoName
@@ -139,19 +127,19 @@ public enum Encoding
 	}
 
 	/**
-	 * @return the sunOldIoName
-	 */
-	public String getSunOldIoName()
-	{
-		return mySunOldIoName;
-	}
-
-	/**
 	 * @return the sunNewIoName
 	 */
 	public String getSunNewIoName()
 	{
 		return mySunNewIoName;
+	}
+
+	/**
+	 * @return the sunOldIoName
+	 */
+	public String getSunOldIoName()
+	{
+		return mySunOldIoName;
 	}
 
 }

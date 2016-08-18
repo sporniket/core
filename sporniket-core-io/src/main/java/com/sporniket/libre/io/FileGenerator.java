@@ -39,6 +39,13 @@ import java.io.File;
 public interface FileGenerator
 {
 	/**
+	 * The directory where the generator will create files.
+	 * 
+	 * @return a directory.
+	 */
+	File getWorkingDirectory();
+
+	/**
 	 * Set the directory where the generator will create files.
 	 * 
 	 * @param workingDirectory the working directory.
@@ -46,11 +53,4 @@ public interface FileGenerator
 	 *             if the file is not a directory or does not exists.
 	 */
 	void setWorkingDirectory(File workingDirectory) throws IllegalArgumentException;
-
-	/**
-	 * The directory where the generator will create files.
-	 * 
-	 * @return a directory.
-	 */
-	File getWorkingDirectory();
 }

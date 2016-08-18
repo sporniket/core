@@ -104,6 +104,18 @@ public class FileComparator
 			setReverse(reverse);
 		}
 
+		public int compare(File o1, File o2)
+		{
+			if (isReverse())
+			{
+				return -doCompare(o1, o2);
+			}
+			else
+			{
+				return doCompare(o1, o2);
+			}
+		}
+
 		/**
 		 * @param o1
 		 * @param o2
@@ -144,18 +156,6 @@ public class FileComparator
 		private void setReverse(boolean reverse)
 		{
 			myReverse = reverse;
-		}
-
-		public int compare(File o1, File o2)
-		{
-			if (isReverse())
-			{
-				return -doCompare(o1, o2);
-			}
-			else
-			{
-				return doCompare(o1, o2);
-			}
 		}
 	}
 }

@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
+import junit.framework.TestCase;
+
 import com.sporniket.libre.io.Encoding;
 import com.sporniket.libre.io.FileTools;
 import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
-
-import junit.framework.TestCase;
 
 /**
  * Test case for {@link FileTools}.
@@ -40,7 +40,7 @@ import junit.framework.TestCase;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.00
  * @since 15.02.00
  */
@@ -73,12 +73,13 @@ public class TestFileTools extends TestCase
 		{
 			File _subDir = FileTools.createFileBalancingDirectoryDescriptor(_startingPoint, _filename, 4, 4);
 			fail("Exception not thrown on short file name.");
-		} catch (IllegalArgumentException _exception)
+		}
+		catch (IllegalArgumentException _exception)
 		{
-			//ok
+			// ok
 		}
 	}
-	
+
 	public final void testLoadProperties() throws IOException, SyntaxErrorException
 	{
 		InputStream _fileLocation = getClass().getClassLoader().getResourceAsStream("test/filetools/SampleProperties.properties");

@@ -30,7 +30,7 @@ package com.sporniket.libre.io.parser.properties;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.00
  * @since 15.09.00
  */
@@ -38,13 +38,17 @@ public interface PropertiesParsingListener
 {
 	/**
 	 * Event handler when a multiple line property has been read.
-	 * @param event the event containing the property definition.
+	 * 
+	 * @param event
+	 *            the event containing the property definition.
 	 */
 	void onMultipleLinePropertyParsed(MultipleLinePropertyParsedEvent event);
 
 	/**
 	 * Event handler when a single line property has been read.
-	 * @param event the event containing the property definition.
+	 * 
+	 * @param event
+	 *            the event containing the property definition.
 	 */
 	void onSingleLinePropertyParsed(SingleLinePropertyParsedEvent event);
 }

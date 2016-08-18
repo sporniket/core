@@ -115,17 +115,6 @@ public class TextLoader
 	}
 
 	/**
-	 * Instanciate a loader with the specified buffer size and system encoding.
-	 * 
-	 * @param bufferSize
-	 *            buffer size in bytes.
-	 */
-	public TextLoader(int bufferSize)
-	{
-		this(bufferSize, DEFAULT__ENCODING);
-	}
-
-	/**
 	 * Instanciate a loader with the default buffer size and specified encoding.
 	 * 
 	 * @param encoding
@@ -134,6 +123,17 @@ public class TextLoader
 	public TextLoader(Encoding encoding)
 	{
 		this(DEFAULT__BUFFER_SIZE, encoding);
+	}
+
+	/**
+	 * Instanciate a loader with the specified buffer size and system encoding.
+	 * 
+	 * @param bufferSize
+	 *            buffer size in bytes.
+	 */
+	public TextLoader(int bufferSize)
+	{
+		this(bufferSize, DEFAULT__ENCODING);
 	}
 
 	/**
@@ -205,14 +205,6 @@ public class TextLoader
 	}
 
 	/**
-	 * @return the bufferSize
-	 */
-	private int getBufferSize()
-	{
-		return myBufferSize;
-	}
-
-	/**
 	 * @return the encoding
 	 */
 	public Encoding getEncoding()
@@ -271,20 +263,28 @@ public class TextLoader
 	}
 
 	/**
-	 * @param bufferSize
-	 *            the bufferSize to set
-	 */
-	private void setBufferSize(int bufferSize)
-	{
-		myBufferSize = bufferSize;
-	}
-
-	/**
 	 * @param encoding
 	 *            the encoding to set
 	 */
 	public void setEncoding(Encoding encoding)
 	{
 		myEncoding = encoding;
+	}
+
+	/**
+	 * @return the bufferSize
+	 */
+	private int getBufferSize()
+	{
+		return myBufferSize;
+	}
+
+	/**
+	 * @param bufferSize
+	 *            the bufferSize to set
+	 */
+	private void setBufferSize(int bufferSize)
+	{
+		myBufferSize = bufferSize;
 	}
 }

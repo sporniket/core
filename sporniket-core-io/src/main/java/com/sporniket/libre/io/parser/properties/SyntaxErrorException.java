@@ -30,7 +30,7 @@ package com.sporniket.libre.io.parser.properties;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.00
  * @since 15.09.00
  */

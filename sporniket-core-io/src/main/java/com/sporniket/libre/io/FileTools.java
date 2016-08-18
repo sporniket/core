@@ -57,6 +57,55 @@ public class FileTools
 {
 
 	/**
+	 * Create a descriptor of a subdirectory to be created in the <em>workingDirectory</em>, named from the name of the file to
+	 * store.
+	 * 
+	 * <p>
+	 * The name of the subdirectories are created as follow :
+	 * <ul>
+	 * <li>The first level is a substring of the filename of the first <em>cellWidth</em>-th characters of the file name
+	 * <li>If the <em>depth</em> is not reached yet, the next level is a substring that has <em>cellWidth</em> more caracters than
+	 * its parent.
+	 * </ul>
+	 * 
+	 * @param workingDirectory
+	 *            The working directory into which the subdirectories will be created.
+	 * @param fileName
+	 *            Name of the file to store in the created directories.
+	 * @param depth
+	 *            MUST be at least 0, SHOULD be at least 1
+	 * @param cellWidth
+	 *            MUST be at least 1
+	 * @return a {@link File} describing the deepest directory to create, then you should use {@link File#mkdirs()} on it. If depth
+	 *         was 0, return the working directory.
+	 */
+	// TODO tests
+	public static File createFileBalancingDirectoryDescriptor(File workingDirectory, String fileName, int depth, int cellWidth)
+	{
+		if (depth < 0)
+		{
+			throw new IllegalArgumentException("depth must be greater or equal to 0");
+		}
+		if (cellWidth < 1)
+		{
+			throw new IllegalArgumentException("cellWidth must be greater or equal to 1");
+		}
+		if (fileName.length() < (depth * cellWidth))
+		{
+			throw new IllegalArgumentException("fileName must be at least " + (depth * cellWidth) + " chars, has only "
+					+ fileName.length() + " [" + fileName + "].");
+		}
+		int _subNameLength = cellWidth;
+		File _targetFile = workingDirectory;
+		for (int _level = 0; _level < depth; _level++)
+		{
+			_targetFile = new File(_targetFile, fileName.substring(0, _subNameLength));
+			_subNameLength += cellWidth;
+		}
+		return _targetFile;
+	}
+
+	/**
 	 * Instanciate a Reader for a file using the given encoding.
 	 * 
 	 * @param source
@@ -137,55 +186,6 @@ public class FileTools
 	}
 
 	/**
-	 * Create a descriptor of a subdirectory to be created in the <em>workingDirectory</em>, named from the name of the file to
-	 * store.
-	 * 
-	 * <p>
-	 * The name of the subdirectories are created as follow :
-	 * <ul>
-	 * <li>The first level is a substring of the filename of the first <em>cellWidth</em>-th characters of the file name
-	 * <li>If the <em>depth</em> is not reached yet, the next level is a substring that has <em>cellWidth</em> more caracters than
-	 * its parent.
-	 * </ul>
-	 * 
-	 * @param workingDirectory
-	 *            The working directory into which the subdirectories will be created.
-	 * @param fileName
-	 *            Name of the file to store in the created directories.
-	 * @param depth
-	 *            MUST be at least 0, SHOULD be at least 1
-	 * @param cellWidth
-	 *            MUST be at least 1
-	 * @return a {@link File} describing the deepest directory to create, then you should use {@link File#mkdirs()} on it. If depth
-	 *         was 0, return the working directory.
-	 */
-	// TODO tests
-	public static File createFileBalancingDirectoryDescriptor(File workingDirectory, String fileName, int depth, int cellWidth)
-	{
-		if (depth < 0)
-		{
-			throw new IllegalArgumentException("depth must be greater or equal to 0");
-		}
-		if (cellWidth < 1)
-		{
-			throw new IllegalArgumentException("cellWidth must be greater or equal to 1");
-		}
-		if (fileName.length() < (depth * cellWidth))
-		{
-			throw new IllegalArgumentException("fileName must be at least " + (depth * cellWidth) + " chars, has only "
-					+ fileName.length() + " [" + fileName + "].");
-		}
-		int _subNameLength = cellWidth;
-		File _targetFile = workingDirectory;
-		for (int _level = 0; _level < depth; _level++)
-		{
-			_targetFile = new File(_targetFile, fileName.substring(0, _subNameLength));
-			_subNameLength += cellWidth;
-		}
-		return _targetFile;
-	}
-
-	/**
 	 * Load a properties file from the specified source supporting multiple line values.
 	 * 
 	 * @param source
@@ -195,6 +195,7 @@ public class FileTools
 	 * @throws IOException
 	 * @throws SyntaxErrorException
 	 * @see LineByLinePropertyParser
+	 * @since 16.08.01
 	 */
 	public static Map<String, String> loadProperties(InputStream source, Encoding encoding, String newline) throws IOException,
 			SyntaxErrorException
@@ -203,15 +204,15 @@ public class FileTools
 		PropertiesParsingListener _listener = new PropertiesParsingListener()
 		{
 			@Override
-			public void onSingleLinePropertyParsed(SingleLinePropertyParsedEvent event)
-			{
-				_result.put(event.getName(), event.getValue());
-			}
-
-			@Override
 			public void onMultipleLinePropertyParsed(MultipleLinePropertyParsedEvent event)
 			{
 				_result.put(event.getName(), String.join(newline, event.getValue()));
+			}
+
+			@Override
+			public void onSingleLinePropertyParsed(SingleLinePropertyParsedEvent event)
+			{
+				_result.put(event.getName(), event.getValue());
 			}
 		};
 
