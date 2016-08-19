@@ -13,13 +13,19 @@ Content
 ##1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
+### What's new in v16.08.01
+
+* fixed : left-trimed multi-line processing and untrimed multi-line processing is swaped.
+* A utility (FileTools.loadProperties()) to load a properties file supporting heredoc convention.
+
 ### What's new in v16.08.00
 
 * a regexp utility that create a pattern that match a formatted input using a limited description format.
 
 ### What's new in v15.09.00
 
-* ssl utility to get a required SSLContext to use an https url.
+* An utility to get a SSLContext to use an https url.
+* An utility to parse a properties file supporting heredoc convention for multiple-lines values.
 
 ### What's new in v15.03.01
 
@@ -65,22 +71,22 @@ Add any of the following dependencies that are appropriate to your project.
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-lang</artifactId>
-	<version><!-- the version to use --></version>
+	<version>16.08.01</version>
 </dependency>
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-io</artifactId>
-	<version><!-- the version to use --></version>
+	<version>16.08.01</version>
 </dependency>
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-ml</artifactId>
-	<version><!-- the version to use --></version>
+	<version>16.08.01</version>
 </dependency>
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-ui</artifactId>
-	<version><!-- the version to use --></version>
+	<version>16.08.01</version>
 </dependency>
 ```
 
@@ -88,7 +94,8 @@ Add any of the following dependencies that are appropriate to your project.
 Read the javadoc and look at the test code.
 
 ##4. Known issues
-...
+
+See the [project issues](https://github.com/sporniket/core/issues) page.
 
 ##5. Miscellanous
 ### Report issues
