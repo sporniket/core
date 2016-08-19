@@ -31,7 +31,7 @@ package com.sporniket.libre.io.parser.properties;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.00
+ * @version 16.08.01
  * @since 15.09.00
  */
 public class SyntaxErrorException extends Exception

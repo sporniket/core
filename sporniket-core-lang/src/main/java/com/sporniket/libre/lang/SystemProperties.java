@@ -38,7 +38,7 @@ package com.sporniket.libre.lang;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.00
+ * @version 16.08.01
  * @since 12.06.01
  */
 public class SystemProperties
@@ -71,7 +71,7 @@ public class SystemProperties
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 16.08.00
+	 * @version 16.08.01
 	 */
 	public static class Private
 	{
@@ -109,7 +109,7 @@ public class SystemProperties
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 16.08.00
+	 * @version 16.08.01
 	 */
 	public static class Protected
 	{

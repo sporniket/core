@@ -42,7 +42,7 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
  * <hr>
  * 
  * @author David Sporn
- * @version 16.08.00
+ * @version 16.08.01
  * @since 12.06.01
  */
 public class LookAndFeelMedium extends DefaultMetalTheme

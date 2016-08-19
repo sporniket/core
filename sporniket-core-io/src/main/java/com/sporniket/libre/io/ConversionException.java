@@ -28,7 +28,7 @@ package com.sporniket.libre.io;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.00
+ * @version 16.08.01
  * @since 12.06.01
  */
 public class ConversionException extends RuntimeException

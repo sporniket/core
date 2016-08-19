@@ -41,7 +41,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.00
+ * @version 16.08.01
  * @since 15.02.00
  */
 public class TestFileTools extends TestCase
@@ -71,6 +71,7 @@ public class TestFileTools extends TestCase
 		String _filename = "TheTestFile";
 		try
 		{
+			@SuppressWarnings("unused")
 			File _subDir = FileTools.createFileBalancingDirectoryDescriptor(_startingPoint, _filename, 4, 4);
 			fail("Exception not thrown on short file name.");
 		}
@@ -80,6 +81,11 @@ public class TestFileTools extends TestCase
 		}
 	}
 
+	/**
+	 * @throws IOException when there is a problem.
+	 * @throws SyntaxErrorException when there is a problem.
+	 * @since 16.08.01
+	 */
 	public final void testLoadProperties() throws IOException, SyntaxErrorException
 	{
 		InputStream _fileLocation = getClass().getClassLoader().getResourceAsStream("test/filetools/SampleProperties.properties");

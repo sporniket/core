@@ -31,7 +31,7 @@ import java.beans.PropertyChangeSupport;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.00
+ * @version 16.08.01
  * @since 12.06.01
  */
 public class DemoMonitored implements Monitorable
