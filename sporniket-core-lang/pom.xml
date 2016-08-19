@@ -4,7 +4,7 @@
 		<groupId>com.sporniket.core</groupId>
 		<artifactId>sporniket-core</artifactId>
 		<version>16.08.01-SNAPSHOT</version>
-		<relativePath>../sporniket-core/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>sporniket-core-lang</artifactId>
@@ -60,7 +60,7 @@
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>${version.maven-checkstyle-plugin}</version>
 				<configuration>
-					<configLocation>../sporniket-core/checkstyle-custom.xml</configLocation>
+					<configLocation>../checkstyle-custom.xml</configLocation>
 				</configuration>
 			</plugin>
 			<plugin>
