@@ -12,7 +12,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import com.sporniket.libre.io.parser.properties.LineByLinePropertyParser;
@@ -55,6 +59,8 @@ import com.sporniket.libre.lang.string.StringTools;
  */
 public class FileTools
 {
+
+	private static final String FILE_EXTENSION__PROPERTIES = ".properties";
 
 	/**
 	 * Create a descriptor of a subdirectory to be created in the <em>workingDirectory</em>, named from the name of the file to
@@ -186,14 +192,86 @@ public class FileTools
 	}
 
 	/**
-	 * Load a properties file from the specified source supporting multiple line values.
+	 * Load a collection of properties files into the same Map, supports multiple lines values.
+	 * 
+	 * @param sources
+	 *            the list of properties files to load.
+	 * @param encoding
+	 *            the encoding of the files.
+	 * @param newline
+	 *            the sequence to use as a line separator for multiple line values.
+	 * @return the properties, merged following the rules "the last speaker is right".
+	 * @throws IOException
+	 *             if there is a problem to deal with.
+	 * @throws SyntaxErrorException
+	 *             if there is a problem to deal with.
+	 * @see LineByLinePropertyParser
+	 * @since 16.08.02
+	 */
+	public static Map<String, String> loadBundle(List<URL> sources, Encoding encoding, String newline) throws IOException,
+			SyntaxErrorException
+	{
+		Map<String, String> _result = new HashMap<String, String>();
+		for (URL _source : sources)
+		{
+			_result.putAll(loadProperties(_source.openStream(), encoding, newline));
+		}
+		return _result;
+	}
+
+	/**
+	 * Implement the loading of properties files using a locale like ResourceBundle, supporting multiple line values.
+	 * 
+	 * @param bundleName
+	 *            the bundle name, like <code>com.foo.MyBundle</code>.
+	 * @param encoding
+	 *            the encoding of the bundle files.
+	 * @param newline
+	 *            the sequence to use as a line separator for multiple line values.
+	 * @param locale
+	 *            the locale to use to compute the name of the localized resources.
+	 * @return the properties, merged like a Java ResourceBundle.
+	 * @throws IOException
+	 *             if there is a problem to deal with.
+	 * @throws SyntaxErrorException
+	 *             if there is a problem to deal with.
+	 * @see LineByLinePropertyParser
+	 * @since 16.08.02
+	 */
+	public static Map<String, String> loadJavaBundle(String bundleName, Encoding encoding, String newline, Locale locale)
+			throws IOException, SyntaxErrorException
+	{
+		String _baseName = bundleName.replace(".", "/");
+		List<URL> _bundle = new ArrayList<URL>(3);
+		_bundle.add(FileTools.class.getClassLoader().getResource(_baseName + FILE_EXTENSION__PROPERTIES));
+		if (!StringTools.isEmptyString(locale.getCountry()))
+		{
+			_bundle.add(FileTools.class.getClassLoader().getResource(
+					_baseName + "_" + locale.getCountry() + FILE_EXTENSION__PROPERTIES));
+			if (!StringTools.isEmptyString(locale.getLanguage()))
+			{
+				_bundle.add(FileTools.class.getClassLoader().getResource(
+						_baseName + "_" + locale.getCountry() + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES));
+			}
+		}
+		return loadBundle(_bundle, encoding, newline);
+	}
+
+	/**
+	 * Load a properties file from the specified source supporting multiple line values, as specified by
+	 * {@link LineByLinePropertyParser}.
 	 * 
 	 * @param source
+	 *            the source input stream.
 	 * @param encoding
+	 *            the encoding of the file.
 	 * @param newline
-	 * @return
+	 *            the sequence to use as a line separator for multiple line values.
+	 * @return the properties.
 	 * @throws IOException
+	 *             if there is a problem to deal with.
 	 * @throws SyntaxErrorException
+	 *             if there is a problem to deal with.
 	 * @see LineByLinePropertyParser
 	 * @since 16.08.01
 	 */
