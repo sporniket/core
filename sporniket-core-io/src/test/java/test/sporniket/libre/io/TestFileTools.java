@@ -6,6 +6,10 @@ package test.sporniket.libre.io;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import junit.framework.TestCase;
@@ -46,6 +50,8 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  */
 public class TestFileTools extends TestCase
 {
+	private static final String NEWLINE = "\n";
+
 	/**
 	 * Test normal behaviour of {@link FileTools#createFileBalancingDirectoryDescriptor(java.io.File, String, int, int)}.
 	 */
@@ -82,18 +88,65 @@ public class TestFileTools extends TestCase
 	}
 
 	/**
-	 * @throws IOException when there is a problem.
-	 * @throws SyntaxErrorException when there is a problem.
+	 * Test the loading of several properties files into one single map.
+	 * 
+	 * @throws IOException
+	 *             when there is a problem.
+	 * @throws SyntaxErrorException
+	 *             when there is a problem.
+	 * @since 16.08.02
+	 */
+	public final void testLoadBundle() throws IOException, SyntaxErrorException
+	{
+		List<URL> _bundle = new ArrayList<URL>(2);
+		_bundle.add(getClass().getClassLoader().getResource("test/filetools/bundle.properties"));
+		_bundle.add(getClass().getClassLoader().getResource("test/filetools/bundle2.properties"));
+		Map<String, String> _properties = FileTools.loadBundle(_bundle, Encoding.ISO_8859_1, NEWLINE);
+		assertEquals("foo", _properties.get("foo"));
+		assertEquals("bar", _properties.get("bar"));
+		assertEquals("bundle2.properties", _properties.get("overridden"));
+	}
+
+	/**
+	 * Test the loading of a properties files.
+	 * 
+	 * @throws IOException
+	 *             when there is a problem.
+	 * @throws SyntaxErrorException
+	 *             when there is a problem.
 	 * @since 16.08.01
 	 */
 	public final void testLoadProperties() throws IOException, SyntaxErrorException
 	{
 		InputStream _fileLocation = getClass().getClassLoader().getResourceAsStream("test/filetools/SampleProperties.properties");
-		Map<String, String> _properties = FileTools.loadProperties(_fileLocation, Encoding.ISO_8859_1, "\n");
+		Map<String, String> _properties = FileTools.loadProperties(_fileLocation, Encoding.ISO_8859_1, NEWLINE);
 		assertEquals("I am trimed at the begining ", _properties.get("trimed.value"));
 		assertEquals(" I am untrimed at the begining ", _properties.get("untrimed.value"));
 		assertEquals("bla blah \ntrimed ! ", _properties.get("trimed.multiline.value"));
 		assertEquals("	bla blah \n	trimed ! ", _properties.get("untrimed.multiline.value"));
+	}
+
+	/**
+	 * Test the loading of a properties file looking for localized variant, like ResourceBundle.
+	 * 
+	 * @throws IOException
+	 *             when there is a problem.
+	 * @throws SyntaxErrorException
+	 *             when there is a problem.
+	 * @since 16.08.02
+	 */
+	public final void testLoadResourceBundle() throws IOException, SyntaxErrorException
+	{
+		Map<String, String> _properties = FileTools.loadResourceBundle("test.filetools.bundle", Encoding.ISO_8859_1, NEWLINE,
+				Locale.FRENCH);
+		assertEquals("foo", _properties.get("foo"));
+		assertEquals("bundle_fr.properties", _properties.get("overridden"));
+		_properties = FileTools.loadResourceBundle("test.filetools.bundle", Encoding.ISO_8859_1, NEWLINE, Locale.FRANCE);
+		assertEquals("foo", _properties.get("foo"));
+		assertEquals("bundle_fr_FR.properties", _properties.get("overridden"));
+		_properties = FileTools.loadResourceBundle("test.filetools.bundle2", Encoding.ISO_8859_1, NEWLINE);
+		assertEquals("bar", _properties.get("bar"));
+		assertEquals("bundle2.properties", _properties.get("overridden"));
 	}
 
 }
