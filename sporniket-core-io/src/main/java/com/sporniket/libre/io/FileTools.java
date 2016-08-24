@@ -244,14 +244,14 @@ public class FileTools
 		String _baseName = bundleName.replace(".", "/");
 		List<URL> _bundle = new ArrayList<URL>(3);
 		_bundle.add(FileTools.class.getClassLoader().getResource(_baseName + FILE_EXTENSION__PROPERTIES));
-		if (!StringTools.isEmptyString(locale.getCountry()))
+		if (!StringTools.isEmptyString(locale.getLanguage()))
 		{
 			_bundle.add(FileTools.class.getClassLoader().getResource(
-					_baseName + "_" + locale.getCountry() + FILE_EXTENSION__PROPERTIES));
-			if (!StringTools.isEmptyString(locale.getLanguage()))
+					_baseName + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES));
+			if (!StringTools.isEmptyString(locale.getCountry()))
 			{
 				_bundle.add(FileTools.class.getClassLoader().getResource(
-						_baseName + "_" + locale.getCountry() + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES));
+						_baseName + "_" + locale.getLanguage() + "_" + locale.getCountry() + FILE_EXTENSION__PROPERTIES));
 			}
 		}
 		return loadBundle(_bundle, encoding, newline);
