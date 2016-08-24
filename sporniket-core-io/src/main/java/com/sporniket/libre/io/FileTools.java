@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.MissingResourceException;
 
 import com.sporniket.libre.io.parser.properties.LineByLinePropertyParser;
 import com.sporniket.libre.io.parser.properties.MultipleLinePropertyParsedEvent;
@@ -202,7 +203,7 @@ public class FileTools
 	 *            the sequence to use as a line separator for multiple line values.
 	 * @return the properties, merged following the rules "the last speaker is right".
 	 * @throws IOException
-	 *             if there is a problem to deal with.
+	 *             if there is a problem to deal with, especially if one of the URL points to nothing.
 	 * @throws SyntaxErrorException
 	 *             if there is a problem to deal with.
 	 * @see LineByLinePropertyParser
@@ -214,47 +215,10 @@ public class FileTools
 		Map<String, String> _result = new HashMap<String, String>();
 		for (URL _source : sources)
 		{
-			_result.putAll(loadProperties(_source.openStream(), encoding, newline));
+				Map<String, String> _properties = loadProperties(_source.openStream(), encoding, newline);
+				_result.putAll(_properties);
 		}
 		return _result;
-	}
-
-	/**
-	 * Implement the loading of properties files using a locale like ResourceBundle, supporting multiple line values.
-	 * 
-	 * @param bundleName
-	 *            the bundle name, like <code>com.foo.MyBundle</code>.
-	 * @param encoding
-	 *            the encoding of the bundle files.
-	 * @param newline
-	 *            the sequence to use as a line separator for multiple line values.
-	 * @param locale
-	 *            the locale to use to compute the name of the localized resources.
-	 * @return the properties, merged like a Java ResourceBundle.
-	 * @throws IOException
-	 *             if there is a problem to deal with.
-	 * @throws SyntaxErrorException
-	 *             if there is a problem to deal with.
-	 * @see LineByLinePropertyParser
-	 * @since 16.08.02
-	 */
-	public static Map<String, String> loadJavaBundle(String bundleName, Encoding encoding, String newline, Locale locale)
-			throws IOException, SyntaxErrorException
-	{
-		String _baseName = bundleName.replace(".", "/");
-		List<URL> _bundle = new ArrayList<URL>(3);
-		_bundle.add(FileTools.class.getClassLoader().getResource(_baseName + FILE_EXTENSION__PROPERTIES));
-		if (!StringTools.isEmptyString(locale.getLanguage()))
-		{
-			_bundle.add(FileTools.class.getClassLoader().getResource(
-					_baseName + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES));
-			if (!StringTools.isEmptyString(locale.getCountry()))
-			{
-				_bundle.add(FileTools.class.getClassLoader().getResource(
-						_baseName + "_" + locale.getLanguage() + "_" + locale.getCountry() + FILE_EXTENSION__PROPERTIES));
-			}
-		}
-		return loadBundle(_bundle, encoding, newline);
 	}
 
 	/**
@@ -306,5 +270,87 @@ public class FileTools
 		_reader.close();
 
 		return _result;
+	}
+
+	/**
+	 * Load a properties file looking for localized versions like ResourceBundle, using the default Locale, supporting multiple line
+	 * values.
+	 * 
+	 * @param bundleName
+	 *            the bundle name, like <code>com.foo.MyBundle</code>.
+	 * @param encoding
+	 *            the encoding of the bundle files.
+	 * @param newline
+	 *            the sequence to use as a line separator for multiple line values.
+	 * @return the properties, merged like a Java ResourceBundle.
+	 * @throws IOException
+	 *             if there is a problem to deal with.
+	 * @throws SyntaxErrorException
+	 *             if there is a problem to deal with.
+	 * @throws MissingResourceException
+	 *             if no file at all is found.
+	 * @see LineByLinePropertyParser
+	 * @since 16.08.02
+	 */
+	public static Map<String, String> loadResourceBundle(String bundleName, Encoding encoding, String newline) throws IOException,
+			SyntaxErrorException, MissingResourceException
+	{
+		return loadResourceBundle(bundleName, encoding, newline, Locale.getDefault());
+	}
+
+	/**
+	 * Load a properties file looking for localized versions like ResourceBundle, supporting multiple line values.
+	 * 
+	 * @param bundleName
+	 *            the bundle name, like <code>com.foo.MyBundle</code>.
+	 * @param encoding
+	 *            the encoding of the bundle files.
+	 * @param newline
+	 *            the sequence to use as a line separator for multiple line values.
+	 * @param locale
+	 *            the locale to use to compute the name of the localized resources.
+	 * @return the properties, merged like a Java ResourceBundle.
+	 * @throws IOException
+	 *             if there is a problem to deal with.
+	 * @throws SyntaxErrorException
+	 *             if there is a problem to deal with.
+	 * @throws MissingResourceException
+	 *             if no file at all is found.
+	 * @see LineByLinePropertyParser
+	 * @since 16.08.02
+	 */
+	public static Map<String, String> loadResourceBundle(String bundleName, Encoding encoding, String newline, Locale locale)
+			throws IOException, SyntaxErrorException, MissingResourceException
+	{
+		String _baseName = bundleName.replace(".", "/");
+		List<URL> _bundle = new ArrayList<URL>(3);
+		URL _resource = FileTools.class.getClassLoader().getResource(_baseName + FILE_EXTENSION__PROPERTIES);
+		if (null != _resource)
+		{
+			_bundle.add(_resource);
+		}
+		if (null != locale && !StringTools.isEmptyString(locale.getLanguage()))
+		{
+			_resource = FileTools.class.getClassLoader().getResource(
+					_baseName + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES);
+			if (null != _resource)
+			{
+				_bundle.add(_resource);
+			}
+			if (!StringTools.isEmptyString(locale.getCountry()))
+			{
+				_resource = FileTools.class.getClassLoader().getResource(
+						_baseName + "_" + locale.getLanguage() + "_" + locale.getCountry() + FILE_EXTENSION__PROPERTIES);
+				if (null != _resource)
+				{
+					_bundle.add(_resource);
+				}
+			}
+		}
+		if (_bundle.isEmpty())
+		{
+			throw new MissingResourceException(bundleName, null, null);
+		}
+		return loadBundle(_bundle, encoding, newline);
 	}
 }
