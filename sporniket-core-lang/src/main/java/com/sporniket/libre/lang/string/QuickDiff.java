@@ -37,7 +37,7 @@ import java.util.List;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.01
+ * @version 16.08.02
  * @since 12.09.01
  */
 public class QuickDiff

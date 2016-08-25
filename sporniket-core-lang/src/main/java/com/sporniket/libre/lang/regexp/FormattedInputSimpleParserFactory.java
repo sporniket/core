@@ -72,7 +72,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.01
+ * @version 16.08.02
  * @since 16.08.00
  */
 public class FormattedInputSimpleParserFactory

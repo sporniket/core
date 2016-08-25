@@ -26,7 +26,7 @@
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.01
+ * @version 16.08.02
  * @since 16.08.00
  */
 package com.sporniket.libre.lang.regexp;

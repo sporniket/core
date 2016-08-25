@@ -41,7 +41,7 @@ import javax.swing.JFrame;
  * 
  * @author David SPORN 
  * 
- * @version 16.08.01
+ * @version 16.08.02
  * @since 15.02.00
  */
 public class JFrameUtils

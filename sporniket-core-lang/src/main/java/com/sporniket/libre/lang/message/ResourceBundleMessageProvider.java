@@ -39,7 +39,7 @@ import com.sporniket.libre.lang.CollectionTools;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.01
+ * @version 16.08.02
  * @since 12.06.01
  */
 public class ResourceBundleMessageProvider implements MessageProviderInterface
