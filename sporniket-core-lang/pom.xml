@@ -14,13 +14,6 @@
 	<description>Usefull classes suitable for any project</description>
 	<url>${url.base}/blob/master/${project.artifactId}</url>
 
-	<distributionManagement>
-		<site>
-			<id>localMvnSite</id>
-			<name>Sporniket Java Core Library - lang</name>
-			<url>${url.base.site.deploy}/${project.artifactId}/${project.version}</url>
-		</site>
-	</distributionManagement>
 	<dependencies>
 		<!-- ===INTERNAL DEPENDENCIES -->
 
@@ -54,14 +47,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>${version.maven-surefire-report-plugin}</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>${version.maven-checkstyle-plugin}</version>
-				<configuration>
-					<configLocation>../checkstyle-custom.xml</configLocation>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
