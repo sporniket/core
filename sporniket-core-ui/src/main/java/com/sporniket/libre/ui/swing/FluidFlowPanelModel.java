@@ -173,10 +173,10 @@ public class FluidFlowPanelModel
 				{
 					_width = _minWidth;
 				}
-				int colsCount = _width / _baseVariableWidth;
-				System.out.println("width = " + _width + " ; colsCount = " + colsCount);
-				int _rowCount = (_max + colsCount - 1) / colsCount;
-				Dimension _newPreferredSize = new Dimension(_hgap + _baseVariableWidth * colsCount, _vgap + _baseVariableHeight
+				int _colsCount = _width / _baseVariableWidth;
+				System.out.println("width = " + _width + " ; colsCount = " + _colsCount);
+				int _rowCount = (_max + _colsCount - 1) / _colsCount;
+				Dimension _newPreferredSize = new Dimension(_hgap + _baseVariableWidth * _colsCount, _vgap + _baseVariableHeight
 						* _rowCount);
 				if (_newPreferredSize.width != _old.width || _newPreferredSize.height != _old.height)
 				{

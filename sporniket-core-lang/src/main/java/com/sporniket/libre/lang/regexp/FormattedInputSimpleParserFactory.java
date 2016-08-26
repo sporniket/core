@@ -146,22 +146,22 @@ public class FormattedInputSimpleParserFactory
 
 	private void buildPlaceHolderSpecs(String[][] specs)
 	{
-		for (String[] spec : specs)
+		for (String[] _spec : specs)
 		{
 			// silently ignore bad specs
-			if (spec.length < 2)
+			if (_spec.length < 2)
 			{
 				continue;
 			}
-			if (StringTools.isEmptyString(spec[0]))
+			if (StringTools.isEmptyString(_spec[0]))
 			{
 				continue;
 			}
-			if (StringTools.isEmptyString(spec[1]))
+			if (StringTools.isEmptyString(_spec[1]))
 			{
 				continue;
 			}
-			getPlaceHolderSpecs().put(spec[0].charAt(0), spec[1]);
+			getPlaceHolderSpecs().put(_spec[0].charAt(0), _spec[1]);
 
 		}
 	}
@@ -206,23 +206,23 @@ public class FormattedInputSimpleParserFactory
 		return myPlaceHolderSpecs;
 	}
 
-	private boolean isBlank(char _char)
+	private boolean isBlank(char character)
 	{
-		return SPECIAL_CHARS__BLANK.indexOf(_char) > -1;
+		return SPECIAL_CHARS__BLANK.indexOf(character) > -1;
 	}
 
-	private boolean isMandatoryBlank(char _char)
+	private boolean isMandatoryBlank(char character)
 	{
-		return SPECIAL_CHARS__NBSP.indexOf(_char) > -1;
+		return SPECIAL_CHARS__NBSP.indexOf(character) > -1;
 	}
 
-	private boolean isPlaceHolder(char _char)
+	private boolean isPlaceHolder(char character)
 	{
-		return getPlaceHolderSpecs().containsKey(_char);
+		return getPlaceHolderSpecs().containsKey(character);
 	}
 
-	private boolean isSpecialChar(char _char)
+	private boolean isSpecialChar(char character)
 	{
-		return SPECIAL_CHARS.indexOf(_char) > -1;
+		return SPECIAL_CHARS.indexOf(character) > -1;
 	}
 }
