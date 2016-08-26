@@ -9,7 +9,7 @@
 
 	<properties>
 		<url.base>https://github.com/sporniket/core</url.base>
-		<url.base.site.deploy>${project.baseUri}./mvnsites</url.base.site.deploy>
+		<url.base.site.deploy>file://${user.home}/mvnsites</url.base.site.deploy>
 		<version.jdk>1.8</version.jdk>
 
 		<!-- maven plugins version -->
@@ -171,7 +171,7 @@
 	</licenses>
 	<distributionManagement>
 		<site>
-			<id>localMvnSite</id>
+			<id>localMvnSite-${project.artifactId}</id>
 			<name>Sporniket Java Core Library - Core</name>
 			<url>${url.base.site.deploy}/${project.artifactId}/${project.version}</url>
 		</site>
