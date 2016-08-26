@@ -28,7 +28,6 @@
 	<url>${url.base}/blob/master/${project.artifactId}</url>
 
 	<modules>
-<!-- 		<module>./build-support</module> -->
 		<module>./sporniket-core-lang</module>
 		<module>./sporniket-core-ml</module>
 		<module>./sporniket-core-io</module>
@@ -97,11 +96,6 @@
 							<artifactId>checkstyle</artifactId>
 							<version>${version.maven-checkstyle-plugin.checkstyle-runtime}</version>
 						</dependency>
-<!-- 						<dependency> -->
-<!-- 							<groupId>${project.groupId}</groupId> -->
-<!-- 							<artifactId>build-support</artifactId> -->
-<!-- 							<version>${project.version}</version> -->
-<!-- 						</dependency> -->
 					</dependencies>
 				</plugin>
 			</plugins>
@@ -157,6 +151,9 @@
 				<configuration>
 					<aggregate>true</aggregate>
 					<targetJdk>${version.jdk}</targetJdk>
+					<rulesets>
+						<ruleset>pmd-custom.xml</ruleset>
+					</rulesets>
 				</configuration>
 			</plugin>
 			<!-- <plugin> -->
