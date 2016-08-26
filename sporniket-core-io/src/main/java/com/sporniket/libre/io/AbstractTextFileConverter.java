@@ -122,10 +122,10 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 		{
 			theEncodingResource = ResourceBundle.getBundle(RB_PREXIX + RB_ENCODING);
 		} // try
-		catch (java.util.MissingResourceException _exception)
+		catch (MissingResourceException _exception)
 		{
 			_exception.printStackTrace();
-		} // catch (java.util.MissingResourceException _exception)
+		} // catch (MissingResourceException _exception)
 	}
 
 	/**
@@ -137,10 +137,10 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 		{
 			theTextFileConverterAdapterResource = ResourceBundle.getBundle(RB_PREXIX + RB_TEXT_FILE_CONVERTER_ADAPTER);
 		} // try
-		catch (java.util.MissingResourceException _exception)
+		catch (MissingResourceException _exception)
 		{
 			_exception.printStackTrace();
-		} // catch (java.util.MissingResourceException _exception)
+		} // catch (MissingResourceException _exception)
 		theMessageUnsupportedEncoding = CollectionTools.getString(theTextFileConverterAdapterResource, KEY_UNSUPPORTED_ENCODING,
 				KEY_UNSUPPORTED_ENCODING);
 		theMessageErrorTranslatingEncoding = CollectionTools.getString(theTextFileConverterAdapterResource,
@@ -167,11 +167,11 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 		} // try
 		catch (MissingResourceException _exception)
 		{
-			throw new java.io.UnsupportedEncodingException(theMessageUnsupportedEncoding + encodingName);
-		} // catch(java.util.MissingResourceException _exception)
+			throw new UnsupportedEncodingException(theMessageUnsupportedEncoding + encodingName);
+		} // catch(MissingResourceException _exception)
 		catch (Exception _exception)
 		{
-			throw new java.io.UnsupportedEncodingException(theMessageErrorTranslatingEncoding + encodingName);
+			throw new UnsupportedEncodingException(theMessageErrorTranslatingEncoding + encodingName);
 		} // catch (Exception _exception)
 	}
 
@@ -402,11 +402,11 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 	 */
 	private void openInputFile(final String inputFileName) throws IOException
 	{
-		myInputFile = new java.io.File(inputFileName);
-		myInputStream = new java.io.FileInputStream(myInputFile);
-		myStreamReader = new java.io.InputStreamReader(myInputStream, getInputEncodingCode());
-		myBufferedReader = new java.io.BufferedReader(myStreamReader);
-		myLineReader = new java.io.LineNumberReader(myBufferedReader);
+		myInputFile = new File(inputFileName);
+		myInputStream = new FileInputStream(myInputFile);
+		myStreamReader = new InputStreamReader(myInputStream, getInputEncodingCode());
+		myBufferedReader = new BufferedReader(myStreamReader);
+		myLineReader = new LineNumberReader(myBufferedReader);
 	}
 
 	/**
@@ -419,9 +419,9 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 	 */
 	private void openOutputFile(final String outputFileName) throws IOException
 	{
-		myOutputFile = new java.io.File(outputFileName);
-		myOutputStream = new java.io.FileOutputStream(myOutputFile);
-		myStreamWriter = new java.io.OutputStreamWriter(myOutputStream, getOutputEncodingCode());
-		myBufferedWriter = new java.io.BufferedWriter(myStreamWriter);
+		myOutputFile = new File(outputFileName);
+		myOutputStream = new FileOutputStream(myOutputFile);
+		myStreamWriter = new OutputStreamWriter(myOutputStream, getOutputEncodingCode());
+		myBufferedWriter = new BufferedWriter(myStreamWriter);
 	}
 }

@@ -5,7 +5,6 @@ import java.util.Locale;
 import com.sporniket.libre.lang.FactoryNotReadyException;
 import com.sporniket.libre.lang.functor.Functor;
 import com.sporniket.libre.lang.message.MessageProviderInterface;
-import com.sporniket.libre.lang.url.UrlProvider;
 import com.sporniket.libre.ui.icon.IconProvider;
 
 /**

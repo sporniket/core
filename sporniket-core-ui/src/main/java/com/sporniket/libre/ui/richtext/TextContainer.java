@@ -38,7 +38,7 @@ public interface TextContainer
 	 * 
 	 * @return the text
 	 */
-	public String getText();
+	String getText();
 
 	/**
 	 * Write the text property.
@@ -46,6 +46,6 @@ public interface TextContainer
 	 * @param text
 	 *            the text to set
 	 */
-	public void setText(String text);
+	void setText(String text);
 
 }

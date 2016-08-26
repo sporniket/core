@@ -43,5 +43,5 @@ public interface UrlProvider
 	 * @return an URM
 	 * @throws UrlProviderException if there is a problem.
 	 */
-	public URL getUrl(String path) throws UrlProviderException;
+	URL getUrl(String path) throws UrlProviderException;
 }

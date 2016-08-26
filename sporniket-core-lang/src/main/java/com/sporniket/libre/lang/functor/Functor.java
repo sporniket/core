@@ -42,5 +42,5 @@ public interface Functor
 	 * @return a result (optional)
 	 * @throws Exception if there is a problem to deal with.
 	 */
-	public Object process() throws Exception;
+	Object process() throws Exception;
 }

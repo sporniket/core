@@ -40,7 +40,7 @@ public interface BehaviourOnMissingMessage
 	/**
 	 * Defines the default behaviour.
 	 */
-	public static final BehaviourOnMissingMessage DEFAULT_BEHAVIOUR = new ReturnKey();
+	BehaviourOnMissingMessage DEFAULT_BEHAVIOUR = new ReturnKey();
 
 	/**
 	 * Implementation that return the key if the message is missing (that will be the default behaviour).
@@ -73,7 +73,7 @@ public interface BehaviourOnMissingMessage
 	 * @version 16.08.02
 	 * @since 15.02.00
 	 */
-	public static class ReturnKey implements BehaviourOnMissingMessage
+	class ReturnKey implements BehaviourOnMissingMessage
 	{
 		/* (non-Javadoc)
 		 * @see com.sporniket.libre.lang.message.BehaviourOnMissingMessage#getValueOnMissingMessage(java.lang.String)
@@ -115,7 +115,7 @@ public interface BehaviourOnMissingMessage
 	 * @version 16.08.02
 	 * @since 15.02.00
 	 */
-	public static class ReturnNull implements BehaviourOnMissingMessage
+	class ReturnNull implements BehaviourOnMissingMessage
 	{
 		/* (non-Javadoc)
 		 * @see com.sporniket.libre.lang.message.BehaviourOnMissingMessage#getValueOnMissingMessage(java.lang.String)

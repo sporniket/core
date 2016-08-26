@@ -3,8 +3,6 @@
  */
 package com.sporniket.libre.ui.swing;
 
-import java.awt.Component;
-
 import javax.swing.JApplet;
 import javax.swing.JComponent;
 import javax.swing.JDialog;
@@ -78,7 +76,7 @@ public interface SwingComponentProvider<ComponentType extends JComponent, Parame
 	 * @version 16.08.02
 	 * @since 15.02.00
 	 */
-	public static class NoParameter
+	class NoParameter
 	{
 	}
 

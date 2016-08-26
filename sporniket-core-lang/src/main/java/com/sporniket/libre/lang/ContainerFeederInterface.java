@@ -35,7 +35,7 @@ package com.sporniket.libre.lang;
  */
 public interface ContainerFeederInterface
 {
-	public static final int DEFAULT_PROFIL = 0;
+	int DEFAULT_PROFIL = 0;
 
 	/**
 	 * Add some component to the given container.

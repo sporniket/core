@@ -137,7 +137,7 @@ public class FileComparator
 			}
 			else
 			{
-				return (o1.getAbsolutePath().compareTo(o2.getAbsolutePath()));
+				return o1.getAbsolutePath().compareTo(o2.getAbsolutePath());
 			}
 		}
 

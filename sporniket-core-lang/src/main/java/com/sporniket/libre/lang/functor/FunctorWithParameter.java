@@ -45,5 +45,5 @@ public interface FunctorWithParameter
 	 * @return a result (optional)
 	 * @throws Exception if there is a problem to deal with.
 	 */
-	public Object process(Map<String, Object> parameters) throws Exception;
+	Object process(Map<String, Object> parameters) throws Exception;
 }

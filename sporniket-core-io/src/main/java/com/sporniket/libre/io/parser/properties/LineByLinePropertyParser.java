@@ -580,6 +580,7 @@ public class LineByLinePropertyParser
 		return myAutomaton;
 	}
 
+	@SuppressWarnings("PMD.UnusedPrivateMethod")
 	private int getCurrentChar()
 	{
 		return myCurrentChar;

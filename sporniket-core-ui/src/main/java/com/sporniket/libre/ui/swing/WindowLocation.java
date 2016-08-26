@@ -36,7 +36,7 @@ import java.awt.Window;
  * @version 16.08.02
  * @since 12.06.01
  */
-public class WindowLocation extends Object
+public class WindowLocation
 {
 	/** Predefined position */
 	public final static int TOP_LEFT = 0;

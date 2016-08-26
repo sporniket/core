@@ -47,7 +47,7 @@ import com.sporniket.libre.lang.url.UrlProviderException;
  * @version 16.08.02
  * @since 12.06.01
  */
-public class ComponentFactory extends Object
+public class ComponentFactory
 {
 	/**
 	 * Create a scrollable panel.

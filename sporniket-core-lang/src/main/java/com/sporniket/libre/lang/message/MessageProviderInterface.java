@@ -44,7 +44,7 @@ public interface MessageProviderInterface
 	 *            the key for retrieving the message.
 	 * @return the message
 	 */
-	public String getMessage(String key);
+	String getMessage(String key);
 
 	/**
 	 * Return a message.
@@ -57,7 +57,7 @@ public interface MessageProviderInterface
 	 *            the locale to get the appropriate translation of the message.
 	 * @return the message
 	 */
-	public String getMessage(String key, Locale locale);
+	String getMessage(String key, Locale locale);
 
 	/**
 	 * Return a message.
@@ -72,7 +72,7 @@ public interface MessageProviderInterface
 	 *            optionnal parameter to embed in the message.
 	 * @return the message
 	 */
-	public String getMessage(String key, Locale locale, Object[] parameters);
+	String getMessage(String key, Locale locale, Object[] parameters);
 
 	/**
 	 * Return a message.
@@ -85,6 +85,6 @@ public interface MessageProviderInterface
 	 *            optionnal parameter to embed in the message.
 	 * @return the message
 	 */
-	public String getMessage(String key, Object[] parameters);
+	String getMessage(String key, Object[] parameters);
 
 }

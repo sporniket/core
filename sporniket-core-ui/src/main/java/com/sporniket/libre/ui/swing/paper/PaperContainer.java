@@ -38,18 +38,18 @@ public interface PaperContainer
 	 * 
 	 * @return the sheetOfPaper
 	 */
-	public SheetOfPaper getSheetOfPaper();
+	SheetOfPaper getSheetOfPaper();
 
-	public double convertMillimeterToUnit(double value);
+	double convertMillimeterToUnit(double value);
 
-	public double convertUnitToMillimeter(double value);
+	double convertUnitToMillimeter(double value);
 
 	/**
 	 * Read the content property.
 	 * 
 	 * @return the content
 	 */
-	public PaperContent getContent();
+	PaperContent getContent();
 
 	/**
 	 * Write the content property.
@@ -57,6 +57,6 @@ public interface PaperContainer
 	 * @param content
 	 *            the content to set
 	 */
-	public void setContent(PaperContent content);
+	void setContent(PaperContent content);
 
 }

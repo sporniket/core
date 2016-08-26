@@ -39,29 +39,29 @@ public interface SheetOfPaper
 	 * href="http://www.w3.org/TR/SVG/coords.html#Units">the sample value used in SVG specification</a> and it appears to be the
 	 * actual resolution of my screen (19" CRT Iiyama HM903DT).
 	 */
-	public static int PIXEL_PER_INCH__DEFAULT = 90;
+	int PIXEL_PER_INCH__DEFAULT = 90;
 
-	public static int PIXEL_PER_INCH__WINDOWS = 96;
+	int PIXEL_PER_INCH__WINDOWS = 96;
 
-	public static int PIXEL_PER_INCH__ADOBE = 72;
+	int PIXEL_PER_INCH__ADOBE = 72;
 
-	public static int PIXEL_PER_INCH__APPLE = 72;
+	int PIXEL_PER_INCH__APPLE = 72;
 
-	public static int HEIGHT__DEFAULT = 297;
+	int HEIGHT__DEFAULT = 297;
 
-	public static int HEIGHT__A4 = 297;
+	int HEIGHT__A4 = 297;
 
-	public static int WIDTH__DEFAULT = 210;
+	int WIDTH__DEFAULT = 210;
 
-	public static int WIDTH__A4 = 210;
+	int WIDTH__A4 = 210;
 
-	public static int OUTER_MARGIN__DEFAULT = 50;
+	int OUTER_MARGIN__DEFAULT = 50;
 
 	/**
 	 * The default model precision. DSP: I wanted to use 10 (i.e. one unit is a tenth of a millimeter) but Java was displaying
 	 * nothing, then. Maybe it needed too much memory ?
 	 */
-	public static final int UNIT_PER_MM__DEFAULT = 5;
+	int UNIT_PER_MM__DEFAULT = 5;
 
 	/**
 	 * Read the color property.
@@ -70,7 +70,7 @@ public interface SheetOfPaper
 	 * 
 	 * @return the color
 	 */
-	public Color getColor();
+	Color getColor();
 
 	/**
 	 * Write the color property.
@@ -80,7 +80,7 @@ public interface SheetOfPaper
 	 * @param color
 	 *            the color to set
 	 */
-	public void setColor(Color color);
+	void setColor(Color color);
 
 	/**
 	 * Read the PixelPerInch property.
@@ -89,7 +89,7 @@ public interface SheetOfPaper
 	 * 
 	 * @return the PixelPerInch
 	 */
-	public int getPixelPerInch();
+	int getPixelPerInch();
 
 	/**
 	 * Write the PixelPerInch property.
@@ -99,7 +99,7 @@ public interface SheetOfPaper
 	 * @param pixelPerInch
 	 *            the PixelPerInch to set
 	 */
-	public void setPixelPerInch(int pixelPerInch);
+	void setPixelPerInch(int pixelPerInch);
 
 	/**
 	 * Read the height property.
@@ -108,7 +108,7 @@ public interface SheetOfPaper
 	 * 
 	 * @return the height
 	 */
-	public int getHeight();
+	int getHeight();
 
 	/**
 	 * Write the height property.
@@ -118,7 +118,7 @@ public interface SheetOfPaper
 	 * @param height
 	 *            the height to set
 	 */
-	public void setHeight(int height);
+	void setHeight(int height);
 
 	/**
 	 * Read the outerMargin property.
@@ -127,7 +127,7 @@ public interface SheetOfPaper
 	 * 
 	 * @return the outerMargin
 	 */
-	public int getOuterMargin();
+	int getOuterMargin();
 
 	/**
 	 * Write the outerMargin property.
@@ -137,7 +137,7 @@ public interface SheetOfPaper
 	 * @param outerMargin
 	 *            the outerMargin to set
 	 */
-	public void setOuterMargin(int outerMargin);
+	void setOuterMargin(int outerMargin);
 
 	/**
 	 * Read the unitPerMillimeter property.
@@ -146,7 +146,7 @@ public interface SheetOfPaper
 	 * 
 	 * @return the unitPerMillimeter
 	 */
-	public int getUnitPerMillimeter();
+	int getUnitPerMillimeter();
 
 	/**
 	 * Write the unitPerMillimeter property.
@@ -156,7 +156,7 @@ public interface SheetOfPaper
 	 * @param unitPerMillimeter
 	 *            the unitPerMillimeter to set
 	 */
-	public void setUnitPerMillimeter(int unitPerMillimeter);
+	void setUnitPerMillimeter(int unitPerMillimeter);
 
 	/**
 	 * Read the width property.
@@ -165,7 +165,7 @@ public interface SheetOfPaper
 	 * 
 	 * @return the width
 	 */
-	public int getWidth();
+	int getWidth();
 
 	/**
 	 * Write the width property.
@@ -175,6 +175,6 @@ public interface SheetOfPaper
 	 * @param width
 	 *            the width to set
 	 */
-	public void setWidth(int width);
+	void setWidth(int width);
 
 }

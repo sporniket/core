@@ -45,21 +45,21 @@ public interface UserInterfaceAction<IconLocationType>
 	 * 
 	 * @return the callback
 	 */
-	public Functor getCallback();
+	Functor getCallback();
 
 	/**
 	 * Read the location of the icon to use for creating a button.
 	 * 
 	 * @return the iconForButton
 	 */
-	public IconLocationType getIconForButton();
+	IconLocationType getIconForButton();
 
 	/**
 	 * Read the location of the icon to use for creating a menu.
 	 * 
 	 * @return the iconForMenu
 	 */
-	public IconLocationType getIconForMenu();
+	IconLocationType getIconForMenu();
 
 	/**
 	 * Read the keyboardShortcut property.
@@ -68,35 +68,35 @@ public interface UserInterfaceAction<IconLocationType>
 	 * 
 	 * @return the keyboardShortcut
 	 */
-	public String getKeyboardShortcut();
+	String getKeyboardShortcut();
 
 	/**
 	 * Read the labelDescription property.
 	 * 
 	 * @return the labelDescription
 	 */
-	public String getLabelDescription();
+	String getLabelDescription();
 
 	/**
 	 * Read the labelMessage property.
 	 * 
 	 * @return the labelMessage
 	 */
-	public String getLabelMessage();
+	String getLabelMessage();
 
 	/**
 	 * Read the locale property.
 	 * 
 	 * @return the locale.
 	 */
-	public Locale getLocale();
+	Locale getLocale();
 
 	/**
 	 * Read the enabled property.
 	 * 
 	 * @return the enabled
 	 */
-	public boolean isEnabled();
+	boolean isEnabled();
 
 	/**
 	 * Write the callback property.
@@ -104,7 +104,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param callback
 	 *            the callback to set
 	 */
-	public void setCallback(Functor callback);
+	void setCallback(Functor callback);
 
 	/**
 	 * Write the enabled property.
@@ -112,7 +112,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param enabled
 	 *            the enabled to set
 	 */
-	public void setEnabled(boolean enabled);
+	void setEnabled(boolean enabled);
 
 	/**
 	 * Change the location of the icon to use for creating a button.
@@ -120,7 +120,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param iconForButton
 	 *            the iconForButton to set
 	 */
-	public void setIconForButton(IconLocationType iconForButton);
+	void setIconForButton(IconLocationType iconForButton);
 
 	/**
 	 * Change the location of the icon to use for creating a menu.
@@ -128,7 +128,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param iconForMenu
 	 *            the iconForMenu to set
 	 */
-	public void setIconForMenu(IconLocationType iconForMenu);
+	void setIconForMenu(IconLocationType iconForMenu);
 
 	/**
 	 * Write the keyboardShortcut property.
@@ -136,7 +136,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param keyboardShortcut
 	 *            the keyboardShortcut to set
 	 */
-	public void setKeyboardShortcut(String keyboardShortcut);
+	void setKeyboardShortcut(String keyboardShortcut);
 
 	/**
 	 * Write the labelDescription property.
@@ -144,7 +144,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param labelDescription
 	 *            the labelDescription to set
 	 */
-	public void setLabelDescription(String labelDescription);
+	void setLabelDescription(String labelDescription);
 
 	/**
 	 * Write the labelMessage property.
@@ -152,7 +152,7 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param labelMessage
 	 *            the labelMessage to set
 	 */
-	public void setLabelMessage(String labelMessage);
+	void setLabelMessage(String labelMessage);
 
 	/**
 	 * Write the locale property.
@@ -160,6 +160,6 @@ public interface UserInterfaceAction<IconLocationType>
 	 * @param locale
 	 *            the locale
 	 */
-	public void setLocale(Locale locale);
+	void setLocale(Locale locale);
 
 }

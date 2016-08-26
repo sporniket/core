@@ -34,5 +34,5 @@ import java.awt.Font;
  */
 public interface TextStyle
 {
-	public Font getFontInstance();
+	Font getFontInstance();
 }
