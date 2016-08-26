@@ -4,7 +4,7 @@
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core</artifactId>
 	<packaging>pom</packaging>
-	<version>16.08.02</version>
+	<version>16.08.03-SNAPSHOT</version>
 
 	<properties>
 		<url.base>https://github.com/sporniket/core</url.base>
@@ -194,7 +194,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/sporniket/core.git</connection>
 		<url>https://github.com/sporniket/core</url>
-		<tag>v16.08.02</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<issueManagement>
 		<system>GitHub.com</system>
