@@ -40,7 +40,7 @@ import junit.framework.TestCase;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.02
  * @since 16.08.02
  */
@@ -48,19 +48,21 @@ public class TestClasspathProtocolAwareUrlProvider extends TestCase
 {
 	public final void testClasspathUrl() throws UrlProviderException
 	{
-		UrlProvider _provider = new ClasspathProtocolAwareUrlProvider() ;
+		UrlProvider _provider = new ClasspathProtocolAwareUrlProvider();
 		URL _file = _provider.getUrl("classpath:com/sporniket/test/lang/TestCollectionTools.properties");
-		//should not throw any exception.
+		// should not throw any exception.
 	}
+
 	public final void testStandardUrl() throws UrlProviderException
 	{
-		UrlProvider _provider = new ClasspathProtocolAwareUrlProvider() ;
+		UrlProvider _provider = new ClasspathProtocolAwareUrlProvider();
 		URL _file = _provider.getUrl("http://www.google.com");
-		//should not throw any exception.
+		// should not throw any exception.
 	}
+
 	public final void testUnknownProtocolUrl()
 	{
-		UrlProvider _provider = new ClasspathProtocolAwareUrlProvider() ;
+		UrlProvider _provider = new ClasspathProtocolAwareUrlProvider();
 		try
 		{
 			URL _file = _provider.getUrl("foo://www.google.com");
