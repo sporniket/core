@@ -16,6 +16,7 @@
 		<version.maven-compiler-plugin>3.5.1</version.maven-compiler-plugin>
 		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
 		<version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
+		<version.maven-project-info-reports-plugin>2.6</version.maven-project-info-reports-plugin>
 		<version.maven-surefire-report-plugin>2.19.1</version.maven-surefire-report-plugin>
 		<version.maven-checkstyle-plugin>2.17</version.maven-checkstyle-plugin>
 		<version.maven-checkstyle-plugin.checkstyle-runtime>7.1</version.maven-checkstyle-plugin.checkstyle-runtime> <!-- required to use recent checkstyle -->
@@ -86,6 +87,11 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>${version.maven-project-info-reports-plugin}</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
