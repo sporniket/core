@@ -13,6 +13,10 @@ Content
 ##1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
+### What's new in v16.08.02
+* A utility that load properties files like ResourceBundle
+* An url provider that encapsulate regular URL instanciation from full urls, that recognize the "classpath" protocol and use the classloader to get a real url.
+
 ### What's new in v16.08.01
 
 * fixed : left-trimed multi-line processing and untrimed multi-line processing is swaped.
