@@ -13,23 +13,26 @@ Content
 ##1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
+### What's new in v16.09.00
+* A utility that allow to specify the listeners to use when reading a properties file. See `FileTools.readPropertiesToListeners(...)` in *sporniket-core-io*.
+
 ### What's new in v16.08.02
-* A utility that load properties files like ResourceBundle
-* An url provider that encapsulate regular URL instanciation from full urls, that recognize the "classpath" protocol and use the classloader to get a real url.
+* A utility that load properties files like ResourceBundle. See `FileTools.loadResourceBundle(...)` in *sporniket-core-io*.
+* An url provider that encapsulate regular URL instanciation from full urls, that recognize the "classpath" protocol and use the classloader to get a real url. See `ClasspathProtocolAwareUrlProvider` class in *sporniket-core-lang*.
 
 ### What's new in v16.08.01
 
 * fixed : left-trimed multi-line processing and untrimed multi-line processing is swaped.
-* A utility (FileTools.loadProperties()) to load a properties file supporting heredoc convention.
+* A utility to load a properties file supporting heredoc convention. See `FileTools.loadProperties(...)` in *sporniket-core-io*.
 
 ### What's new in v16.08.00
 
-* a regexp utility that create a pattern that match a formatted input using a limited description format.
+* a regexp utility that create a pattern that match a formatted input using a limited description format. See `FormattedInputSimpleParserFactory` class in *sporniket-core-lang*.
 
 ### What's new in v15.09.00
 
-* An utility to get a SSLContext to use an https url.
-* An utility to parse a properties file supporting heredoc convention for multiple-lines values.
+* An utility to get a SSLContext to use an https url. See `SslContextFactory` class in *sporniket-core-lang*.
+* An utility to parse a properties file supporting heredoc convention for multiple-lines values. See `LineByLinePropertyParser` class in *sporniket-core-io*.
 
 ### What's new in v15.03.01
 
