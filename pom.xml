@@ -161,15 +161,6 @@
 					</rulesets>
 				</configuration>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-changelog-plugin</artifactId> -->
-			<!-- <version>2.2</version> -->
-			<!-- <configuration> -->
-			<!-- <dateFormat>EEE MMM dd hh:mm:ss yyyy Z</dateFormat> -->
-			<!-- <startDate>2012-01-01</startDate> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
 		</plugins>
 	</reporting>
 	<licenses>
