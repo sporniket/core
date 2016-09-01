@@ -215,8 +215,8 @@ public class FileTools
 		Map<String, String> _result = new HashMap<String, String>();
 		for (URL _source : sources)
 		{
-				Map<String, String> _properties = loadProperties(_source.openStream(), encoding, newline);
-				_result.putAll(_properties);
+			Map<String, String> _properties = loadProperties(_source.openStream(), encoding, newline);
+			_result.putAll(_properties);
 		}
 		return _result;
 	}
@@ -258,16 +258,7 @@ public class FileTools
 			}
 		};
 
-		BufferedReader _reader = new BufferedReader(createReaderForInputStream(source, encoding));
-		LineByLinePropertyParser _parser = new LineByLinePropertyParser();
-		_parser.addListener(_listener);
-
-		for (String _line = _reader.readLine(); _line != null;)
-		{
-			_parser.parseLine(_line);
-			_line = _reader.readLine();
-		}
-		_reader.close();
+		readPropertiesToListeners(source, encoding, _listener);
 
 		return _result;
 	}
@@ -352,5 +343,41 @@ public class FileTools
 			throw new MissingResourceException(bundleName, null, null);
 		}
 		return loadBundle(_bundle, encoding, newline);
+	}
+
+	/**
+	 * Read a file of properties and notifies all the listeners for each property.
+	 * 
+	 * @param source
+	 *            the source input stream.
+	 * @param encoding
+	 *            the encoding of the file.
+	 * @param listeners
+	 *            a list of any {@link PropertiesParsingListener}
+	 * @throws IOException
+	 * @throws SyntaxErrorException
+	 * @throws IOException
+	 *             if there is a problem to deal with.
+	 * @throws SyntaxErrorException
+	 *             if there is a problem to deal with.
+	 * @see LineByLinePropertyParser
+	 * @since 16.09.00
+	 */
+	public static void readPropertiesToListeners(InputStream source, Encoding encoding, PropertiesParsingListener... listeners)
+			throws IOException, SyntaxErrorException
+	{
+		BufferedReader _reader = new BufferedReader(createReaderForInputStream(source, encoding));
+		LineByLinePropertyParser _parser = new LineByLinePropertyParser();
+		for (PropertiesParsingListener _listener : listeners)
+		{
+			_parser.addListener(_listener);
+		}
+
+		for (String _line = _reader.readLine(); _line != null;)
+		{
+			_parser.parseLine(_line);
+			_line = _reader.readLine();
+		}
+		_reader.close();
 	}
 }
