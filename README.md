@@ -53,7 +53,7 @@ Content
 
 
 ##2. What should you know before using **Sporniket-core** ?
-**Sporniket-core** consists of and relies only on standard jdk 8 :
+**Sporniket-core** relies only on standard jdk 8 and consists of :
 
 * **sporniket-core-lang** : general purpose code.
 * **sporniket-core-io** : code related with IO, mostly files.
