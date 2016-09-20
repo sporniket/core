@@ -101,11 +101,8 @@ Add any of the following dependencies that are appropriate to your project.
 Read the javadoc and look at the test code.
 
 ##4. Known issues
-
 See the [project issues](https://github.com/sporniket/core/issues) page.
 
 ##5. Miscellanous
 ### Report issues
-Use the issue reporting system at the [project page](https://github.com/sporniket/core)
-
-
+Use the [project issues](https://github.com/sporniket/core/issues) page.
