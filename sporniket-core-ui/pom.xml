@@ -50,7 +50,7 @@
 		<site>
 			<id>localMvnSite-${project.artifactId}</id>
 			<name>Sporniket Java Core Library - ${project.name}</name>
-			<url>${url.base.site.deploy}/${project.parent.artifactId}/module/${project.artifactId}/${project.version}</url>
+			<url>${url.base.site.deploy}/${project.parent.artifactId}/${project.version}/module/${project.artifactId}</url>
 		</site>
 	</distributionManagement>
 </project>
