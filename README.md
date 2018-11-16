@@ -10,7 +10,7 @@ Content
 4. Known issues
 5. Miscellanous
 
-##1. What is **Sporniket-core**, and when to use it ?
+## 1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
 ### What's new in v16.09.00
@@ -39,7 +39,7 @@ Content
 * general availability through central sonatype maven repository.
 
 
-###Licence
+### Licence
  **Sporniket-core** is free software: you can redistribute it and/or modify it under the terms of the
  GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your
  option) any later version.
@@ -52,7 +52,7 @@ Content
  If not, see http://www.gnu.org/licenses/ .
 
 
-##2. What should you know before using **Sporniket-core** ?
+## 2. What should you know before using **Sporniket-core** ?
 **Sporniket-core** relies only on standard jdk 8 and consists of :
 
 * **sporniket-core-lang** : general purpose code.
@@ -62,16 +62,16 @@ Content
 
 > Do not use **Sporniket-core** if this project is not suitable for your project
 
-##3. How to use **Sporniket-core** ?
+## 3. How to use **Sporniket-core** ?
 
-###From source
+### From source
 To get the latest available code, one must clone the git repository, build and install to the maven local repository.
 
 	git clone https://github.com/sporniket/core.git
 	cd core
 	mvn install
 
-###Maven
+### Maven
 Add any of the following dependencies that are appropriate to your project.
 
 ```
@@ -97,12 +97,13 @@ Add any of the following dependencies that are appropriate to your project.
 </dependency>
 ```
 
-###Directions and sample code
+### Directions and sample code
 Read the javadoc and look at the test code.
 
-##4. Known issues
+## 4. Known issues
 See the [project issues](https://github.com/sporniket/core/issues) page.
 
-##5. Miscellanous
+## 5. Miscellanous
+
 ### Report issues
 Use the [project issues](https://github.com/sporniket/core/issues) page.
