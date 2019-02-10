@@ -3,7 +3,10 @@
  */
 package test.sporniket.libre.lang.string;
 
-import junit.framework.TestCase;
+import static com.sporniket.libre.lang.string.QuickDiff.reportDiff;
+import static org.assertj.core.api.BDDAssertions.then;
+
+import org.junit.jupiter.api.Test;
 
 import com.sporniket.libre.lang.string.QuickDiff;
 
@@ -33,13 +36,14 @@ import com.sporniket.libre.lang.string.QuickDiff;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.02
  * @since 12.09.01
  */
-public class TestQuickDiff extends TestCase
+public class QuickDiffTest
 {
-	public void testNoDiff()
+	@Test
+	public void shouldFindNoDiffComparingIdenticalInput()
 	{
 		String[] _left =
 		{
@@ -49,15 +53,12 @@ public class TestQuickDiff extends TestCase
 		{
 				"line 1", "line 2"
 		};
-		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 != _result.length)
-		{
-			String _message = buildErrorMessage("Found differences that should not exist :\n", _result);
-			fail(_message);
-		}
+		String[] _result = reportDiff(_left, _right, false, false);
+		then(_result).isEmpty();
 	}
 
-	public void testFindDiff()
+	@Test
+	public void shouldFindDiffWhenOneLineIsDifferent()
 	{
 		String[] _left =
 		{
@@ -68,13 +69,11 @@ public class TestQuickDiff extends TestCase
 				"line 1", "line 2b", "line 3"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by different line");
-		}
+		then(_result).isNotEmpty();
 	}
 
-	public void testFindSupplementalLinesOnLeft()
+	@Test
+	public void shouldSpotSupplementalLinesOnLeft()
 	{
 		String[] _left =
 		{
@@ -85,13 +84,11 @@ public class TestQuickDiff extends TestCase
 				"line 1", "line 3"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by supplemental line");
-		}
+		then(_result).isNotEmpty();
 	}
 
-	public void testFindSupplementalLinesOnRight()
+	@Test
+	public void shouldSpotSupplementalLinesOnRight()
 	{
 		String[] _left =
 		{
@@ -102,13 +99,11 @@ public class TestQuickDiff extends TestCase
 				"line 1", "line 2", "line 3"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by supplemental line");
-		}
+		then(_result).isNotEmpty();
 	}
 
-	public void testAppendedLinesOnLeft()
+	@Test
+	public void shouldSpotAppendedLinesOnLeft()
 	{
 		String[] _left =
 		{
@@ -119,13 +114,11 @@ public class TestQuickDiff extends TestCase
 				"line 1", "line 2"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by appended line");
-		}
+		then(_result).isNotEmpty();
 	}
 
-	public void testAppendedLinesOnRight()
+	@Test
+	public void shouldSpotAppendedLinesOnRight()
 	{
 		String[] _left =
 		{
@@ -136,13 +129,11 @@ public class TestQuickDiff extends TestCase
 				"line 1", "line 2", "line 3"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by appended line");
-		}
+		then(_result).isNotEmpty();
 	}
 
-	public void testIgnoreEmptyLineOnLeft()
+	@Test
+	public void shouldFollowIgnoreEmptyLinePolicyOnLeft()
 	{
 		String[] _left =
 		{
@@ -153,20 +144,14 @@ public class TestQuickDiff extends TestCase
 				"line 1", "line 2"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by empty line");
-		}
+		then(_result).isNotEmpty();
 
 		String[] _resultIgnore = QuickDiff.reportDiff(_left, _right, true, false);
-		if (0 != _resultIgnore.length)
-		{
-			String _message = buildErrorMessage("Found differences that should not exist :\n", _resultIgnore);
-			fail(_message);
-		}
+		then(_resultIgnore).isEmpty();
 	}
 
-	public void testIgnoreEmptyLineOnRight()
+	@Test
+	public void shouldFollowIgnoreEmptyLinePolicyOnRight()
 	{
 		String[] _left =
 		{
@@ -177,20 +162,14 @@ public class TestQuickDiff extends TestCase
 				"line 1", "", "line 2"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by empty line");
-		}
+		then(_result).isNotEmpty();
 
 		String[] _resultIgnore = QuickDiff.reportDiff(_left, _right, true, false);
-		if (0 != _resultIgnore.length)
-		{
-			String _message = buildErrorMessage("Found differences that should not exist :\n", _resultIgnore);
-			fail(_message);
-		}
+		then(_resultIgnore).isEmpty();
 	}
 
-	public void testIgnoreEmptyTrailingWhiteSpace()
+	@Test
+	public void shouldFollowIgnoreEmptyTrailingWhiteSpacePolicy()
 	{
 		String[] _left =
 		{
@@ -201,32 +180,9 @@ public class TestQuickDiff extends TestCase
 				"line 1", " line 2", " line 3", "line 4\t", "\tline 5", "\tline 6 ", " line 7\t", "\tline 8\t"
 		};
 		String[] _result = QuickDiff.reportDiff(_left, _right, false, false);
-		if (0 == _result.length)
-		{
-			fail("Did not found difference caused by empty line");
-		}
+		then(_result).isNotEmpty();
 
 		String[] _resultIgnore = QuickDiff.reportDiff(_left, _right, false, true);
-		if (0 != _resultIgnore.length)
-		{
-			String _message = buildErrorMessage("Found differences that should not exist :\n", _resultIgnore);
-			fail(_message);
-		}
-	}
-
-	/**
-	 * @param errorMessage
-	 * @param diffReport
-	 * @return
-	 */
-	private String buildErrorMessage(String errorMessage, String[] diffReport)
-	{
-		StringBuilder _messageBuffer = new StringBuilder(errorMessage);
-		for (String _line : diffReport)
-		{
-			_messageBuffer.append(_line).append("\n");
-		}
-		String _message = _messageBuffer.toString();
-		return _message;
+		then(_resultIgnore).isEmpty();
 	}
 }

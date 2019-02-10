@@ -1,6 +1,20 @@
-package test.sporniket.libre.lang;
+package test.sporniket.libre.lang.string;
 
-import junit.framework.TestCase;
+import static com.sporniket.libre.lang.string.StringTools.removeWhiteSpaces;
+import static com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode.LEADING_SPACES;
+import static com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode.TRAILING_SPACES;
+import static com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode.TWO_ENDS_SPACES;
+import static java.lang.String.format;
+import static org.assertj.core.api.BDDAssertions.then;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
 
 import com.sporniket.libre.lang.string.StringTools;
 import com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode;
@@ -36,106 +50,38 @@ import com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode;
  * @version 16.08.02
  * @since 15.09.00
  */
-public class TestStringTools extends TestCase
+public class StringToolsTest
 {
-	public final void testRemoveHeadingSpaces()
+	List<String> WHITE_SPACE_COMBINATIONS = Arrays.asList(" ", "\t", " \t", "\t ");
+
+	@TestFactory
+	public Stream<DynamicTest> testRemovingHeadingSpaces()
 	{
-		String _valueToTrim = " a";
-		String _valueToExpect = "a";
-		String _valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.LEADING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToTrim = "  a";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.LEADING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToTrim = "   a";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.LEADING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToExpect = "";
-		_valueToTrim = "   ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.LEADING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
+		final String _expected = "a";
+		return WHITE_SPACE_COMBINATIONS.parallelStream()//
+				.map(t -> t + _expected)//
+				.map(text -> dynamicTest(format("Should remove leading whitespaces in '%s'", text),
+						() -> then(removeWhiteSpaces(text, LEADING_SPACES)).isEqualTo(_expected)));
 	}
 
-	public final void testRemoveSpacesOnBothSides()
+	@TestFactory
+	public Stream<DynamicTest> testRemovingTrailingSpaces()
 	{
-		String _valueToTrim = " a ";
-		String _valueToExpect = "a";
-		String _valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TWO_ENDS_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToTrim = "  a ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TWO_ENDS_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToTrim = "   a  ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TWO_ENDS_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToExpect = "";
-		_valueToTrim = "   ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TWO_ENDS_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
+		final String _expected = "a";
+		return WHITE_SPACE_COMBINATIONS.parallelStream()//
+				.map(t -> _expected + t)//
+				.map(text -> dynamicTest(format("Should remove trailing whitespaces in '%s'", text),
+						() -> then(removeWhiteSpaces(text, TRAILING_SPACES)).isEqualTo(_expected)));
 	}
 
-	public final void testRemoveTrailingSpaces()
-	{
-		String _valueToTrim = "a ";
-		String _valueToExpect = "a";
-		String _valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TRAILING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToTrim = "a  ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TRAILING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToTrim = "a   ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TRAILING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-		_valueToExpect = "";
-		_valueToTrim = "   ";
-		_valueGot = StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.TRAILING_SPACES);
-		if (!_valueToExpect.equals(_valueGot))
-		{
-			fail("Some whitespaces has not been detected : expected '" + _valueToExpect + "', got '" + _valueGot + "'.");
-		}
-	}
-
-	public final void testWhiteSpaceCharacterisation()
-	{
-		String _valueToTrim = " \ta";
-		String _valueToExpect = "a";
-		if (!_valueToExpect.equals(StringTools.removeWhiteSpaces(_valueToTrim, SpaceRemovingMode.LEADING_SPACES)))
-		{
-			fail("Some whitespaces has not been detected");
-		}
-	}
-
+	@TestFactory
+    public Stream<DynamicTest> testRemovingSpacesOnBothEnds() {
+		final String _expected = "a";
+        return WHITE_SPACE_COMBINATIONS.parallelStream()//
+        		.map(t -> t+_expected)//
+        		.flatMap(t -> WHITE_SPACE_COMBINATIONS.parallelStream().map(suffix -> t+suffix))//
+        		.map(text -> dynamicTest(format("Should remove leading and trailing whitespaces in '%s'", text),
+						() -> then(removeWhiteSpaces(text, TWO_ENDS_SPACES)).isEqualTo(_expected)))//
+        		;
+    }
 }
