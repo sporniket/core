@@ -1,0 +1,195 @@
+[
+	{
+		"label": "Same content",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"line 2"
+		],
+		"right": [
+			"line 1",
+			"line 2"
+		],
+		"reportLtr": [],
+		"reportRtl": []
+	},
+	{
+		"label": "Ignored empty lines give no differences",
+		"ignoreEmptyLines": true,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"",
+			"line 2"
+		],
+		"right": [
+			"line 1",
+			"line 2"
+		],
+		"reportLtr": [],
+		"reportRtl": []
+	},
+	{
+		"label": "One line changed",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"line 2a",
+			"line 3"
+		],
+		"right": [
+			"line 1",
+			"line 2b",
+			"line 3"
+		],
+		"reportLtr": [
+			"<<00001==line 2a",
+			"--00001>>line 2b",
+			""
+		],
+		"reportRtl": [
+			"<<00001==line 2b",
+			"--00001>>line 2a",
+			""
+		]
+	},
+	{
+		"label": "Multiple changes",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"line 2aa",
+			"line 2ab",
+			"line 2ac",
+			"line 2ba"
+		],
+		"right": [
+			"line 1",
+			"line 2ba",
+			"line 2bb",
+			"line 2aa"
+		],
+		"reportLtr": [
+			"<<00001==line 2aa",
+			"--00001>>line 2ba",
+			"--00002>>line 2bb",
+			"--00003>>line 2aa",
+			"",
+			"<<00002==line 2ab",
+			"<<00003==line 2ac",
+			"<<00004==line 2ba"
+		],
+		"reportRtl": [
+			"<<00001==line 2ba",
+			"<<00002==line 2bb",
+			"<<00003==line 2aa",
+			"--00001>>line 2aa",
+			"",
+			"--00002>>line 2ab",
+			"--00003>>line 2ac",
+			"--00004>>line 2ba"
+		]
+	},
+	{
+		"label": "Empty line added with empty lines not ignored",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"",
+			"line 2"
+		],
+		"right": [
+			"line 1",
+			"line 2"
+		],
+		"reportLtr": [
+			"<<00001==",
+			"<<00002==line 2",
+			"--00001>>line 2",
+			""
+		],
+		"reportRtl": [
+			"<<00001==line 2",
+			"--00001>>",
+			"--00002>>line 2",
+			""
+		]
+	},
+	{
+		"label": "One line added inside",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"line 2",
+			"line 3"
+		],
+		"right": [
+			"line 1",
+			"line 3"
+		],
+		"reportLtr": [
+			"<<00001==line 2",
+			"<<00002==line 3",
+			"--00001>>line 3",
+			""
+		],
+		"reportRtl": [
+			"<<00001==line 3",
+			"--00001>>line 2",
+			"--00002>>line 3",
+			""
+		]
+	},
+	{
+		"label": "One line appended",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": false,
+		"left": [
+			"line 1",
+			"line 2",
+			"line 3"
+		],
+		"right": [
+			"line 1",
+			"line 2"
+		],
+		"reportLtr": [
+			"<<00002==line 3"
+		],
+		"reportRtl": [
+			"--00002>>line 3"
+		]
+	},
+	{
+		"label": "No differences when ignoring different trailing whitespaces",
+		"ignoreEmptyLines": false,
+		"ignoreTrailingWhiteSpaces": true,
+		"left": [
+			"line 1 ",
+			" line 2",
+			"line 3\t",
+			"\tline 4",
+			"line 5 ",
+			" line 6",
+			"line 7\t",
+			"\tline 8"
+		],
+		"right": [
+			"line 1",
+			" line 2",
+			" line 3",
+			"line 4\t",
+			"\tline 5",
+			"\tline 6 ",
+			" line 7\t",
+			"\tline 8\t"
+		],
+		"reportLtr": [],
+		"reportRtl": []
+	}
+]
