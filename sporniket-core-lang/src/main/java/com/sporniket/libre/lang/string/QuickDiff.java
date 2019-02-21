@@ -39,6 +39,7 @@ import java.util.List;
  * @author David SPORN 
  * @version 16.08.02
  * @since 12.09.01
+ * @deprecated moved to sporniket-core-strings in package com.sporniket.strings.
  */
 public class QuickDiff
 {

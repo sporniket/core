@@ -1,10 +1,10 @@
 package com.sporniket.libre.lang.string;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import static com.sporniket.strings.StringPredicates.IS_EMPTY;
+import static com.sporniket.strings.pipeline.StringTransformation.TO_HASH_MD5;
+import static com.sporniket.strings.pipeline.StringTransformation.TRIM_START;
 
-import com.sporniket.libre.lang.Constants;
-import com.sporniket.libre.lang.DataTools;
+import com.sporniket.strings.pipeline.StringTransformation;
 
 /**
  * String utilities.
@@ -83,62 +83,98 @@ public class StringTools
 
 	/**
 	 * Letters.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	/**
 	 * Lower case letters.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__ALPHA_LOW = "abcdefghijklmnopqrstuvwxyz";
 
 	/**
 	 * Upper case letters.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__ALPHA_UP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	/**
 	 * Letters and digits.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__ALPHANUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 	/**
 	 * Lower case letters and digits.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__ALPHANUM_LOW = "abcdefghijklmnopqrstuvwxyz0123456789";
 
 	/**
 	 * Upper case letter and digits.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__ALPHANUM_UP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	/**
 	 * Digits.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__DIGIT = "0123456789";
 
 	/**
 	 * Letter, digits and underscore.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__FILENAME = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-";
 
 	/**
 	 * Letter, digits, underscore and slash.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__FILEPATH_UNIX = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-/";
 
 	/**
 	 * Letter, digits, underscore and backslash.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__FILEPATH_WIN = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-\\";
 
 	/**
 	 * Digits, minus, dot and comma.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__NUMBER_FLOAT = "0123456789-.,";
 
 	/**
 	 * Digits and minus sign.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static final String FILTER__NUMBER_INT = "0123456789-";
 
 	/**
@@ -178,7 +214,10 @@ public class StringTools
 	 * @param filter
 	 *            the filtering String
 	 * @return the filtered String. If filter is empty, it returns the source.
+	 * 
+	 * @deprecated see the builtins StringFilter in sporniket-core-strings, in package com.sporniket.strings.pipeline
 	 */
+	@Deprecated
 	public static String filterString(final String source, final String filter)
 	{
 		if ((null != filter) && (0 != filter.length()))
@@ -206,10 +245,13 @@ public class StringTools
 	 * @param value
 	 *            The String to test
 	 * @return true if the string is null or "empty"
+	 * 
+	 * @deprecated use StringPredicates.IS_EMPTY.test(value).
 	 */
+	@Deprecated
 	public static boolean isEmptyString(String value)
 	{
-		return ((null == value) || (0 == value.trim().length()));
+		return IS_EMPTY.test(value);
 	}
 
 	/**
@@ -219,21 +261,12 @@ public class StringTools
 	 *            the value to hash.
 	 * @return the hex string of the hash.
 	 * @since 15.02.00
+	 * @deprecated use StringTransformation.TO_HASH_MD5.transform(value).
 	 */
+	@Deprecated
 	public static String hash(String value)
 	{
-		try
-		{
-			final MessageDigest _filenameHasher = MessageDigest.getInstance(Constants.HashAlgorithmNames.MD5);
-			byte[] _sourceBytes = value.getBytes(Constants.CharsetNames.UTF8);
-			_filenameHasher.update(_sourceBytes);
-			byte[] _hashBytes = _filenameHasher.digest();
-			return DataTools.convertToPaddedHexString(_hashBytes);
-		}
-		catch (NoSuchAlgorithmException _exception)
-		{
-			throw new RuntimeException(_exception);
-		}
+		return TO_HASH_MD5.transform(value);
 	}
 
 	/**
@@ -245,56 +278,24 @@ public class StringTools
 	 *            tells where to remove whitespaces.
 	 * @return a trimmed String
 	 * @since 15.09.00
+	 * @deprecated use StringTransformation.TRIM_START, StringTransformation.TRIM_END and StringTransformation.TRIM
 	 */
+	@Deprecated
 	public static String removeWhiteSpaces(String value, SpaceRemovingMode mode)
 	{
 		if (null == value)
 		{
 			throw new NullPointerException();
 		}
-		int _resultStart = 0;
-		int _resultEnd = value.length();
 
-		// remove leading spaces
-		if (SpaceRemovingMode.LEADING_SPACES == mode || SpaceRemovingMode.TWO_ENDS_SPACES == mode)
+		switch (mode)
 		{
-			for (int _pos = 0; _pos < _resultEnd; _pos++)
-			{
-				char _currentChar = value.charAt(_pos);
-				if (!removeWhiteSpaces__isWhiteSpace(_currentChar))
-				{
-					break;
-				}
-				_resultStart = _pos + 1;
-			}
+			case LEADING_SPACES:
+				return TRIM_START.transform(value);
+			case TRAILING_SPACES:
+				return StringTransformation.TRIM_END.transform(value);
+			default:
+				return StringTransformation.TRIM.transform(value);
 		}
-
-		// remove trailing spaces
-		if (SpaceRemovingMode.TRAILING_SPACES == mode || SpaceRemovingMode.TWO_ENDS_SPACES == mode)
-		{
-			for (int _pos = _resultEnd - 1; _pos >= _resultStart; _pos--)
-			{
-				char _currentChar = value.charAt(_pos);
-				if (!removeWhiteSpaces__isWhiteSpace(_currentChar))
-				{
-					break;
-				}
-				_resultEnd = _pos;
-			}
-		}
-
-		return value.substring(_resultStart, _resultEnd);
 	}
-
-	/**
-	 * @param value
-	 *            char to test.
-	 * @return <code>true</code> if the given char is ' '(space) or tabulation.
-	 * @since 15.09.00
-	 */
-	private static boolean removeWhiteSpaces__isWhiteSpace(char value)
-	{
-		return value == ' ' || value == '\t';
-	}
-
 }

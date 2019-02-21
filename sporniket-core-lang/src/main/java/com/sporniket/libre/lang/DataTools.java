@@ -1,5 +1,9 @@
 package com.sporniket.libre.lang;
 
+import static javax.xml.bind.DatatypeConverter.printHexBinary;
+
+import javax.xml.bind.DatatypeConverter;
+
 /**
  * Data manipulation utilities.
  * <p>
@@ -119,16 +123,12 @@ public class DataTools
 	 * @param buffer
 	 *            the buffer to append the result into.
 	 * @return the updated buffer.
+	 * @deprecated use <code>buffer.append(javax.xml.bind.DatatypeConverter.printHexBinary(new byte[] {value}).toLowerCase())</code>
 	 */
+	@Deprecated
 	public static StringBuffer appendByteAsPaddedHexString(byte value, StringBuffer buffer)
 	{
-		int _value = getUnsignedByteValue(value);
-		if (_value < 0x10)
-		{
-			buffer.append("0").append(Integer.toHexString(_value));
-		}
-		buffer.append(Integer.toHexString(_value));
-		return buffer;
+		return buffer.append(printHexBinary(new byte[] {value}).toLowerCase());
 	}
 
 	/**
@@ -137,10 +137,12 @@ public class DataTools
 	 * @param value
 	 *            the value to convert.
 	 * @return a padded hexadecimal string.
+	 * @deprecated use <code>javax.xml.bind.DatatypeConverter.printHexBinary(new byte[] {value}).toLowerCase()</code>
 	 */
+	@Deprecated
 	public static String convertToPaddedHexString(byte value)
 	{
-		return appendByteAsPaddedHexString(value, new StringBuffer()).toString();
+		return printHexBinary(new byte[] {value}).toLowerCase();
 	}
 
 
@@ -152,14 +154,12 @@ public class DataTools
 	 * @param buffer
 	 *            the buffer to append the result into.
 	 * @return the updated buffer.
+	 * @deprecated use <code>buffer.append(javax.xml.bind.DatatypeConverter.printHexBinary(value).toLowerCase())</code>
 	 */
+	@Deprecated
 	public static StringBuffer appendBytesAsPaddedHexString(byte[] values, StringBuffer buffer)
 	{
-		for (byte _value : values)
-		{
-			appendByteAsPaddedHexString(_value, buffer);
-		}
-		return buffer;
+		return buffer.append(printHexBinary(values).toLowerCase());
 	}
 
 
@@ -169,10 +169,12 @@ public class DataTools
 	 * @param values
 	 *            the value to convert.
 	 * @return a padded hexadecimal string.
+	 * @deprecated use <code>javax.xml.bind.DatatypeConverter.printHexBinary(value).toLowerCase()</code>
 	 */
+	@Deprecated
 	public static String convertToPaddedHexString(byte[] values)
 	{
-		return appendBytesAsPaddedHexString(values, new StringBuffer()).toString();
+		return printHexBinary(values).toLowerCase();
 	}
 
 }

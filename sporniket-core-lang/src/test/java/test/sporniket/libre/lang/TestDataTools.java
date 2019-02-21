@@ -3,6 +3,7 @@
  */
 package test.sporniket.libre.lang;
 
+import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import com.sporniket.libre.lang.DataTools;
@@ -111,5 +112,25 @@ public class TestDataTools extends TestCase
 		{
 			fail("Unsigned value of negative byte does not match : " + _aHex + " -> " + _bHex);
 		}
+	}
+	
+	public final void testConvertByteToPaddedHexString()
+	{
+		assertEquals("0a", DataTools.convertToPaddedHexString((byte) 10));
+		assertEquals("a0", DataTools.convertToPaddedHexString((byte) 160));
+	}
+	
+	public final void testConvertByteArrayToPaddedHexString() {
+		assertEquals("0aa00a", DataTools.convertToPaddedHexString(new byte[] {10,(byte) 160,10})) ;
+	}
+	
+	public final void testAppendByteToPaddedHexString()
+	{
+		assertEquals("0a", DataTools.appendByteAsPaddedHexString((byte) 10, new StringBuffer()).toString());
+		assertEquals("a0", DataTools.appendByteAsPaddedHexString((byte) 160, new StringBuffer()).toString());
+	}
+	
+	public final void testAppendByteArrayToPaddedHexString() {
+		assertEquals("0aa00a", DataTools.appendBytesAsPaddedHexString(new byte[] {10,(byte) 160,10}, new StringBuffer()).toString()) ;
 	}
 }

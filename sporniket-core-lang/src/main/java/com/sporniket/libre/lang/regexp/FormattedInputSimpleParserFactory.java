@@ -74,7 +74,9 @@ import com.sporniket.libre.lang.string.StringTools;
  * @author David SPORN
  * @version 16.08.02
  * @since 16.08.00
+ * @deprecated moved to sporniket-core-strings in package com.sporniket.strings.parsers
  */
+@Deprecated
 public class FormattedInputSimpleParserFactory
 {
 	private static final String[][] DEFAULT_PLACEHOLDERS_DEFINITION =
