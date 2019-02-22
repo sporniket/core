@@ -1,9 +1,11 @@
 package com.sporniket.libre.lang.string;
 
+import static com.sporniket.libre.lang.Empty.EMPTY_STRING_ARRAY;
 import static com.sporniket.strings.StringPredicates.IS_EMPTY;
 import static com.sporniket.strings.pipeline.StringTransformation.TO_HASH_MD5;
 import static com.sporniket.strings.pipeline.StringTransformation.TRIM_START;
 
+import com.sporniket.libre.lang.Empty;
 import com.sporniket.strings.pipeline.StringTransformation;
 
 /**
@@ -69,17 +71,15 @@ public class StringTools
 	 * @author David SPORN
 	 * @version 16.08.02
 	 * @since 15.09.00
+	 * @deprecated useless with the deprecation of {@link StringTools#removeWhiteSpaces(String, SpaceRemovingMode)}
 	 */
+	@Deprecated
 	public static enum SpaceRemovingMode
 	{
 		LEADING_SPACES,
 		TRAILING_SPACES,
 		TWO_ENDS_SPACES
 	}
-
-	private static final String explode__DEFAULT_PATTERN = "\\s";
-
-	private static final String[] explode__EMPTY_ARRAY = new String[0];
 
 	/**
 	 * Letters.
@@ -188,14 +188,11 @@ public class StringTools
 	 * @return the array of token (might be empty)
 	 * @see java.util.StringTokenizer
 	 * @see String#split(String)
+	 * @deprecated use <code>String[] result = (null == source)?Empty.EMPTY_STRING_ARRAY:source.split("\\s") ;</code>
 	 */
 	public static String[] explode(final String source)
 	{
-		if (null == source)
-		{
-			return explode__EMPTY_ARRAY;
-		}
-		return source.split(explode__DEFAULT_PATTERN);
+		return (null == source) ? EMPTY_STRING_ARRAY : source.split("\\s");
 	}
 
 	/**
