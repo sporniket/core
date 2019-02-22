@@ -5,6 +5,11 @@ package com.sporniket.libre.lang.sgml;
 
 import java.text.MessageFormat;
 
+import com.sporniket.libre.lang.sgml.EncodedChar;
+import com.sporniket.libre.lang.sgml.RawChar;
+import com.sporniket.strings.pipeline.StringPipelineBuilder;
+import com.sporniket.strings.pipeline.StringTransformation;
+
 /**
  * Utility macro for sgml code generation.
  * 
@@ -32,7 +37,7 @@ import java.text.MessageFormat;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 16.08.02
  * @since 12.06.01
  */
@@ -41,17 +46,41 @@ public class SgmlUtils
 	private static final MessageFormat MESSAGE_FORMAT__ATTRIBUT = new MessageFormat(" {0}=\"{1}\"");
 
 	/**
+	 * since 19.02.00
+	 */
+	public static final StringTransformation SGML_VALUE_DECODER = new StringPipelineBuilder()//
+			.pipeThrough(StringTransformation.NULL_TO_EMPTY)//
+			.pipeThrough(t -> t.replace(EncodedChar.QUOTE, RawChar.QUOTE))//
+			.pipeThrough(t -> t.replace(EncodedChar.GREATER_THAN, RawChar.GREATER_THAN))//
+			.pipeThrough(t -> t.replace(EncodedChar.LOWER_THAN, RawChar.LOWER_THAN))//
+			.pipeThrough(t -> t.replace(EncodedChar.AMPERSAND, RawChar.AMPERSAND))//
+			.done();
+
+	/**
+	 * since 19.02.00
+	 */
+	public static final StringTransformation SGML_VALUE_ENCODER = new StringPipelineBuilder()//
+			.pipeThrough(StringTransformation.NULL_TO_EMPTY)//
+			.pipeThrough(t -> t.replace(RawChar.AMPERSAND, EncodedChar.AMPERSAND))//
+			.pipeThrough(t -> t.replace(RawChar.LOWER_THAN, EncodedChar.LOWER_THAN))//
+			.pipeThrough(t -> t.replace(RawChar.GREATER_THAN, EncodedChar.GREATER_THAN))//
+			.pipeThrough(t -> t.replace(RawChar.QUOTE, EncodedChar.QUOTE))//
+			.done();
+
+	/**
 	 * Generate an attribute of the specified name and value.
 	 * 
-	 * @param attributeName name of the attribute.
-	 * @param value value of the attribute.
+	 * @param attributeName
+	 *            name of the attribute.
+	 * @param value
+	 *            value of the attribute.
 	 * @return the SGML code for an attribute.
 	 */
 	public static String generateAttribute(String attributeName, String value)
 	{
 		Object[] _args =
 		{
-				attributeName, SgmlAttributeCodec.getInstance().encode(value)
+				attributeName, SGML_VALUE_ENCODER.transform(value)
 		};
 		return MESSAGE_FORMAT__ATTRIBUT.format(_args);
 	}

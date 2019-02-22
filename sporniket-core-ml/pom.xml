@@ -18,6 +18,11 @@
 		<!-- ===INTERNAL DEPENDENCIES=== -->
 		<dependency>
 			<groupId>com.sporniket.core</groupId>
+			<artifactId>sporniket-core-strings</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sporniket.core</groupId>
 			<artifactId>sporniket-core-lang</artifactId>
 			<version>${project.version}</version>
 		</dependency>
