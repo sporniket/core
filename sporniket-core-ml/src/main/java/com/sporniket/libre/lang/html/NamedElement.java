@@ -1,8 +1,8 @@
 package com.sporniket.libre.lang.html;
 
-import java.io.Serializable;
+import static com.sporniket.libre.lang.Empty.EMPTY_STRING;
 
-import com.sporniket.libre.lang.Constants;
+import java.io.Serializable;
 
 /**
  * Base class for an element having an name, and an id (the name and a suffix).
@@ -51,7 +51,7 @@ class NamedElement implements Serializable
 	/**
 	 * Suffix to add to the name to get an Id for the control.
 	 */
-	private String myIdSuffix = Constants.Empty.STRING;
+	private String myIdSuffix = EMPTY_STRING;
 
 	/**
 	 * Name of the field.
