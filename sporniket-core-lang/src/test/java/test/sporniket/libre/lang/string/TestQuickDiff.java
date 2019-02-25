@@ -34,7 +34,7 @@ import com.sporniket.libre.lang.string.QuickDiff;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 12.09.01
  */
 public class TestQuickDiff extends TestCase

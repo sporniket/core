@@ -40,7 +40,7 @@ import javax.swing.JFrame;
  * 
  * @author David SPORN 
  * 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 15.02.00
  */
 public interface SwingComponentProvider<ComponentType extends JComponent, ParameterType>
@@ -73,7 +73,7 @@ public interface SwingComponentProvider<ComponentType extends JComponent, Parame
 	 * 
 	 * @author David SPORN 
 	 * 
-	 * @version 16.08.02
+	 * @version 19.02.00
 	 * @since 15.02.00
 	 */
 	class NoParameter

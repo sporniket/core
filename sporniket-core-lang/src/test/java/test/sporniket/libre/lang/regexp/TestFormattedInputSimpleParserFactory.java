@@ -38,7 +38,7 @@ import com.sporniket.libre.lang.regexp.FormattedInputSimpleParserFactory;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.02
+ * @version 19.02.00
  * @since 16.08.00
  */
 public class TestFormattedInputSimpleParserFactory extends TestCase

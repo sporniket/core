@@ -37,7 +37,7 @@ import com.sporniket.libre.lang.DataTools;
  * 
  * @author David SPORN 
  * 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 15.02.00
  */
 public class TestDataTools extends TestCase

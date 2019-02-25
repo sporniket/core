@@ -36,7 +36,7 @@ import com.sporniket.strings.pipeline.StringTransformation;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.02
+ * @version 19.02.00
  * @since 12.06.01
  */
 public class StringTools
@@ -69,7 +69,7 @@ public class StringTools
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 16.08.02
+	 * @version 19.02.00
 	 * @since 15.09.00
 	 * @deprecated useless with the deprecation of {@link StringTools#removeWhiteSpaces(String, SpaceRemovingMode)}
 	 */

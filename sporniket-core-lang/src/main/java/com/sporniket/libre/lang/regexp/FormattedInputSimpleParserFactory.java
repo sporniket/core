@@ -72,7 +72,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.02
+ * @version 19.02.00
  * @since 16.08.00
  * @deprecated moved to sporniket-core-strings in package com.sporniket.strings.parsers
  */

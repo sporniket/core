@@ -37,7 +37,7 @@ import java.util.List;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 12.09.01
  * @deprecated moved to sporniket-core-strings in package com.sporniket.strings.
  */

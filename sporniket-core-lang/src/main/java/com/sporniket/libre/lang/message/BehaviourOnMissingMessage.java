@@ -32,7 +32,7 @@ package com.sporniket.libre.lang.message;
  * 
  * @author David SPORN 
  * 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 15.02.00
  */
 public interface BehaviourOnMissingMessage
@@ -70,7 +70,7 @@ public interface BehaviourOnMissingMessage
 	 * 
 	 * @author David SPORN 
 	 * 
-	 * @version 16.08.02
+	 * @version 19.02.00
 	 * @since 15.02.00
 	 */
 	class ReturnKey implements BehaviourOnMissingMessage
@@ -112,7 +112,7 @@ public interface BehaviourOnMissingMessage
 	 * 
 	 * @author David SPORN 
 	 * 
-	 * @version 16.08.02
+	 * @version 19.02.00
 	 * @since 15.02.00
 	 */
 	class ReturnNull implements BehaviourOnMissingMessage

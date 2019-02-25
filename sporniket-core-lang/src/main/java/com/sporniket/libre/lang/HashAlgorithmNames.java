@@ -27,7 +27,7 @@ package com.sporniket.libre.lang;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 15.02.00
  */
 public final class HashAlgorithmNames

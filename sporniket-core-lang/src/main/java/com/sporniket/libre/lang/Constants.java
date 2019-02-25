@@ -34,7 +34,7 @@ import java.nio.charset.StandardCharsets;
  * <hr>
  * 
  * @author David SPORN 
- * @version 16.08.02
+ * @version 19.02.00
  * @since 12.06.01
  */
 public final class Constants
@@ -68,7 +68,7 @@ public final class Constants
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 16.08.02
+	 * @version 19.02.00
 	 * @since 15.02.00
 	 * @deprecated use {@link StandardCharsets#UTF_8}
 	 */
