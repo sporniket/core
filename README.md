@@ -13,6 +13,10 @@ Content
 ## 1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
+### What's new in v19.02.00
+* Rewritten most of the string utilities : transformative utilities have been rewritten as implementation of `StringTransformation`, test utilities have been rewritten as `Predicate<String>` ; the existing ones in *sporniket-core-lang* have been marked has deprecated and _will be deleted on the next iteration_. The new utilities, the `QuickDiff` utility and the `FormattedInputSimpleParserFactory` have been moved into a new library : *sporniket-core-strings*.
+* String comparators that handle null values : natural or reverse order, ignoring case or not.
+
 ### What's new in v16.09.00
 * A utility that allow to specify the listeners to use when reading a properties file. See `FileTools.readPropertiesToListeners(...)` in *sporniket-core-io*.
 
@@ -47,14 +51,15 @@ Content
  **Sporniket-core** is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
  more details.
- 
+
  You should have received a copy of the GNU Lesser General Public License along with **Sporniket-core**.
  If not, see http://www.gnu.org/licenses/ .
 
 
 ## 2. What should you know before using **Sporniket-core** ?
-**Sporniket-core** relies only on standard jdk 8 and consists of :
+**Sporniket-core** relies _only_ on standard jdk 8 and consists of :
 
+* **sporniket-core-string** : String manipulation code.
 * **sporniket-core-lang** : general purpose code.
 * **sporniket-core-io** : code related with IO, mostly files.
 * **sporniket-core-ml** : code related with xml, sgml, html,... processing.
@@ -78,22 +83,22 @@ Add any of the following dependencies that are appropriate to your project.
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-lang</artifactId>
-	<version>16.08.01</version>
+	<version>19.02.00</version>
 </dependency>
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-io</artifactId>
-	<version>16.08.01</version>
+	<version>19.02.00</version>
 </dependency>
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-ml</artifactId>
-	<version>16.08.01</version>
+	<version>19.02.00</version>
 </dependency>
 <dependency>
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core-ui</artifactId>
-	<version>16.08.01</version>
+	<version>19.02.00</version>
 </dependency>
 ```
 
