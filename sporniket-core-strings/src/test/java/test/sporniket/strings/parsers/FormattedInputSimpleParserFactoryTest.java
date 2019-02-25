@@ -42,10 +42,10 @@ import com.sporniket.strings.parsers.FormattedInputSimpleParserFactory;
  * <hr>
  * 
  * @author David SPORN
- * @version 16.08.02
+ * @version 19.02.00
  * @since 16.08.00
  */
-public class FormattedInputSimpleParserFactoryTest 
+public class FormattedInputSimpleParserFactoryTest
 {
 	@Test
 	public void testTypicalInputFormat()
@@ -53,10 +53,10 @@ public class FormattedInputSimpleParserFactoryTest
 		Pattern _parserToTest = FormattedInputSimpleParserFactory.getSimpleParser("foo:#,#,$");
 		String _testInput = "foo:1,2,trois";
 		Matcher _parsedResult = _parserToTest.matcher(_testInput);
-		then(_parsedResult.matches()).as("syntax error in input :'%s'", _testInput).isTrue() ;
-		then(_parsedResult.group(1)).isEqualTo("1") ;
-		then(_parsedResult.group(2)).isEqualTo("2") ;
-		then(_parsedResult.group(3)).isEqualTo("trois") ;
+		then(_parsedResult.matches()).as("syntax error in input :'%s'", _testInput).isTrue();
+		then(_parsedResult.group(1)).isEqualTo("1");
+		then(_parsedResult.group(2)).isEqualTo("2");
+		then(_parsedResult.group(3)).isEqualTo("trois");
 	}
 
 	@Test
@@ -65,10 +65,10 @@ public class FormattedInputSimpleParserFactoryTest
 		Pattern _parserToTest = FormattedInputSimpleParserFactory.getSimpleParser("foo:{#},[#],($)");
 		String _testInput = "foo:{1},[2],(trois)";
 		Matcher _parsedResult = _parserToTest.matcher(_testInput);
-		then(_parsedResult.matches()).as("syntax error in input :'%s'", _testInput).isTrue() ;
-		then(_parsedResult.group(1)).isEqualTo("1") ;
-		then(_parsedResult.group(2)).isEqualTo("2") ;
-		then(_parsedResult.group(3)).isEqualTo("trois") ;
+		then(_parsedResult.matches()).as("syntax error in input :'%s'", _testInput).isTrue();
+		then(_parsedResult.group(1)).isEqualTo("1");
+		then(_parsedResult.group(2)).isEqualTo("2");
+		then(_parsedResult.group(3)).isEqualTo("trois");
 	}
 
 	@Test
@@ -77,12 +77,13 @@ public class FormattedInputSimpleParserFactoryTest
 		Pattern _parserToTest = FormattedInputSimpleParserFactory.getSimpleParser("foo\u00a0# , # , $");
 		String _testInput = "foo 1	,2	,trois";
 		String _testInputInvalid = "foo1	,2	,trois";
-		then(_parserToTest.matcher(_testInputInvalid).matches()).as("MUST reject input with missing mandatory blank spaces").isFalse();
+		then(_parserToTest.matcher(_testInputInvalid).matches()).as("MUST reject input with missing mandatory blank spaces")
+				.isFalse();
 
 		Matcher _parsedResult = _parserToTest.matcher(_testInput);
-		then(_parsedResult.matches()).as("syntax error in input :'%s'", _testInput).isTrue() ;
-		then(_parsedResult.group(1)).isEqualTo("1") ;
-		then(_parsedResult.group(2)).isEqualTo("2") ;
-		then(_parsedResult.group(3)).isEqualTo("trois") ;
+		then(_parsedResult.matches()).as("syntax error in input :'%s'", _testInput).isTrue();
+		then(_parsedResult.group(1)).isEqualTo("1");
+		then(_parsedResult.group(2)).isEqualTo("2");
+		then(_parsedResult.group(3)).isEqualTo("trois");
 	}
 }
