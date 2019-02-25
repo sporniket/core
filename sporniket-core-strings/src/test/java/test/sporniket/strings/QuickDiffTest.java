@@ -7,26 +7,20 @@ import static com.sporniket.strings.QuickDiff.reportDiff;
 import static java.lang.String.format;
 import static java.lang.String.join;
 import static java.util.Arrays.asList;
-import static java.util.Arrays.deepEquals;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
-import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sporniket.strings.QuickDiff;
 
 /**
  * Test suite for {@link QuickDiff}.
@@ -60,7 +54,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class QuickDiffTest extends TestBase
 {
-	public static class TestSpecStruct
+	static class TestSpecStruct
 	{
 		public String label;
 

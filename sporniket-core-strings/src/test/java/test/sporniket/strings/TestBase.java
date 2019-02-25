@@ -9,8 +9,6 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import test.sporniket.strings.QuickDiffTest.TestSpecStruct;
-
 /**
  * Base class for test, when one needs some utilities.
  * 

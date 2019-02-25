@@ -1,0 +1,20 @@
+[
+	{
+		"left": "a",
+		"right": "b",
+		"compareLtr": 1,
+		"compareRtl": -1
+	},
+	{
+		"left": "a",
+		"right": null,
+		"compareLtr": 1,
+		"compareRtl": -1
+	},
+	{
+		"left": "ab",
+		"right": "Ab",
+		"compareLtr": -1,
+		"compareRtl": 1
+	}
+]
