@@ -1,12 +1,12 @@
 package com.sporniket.libre.lang.xml;
 
+import static com.sporniket.strings.StringPredicates.IS_EMPTY;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.sporniket.libre.lang.string.StringTools;
 
 /**
  * A class that iterates over a {@link NodeList} and dispatch processing according to the node name of the current {@link Node}.
@@ -35,7 +35,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 19.02.00
  * @since 12.06.01
  */
@@ -71,7 +71,8 @@ public class NodeListProcessor
 	/**
 	 * Usual constructor, just provide the NodeList to work with.
 	 * 
-	 * @param source the node list to work with.
+	 * @param source
+	 *            the node list to work with.
 	 */
 	public NodeListProcessor(NodeList source)
 	{
@@ -82,7 +83,8 @@ public class NodeListProcessor
 	/**
 	 * A constructor where one specify the starting position.
 	 * 
-	 * @param source the node list to work with.
+	 * @param source
+	 *            the node list to work with.
 	 * @param position
 	 *            the index in the node list of the first node to scan.
 	 */
@@ -94,7 +96,9 @@ public class NodeListProcessor
 
 	/**
 	 * Add a default processing that will be applied when no specific processor is found.
-	 * @param processor the default processor.
+	 * 
+	 * @param processor
+	 *            the default processor.
 	 */
 	public void addDefaultProcessor(NodeProcessor processor)
 	{
@@ -107,8 +111,11 @@ public class NodeListProcessor
 
 	/**
 	 * Add a specific processing that will be applied to nodes having the matching name.
-	 * @param nodeName the name of nodes that will be processed.
-	 * @param processor the processor.
+	 * 
+	 * @param nodeName
+	 *            the name of nodes that will be processed.
+	 * @param processor
+	 *            the processor.
 	 */
 	public void addProcessor(String nodeName, NodeProcessor processor)
 	{
@@ -116,7 +123,7 @@ public class NodeListProcessor
 		{
 			throw new IllegalArgumentException("Processor should not be null.");
 		}
-		if (StringTools.isEmptyString(nodeName))
+		if (IS_EMPTY.test(nodeName))
 		{
 			throw new IllegalArgumentException("The node name should not be empty.");
 		}
@@ -230,7 +237,8 @@ public class NodeListProcessor
 	/**
 	 * Specify the NodeList to work with, starting from the beginning.
 	 * 
-	 * @param source the node list to work with.
+	 * @param source
+	 *            the node list to work with.
 	 */
 	public void setup(NodeList source)
 	{
@@ -240,7 +248,8 @@ public class NodeListProcessor
 	/**
 	 * Specify the NodeList to work with, and the starting position.
 	 * 
-	 * @param source the node list to work with.
+	 * @param source
+	 *            the node list to work with.
 	 * @param position
 	 *            the index in the node list of the first node to scan.
 	 */

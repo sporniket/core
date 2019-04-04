@@ -3,10 +3,10 @@
  */
 package com.sporniket.libre.lang.xml;
 
+import static com.sporniket.strings.StringPredicates.IS_EMPTY;
+
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.sporniket.libre.lang.string.StringTools;
 
 /**
  * Class that will iterate over a {@link NodeList} to find the next specified node.
@@ -38,7 +38,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 19.02.00
  * @since 12.06.01
  */
@@ -59,7 +59,8 @@ public class NodeFinder
 	/**
 	 * Usual constructor, just provide the NodeList to work with.
 	 * 
-	 * @param source node list to scan.
+	 * @param source
+	 *            node list to scan.
 	 */
 	public NodeFinder(NodeList source)
 	{
@@ -70,7 +71,8 @@ public class NodeFinder
 	/**
 	 * A constructor where one specify the starting position.
 	 * 
-	 * @param source node list to scan.
+	 * @param source
+	 *            node list to scan.
 	 * @param position
 	 *            the index in the node list of the first node to scan.
 	 */
@@ -144,13 +146,14 @@ public class NodeFinder
 	/**
 	 * Find the next node having the specified node name.
 	 * 
-	 * @param nodeName name to look for.
+	 * @param nodeName
+	 *            name to look for.
 	 * @return <code>null</code> if there are no more node to scan and there was no matching node.
 	 */
 	public Node find(String nodeName)
 	{
 		// Sanity check
-		if (StringTools.isEmptyString(nodeName))
+		if (IS_EMPTY.test(nodeName))
 		{
 			throw new IllegalArgumentException("The node name should not be empty");
 		}

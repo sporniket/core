@@ -3,6 +3,9 @@
  */
 package com.sporniket.libre.io;
 
+import static com.sporniket.strings.StringPredicates.IS_EMPTY;
+import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,7 +28,6 @@ import com.sporniket.libre.io.parser.properties.MultipleLinePropertyParsedEvent;
 import com.sporniket.libre.io.parser.properties.PropertiesParsingListener;
 import com.sporniket.libre.io.parser.properties.SingleLinePropertyParsedEvent;
 import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
-import com.sporniket.libre.lang.string.StringTools;
 
 /**
  * Utility class for file processing.
@@ -126,8 +128,8 @@ public class FileTools
 	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
-	public static Reader createReaderForFile(File source, Encoding encoding) throws FileNotFoundException,
-			UnsupportedEncodingException
+	public static Reader createReaderForFile(File source, Encoding encoding)
+			throws FileNotFoundException, UnsupportedEncodingException
 	{
 		return createReaderForInputStream(new FileInputStream(source), encoding);
 	}
@@ -146,8 +148,8 @@ public class FileTools
 	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
-	public static Reader createReaderForFile(File source, String encoding) throws FileNotFoundException,
-			UnsupportedEncodingException
+	public static Reader createReaderForFile(File source, String encoding)
+			throws FileNotFoundException, UnsupportedEncodingException
 	{
 		return createReaderForInputStream(new FileInputStream(source), encoding);
 	}
@@ -166,8 +168,8 @@ public class FileTools
 	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
-	public static Reader createReaderForInputStream(InputStream source, Encoding encoding) throws FileNotFoundException,
-			UnsupportedEncodingException
+	public static Reader createReaderForInputStream(InputStream source, Encoding encoding)
+			throws FileNotFoundException, UnsupportedEncodingException
 	{
 		return (null == encoding) ? new InputStreamReader(source) : new InputStreamReader(source, encoding.getSunOldIoName());
 	}
@@ -186,10 +188,10 @@ public class FileTools
 	 *             if there is a problem to deal with.
 	 * @since 12.06.01
 	 */
-	public static Reader createReaderForInputStream(InputStream source, String encoding) throws FileNotFoundException,
-			UnsupportedEncodingException
+	public static Reader createReaderForInputStream(InputStream source, String encoding)
+			throws FileNotFoundException, UnsupportedEncodingException
 	{
-		return (StringTools.isEmptyString(encoding)) ? new InputStreamReader(source) : new InputStreamReader(source, encoding);
+		return (IS_EMPTY.test(encoding)) ? new InputStreamReader(source) : new InputStreamReader(source, encoding);
 	}
 
 	/**
@@ -209,8 +211,8 @@ public class FileTools
 	 * @see LineByLinePropertyParser
 	 * @since 16.08.02
 	 */
-	public static Map<String, String> loadBundle(List<URL> sources, Encoding encoding, String newline) throws IOException,
-			SyntaxErrorException
+	public static Map<String, String> loadBundle(List<URL> sources, Encoding encoding, String newline)
+			throws IOException, SyntaxErrorException
 	{
 		Map<String, String> _result = new HashMap<String, String>();
 		for (URL _source : sources)
@@ -239,8 +241,8 @@ public class FileTools
 	 * @see LineByLinePropertyParser
 	 * @since 16.08.01
 	 */
-	public static Map<String, String> loadProperties(InputStream source, Encoding encoding, String newline) throws IOException,
-			SyntaxErrorException
+	public static Map<String, String> loadProperties(InputStream source, Encoding encoding, String newline)
+			throws IOException, SyntaxErrorException
 	{
 		final Map<String, String> _result = new HashMap<String, String>();
 		PropertiesParsingListener _listener = new PropertiesParsingListener()
@@ -283,8 +285,8 @@ public class FileTools
 	 * @see LineByLinePropertyParser
 	 * @since 16.08.02
 	 */
-	public static Map<String, String> loadResourceBundle(String bundleName, Encoding encoding, String newline) throws IOException,
-			SyntaxErrorException, MissingResourceException
+	public static Map<String, String> loadResourceBundle(String bundleName, Encoding encoding, String newline)
+			throws IOException, SyntaxErrorException, MissingResourceException
 	{
 		return loadResourceBundle(bundleName, encoding, newline, Locale.getDefault());
 	}
@@ -320,15 +322,15 @@ public class FileTools
 		{
 			_bundle.add(_resource);
 		}
-		if (null != locale && !StringTools.isEmptyString(locale.getLanguage()))
+		if (null != locale && IS_NOT_EMPTY.test(locale.getLanguage()))
 		{
-			_resource = FileTools.class.getClassLoader().getResource(
-					_baseName + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES);
+			_resource = FileTools.class.getClassLoader()
+					.getResource(_baseName + "_" + locale.getLanguage() + FILE_EXTENSION__PROPERTIES);
 			if (null != _resource)
 			{
 				_bundle.add(_resource);
 			}
-			if (!StringTools.isEmptyString(locale.getCountry()))
+			if (IS_NOT_EMPTY.test(locale.getCountry()))
 			{
 				_resource = FileTools.class.getClassLoader().getResource(
 						_baseName + "_" + locale.getLanguage() + "_" + locale.getCountry() + FILE_EXTENSION__PROPERTIES);

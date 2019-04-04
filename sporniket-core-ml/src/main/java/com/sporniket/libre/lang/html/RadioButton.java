@@ -1,9 +1,9 @@
 package com.sporniket.libre.lang.html;
 
+import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+
 import java.io.Serializable;
 import java.text.MessageFormat;
-
-import com.sporniket.libre.lang.string.StringTools;
 
 /**
  * Model for the a radio button.
@@ -36,7 +36,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 19.02.00
  * @since 12.06.01
  */
@@ -65,12 +65,18 @@ public class RadioButton extends FormControl implements Serializable
 	/**
 	 * Create a fully specified radio button.
 	 * 
-	 * @param name name of the radio button.
-	 * @param value value of the radio button.
-	 * @param idSuffix suffix to add to compute the id attribute.
-	 * @param label label of the button.
-	 * @param isSelected selected attribute.
-	 * @param isDisabled disabled attribute.
+	 * @param name
+	 *            name of the radio button.
+	 * @param value
+	 *            value of the radio button.
+	 * @param idSuffix
+	 *            suffix to add to compute the id attribute.
+	 * @param label
+	 *            label of the button.
+	 * @param isSelected
+	 *            selected attribute.
+	 * @param isDisabled
+	 *            disabled attribute.
 	 * @return a fully defined {@link RadioButton}.
 	 */
 	public static RadioButton create(String name, String value, String idSuffix, String label, boolean isSelected,
@@ -79,7 +85,7 @@ public class RadioButton extends FormControl implements Serializable
 		RadioButton _result = new RadioButton();
 		_result.setName(name);
 		_result.setValue(value);
-		if (!StringTools.isEmptyString(idSuffix))
+		if (IS_NOT_EMPTY.test(idSuffix))
 		{
 			_result.setIdSuffix(idSuffix);
 		}
@@ -139,6 +145,7 @@ public class RadioButton extends FormControl implements Serializable
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
+	@Override
 	public String toString()
 	{
 		return getHtmlCode();

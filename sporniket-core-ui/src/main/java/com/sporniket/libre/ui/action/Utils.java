@@ -1,11 +1,12 @@
 package com.sporniket.libre.ui.action;
 
+import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+
 import java.net.URL;
 import java.util.Locale;
 
 import com.sporniket.libre.lang.functor.FunctorFactory;
 import com.sporniket.libre.lang.message.MessageProviderInterface;
-import com.sporniket.libre.lang.string.StringTools;
 import com.sporniket.libre.lang.url.UrlProvider;
 import com.sporniket.libre.lang.url.UrlProviderException;
 
@@ -84,7 +85,8 @@ public class Utils
 	 * @return the given action instance, configured with data extracted from the message provider.
 	 */
 	public static UserInterfaceAction<URL> retrieveActionDefinitionFromMessageProvider(UserInterfaceAction<URL> action,
-			MessageProviderInterface messageProvider, String prefix, Locale locale, Object callbackProvider, UrlProvider urlProvider)
+			MessageProviderInterface messageProvider, String prefix, Locale locale, Object callbackProvider,
+			UrlProvider urlProvider)
 	{
 		// sanity check
 		if (null == action)
@@ -114,7 +116,7 @@ public class Utils
 		try
 		{
 			String _location = messageProvider.getMessage(_prefix + TOKEN_ICON_FOR_BUTTON, locale);
-			if (!StringTools.isEmptyString(_location))
+			if (IS_NOT_EMPTY.test(_location))
 			{
 				action.setIconForButton(urlProvider.getUrl(_location));
 			}
@@ -126,7 +128,7 @@ public class Utils
 		try
 		{
 			String _location = messageProvider.getMessage(_prefix + TOKEN_ICON_FOR_MENU, locale);
-			if (!StringTools.isEmptyString(_location))
+			if (IS_NOT_EMPTY.test(_location))
 			{
 				action.setIconForMenu(urlProvider.getUrl(_location));
 			}

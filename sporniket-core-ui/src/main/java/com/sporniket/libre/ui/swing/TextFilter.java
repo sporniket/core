@@ -4,7 +4,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 
-import com.sporniket.libre.lang.string.StringTools;
+import com.sporniket.strings.pipeline.StringFilter;
 
 /**
  * A filter for AbstractDocument instances.
@@ -38,7 +38,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 19.02.00
  * @since 12.06.01
  * @see javax.swing.text.AbstractDocument
@@ -54,6 +54,7 @@ public class TextFilter extends DocumentFilter
 	/**
 	 * @see javax.swing.text.DocumentFilter#insertString(FilterBypass, int, String, AttributeSet)
 	 */
+	@Override
 	public void insertString(FilterBypass arg0, int arg1, String arg2, AttributeSet arg3) throws BadLocationException
 	{
 		String _filteredData = filterString(arg2);
@@ -63,6 +64,7 @@ public class TextFilter extends DocumentFilter
 	/**
 	 * @see javax.swing.text.DocumentFilter#replace(FilterBypass, int, int, String, AttributeSet)
 	 */
+	@Override
 	public void replace(FilterBypass arg0, int arg1, int arg2, String arg3, AttributeSet arg4) throws BadLocationException
 	{
 		String _filteredData = filterString(arg3);
@@ -109,7 +111,7 @@ public class TextFilter extends DocumentFilter
 	 */
 	private String filterString(String source)
 	{
-		return StringTools.filterString(source, myFilter);
+		return new StringFilter(myFilter).apply(source);
 	}
 
 }

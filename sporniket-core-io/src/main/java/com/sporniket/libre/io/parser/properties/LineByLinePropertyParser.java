@@ -3,12 +3,13 @@
  */
 package com.sporniket.libre.io.parser.properties;
 
+import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.sporniket.libre.lang.string.StringTools;
-import com.sporniket.libre.lang.string.StringTools.SpaceRemovingMode;
+import com.sporniket.strings.pipeline.StringTransformation;
 
 /**
  * Line oriented property parser.
@@ -371,7 +372,7 @@ public class LineByLinePropertyParser
 					getParser().setParserOutcome(FinalState.IS_EMPTY_LINE);
 					getParser().setPropertyNameStart(getParser().getCurrentChar());
 				}
-			},// 1
+			}, // 1
 			new State(this, null)
 			{
 				@Override
@@ -379,7 +380,7 @@ public class LineByLinePropertyParser
 				{
 					getParser().setParserOutcome(FinalState.IS_COMMENT_LINE);
 				}
-			},// 2
+			}, // 2
 			new State(this, new FollowUp[]
 			{
 					new FollowUp(CharacterPattern.NAME_BODY, 2),
@@ -393,11 +394,11 @@ public class LineByLinePropertyParser
 				{
 					getParser().setPropertyNameEnd(getParser().getCurrentChar());
 				}
-			},// 3
+			}, // 3
 			new State(this, new FollowUp[]
 			{
 					new FollowUp(CharacterPattern.WHITESPACE, 3), new FollowUp("[=]", 4), new FollowUp("[<]", 7)
-			}),// 4
+			}), // 4
 			new State(this, new FollowUp[]
 			{
 					new FollowUp("[>]", 5), new FollowUp(".", 6)
@@ -409,7 +410,7 @@ public class LineByLinePropertyParser
 					getParser().setRestOfLineStart(getParser().getCurrentChar());
 					getParser().setParserOutcome(FinalState.IS_SINGLE_LINE_LEFT_TRIM);
 				}
-			},// 5
+			}, // 5
 			new State(this, null)
 			{
 				@Override
@@ -418,16 +419,16 @@ public class LineByLinePropertyParser
 					getParser().setRestOfLineStart(getParser().getCurrentChar());
 					getParser().setParserOutcome(FinalState.IS_SINGLE_LINE);
 				}
-			},// 6
-			new State(this, null),// 7
+			}, // 6
+			new State(this, null), // 7
 			new State(this, new FollowUp[]
 			{
-				new FollowUp("[<]", 8)
-			}),// 8
+					new FollowUp("[<]", 8)
+			}), // 8
 			new State(this, new FollowUp[]
 			{
 					new FollowUp("[-]", 10), new FollowUp(".", 9)
-			}),// 9
+			}), // 9
 			new State(this, null)
 			{
 				@Override
@@ -436,7 +437,7 @@ public class LineByLinePropertyParser
 					getParser().setRestOfLineStart(getParser().getCurrentChar());
 					getParser().setParserOutcome(FinalState.IS_MULTIPLE_LINE);
 				}
-			},// 10
+			}, // 10
 			new State(this, null)
 			{
 				@Override
@@ -680,7 +681,7 @@ public class LineByLinePropertyParser
 		{
 			_line = removeLeadingSpaces(_line);
 		}
-		if (!StringTools.isEmptyString(getMultipleLineEndTag()) && _line.trim().equals(getMultipleLineEndTag()))
+		if (IS_NOT_EMPTY.test(getMultipleLineEndTag()) && _line.trim().equals(getMultipleLineEndTag()))
 		{
 			// exit multiple line mode
 			setParserOutcome(null);
@@ -754,8 +755,8 @@ public class LineByLinePropertyParser
 				String _endTag = line.substring(getRestOfLineStart()).trim();
 				if (!getEndTagChecker().matcher(_endTag).matches())
 				{
-					throw new SyntaxErrorException("End tag MUST match the rule : '" + CharacterPattern.END_TAG + "', got '"
-							+ _endTag + "'");
+					throw new SyntaxErrorException(
+							"End tag MUST match the rule : '" + CharacterPattern.END_TAG + "', got '" + _endTag + "'");
 				}
 				setMultipleLineEndTag(_endTag);
 			}
@@ -771,7 +772,7 @@ public class LineByLinePropertyParser
 	 */
 	private String removeLeadingSpaces(String value)
 	{
-		return StringTools.removeWhiteSpaces(value, SpaceRemovingMode.LEADING_SPACES);
+		return StringTransformation.TRIM_START.apply(value);
 	}
 
 	private void setCurrentChar(int currentChar)

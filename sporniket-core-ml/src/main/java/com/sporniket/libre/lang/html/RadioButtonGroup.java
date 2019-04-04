@@ -1,10 +1,10 @@
 package com.sporniket.libre.lang.html;
 
+import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.sporniket.libre.lang.string.StringTools;
 
 /**
  * Model for a group of radio button.
@@ -37,7 +37,7 @@ import com.sporniket.libre.lang.string.StringTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 19.02.00
  * @since 12.06.01
  */
@@ -66,7 +66,7 @@ public class RadioButtonGroup extends NamedElement
 	{
 		RadioButtonGroup _result = new RadioButtonGroup();
 		_result.setName(name);
-		if (!StringTools.isEmptyString(idSuffix))
+		if (IS_NOT_EMPTY.test(idSuffix))
 		{
 			_result.setIdSuffix(idSuffix);
 		}
@@ -89,6 +89,7 @@ public class RadioButtonGroup extends NamedElement
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
+	@Override
 	public String toString()
 	{
 		return getHtmlCode();
@@ -113,7 +114,7 @@ public class RadioButtonGroup extends NamedElement
 		{
 			Object[] _paramsItem =
 			{
-				_radio.getHtmlCode()
+					_radio.getHtmlCode()
 			};
 			_buffer.append(FORMAT__ITEM.format(_paramsItem));
 		}
