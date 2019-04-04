@@ -5,8 +5,6 @@ package com.sporniket.libre.lang.sgml;
 
 import java.text.MessageFormat;
 
-import com.sporniket.libre.lang.sgml.EncodedChar;
-import com.sporniket.libre.lang.sgml.RawChar;
 import com.sporniket.strings.pipeline.StringPipelineBuilder;
 import com.sporniket.strings.pipeline.StringTransformation;
 
@@ -80,7 +78,7 @@ public class SgmlUtils
 	{
 		Object[] _args =
 		{
-				attributeName, SGML_VALUE_ENCODER.transform(value)
+				attributeName, SGML_VALUE_ENCODER.apply(value)
 		};
 		return MESSAGE_FORMAT__ATTRIBUT.format(_args);
 	}

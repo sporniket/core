@@ -75,9 +75,9 @@ public class StringPipelineTest
 				.pipeThrough(TO_LOWERCASE)//
 				.pipeThrough(TRIM).done();
 		return asList(//
-				dynamicTest("null give empty string", () -> then(pipeline.transform(null)).isEqualTo(""))//
+				dynamicTest("null give empty string", () -> then(pipeline.apply(null)).isEqualTo(""))//
 				, dynamicTest("test on '   WhatEVER R you DOING ?  '",
-						() -> then(pipeline.transform("   WhatEVER R you DOING ?  ")).isEqualTo("whatever r you doing ?"))//
+						() -> then(pipeline.apply("   WhatEVER R you DOING ?  ")).isEqualTo("whatever r you doing ?"))//
 		).stream();
 	}
 }

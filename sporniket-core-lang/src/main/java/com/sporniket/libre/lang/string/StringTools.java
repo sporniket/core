@@ -5,7 +5,6 @@ import static com.sporniket.strings.StringPredicates.IS_EMPTY;
 import static com.sporniket.strings.pipeline.StringTransformation.TO_HASH_MD5;
 import static com.sporniket.strings.pipeline.StringTransformation.TRIM_START;
 
-import com.sporniket.libre.lang.Empty;
 import com.sporniket.strings.pipeline.StringTransformation;
 
 /**
@@ -190,6 +189,7 @@ public class StringTools
 	 * @see String#split(String)
 	 * @deprecated use <code>String[] result = (null == source)?Empty.EMPTY_STRING_ARRAY:source.split("\\s") ;</code>
 	 */
+	@Deprecated
 	public static String[] explode(final String source)
 	{
 		return (null == source) ? EMPTY_STRING_ARRAY : source.split("\\s");
@@ -223,7 +223,7 @@ public class StringTools
 			for (int _index = 0; _index < source.length(); _index++)
 			{
 				char _currentChar = source.charAt(_index);
-				if (-1 < filter.indexOf((int) _currentChar))
+				if (-1 < filter.indexOf(_currentChar))
 				{
 					_acceptedBuffer.append(_currentChar);
 				}
@@ -263,7 +263,7 @@ public class StringTools
 	@Deprecated
 	public static String hash(String value)
 	{
-		return TO_HASH_MD5.transform(value);
+		return TO_HASH_MD5.apply(value);
 	}
 
 	/**
@@ -288,11 +288,11 @@ public class StringTools
 		switch (mode)
 		{
 			case LEADING_SPACES:
-				return TRIM_START.transform(value);
+				return TRIM_START.apply(value);
 			case TRAILING_SPACES:
-				return StringTransformation.TRIM_END.transform(value);
+				return StringTransformation.TRIM_END.apply(value);
 			default:
-				return StringTransformation.TRIM.transform(value);
+				return StringTransformation.TRIM.apply(value);
 		}
 	}
 }

@@ -51,18 +51,13 @@ public class StringPipeline implements StringTransformation
 		myTransformers = new ArrayList<>(transformers);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.strings.pipeline.StringTransformation#transform(java.lang.String)
-	 */
 	@Override
-	public String transform(String input)
+	public String apply(String input)
 	{
 		String result = input;
 		for (StringTransformation transformer : myTransformers)
 		{
-			result = transformer.transform(result);
+			result = transformer.apply(result);
 		}
 		return result;
 	}

@@ -67,13 +67,8 @@ public class StringFilter implements StringTransformation
 		myFilter = Pattern.compile(String.format("[%s]+", charactersToKeep));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.strings.pipeline.StringTransformation#transform(java.lang.String)
-	 */
 	@Override
-	public String transform(String input)
+	public String apply(String input)
 	{
 		StringBuilder result = new StringBuilder();
 		int scanFrom = 0;

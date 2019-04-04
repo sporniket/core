@@ -62,9 +62,9 @@ public class StringTransformationTest
 	{
 		return asList(//
 				dynamicTest("Should return an empty string when input is null",
-						() -> then(NULL_TO_EMPTY.transform(null)).isNotNull().isEqualTo(""))//
+						() -> then(NULL_TO_EMPTY.apply(null)).isNotNull().isEqualTo(""))//
 				, dynamicTest("Should return the input string when it is not null",
-						() -> then(NULL_TO_EMPTY.transform("a")).isEqualTo("a"))//
+						() -> then(NULL_TO_EMPTY.apply("a")).isEqualTo("a"))//
 		).stream();
 	}
 
@@ -73,7 +73,7 @@ public class StringTransformationTest
 	{
 		return asList(//
 				dynamicTest("Should compute the MD5 hash of the input string",
-						() -> then(TO_HASH_MD5.transform("abcd")).isEqualTo("E2FC714C4727EE9395F324CD2E7F331F"))//
+						() -> then(TO_HASH_MD5.apply("abcd")).isEqualTo("E2FC714C4727EE9395F324CD2E7F331F"))//
 		).stream();
 	}
 
@@ -82,7 +82,7 @@ public class StringTransformationTest
 	{
 		return asList(//
 				dynamicTest("Should convert to upper case all the chars of the input string",
-						() -> then(TO_LOWERCASE.transform("WhAtEvEr")).isEqualTo("whatever"))//
+						() -> then(TO_LOWERCASE.apply("WhAtEvEr")).isEqualTo("whatever"))//
 		).stream();
 	}
 
@@ -91,7 +91,7 @@ public class StringTransformationTest
 	{
 		return asList(//
 				dynamicTest("Should convert to upper case all the chars of the input string",
-						() -> then(TO_UPPERCASE.transform("WhatEver")).isEqualTo("WHATEVER"))//
+						() -> then(TO_UPPERCASE.apply("WhatEver")).isEqualTo("WHATEVER"))//
 		).stream();
 	}
 
@@ -103,7 +103,7 @@ public class StringTransformationTest
 				.map(t -> t + _expected)//
 				.flatMap(t -> WHITE_SPACE_COMBINATIONS.parallelStream().map(suffix -> t + suffix))//
 				.map(text -> dynamicTest(format("Should remove whitespaces at both ends of '%s'", text),
-						() -> then(TRIM.transform(text)).isEqualTo(_expected)))//
+						() -> then(TRIM.apply(text)).isEqualTo(_expected)))//
 		;
 	}
 
@@ -113,7 +113,7 @@ public class StringTransformationTest
 		final String _expected = "";
 		return WHITE_SPACE_COMBINATIONS.parallelStream()//
 				.map(text -> dynamicTest(format("Should remove whitespaces at both ends of '%s'", text),
-						() -> then(TRIM.transform(text)).isEqualTo(_expected)))//
+						() -> then(TRIM.apply(text)).isEqualTo(_expected)))//
 		;
 	}
 
@@ -124,7 +124,7 @@ public class StringTransformationTest
 		return WHITE_SPACE_COMBINATIONS.parallelStream()//
 				.map(t -> _expected + t)//
 				.map(text -> dynamicTest(format("Should remove whitespaces at the end of '%s'", text),
-						() -> then(TRIM_END.transform(text)).isEqualTo(_expected)));
+						() -> then(TRIM_END.apply(text)).isEqualTo(_expected)));
 	}
 
 	@TestFactory
@@ -133,7 +133,7 @@ public class StringTransformationTest
 		final String _expected = "";
 		return WHITE_SPACE_COMBINATIONS.parallelStream()//
 				.map(text -> dynamicTest(format("Should remove whitespaces at the end of '%s'", text),
-						() -> then(TRIM_END.transform(text)).isEqualTo(_expected)));
+						() -> then(TRIM_END.apply(text)).isEqualTo(_expected)));
 	}
 
 	@TestFactory
@@ -143,7 +143,7 @@ public class StringTransformationTest
 		return WHITE_SPACE_COMBINATIONS.parallelStream()//
 				.map(t -> t + _expected)//
 				.map(text -> dynamicTest(format("Should remove whitespaces at the start of '%s'", text),
-						() -> then(TRIM_START.transform(text)).isEqualTo(_expected)));
+						() -> then(TRIM_START.apply(text)).isEqualTo(_expected)));
 	}
 
 	@TestFactory
@@ -152,6 +152,6 @@ public class StringTransformationTest
 		final String _expected = "";
 		return WHITE_SPACE_COMBINATIONS.parallelStream()//
 				.map(text -> dynamicTest(format("Should remove whitespaces at the start of '%s'", text),
-						() -> then(TRIM_START.transform(text)).isEqualTo(_expected)));
+						() -> then(TRIM_START.apply(text)).isEqualTo(_expected)));
 	}
 }

@@ -6,6 +6,7 @@ package com.sporniket.strings.pipeline;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.function.Function;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -40,7 +41,7 @@ import javax.xml.bind.DatatypeConverter;
  * @version 19.02.00
  * @since 19.02.00
  */
-public interface StringTransformation
+public interface StringTransformation extends Function<String, String>
 {
 	// FIXME to sha-1, sha-256, url encode/decode
 
@@ -81,5 +82,9 @@ public interface StringTransformation
 				: t.substring(0, trimmed.length() + t.indexOf(trimmed.charAt(0)));
 	};
 
-	String transform(String input);
+	@Deprecated
+	default String transform(String input)
+	{
+		return apply(input);
+	}
 }
