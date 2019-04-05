@@ -17,7 +17,7 @@
 		<version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
 		<version.maven-project-info-reports-plugin>2.6</version.maven-project-info-reports-plugin>
 		<version.maven-surefire-report-plugin>2.19.1</version.maven-surefire-report-plugin>
-		<version.maven-checkstyle-plugin>2.17</version.maven-checkstyle-plugin>
+		<version.maven-checkstyle-plugin>2.18</version.maven-checkstyle-plugin>
 		<version.maven-checkstyle-plugin.checkstyle-runtime>7.1</version.maven-checkstyle-plugin.checkstyle-runtime> <!-- required to use recent checkstyle -->
 		<version.maven-pmd-plugin>3.6</version.maven-pmd-plugin>
 		<version.maven-release-plugin>2.5.2</version.maven-release-plugin>

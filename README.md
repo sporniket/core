@@ -19,6 +19,7 @@ Content
 * #26 : Cleanstep - remove package com.sporniket.libre.lang.regexp from core-lang
 * #27 : Cleanstep - remove package com.sporniket.libre.lang.string from core-lang
 * update test dependency on jackson-databind following security alert
+* update plugin dependency on checkstyle following security alert
 
 
 ### What's new in v19.02.00
