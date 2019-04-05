@@ -13,14 +13,25 @@ Content
 ## 1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
+### What's new in v19.04.00
+
+* #24 : Make StringTransformation a Function<String,String>
+* #26 : Cleanstep - remove package com.sporniket.libre.lang.regexp from core-lang
+* #27 : Cleanstep - remove package com.sporniket.libre.lang.string from core-lang
+* update test dependency on jackson-databind following security alert
+
+
 ### What's new in v19.02.00
+
 * Rewritten most of the string utilities : transformative utilities have been rewritten as implementation of `StringTransformation`, test utilities have been rewritten as `Predicate<String>` ; the existing ones in *sporniket-core-lang* have been marked has deprecated and _will be deleted on the next iteration_. The new utilities, the `QuickDiff` utility and the `FormattedInputSimpleParserFactory` have been moved into a new library : *sporniket-core-strings*.
 * String comparators that handle null values : natural or reverse order, ignoring case or not.
 
 ### What's new in v16.09.00
+
 * A utility that allow to specify the listeners to use when reading a properties file. See `FileTools.readPropertiesToListeners(...)` in *sporniket-core-io*.
 
 ### What's new in v16.08.02
+
 * A utility that load properties files like ResourceBundle. See `FileTools.loadResourceBundle(...)` in *sporniket-core-io*.
 * An url provider that encapsulate regular URL instanciation from full urls, that recognize the "classpath" protocol and use the classloader to get a real url. See `ClasspathProtocolAwareUrlProvider` class in *sporniket-core-lang*.
 
