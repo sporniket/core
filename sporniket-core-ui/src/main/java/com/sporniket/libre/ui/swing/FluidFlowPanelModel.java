@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
  * avoid horizontal scrolling.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -43,7 +43,7 @@ import javax.swing.JScrollPane;
  * 
  * @author David SPORN
  * 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.02.00
  */
 public class FluidFlowPanelModel
@@ -52,7 +52,7 @@ public class FluidFlowPanelModel
 	 * Listener for updating the panel size when the viewport is resized.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -77,7 +77,7 @@ public class FluidFlowPanelModel
 	 * 
 	 * @author David SPORN
 	 * 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.02.00
 	 */
 	private static class PanelSizeUpdaterOnViewPortResize implements ComponentListener, ContainerListener

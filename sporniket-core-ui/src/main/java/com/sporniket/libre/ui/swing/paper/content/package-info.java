@@ -1,7 +1,7 @@
 /**
  * Ready to use content implementation for printing.
  * 
- * <p> &copy; Copyright 2002-2016 David Sporn</p>
+ * <p> &copy; Copyright 2002-2019 David Sporn</p>
  * <hr>
  *
  * <p>This file is part of <i>The Sporniket Core Library &#8211; ui</i>.
@@ -22,7 +22,7 @@
  * <hr>
  *
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 package com.sporniket.libre.ui.swing.paper.content;

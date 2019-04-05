@@ -25,7 +25,7 @@ import com.sporniket.strings.QuickDiff;
 /**
  * Test suite for {@link QuickDiff}.
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -49,7 +49,7 @@ import com.sporniket.strings.QuickDiff;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.09.01
  */
 public class QuickDiffTest extends TestBase

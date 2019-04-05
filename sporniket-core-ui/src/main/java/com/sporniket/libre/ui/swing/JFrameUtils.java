@@ -16,7 +16,7 @@ import javax.swing.JFrame;
  * Utility class for JFrames.
  * 
  * <p>
- * &copy; Copyright 2013 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -39,9 +39,9 @@ import javax.swing.JFrame;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.02.00
  */
 public class JFrameUtils
@@ -50,7 +50,8 @@ public class JFrameUtils
 	 * Query {@link Toolkit#getScreenInsets(GraphicsConfiguration)} and {@link GraphicsConfiguration#getBounds()} to compute the
 	 * bounds of a maximized JFrame.
 	 * 
-	 * @return a rectangle describing the outer bounds of a maximised frame, for determining the screen size (this is not the full-screen size).
+	 * @return a rectangle describing the outer bounds of a maximised frame, for determining the screen size (this is not the
+	 *         full-screen size).
 	 */
 	public static Rectangle getMaximisedFrameOuterBounds()
 	{
@@ -70,7 +71,8 @@ public class JFrameUtils
 	/**
 	 * Make the given {@link JFrame} maximized.
 	 * 
-	 * @param frame the frame to maximize.
+	 * @param frame
+	 *            the frame to maximize.
 	 * @return the maximized frame.
 	 */
 	public static JFrame maximizeFrame(JFrame frame)

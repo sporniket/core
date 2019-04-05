@@ -4,7 +4,7 @@ package com.sporniket.libre.io;
  * Exception class when a problem related with the conversion process occurs.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -28,7 +28,7 @@ package com.sporniket.libre.io;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public class ConversionException extends RuntimeException

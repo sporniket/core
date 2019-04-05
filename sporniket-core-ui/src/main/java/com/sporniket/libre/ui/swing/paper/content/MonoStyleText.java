@@ -24,7 +24,7 @@ import com.sporniket.libre.ui.swing.paper.UnitConverter;
  * The rendered text will fit the specified width, and it will takes all the space needed vertically to display the text.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -48,7 +48,7 @@ import com.sporniket.libre.ui.swing.paper.UnitConverter;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public class MonoStyleText extends PaperContentAdapter

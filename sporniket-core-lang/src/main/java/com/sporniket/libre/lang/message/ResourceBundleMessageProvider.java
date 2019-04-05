@@ -15,7 +15,7 @@ import com.sporniket.libre.lang.CollectionTools;
  * ResourceBundle based message provider.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -39,7 +39,7 @@ import com.sporniket.libre.lang.CollectionTools;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public class ResourceBundleMessageProvider implements MessageProviderInterface

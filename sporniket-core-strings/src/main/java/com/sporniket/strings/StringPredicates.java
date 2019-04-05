@@ -9,7 +9,7 @@ import java.util.function.Predicate;
  * Various predicates about strings.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  *
@@ -33,7 +33,7 @@ import java.util.function.Predicate;
  * <hr>
  *
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 19.02.00
  */
 public class StringPredicates

@@ -7,7 +7,7 @@ package com.sporniket.libre.lang.message;
  * How the message provider should behave when the message provider can't retrieve the wanted message is not found.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -32,7 +32,7 @@ package com.sporniket.libre.lang.message;
  * 
  * @author David SPORN 
  * 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.02.00
  */
 public interface BehaviourOnMissingMessage
@@ -45,7 +45,7 @@ public interface BehaviourOnMissingMessage
 	/**
 	 * Implementation that return the key if the message is missing (that will be the default behaviour).
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -70,7 +70,7 @@ public interface BehaviourOnMissingMessage
 	 * 
 	 * @author David SPORN 
 	 * 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.02.00
 	 */
 	class ReturnKey implements BehaviourOnMissingMessage
@@ -87,7 +87,7 @@ public interface BehaviourOnMissingMessage
 	/**
 	 * Return <code>null</code> if the message is missing.
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -112,7 +112,7 @@ public interface BehaviourOnMissingMessage
 	 * 
 	 * @author David SPORN 
 	 * 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.02.00
 	 */
 	class ReturnNull implements BehaviourOnMissingMessage

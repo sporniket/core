@@ -21,7 +21,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
 /**
  * Test case for {@link FileTools}.
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -45,7 +45,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.02.00
  */
 public class TestFileTools extends TestCase

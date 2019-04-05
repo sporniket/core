@@ -11,7 +11,7 @@ import com.sporniket.libre.lang.sgml.SgmlUtils;
  * Utility macros to generate HTML code.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -35,7 +35,7 @@ import com.sporniket.libre.lang.sgml.SgmlUtils;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public class HtmlUtils
@@ -46,7 +46,7 @@ public class HtmlUtils
 	 * 
 	 * <hr>
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -68,7 +68,7 @@ public class HtmlUtils
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 12.06.01
 	 */
 	public static final class AttributeNames
@@ -78,7 +78,7 @@ public class HtmlUtils
 		 * Attributes for form tag.
 		 * <hr>
 		 * <p>
-		 * &copy; Copyright 2002-2016 David Sporn
+		 * &copy; Copyright 2002-2019 David Sporn
 		 * </p>
 		 * <hr>
 		 * 
@@ -101,7 +101,7 @@ public class HtmlUtils
 		 * <hr>
 		 * 
 		 * @author David SPORN 
-		 * @version 19.02.00
+		 * @version 19.04.00
 		 * @since 12.06.01
 		 */
 		public static final class Form
@@ -135,7 +135,7 @@ public class HtmlUtils
 	 * 
 	 * <hr>
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -157,7 +157,7 @@ public class HtmlUtils
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 12.06.01
 	 */
 	static final class SpecialAttribute

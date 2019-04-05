@@ -13,7 +13,7 @@ import java.beans.PropertyChangeListener;
  * </p>
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -37,7 +37,7 @@ import java.beans.PropertyChangeListener;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public interface Monitorable

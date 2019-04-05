@@ -5,7 +5,7 @@ import java.awt.Color;
 /**
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -29,7 +29,7 @@ import java.awt.Color;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public interface SheetOfPaper

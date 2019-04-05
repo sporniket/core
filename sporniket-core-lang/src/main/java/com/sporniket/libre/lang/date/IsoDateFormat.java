@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
  * Ready to use date format following the ISO format.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -34,7 +34,7 @@ import java.text.SimpleDateFormat;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 // FIXME SimpleDateFormat is not thread safe, give access to the pattern, and provide function instanciating a dateformat using the

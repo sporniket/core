@@ -9,7 +9,7 @@ import java.io.File;
  * Define a common interface for a File generator.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -33,7 +33,7 @@ import java.io.File;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.09.01
  */
 public interface FileGenerator

@@ -26,7 +26,7 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
  * 
  * <hr>
  * <p>
- * &copy; Copyright David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -42,7 +42,7 @@ import javax.swing.plaf.metal.DefaultMetalTheme;
  * <hr>
  * 
  * @author David Sporn
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public class LookAndFeelMedium extends DefaultMetalTheme
@@ -52,38 +52,45 @@ public class LookAndFeelMedium extends DefaultMetalTheme
 
 	// Overriden methods
 
+	@Override
 	public String getName()
 	{
 		return NAME;
 	}
 
+	@Override
 	public FontUIResource getControlTextFont()
 	{
 		return FONT__CONTROL;
 	}
 
 	// ToolTips font
+	@Override
 	public FontUIResource getSystemTextFont()
 	{
 		return FONT__SYSTEM;
 	}
 
+	@Override
 	public FontUIResource getUserTextFont()
 	{
 		return FONT__USER;
 	}
 
+	@Override
 	public FontUIResource getMenuTextFont()
 	{
 		return FONT__CONTROL;
 	}
 
+	@Override
 	public FontUIResource getWindowTitleFont()
 	{
 		return FONT__WINDOW_TITLE;
 	}
 
 	// ShortCuts font
+	@Override
 	public FontUIResource getSubTextFont()
 	{
 		return FONT__SMALL;

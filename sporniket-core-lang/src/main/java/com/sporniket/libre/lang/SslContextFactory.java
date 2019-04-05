@@ -19,7 +19,7 @@ import javax.net.ssl.TrustManagerFactory;
 /**
  * Factory for creating ssl contexts, with default settings for ease of use.
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -46,7 +46,7 @@ import javax.net.ssl.TrustManagerFactory;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.06.00
  */
 public class SslContextFactory {
@@ -57,7 +57,7 @@ public class SslContextFactory {
 	 * allowing to override only some of the configuration values.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -84,7 +84,7 @@ public class SslContextFactory {
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.06.00
 	 */
 	public static final class Configuration {
@@ -181,7 +181,7 @@ public class SslContextFactory {
 	 * Default values for this factory.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -208,7 +208,7 @@ public class SslContextFactory {
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.06.00
 	 */
 	private static final class ConfigurationDefaultValues {

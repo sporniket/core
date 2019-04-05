@@ -8,7 +8,7 @@ import com.sporniket.libre.lang.functor.Functor;
  * Model of an action to create instances of buttons and menu items.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -32,7 +32,7 @@ import com.sporniket.libre.lang.functor.Functor;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public interface UserInterfaceAction<IconLocationType>

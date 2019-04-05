@@ -6,7 +6,7 @@ package com.sporniket.libre.lang;
  * For instance, it might add buttons to a toolbar, and menu items in a menu, as well as a few Objects in a Collection.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -30,7 +30,7 @@ package com.sporniket.libre.lang;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public interface ContainerFeederInterface

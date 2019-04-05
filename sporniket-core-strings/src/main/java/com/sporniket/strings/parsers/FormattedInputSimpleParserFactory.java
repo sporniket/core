@@ -50,7 +50,7 @@ import java.util.regex.Pattern;
  * item is the regular expression to match, it will be enclosed inside <code>()</code> in the final pattern.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -74,7 +74,7 @@ import java.util.regex.Pattern;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 16.08.00
  */
 public class FormattedInputSimpleParserFactory

@@ -11,7 +11,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * Interface to implement in order to create a Factory that will be able to instanciate a fully defined {@link UserInterfaceAction}.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -35,7 +35,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public interface UserInterfaceActionFactory<IconLocationType>

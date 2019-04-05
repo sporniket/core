@@ -16,7 +16,7 @@ import java.util.Map;
  * Utility class for loading text in memory.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -40,7 +40,7 @@ import java.util.Map;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 // FIXME get an instance for iso-named encoding.

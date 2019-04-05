@@ -9,7 +9,7 @@ import java.util.Date;
  * To be used when one doesn't have a {@link Date} instance to work with.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -33,7 +33,7 @@ import java.util.Date;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  * 
  * @see IsoDateFormat
@@ -44,7 +44,7 @@ public class IsoParsableDateFormatter
 	 * Defines parts of format.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -68,7 +68,7 @@ public class IsoParsableDateFormatter
 	 * <hr>
 	 * 
 	 * @author David SPORN 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 12.06.01
 	 */
 	private static class FormatFragments

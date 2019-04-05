@@ -20,7 +20,7 @@ import com.sporniket.strings.pipeline.StringPipelineBuilder;
 /**
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  *
@@ -44,7 +44,7 @@ import com.sporniket.strings.pipeline.StringPipelineBuilder;
  * <hr>
  *
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 19.02.00
  */
 public class StringPipelineTest

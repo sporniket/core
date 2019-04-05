@@ -16,7 +16,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * note : for jdk 1.6 and following
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -43,7 +43,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  *            type that store the location of the icon.
  * 
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 12.06.01
  */
 public class AdaptedAction<IconLocationType> extends FunctorBasedAction implements UserInterfaceAction<IconLocationType>

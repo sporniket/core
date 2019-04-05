@@ -38,7 +38,7 @@ import com.sporniket.strings.pipeline.StringTransformation;
  * </ul>
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -62,7 +62,7 @@ import com.sporniket.strings.pipeline.StringTransformation;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.09.00
  */
 public class LineByLinePropertyParser
@@ -71,7 +71,7 @@ public class LineByLinePropertyParser
 	 * Some special character patterns for the automaton.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -95,7 +95,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.09.00
 	 */
 	private static final class CharacterPattern
@@ -117,7 +117,7 @@ public class LineByLinePropertyParser
 	 * </p>
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -141,7 +141,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.09.00
 	 */
 	private static enum FinalState
@@ -158,7 +158,7 @@ public class LineByLinePropertyParser
 	 * Automaton model : transition to a next state, only if it matches a pattern.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -182,7 +182,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.09.00
 	 */
 	private static final class FollowUp
@@ -223,7 +223,7 @@ public class LineByLinePropertyParser
 	 * Automaton state.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -247,7 +247,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.09.00
 	 */
 	private static class State

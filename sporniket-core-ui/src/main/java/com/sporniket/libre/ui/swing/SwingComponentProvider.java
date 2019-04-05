@@ -15,7 +15,7 @@ import javax.swing.JFrame;
  * Top-level components ( {@link JFrame}, {@link JDialog}, {@link JApplet}) are not supported.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  * 
@@ -40,7 +40,7 @@ import javax.swing.JFrame;
  * 
  * @author David SPORN 
  * 
- * @version 19.02.00
+ * @version 19.04.00
  * @since 15.02.00
  */
 public interface SwingComponentProvider<ComponentType extends JComponent, ParameterType>
@@ -48,7 +48,7 @@ public interface SwingComponentProvider<ComponentType extends JComponent, Parame
 	/**
 	 * Parameter type to use when the provider does not need any to create a component.
 	 * <p>
-	 * &copy; Copyright 2002-2016 David Sporn
+	 * &copy; Copyright 2002-2019 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -73,7 +73,7 @@ public interface SwingComponentProvider<ComponentType extends JComponent, Parame
 	 * 
 	 * @author David SPORN 
 	 * 
-	 * @version 19.02.00
+	 * @version 19.04.00
 	 * @since 15.02.00
 	 */
 	class NoParameter

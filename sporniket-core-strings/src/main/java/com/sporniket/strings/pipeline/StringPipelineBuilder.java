@@ -10,7 +10,7 @@ import java.util.List;
  * Fluent builder of {@link StringPipeline}.
  * 
  * <p>
- * &copy; Copyright 2002-2016 David Sporn
+ * &copy; Copyright 2002-2019 David Sporn
  * </p>
  * <hr>
  *
@@ -34,7 +34,7 @@ import java.util.List;
  * <hr>
  *
  * @author David SPORN
- * @version 19.02.00
+ * @version 19.04.00
  * @since 19.02.00
  */
 public class StringPipelineBuilder
