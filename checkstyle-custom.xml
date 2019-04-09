@@ -38,11 +38,11 @@
 		<!-- Cas des exceptions -->
 		<module name="LocalFinalVariableName">
 			<property name="format" value="^_exception(_[a-z0-9]*)*$"/>
-			<property name="tokens" value="PARAMETER_DEF"/>
+			<property name="tokens" value="VARIABLE_DEF"/>
 		</module>
 		<module name="LocalVariableName">
 			<property name="format" value="^_exception(_[a-z0-9]*)*$"/>
-			<property name="tokens" value="PARAMETER_DEF"/>
+			<property name="tokens" value="VARIABLE_DEF"/>
 		</module>
 
 		<!-- 
