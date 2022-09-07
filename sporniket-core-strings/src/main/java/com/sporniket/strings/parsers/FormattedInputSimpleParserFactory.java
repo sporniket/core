@@ -50,7 +50,7 @@ import java.util.regex.Pattern;
  * item is the regular expression to match, it will be enclosed inside <code>()</code> in the final pattern.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

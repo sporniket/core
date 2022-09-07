@@ -38,7 +38,7 @@ import com.sporniket.strings.pipeline.StringTransformation;
  * </ul>
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 
@@ -71,7 +71,7 @@ public class LineByLinePropertyParser
 	 * Some special character patterns for the automaton.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -117,7 +117,7 @@ public class LineByLinePropertyParser
 	 * </p>
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -158,7 +158,7 @@ public class LineByLinePropertyParser
 	 * Automaton model : transition to a next state, only if it matches a pattern.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -223,7 +223,7 @@ public class LineByLinePropertyParser
 	 * Automaton state.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

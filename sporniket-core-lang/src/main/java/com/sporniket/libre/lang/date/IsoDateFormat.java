@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
  * Ready to use date format following the ISO format.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

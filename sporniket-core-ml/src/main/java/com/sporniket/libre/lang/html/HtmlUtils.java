@@ -11,7 +11,7 @@ import com.sporniket.libre.lang.sgml.SgmlUtils;
  * Utility macros to generate HTML code.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 
@@ -46,7 +46,7 @@ public class HtmlUtils
 	 * 
 	 * <hr>
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 
@@ -78,7 +78,7 @@ public class HtmlUtils
 		 * Attributes for form tag.
 		 * <hr>
 		 * <p>
-		 * &copy; Copyright 2002-2019 David Sporn
+		 * &copy; Copyright 2002-2022 David Sporn
 		 * </p>
 		 * <hr>
 		 * 
@@ -135,7 +135,7 @@ public class HtmlUtils
 	 * 
 	 * <hr>
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

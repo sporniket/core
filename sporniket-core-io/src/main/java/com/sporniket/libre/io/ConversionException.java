@@ -4,7 +4,7 @@ package com.sporniket.libre.io;
  * Exception class when a problem related with the conversion process occurs.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

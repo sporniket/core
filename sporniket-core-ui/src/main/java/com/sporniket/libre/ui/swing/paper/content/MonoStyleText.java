@@ -24,7 +24,7 @@ import com.sporniket.libre.ui.swing.paper.UnitConverter;
  * The rendered text will fit the specified width, and it will takes all the space needed vertically to display the text.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

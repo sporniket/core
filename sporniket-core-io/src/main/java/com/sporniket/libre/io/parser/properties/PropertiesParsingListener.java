@@ -7,7 +7,7 @@ package com.sporniket.libre.io.parser.properties;
  * Interface defining a listener for the parsing of properties.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

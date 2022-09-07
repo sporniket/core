@@ -1,7 +1,7 @@
 /**
  * Collection of special case actions.
  * 
- * <p> &copy; Copyright 2002-2019 David Sporn</p>
+ * <p> &copy; Copyright 2002-2022 David Sporn</p>
  * <hr>
  *
  * <p>This file is part of <i>The Sporniket Core Library &#8211; ui</i>.

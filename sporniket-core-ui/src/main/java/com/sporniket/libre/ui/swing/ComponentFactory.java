@@ -20,7 +20,7 @@ import com.sporniket.libre.lang.url.UrlProviderException;
  * Macros that are not specific to jdk7 calls the corresponding jdk1.4 macros.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

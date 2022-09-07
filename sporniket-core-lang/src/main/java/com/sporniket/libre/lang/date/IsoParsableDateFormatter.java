@@ -9,7 +9,7 @@ import java.util.Date;
  * To be used when one doesn't have a {@link Date} instance to work with.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 
@@ -44,7 +44,7 @@ public class IsoParsableDateFormatter
 	 * Defines parts of format.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

@@ -16,7 +16,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  * note : for jdk 1.6 and following
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

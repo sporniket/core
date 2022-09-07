@@ -3,7 +3,7 @@
  * 
  * <p>There is a framework to write file conversion programs, with a specialization for converting text files.</p>
  * 
- * <p> &copy; Copyright 2002-2019 David Sporn</p>
+ * <p> &copy; Copyright 2002-2022 David Sporn</p>
  * <hr>
  *
  * <p>This file is part of <i>The Sporniket Core Library &#8211; io</i>.
