@@ -3,6 +3,8 @@ package com.sporniket.reflection ;
 import java.lang.reflect.InvocationTargetException ;
 
 /**
+ * Model of a Getter.
+ * 
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>

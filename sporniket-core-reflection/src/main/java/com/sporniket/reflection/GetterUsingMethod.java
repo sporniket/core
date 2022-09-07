@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException ;
 import java.lang.reflect.Method ;
 
 /**
+ * Implemention of a {@link Getter} that uses an accessor method to retrieve a value.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>

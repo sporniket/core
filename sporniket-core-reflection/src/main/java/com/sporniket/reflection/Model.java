@@ -4,6 +4,7 @@ import java.util.HashMap ;
 import java.util.Map ;
 
 /**
+ * Model of an object and its properties.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>

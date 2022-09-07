@@ -1,5 +1,5 @@
 /**
- * Utilitaires pour des traitements utilisant l'introspection des objets javas.
+ * Utilities to perform processings using Java reflection.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>

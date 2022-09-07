@@ -12,6 +12,7 @@ import java.lang.reflect.Parameter ;
 import java.math.BigDecimal ;
 
 /**
+ * Implementation of a {@link SetterUsingStringValue} that uses an accessor method to change the value.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>
@@ -46,23 +47,29 @@ class SetterUsingMethod implements SetterUsingStringValue {
         myMethod = method ;
     }
 
+    @SuppressWarnings({
+            "unchecked", "rawtypes"
+    })
     @Override
     public void setValue(String value, Object recipient) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
         final Parameter arg = myMethod.getParameters()[0] ;
-        if (String.class.equals(arg.getType())) {
+        final Class<?> argType = arg.getType() ;
+        if (String.class.equals(argType)) {
             myMethod.invoke(recipient, value) ;
-        } else if (BigDecimal.class.equals(arg.getType())) {
+        } else if (BigDecimal.class.equals(argType)) {
             myMethod.invoke(recipient, new BigDecimal(value)) ;
-        } else if (int.class.equals(arg.getType()) || Integer.class.equals(arg.getType())) {
+        } else if (int.class.equals(argType) || Integer.class.equals(argType)) {
             myMethod.invoke(recipient, parseInt(value)) ;
-        } else if (boolean.class.equals(arg.getType()) || Boolean.class.equals(arg.getType())) {
+        } else if (boolean.class.equals(argType) || Boolean.class.equals(argType)) {
             myMethod.invoke(recipient, parseBoolean(value)) ;
-        } else if (long.class.equals(arg.getType()) || Long.class.equals(arg.getType())) {
+        } else if (long.class.equals(argType) || Long.class.equals(argType)) {
             myMethod.invoke(recipient, parseLong(value)) ;
-        } else if (float.class.equals(arg.getType()) || Float.class.equals(arg.getType())) {
+        } else if (float.class.equals(argType) || Float.class.equals(argType)) {
             myMethod.invoke(recipient, parseFloat(value)) ;
-        } else if (double.class.equals(arg.getType()) || Double.class.equals(arg.getType())) {
+        } else if (double.class.equals(argType) || Double.class.equals(argType)) {
             myMethod.invoke(recipient, parseDouble(value)) ;
+        } else if (argType.isEnum()) {
+            myMethod.invoke(recipient, Enum.valueOf((Class<Enum>) argType, value)) ;
         }
     }
 

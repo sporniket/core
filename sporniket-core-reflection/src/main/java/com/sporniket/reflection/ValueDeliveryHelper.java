@@ -26,13 +26,11 @@ import java.util.function.Predicate ;
 import com.fasterxml.jackson.annotation.JsonProperty ;
 
 /**
- * Utilitaire pour appliquer une valeur à un champs ou un sous-champs d'un objet, en désignant l'emplacement par un chemin utilisant les noms de propriété (p.ex.
- * "<code>sub1.sub2.targetField</code>").
+ * Utility class to apply a value to a field a subfield of an object, the location is designated by a path that uses the property names (e.g. "<code>sub1.sub2.targetField</code>").
  *
  * <p>
- * Les noms de propriétés possibles sont découverts par introspection, en répertoriant les accesseurs selon la convention Javabean (e.g. <code>getXxx</code> et <code>setXxx</code>
- * pour la propriété <code>xxx</code>) ; en répertoriant les méthodes et champs annotés avec {@link JsonProperty} avec une valeur non vide ; en utilisant les champs directement
- * sauf accesseur .
+ * Available properties are discovered by introspection, assuming that accessors follows the Javabean convention (e.g. the property <code>xxx</code> is accessible through
+ * <code>getXxx</code> and <code>setXxx</code>);methods and fields annotated with {@link JsonProperty} are registered too ; as well as direct access to fields without any accessor.
  * </p>
  *
  * <p>
@@ -63,7 +61,10 @@ import com.fasterxml.jackson.annotation.JsonProperty ;
  */
 public class ValueDeliveryHelper {
 
-    static final Map<String, Model> CACHE = new HashMap<>(30) ;
+    /**
+     * A cache for already scanned classes.
+     */
+    static final Map<String, Model> registeredModels = new HashMap<>(30) ;
 
     static final Set<Class<?>> FINAL_TYPES = of(//
             String.class, //
@@ -71,49 +72,64 @@ public class ValueDeliveryHelper {
             int.class, //
             boolean.class, //
             Boolean.class, //
-            BigDecimal.class //
+            float.class, //
+            Float.class, //
+            long.class, //
+            Long.class, //
+            double.class, //
+            Double.class, //
+            BigDecimal.class // ,
     ).collect(toSet()) ;
 
     /**
-     * Utilise le nom du champ comme nom de propriété.
+     * To use the field name as property name.
      */
     final static Function<? super Field, ? extends String> PROPERTY_NAME_FROM_FIELD_NAME = f -> {
         return f.getName() ;
     } ;
 
     /**
-     * Utilise la valeur du paramètre <code>value</code> de l'annotation <code>JsonProperty</code>
+     * To use the <code>value</code> argument of the <code>JsonProperty</code> annotation as property name.
      */
     final static Function<? super AccessibleObject, ? extends String> PROPERTY_NAME_FROM_JSON_ANNOTATION = f -> {
         return f.getAnnotation(JsonProperty.class).value() ;
     } ;
 
     /**
-     * Obtient le nom de la propriété depuis un accesseur (e.g. <code>getXxx</code> et <code>setXxx</code> donneront <code>xxx</code>).
+     * To infer a property name from an accessor (e.g. <code>getXxx</code> and <code>setXxx</code> will give <code>xxx</code> as property name).
      */
     final static Function<? super Method, ? extends String> PROPERTY_NAME_FROM_METHOD_NAME = m -> {
+        if (m.getName().startsWith("is")) {
+            return m.getName().substring(2, 3).toLowerCase() + m.getName().substring(3) ;
+        }
         return m.getName().substring(3, 4).toLowerCase() + m.getName().substring(4) ;
     } ;
 
+    /**
+     * Test to infer the presence of a <code>JsonProperty</code> annotation with a value.
+     */
     private static final Predicate<? super AccessibleObject> IS__JSON_ANNOTATED_WITH_VALUE = //
             ao -> (null != ao.getAnnotation(JsonProperty.class) //
             ) && IS_NOT_BLANK.test(ao.getAnnotation(JsonProperty.class).value()) ;
 
+    /**
+     * Test to infer the absence of a <code>JsonProperty</code> annotation with a value.
+     */
     private static final Predicate<? super AccessibleObject> IS_NOT__JSON_ANNOTATED_WITH_VALUE = //
             ao -> !((null != ao.getAnnotation(JsonProperty.class) //
             ) && IS_NOT_BLANK.test(ao.getAnnotation(JsonProperty.class).value())//
             ) ;
 
     /**
-     * Trouve le getter approprié pour la propriété spécifiée, on recherche dans l'ordre : un getter annoté avec {@link JsonProperty} avec valeur, un getter selon la convention
-     * Javabean, un champs annoté avec {@link JsonProperty}, un champs avec le nom recherché.
+     * Find the suitable getter for the given property name, searched in this order : a getter annotated using {@link JsonProperty} with a value, a getter following the Javabean
+     * convention, a field annotated with {@link JsonProperty}, and finally a field having a matching name. recherché.
      *
-     * @param propertyName le nom de la propriété.
-     * @param annotatedJsonGetters la liste des getters annotés référencés.
-     * @param propertyGetters la liste des getters javabean référencés.
-     * @param annotatedJsonFields la liste des champs annotés référencés.
-     * @param plainFields la liste des champs.
-     * @return un getter utilisant le nom approprié.
+     * @param propertyName the property name.
+     * @param annotatedJsonGetters the list of known annotated getters.
+     * @param propertyGetters the list of known javabean getters.
+     * @param annotatedJsonFields the list of known annotated fields.
+     * @param plainFields the list of fields.
+     * @return the suitable getter.
      */
     private static Getter findGetter(String propertyName, final Map<String, Method> annotatedJsonGetters, final Map<String, Method> propertyGetters,
             final Map<String, Field> annotatedJsonFields, final Map<String, Field> plainFields) {
@@ -244,12 +260,12 @@ public class ValueDeliveryHelper {
 
     private static Model modelFromClass(Class<?> toScan) {
         final String _className = toScan.getName() ;
-        synchronized (CACHE) {
-            if (!CACHE.containsKey(_className)) {
-                CACHE.put(_className, extractModelFromClass(toScan)) ;
+        synchronized (registeredModels) {
+            if (!registeredModels.containsKey(_className)) {
+                registeredModels.put(_className, extractModelFromClass(toScan)) ;
             }
         }
-        return CACHE.get(_className) ;
+        return registeredModels.get(_className) ;
     }
 
     /**

@@ -3,6 +3,7 @@ package com.sporniket.reflection ;
 import java.lang.reflect.InvocationTargetException ;
 
 /**
+ * Model of a property setter, using String as the serialized format.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>

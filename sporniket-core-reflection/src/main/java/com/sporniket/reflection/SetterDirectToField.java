@@ -1,7 +1,10 @@
 package com.sporniket.reflection ;
 
 import static java.lang.Boolean.parseBoolean ;
+import static java.lang.Double.parseDouble ;
+import static java.lang.Float.parseFloat ;
 import static java.lang.Integer.parseInt ;
+import static java.lang.Long.parseLong ;
 
 import java.lang.reflect.Field ;
 import java.math.BigDecimal ;
@@ -41,6 +44,9 @@ class SetterDirectToField implements SetterUsingStringValue {
         myField = field ;
     }
 
+    @SuppressWarnings({
+            "unchecked", "rawtypes"
+    })
     @Override
     public void setValue(String value, Object recipient) throws IllegalArgumentException, IllegalAccessException {
         final Class<?> _targetType = myField.getType() ;
@@ -52,6 +58,14 @@ class SetterDirectToField implements SetterUsingStringValue {
             myField.set(recipient, parseInt(value)) ;
         } else if (boolean.class.equals(_targetType) || Boolean.class.equals(_targetType)) {
             myField.set(recipient, parseBoolean(value)) ;
+        } else if (long.class.equals(_targetType) || Long.class.equals(_targetType)) {
+            myField.set(recipient, parseLong(value)) ;
+        } else if (float.class.equals(_targetType) || Float.class.equals(_targetType)) {
+            myField.set(recipient, parseFloat(value)) ;
+        } else if (double.class.equals(_targetType) || Double.class.equals(_targetType)) {
+            myField.set(recipient, parseDouble(value)) ;
+        } else if (_targetType.isEnum()) {
+            myField.set(recipient, Enum.valueOf((Class<Enum>) myField.getType(), value)) ;
         }
     }
 

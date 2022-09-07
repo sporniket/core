@@ -3,6 +3,7 @@ package com.sporniket.reflection ;
 import java.lang.reflect.Field ;
 
 /**
+ * Implementation of a {@link Getter} that retrieves a value by directly accessing the class field.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>

@@ -1,6 +1,7 @@
 package com.sporniket.reflection ;
 
 /**
+ * Model of an object property, with a getter and a setter.
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
  * </p>
