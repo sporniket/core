@@ -49,7 +49,7 @@ import com.sporniket.strings.QuickDiff;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.04.00
+ * @version 22.09.00
  * @since 12.09.01
  */
 public class QuickDiffTest extends TestBase

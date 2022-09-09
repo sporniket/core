@@ -46,7 +46,7 @@ import javax.net.ssl.TrustManagerFactory;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.04.00
+ * @version 22.09.00
  * @since 15.06.00
  */
 public class SslContextFactory {
@@ -84,7 +84,7 @@ public class SslContextFactory {
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.04.00
+	 * @version 22.09.00
 	 * @since 15.06.00
 	 */
 	public static final class Configuration {
@@ -208,7 +208,7 @@ public class SslContextFactory {
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 19.04.00
+	 * @version 22.09.00
 	 * @since 15.06.00
 	 */
 	private static final class ConfigurationDefaultValues {

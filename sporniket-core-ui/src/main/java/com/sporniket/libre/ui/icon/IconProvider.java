@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 /**
  * @author David SPORN 
  *
- * @version 19.04.00
+ * @version 22.09.00
  * @since 15.02.00
  */
 public interface IconProvider<SourceType>

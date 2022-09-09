@@ -37,7 +37,7 @@ import java.text.MessageFormat;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.04.00
+ * @version 22.09.00
  * @since 12.06.01
  */
 public class RadioButton extends FormControl implements Serializable

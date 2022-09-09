@@ -28,7 +28,7 @@
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.04.00
+ * @version 22.09.00
  * @since 15.09.00
  */
 package com.sporniket.libre.io.parser.properties;

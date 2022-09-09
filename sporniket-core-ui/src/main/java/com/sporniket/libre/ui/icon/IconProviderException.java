@@ -31,7 +31,7 @@ package com.sporniket.libre.ui.icon;
  * 
  * @author David SPORN 
  *
- * @version 19.04.00
+ * @version 22.09.00
  * @since 15.02.00
  */
 public class IconProviderException extends Exception

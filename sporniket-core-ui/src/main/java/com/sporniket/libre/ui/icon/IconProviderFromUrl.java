@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  * Icon provider using the classloader.
  * @author David SPORN 
  *
- * @version 19.04.00
+ * @version 22.09.00
  * @since 15.02.00
  */
 public class IconProviderFromUrl implements IconProvider<URL>

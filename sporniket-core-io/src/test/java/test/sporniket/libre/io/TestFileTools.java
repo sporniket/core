@@ -45,7 +45,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  * <hr>
  * 
  * @author David SPORN
- * @version 19.04.00
+ * @version 22.09.00
  * @since 15.02.00
  */
 public class TestFileTools extends TestCase

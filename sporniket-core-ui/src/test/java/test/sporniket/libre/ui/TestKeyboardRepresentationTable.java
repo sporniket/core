@@ -38,7 +38,7 @@ import com.sporniket.libre.ui.KeyboardRepresentationTable;
  * <hr>
  * 
  * @author David SPORN 
- * @version 19.04.00
+ * @version 22.09.00
  */
 public class TestKeyboardRepresentationTable extends TestCase
 {
