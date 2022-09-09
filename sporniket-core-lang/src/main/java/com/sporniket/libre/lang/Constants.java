@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
  * Predefined constants.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 
@@ -44,7 +44,7 @@ public final class Constants
 	 * Charset names.
 	 * 
 	 * <p>
-	 * &copy; Copyright 2002-2019 David Sporn
+	 * &copy; Copyright 2002-2022 David Sporn
 	 * </p>
 	 * <hr>
 	 * 

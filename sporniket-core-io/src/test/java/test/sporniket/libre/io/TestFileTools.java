@@ -21,7 +21,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
 /**
  * Test case for {@link FileTools}.
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

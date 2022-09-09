@@ -12,7 +12,7 @@ import org.w3c.dom.NodeList;
  * A class that iterates over a {@link NodeList} and dispatch processing according to the node name of the current {@link Node}.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

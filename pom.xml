@@ -33,6 +33,7 @@
 		<module>./sporniket-core-ml</module>
 		<module>./sporniket-core-io</module>
 		<module>./sporniket-core-ui</module>
+		<module>./sporniket-core-reflection</module>
 	</modules>
 	<build>
 		<plugins>

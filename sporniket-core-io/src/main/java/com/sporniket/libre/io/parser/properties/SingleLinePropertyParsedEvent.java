@@ -7,7 +7,7 @@ package com.sporniket.libre.io.parser.properties;
  * Event notified when a single-line property definition has been read.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

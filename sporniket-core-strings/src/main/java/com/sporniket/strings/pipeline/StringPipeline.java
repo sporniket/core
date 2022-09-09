@@ -10,7 +10,7 @@ import java.util.List;
  * Model of compounded string transformation.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  *

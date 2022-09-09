@@ -10,7 +10,7 @@ import com.sporniket.libre.lang.functor.Functor;
  * The <code>actionPerformed</code> calls a Functor.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

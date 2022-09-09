@@ -25,7 +25,7 @@ import com.sporniket.strings.QuickDiff;
 /**
  * Test suite for {@link QuickDiff}.
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

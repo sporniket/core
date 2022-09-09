@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Base class for an element having an name, and an id (the name and a suffix).
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

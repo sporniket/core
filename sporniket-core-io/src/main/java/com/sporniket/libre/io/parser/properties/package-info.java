@@ -4,7 +4,7 @@
  * <p>The parsing is event based, and consists of a line processor that notify listeners when a property is completed : one should use e.g. a {@link java.io.LineNumberReader} to read a source line by line, give the line to the parser and listen to events to get each parsed properties.</p>
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

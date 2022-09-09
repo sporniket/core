@@ -6,7 +6,7 @@ package com.sporniket.libre.lang;
  * For instance, it might add buttons to a toolbar, and menu items in a menu, as well as a few Objects in a Collection.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

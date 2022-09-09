@@ -16,7 +16,7 @@ import javax.swing.JFrame;
  * Utility class for JFrames.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

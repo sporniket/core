@@ -18,7 +18,7 @@ import com.sporniket.strings.parsers.FormattedInputSimpleParserFactory;
  * Test suite for the {@link FormattedInputSimpleParserFactory}.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

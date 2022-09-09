@@ -4,7 +4,7 @@ package com.sporniket.libre.lang;
  * Constants that defines <b>immutable objects</b> that can be seen as <em>empty</em> in some way, they are named to support static imports.
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 

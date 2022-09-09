@@ -7,7 +7,7 @@ package com.sporniket.libre.io;
  * Encapsulate standard naming and sun naming, and can be used instead of "magic strings".
  * 
  * <p>
- * &copy; Copyright 2002-2019 David Sporn
+ * &copy; Copyright 2002-2022 David Sporn
  * </p>
  * <hr>
  * 
