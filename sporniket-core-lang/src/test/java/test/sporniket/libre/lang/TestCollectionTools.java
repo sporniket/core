@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.fail ;
 
 import java.util.ResourceBundle ;
 
-import org.junit.jupiter.api.BeforeEach ;
 import org.junit.jupiter.api.Test ;
 
 import com.sporniket.libre.lang.CollectionTools ;
@@ -48,17 +47,11 @@ public class TestCollectionTools {
 
     private static final String VALUE__WHEN_NOT_FOUND = "NULL" ;
 
-    private static final String RESOURCE_BUNDLE__NAME = "com.sporniket.test.lang.TestCollectionTools" ;
-
-    private ResourceBundle myTestBundle ;
-
-    @BeforeEach
-    protected void setUp() throws Exception {
-        myTestBundle = ResourceBundle.getBundle(RESOURCE_BUNDLE__NAME) ;
-    }
+    private static final String RESOURCE_BUNDLE__NAME = "TestCollectionTools" ;
 
     @Test
     public final void testGetStringForExistingValue() {
+        ResourceBundle myTestBundle = ResourceBundle.getBundle(RESOURCE_BUNDLE__NAME) ;
         String _value = CollectionTools.getString(myTestBundle, KEY__BUNDLE_TEST, VALUE__WHEN_NOT_FOUND) ;
         if (!VALUE__BUNDLE_TEST.equals(_value)) {
             fail("Value does not match for key [" + KEY__BUNDLE_TEST + "] ! [" + _value + "] instead of [" + VALUE__BUNDLE_TEST + "]. Check also the test properties file.") ;
@@ -67,6 +60,7 @@ public class TestCollectionTools {
 
     @Test
     public final void testGetStringForNonExistingValue() {
+        ResourceBundle myTestBundle = ResourceBundle.getBundle(RESOURCE_BUNDLE__NAME) ;
         String _value = CollectionTools.getString(myTestBundle, KEY__BUNDLE_TEST__NOT_EXISTING, VALUE__WHEN_NOT_FOUND) ;
         if (!VALUE__WHEN_NOT_FOUND.equals(_value)) {
             fail("Not default value for key [" + KEY__BUNDLE_TEST__NOT_EXISTING + "] ! [" + _value + "] instead of [" + VALUE__WHEN_NOT_FOUND
