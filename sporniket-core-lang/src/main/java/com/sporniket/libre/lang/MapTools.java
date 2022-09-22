@@ -4,8 +4,11 @@
 package com.sporniket.libre.lang ;
 
 import static java.util.Arrays.asList ;
+import static java.util.stream.Collectors.toMap ;
 
 import java.util.Map ;
+import java.util.Set ;
+import java.util.TreeSet ;
 import java.util.stream.Collectors ;
 
 /**
@@ -40,31 +43,6 @@ import java.util.stream.Collectors ;
 public class MapTools {
 
     /**
-     * Update the given map using a list of {@link String}s, each string encoding a pair of key-value.
-     * 
-     * @param target the map to modify.
-     * @param separator
-     * @param items each item follows the pattern : <code>key + separator + value</code>
-     * @return the updated map.
-     */
-    public static final Map<String, String> applyToMap(Map<String, String> target, char separator, String... items) {
-        String sep = "[" + separator + "]" ;
-        asList(items).stream().map(i -> i.split(sep, 2)).forEach(i -> target.put(i[0], i[1])) ;
-        return target ;
-    }
-
-    /**
-     * Update the given map using a list of {@link String}s, each string encoding a pair of key-value.
-     * 
-     * @param target the map to modify.
-     * @param items each item follows the pattern : <code>key + ':' + value</code>
-     * @return the updated map.
-     */
-    public static final Map<String, String> applyToMap(Map<String, String> target, String... items) {
-        return applyToMap(target, ':', items) ;
-    }
-
-    /**
      * Create a {@link Map} using a list of {@link String}s, each string encoding a pair of key-value.
      * 
      * @param separator the separator char to use.
@@ -87,4 +65,17 @@ public class MapTools {
         return asMap(':', items) ;
     }
 
+    /**
+     * Produce a {@link Map} from the given Map by keeping items whose key is in the given list.
+     * 
+     * @param source the original map.
+     * @param keys the allowed keys.
+     * @return the filtered map.
+     */
+    public static final Map<String, String> filterByKeys(Map<String, String> source, String... keys) {
+        Set<String> keysFilter = new TreeSet<String>(asList(keys)) ;
+        return source.entrySet().stream()//
+                .filter(e -> keysFilter.contains(e.getKey()))//
+                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue)) ;
+    }
 }

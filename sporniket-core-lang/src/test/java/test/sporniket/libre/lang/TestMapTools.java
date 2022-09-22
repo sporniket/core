@@ -1,10 +1,8 @@
 package test.sporniket.libre.lang ;
 
-import static com.sporniket.libre.lang.MapTools.applyToMap ;
 import static com.sporniket.libre.lang.MapTools.asMap ;
+import static com.sporniket.libre.lang.MapTools.filterByKeys ;
 import static org.assertj.core.api.BDDAssertions.then ;
-
-import java.util.Map ;
 
 import org.junit.jupiter.api.Test ;
 
@@ -43,26 +41,6 @@ import com.sporniket.libre.lang.MapTools ;
 public class TestMapTools {
 
     @Test
-    public void applyMapWithoutSeparatorShouldModifyMap() {
-        Map<String, String> target = asMap('|', "a|item a", "b|item b") ;
-        then(applyToMap(target, "a:apply a", "c:apply c"))//
-                .hasSize(3)//
-                .containsEntry("a", "apply a")//
-                .containsEntry("b", "item b")//
-                .containsEntry("c", "apply c") ;
-    }
-
-    @Test
-    public void applyMapWithSeparatorShouldModifyMap() {
-        Map<String, String> target = asMap("a:item a", "b:item b") ;
-        then(applyToMap(target, '|', "a|apply a", "c|apply c"))//
-                .hasSize(3)//
-                .containsEntry("a", "apply a")//
-                .containsEntry("b", "item b")//
-                .containsEntry("c", "apply c") ;
-    }
-
-    @Test
     public void asMapWithoutSeparatorShouldCreateMap() {
         then(asMap("a:item a", "b:item b"))//
                 .hasSize(2)//
@@ -76,5 +54,12 @@ public class TestMapTools {
                 .hasSize(2)//
                 .containsEntry("a", "item a")//
                 .containsEntry("b", "item b") ;
+    }
+
+    @Test
+    public void filterByKeysShouldReturnAMapWithFilteredElements() {
+        then(filterByKeys(asMap("a:item a", "b:item b"), "a", "c"))//
+                .hasSize(1)//
+                .containsEntry("a", "item a") ;
     }
 }
