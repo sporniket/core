@@ -16,11 +16,14 @@
 		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
 		<version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
 		<version.maven-project-info-reports-plugin>2.6</version.maven-project-info-reports-plugin>
-		<version.maven-surefire-report-plugin>2.19.1</version.maven-surefire-report-plugin>
+		<version.maven-surefire-report-plugin>2.22.2</version.maven-surefire-report-plugin>
 		<version.maven-checkstyle-plugin>3.0.0</version.maven-checkstyle-plugin>
 		<version.maven-checkstyle-plugin.checkstyle-runtime>10.3.3</version.maven-checkstyle-plugin.checkstyle-runtime> <!-- required to use recent checkstyle -->
 		<version.maven-pmd-plugin>3.6</version.maven-pmd-plugin>
-		<version.maven-release-plugin>2.5.2</version.maven-release-plugin>
+		<version.maven-release-plugin>2.5.3</version.maven-release-plugin>
+		
+		<!-- shared dependencies version -->
+		<version.junit5>5.9.1</version.junit5>
 	</properties>
 
 	<name>sporniket-core</name>
@@ -88,6 +91,11 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-project-info-reports-plugin</artifactId>
