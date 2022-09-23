@@ -41,6 +41,14 @@ import com.sporniket.libre.lang.MapTools ;
 public class TestMapTools {
 
     @Test
+    public void applyShouldChangeExistingKeysAndNotInsertNewEntries() {
+        then(MapTools.apply(asMap("a:item a", "b:item b"), asMap("a:change a", "c:change c")))//
+                .hasSize(2)//
+                .containsEntry("a", "change a")//
+                .containsEntry("b", "item b") ;
+    }
+
+    @Test
     public void asMapWithoutSeparatorShouldCreateMap() {
         then(asMap("a:item a", "b:item b"))//
                 .hasSize(2)//
@@ -61,13 +69,5 @@ public class TestMapTools {
         then(filterByKeys(asMap("a:item a", "b:item b"), "a", "c"))//
                 .hasSize(1)//
                 .containsEntry("a", "item a") ;
-    }
-
-    @Test
-    public void applyShouldChangeExistingKeysAndNotInsertNewEntries() {
-        then(MapTools.apply(asMap("a:item a", "b:item b"), asMap("a:change a", "c:change c")))//
-                .hasSize(2)//
-                .containsEntry("a", "change a")//
-                .containsEntry("b", "item b") ;
     }
 }
