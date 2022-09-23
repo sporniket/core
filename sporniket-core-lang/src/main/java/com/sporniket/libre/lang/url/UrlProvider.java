@@ -29,19 +29,20 @@ import java.net.URL;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface UrlProvider
 {
-	/**
-	 * Return an URL from a given path.
-	 * 
-	 * @param path
-	 *            the path
-	 * @return an URM
-	 * @throws UrlProviderException if there is a problem.
-	 */
-	URL getUrl(String path) throws UrlProviderException;
+    /**
+     * Return an URL from a given path.
+     * 
+     * @param path
+     *            the path
+     * @return an URM
+     * @throws UrlProviderException
+     *             if there is a problem.
+     */
+    URL getUrl(String path) throws UrlProviderException;
 }

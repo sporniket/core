@@ -29,23 +29,23 @@ package com.sporniket.libre.lang;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface ContainerFeederInterface
 {
-	int DEFAULT_PROFIL = 0;
+    int DEFAULT_PROFIL = 0;
 
-	/**
-	 * Add some component to the given container.
-	 * 
-	 * @param container
-	 *            The container to fill.
-	 * @param profil
-	 *            an optional value to fill the container differently than usual (usual = 0).
-	 * @throws Exception
-	 *             if something bad occurs.
-	 */
-	void feedContainer(Object container, int profil) throws Exception;
+    /**
+     * Add some component to the given container.
+     * 
+     * @param container
+     *            The container to fill.
+     * @param profil
+     *            an optional value to fill the container differently than usual (usual = 0).
+     * @throws Exception
+     *             if something bad occurs.
+     */
+    void feedContainer(Object container, int profil) throws Exception;
 }

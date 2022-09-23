@@ -36,18 +36,18 @@ import java.beans.PropertyChangeListener;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface Monitorable
 {
-	void addPropertyChangeListener(PropertyChangeListener listener);
+    void addPropertyChangeListener(PropertyChangeListener listener);
 
-	void addPropertyChangeListener(String propertyName, PropertyChangeListener listener);
+    void addPropertyChangeListener(String propertyName, PropertyChangeListener listener);
 
-	void removePropertyChangeListener(PropertyChangeListener listener);
+    void removePropertyChangeListener(PropertyChangeListener listener);
 
-	void removePropertyChangeListener(String propertyName, PropertyChangeListener listener);
+    void removePropertyChangeListener(String propertyName, PropertyChangeListener listener);
 
 }

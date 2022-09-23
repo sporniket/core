@@ -27,36 +27,36 @@ package com.sporniket.libre.lang;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class FactoryNotReadyException extends Exception
 {
 
-	/**
-	 * Serialization ID
-	 */
-	private static final long serialVersionUID = -2902433785739078173L;
+    /**
+     * Serialization ID
+     */
+    private static final long serialVersionUID = -2902433785739078173L;
 
-	public FactoryNotReadyException()
-	{
-		super();
-	}
+    public FactoryNotReadyException()
+    {
+        super();
+    }
 
-	public FactoryNotReadyException(String message, Throwable cause)
-	{
-		super(message, cause);
-	}
+    public FactoryNotReadyException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
 
-	public FactoryNotReadyException(String message)
-	{
-		super(message);
-	}
+    public FactoryNotReadyException(String message)
+    {
+        super(message);
+    }
 
-	public FactoryNotReadyException(Throwable cause)
-	{
-		super(cause);
-	}
+    public FactoryNotReadyException(Throwable cause)
+    {
+        super(cause);
+    }
 
 }

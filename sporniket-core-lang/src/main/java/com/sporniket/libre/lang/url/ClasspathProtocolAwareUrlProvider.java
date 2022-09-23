@@ -34,35 +34,35 @@ import java.net.URL;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 16.08.02
  */
 public class ClasspathProtocolAwareUrlProvider implements UrlProvider
 {
-	private static final String PROTOCOL = "classpath:";
+    private static final String PROTOCOL = "classpath:";
 
-	@Override
-	public URL getUrl(String path) throws UrlProviderException
-	{
-		URL _result;
-		if (path.startsWith(PROTOCOL))
-		{
-			String _path = path.substring(PROTOCOL.length());
-			_result = getClass().getClassLoader().getResource(_path);
-		}
-		else
-		{
-			try
-			{
-				_result = new URL(path);
-			}
-			catch (MalformedURLException _exception)
-			{
-				throw new UrlProviderException(_exception);
-			}
-		}
+    @Override
+    public URL getUrl(String path) throws UrlProviderException
+    {
+        URL _result;
+        if (path.startsWith(PROTOCOL))
+        {
+            String _path = path.substring(PROTOCOL.length());
+            _result = getClass().getClassLoader().getResource(_path);
+        }
+        else
+        {
+            try
+            {
+                _result = new URL(path);
+            }
+            catch (MalformedURLException _exception)
+            {
+                throw new UrlProviderException(_exception);
+            }
+        }
 
-		return _result;
-	}
+        return _result;
+    }
 }

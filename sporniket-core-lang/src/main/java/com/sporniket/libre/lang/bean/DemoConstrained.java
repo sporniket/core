@@ -31,59 +31,59 @@ import java.beans.VetoableChangeSupport;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class DemoConstrained implements Monitorable, Constrainable
 {
 
-	private DemoMonitored __myEncapsuledObject = new DemoMonitored();
+    private DemoMonitored __myEncapsuledObject = new DemoMonitored();
 
-	private VetoableChangeSupport __myVcs = new VetoableChangeSupport(this);
+    private VetoableChangeSupport __myVcs = new VetoableChangeSupport(this);
 
-	public DemoMonitored __getEncapsuledObject()
-	{
-		return __myEncapsuledObject;
-	}
+    public DemoMonitored __getEncapsuledObject()
+    {
+        return __myEncapsuledObject;
+    }
 
-	public void addPropertyChangeListener(PropertyChangeListener listener)
-	{
-		__myEncapsuledObject.addPropertyChangeListener(listener);
-	}
+    public void addPropertyChangeListener(PropertyChangeListener listener)
+    {
+        __myEncapsuledObject.addPropertyChangeListener(listener);
+    }
 
-	public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener)
-	{
-		__myEncapsuledObject.addPropertyChangeListener(propertyName, listener);
-	}
+    public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener)
+    {
+        __myEncapsuledObject.addPropertyChangeListener(propertyName, listener);
+    }
 
-	public void addVetoableChangeListener(String propertyName, VetoableChangeListener listener)
-	{
-		__myVcs.addVetoableChangeListener(propertyName, listener);
-	}
+    public void addVetoableChangeListener(String propertyName, VetoableChangeListener listener)
+    {
+        __myVcs.addVetoableChangeListener(propertyName, listener);
+    }
 
-	public void addVetoableChangeListener(VetoableChangeListener listener)
-	{
-		__myVcs.addVetoableChangeListener(listener);
-	}
+    public void addVetoableChangeListener(VetoableChangeListener listener)
+    {
+        __myVcs.addVetoableChangeListener(listener);
+    }
 
-	public void removePropertyChangeListener(PropertyChangeListener listener)
-	{
-		__myEncapsuledObject.removePropertyChangeListener(listener);
-	}
+    public void removePropertyChangeListener(PropertyChangeListener listener)
+    {
+        __myEncapsuledObject.removePropertyChangeListener(listener);
+    }
 
-	public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener)
-	{
-		__myEncapsuledObject.removePropertyChangeListener(propertyName, listener);
-	}
+    public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener)
+    {
+        __myEncapsuledObject.removePropertyChangeListener(propertyName, listener);
+    }
 
-	public void removeVetoableChangeListener(String propertyName, VetoableChangeListener listener)
-	{
-		__myVcs.addVetoableChangeListener(propertyName, listener);
-	}
+    public void removeVetoableChangeListener(String propertyName, VetoableChangeListener listener)
+    {
+        __myVcs.addVetoableChangeListener(propertyName, listener);
+    }
 
-	public void removeVetoableChangeListener(VetoableChangeListener listener)
-	{
-		__myVcs.addVetoableChangeListener(listener);
-	}
+    public void removeVetoableChangeListener(VetoableChangeListener listener)
+    {
+        __myVcs.addVetoableChangeListener(listener);
+    }
 }

@@ -36,60 +36,60 @@ import java.io.StringWriter;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class ExceptionTools
 {
-	/**
-	 * Return a string containing the result of <code>printStackTrace()</code>.
-	 * <p>
-	 * This method is not limited to exceptions but is applicable on any throwable objects.
-	 * </p>
-	 * 
-	 * @param t
-	 *            the throwable to trace.
-	 * @return the String containing the trace
-	 */
-	public static String getStackTrace(final Throwable t)
-	{
-		StringWriter _writer = new StringWriter();
-		PrintWriter _print = new PrintWriter(_writer);
-		t.printStackTrace(_print);
-		return _writer.toString();
-	}
+    /**
+     * Return a string containing the result of <code>printStackTrace()</code>.
+     * <p>
+     * This method is not limited to exceptions but is applicable on any throwable objects.
+     * </p>
+     * 
+     * @param t
+     *            the throwable to trace.
+     * @return the String containing the trace
+     */
+    public static String getStackTrace(final Throwable t)
+    {
+        StringWriter _writer = new StringWriter();
+        PrintWriter _print = new PrintWriter(_writer);
+        t.printStackTrace(_print);
+        return _writer.toString();
+    }
 
-	/**
-	 * Return a string containing the result of <code>printStackTrace()</code>.
-	 * <p>
-	 * This method is not limited to exceptions but is applicable on any throwable objects.
-	 * </p>
-	 * 
-	 * @param t
-	 *            the throwable to trace.
-	 * @param limit
-	 *            limit the number of trace to display. 0 means all the stack.
-	 * @return the String containing the trace
-	 */
-	public static String getStackTrace(final Throwable t, final int limit)
-	{
-		if (0 >= limit)
-		{
-			return getStackTrace(t);
-		}
-		StringBuffer _resultBuffer = new StringBuffer();
-		_resultBuffer.append(t.getClass().getName()).append(" : ").append(t.getLocalizedMessage());
-		StackTraceElement[] _stackTrace = t.getStackTrace();
-		for (int _index = 0; _index < _stackTrace.length && _index < limit; _index++)
-		{
-			StackTraceElement _traceElement = _stackTrace[_index];
-			_resultBuffer.append("\n\tat ").append(_traceElement);
-		}
-		if (_stackTrace.length > limit)
-		{
-			_resultBuffer.append("\n\t...");
-		}
-		return _resultBuffer.toString();
-	}
+    /**
+     * Return a string containing the result of <code>printStackTrace()</code>.
+     * <p>
+     * This method is not limited to exceptions but is applicable on any throwable objects.
+     * </p>
+     * 
+     * @param t
+     *            the throwable to trace.
+     * @param limit
+     *            limit the number of trace to display. 0 means all the stack.
+     * @return the String containing the trace
+     */
+    public static String getStackTrace(final Throwable t, final int limit)
+    {
+        if (0 >= limit)
+        {
+            return getStackTrace(t);
+        }
+        StringBuffer _resultBuffer = new StringBuffer();
+        _resultBuffer.append(t.getClass().getName()).append(" : ").append(t.getLocalizedMessage());
+        StackTraceElement[] _stackTrace = t.getStackTrace();
+        for (int _index = 0; _index < _stackTrace.length && _index < limit; _index++)
+        {
+            StackTraceElement _traceElement = _stackTrace[_index];
+            _resultBuffer.append("\n\tat ").append(_traceElement);
+        }
+        if (_stackTrace.length > limit)
+        {
+            _resultBuffer.append("\n\t...");
+        }
+        return _resultBuffer.toString();
+    }
 }

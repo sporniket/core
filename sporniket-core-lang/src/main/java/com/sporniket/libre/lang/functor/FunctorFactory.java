@@ -31,155 +31,161 @@ import java.util.Map;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class FunctorFactory
 {
-	/**
-	 * Create a functor without parameter, wrapping a call to another method.
-	 * 
-	 * @param instanceClass
-	 *            class containing the method.
-	 * @param methodName
-	 *            Name of the method, it must exist.
-	 * @return a Functor that call the specified method on the specified instance.
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	public static Functor instanciateFunctorAsAClassMethodWrapper(Class<?> instanceClass, String methodName) throws Exception
-	{
-		if (null == instanceClass)
-		{
-			throw new NullPointerException("instanceClass is null");
-		}
-		Method _method = instanceClass.getMethod(methodName, (Class<?>[]) null);
-		return instanciateFunctorAsAMethodWrapper(null, _method);
-	}
+    /**
+     * Create a functor without parameter, wrapping a call to another method.
+     * 
+     * @param instanceClass
+     *            class containing the method.
+     * @param methodName
+     *            Name of the method, it must exist.
+     * @return a Functor that call the specified method on the specified instance.
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    public static Functor instanciateFunctorAsAClassMethodWrapper(Class<?> instanceClass, String methodName) throws Exception
+    {
+        if (null == instanceClass)
+        {
+            throw new NullPointerException("instanceClass is null");
+        }
+        Method _method = instanceClass.getMethod(methodName, (Class<?>[]) null);
+        return instanciateFunctorAsAMethodWrapper(null, _method);
+    }
 
-	/**
-	 * Create a functor without parameter, wrapping a call to another method.
-	 * 
-	 * @param instance
-	 *            null is allowed, for wrapping static method calls
-	 * @param method
-	 *            the method to call.
-	 * @return a Functor that call the specified method on the specified instance.
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	public static Functor instanciateFunctorAsAMethodWrapper(final Object instance, final Method method) throws Exception
-	{
-		if (null == method)
-		{
-			throw new NullPointerException("Method is null");
-		}
-		if (method.getParameterTypes().length > 0)
-		{
-			throw new InvalidParameterException("Method should not accept any parameter");
-		}
-		return new Functor()
-		{
-			public Object process() throws Exception
-			{
-				return method.invoke(instance, (Object[]) null);
-			}
-		};
-	}
+    /**
+     * Create a functor without parameter, wrapping a call to another method.
+     * 
+     * @param instance
+     *            null is allowed, for wrapping static method calls
+     * @param method
+     *            the method to call.
+     * @return a Functor that call the specified method on the specified instance.
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    public static Functor instanciateFunctorAsAMethodWrapper(final Object instance, final Method method) throws Exception
+    {
+        if (null == method)
+        {
+            throw new NullPointerException("Method is null");
+        }
+        if (method.getParameterTypes().length > 0)
+        {
+            throw new InvalidParameterException("Method should not accept any parameter");
+        }
+        return new Functor()
+        {
+            public Object process() throws Exception
+            {
+                return method.invoke(instance, (Object[]) null);
+            }
+        };
+    }
 
-	/**
-	 * Create a functor without parameter, wrapping a call to another method.
-	 * 
-	 * @param instance
-	 *            instance to call the method upon. Should not be null.
-	 * @param methodName
-	 *            Name of the method, it must exist.
-	 * @return a Functor that call the specified method on the specified instance.
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	public static Functor instanciateFunctorAsAnInstanceMethodWrapper(final Object instance, String methodName) throws Exception
-	{
-		if (null == instance)
-		{
-			throw new NullPointerException("Instance is null");
-		}
-		Method _method = instance.getClass().getMethod(methodName, (Class<?>[]) null);
-		return instanciateFunctorAsAMethodWrapper(instance, _method);
-	}
+    /**
+     * Create a functor without parameter, wrapping a call to another method.
+     * 
+     * @param instance
+     *            instance to call the method upon. Should not be null.
+     * @param methodName
+     *            Name of the method, it must exist.
+     * @return a Functor that call the specified method on the specified instance.
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    public static Functor instanciateFunctorAsAnInstanceMethodWrapper(final Object instance, String methodName) throws Exception
+    {
+        if (null == instance)
+        {
+            throw new NullPointerException("Instance is null");
+        }
+        Method _method = instance.getClass().getMethod(methodName, (Class<?>[]) null);
+        return instanciateFunctorAsAMethodWrapper(instance, _method);
+    }
 
-	/**
-	 * Create a functor with parameter, wrapping a call to another method.
-	 * 
-	 * @param instanceClass
-	 *            class containing the method.
-	 * @param methodName
-	 *            Name of the method, it must exist.
-	 * @return a Functor with parameter that call the specified method on the specified instance.
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	public static FunctorWithParameter instanciateFunctorWithParameterAsAClassMethodWrapper(Class<?> instanceClass,
-			String methodName) throws Exception
-	{
-		if (null == instanceClass)
-		{
-			throw new NullPointerException("instanceClass is null");
-		}
-		Method _method = instanceClass.getMethod(methodName, (Class<?>[]) null);
-		return instanciateFunctorWithParameterAsAMethodWrapper(null, _method);
-	}
+    /**
+     * Create a functor with parameter, wrapping a call to another method.
+     * 
+     * @param instanceClass
+     *            class containing the method.
+     * @param methodName
+     *            Name of the method, it must exist.
+     * @return a Functor with parameter that call the specified method on the specified instance.
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    public static FunctorWithParameter instanciateFunctorWithParameterAsAClassMethodWrapper(Class<?> instanceClass,
+            String methodName) throws Exception
+    {
+        if (null == instanceClass)
+        {
+            throw new NullPointerException("instanceClass is null");
+        }
+        Method _method = instanceClass.getMethod(methodName, (Class<?>[]) null);
+        return instanciateFunctorWithParameterAsAMethodWrapper(null, _method);
+    }
 
-	/**
-	 * Create a functor with parameter, wrapping a call to another method.
-	 * 
-	 * @param instance
-	 *            null is allowed, for wrapping static method calls
-	 * @param method
-	 *            the method to call.
-	 * @return a Functor with parameter that call the specified method on the specified instance.
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	public static FunctorWithParameter instanciateFunctorWithParameterAsAMethodWrapper(final Object instance, final Method method)
-			throws Exception
-	{
-		if (null == method)
-		{
-			throw new NullPointerException("Method is null");
-		}
-		if (method.getParameterTypes().length != 1 || !Map.class.equals(method.getParameterTypes()[0]))
-		{
-			throw new InvalidParameterException("Method must accept a Map");
-		}
+    /**
+     * Create a functor with parameter, wrapping a call to another method.
+     * 
+     * @param instance
+     *            null is allowed, for wrapping static method calls
+     * @param method
+     *            the method to call.
+     * @return a Functor with parameter that call the specified method on the specified instance.
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    public static FunctorWithParameter instanciateFunctorWithParameterAsAMethodWrapper(final Object instance, final Method method)
+            throws Exception
+    {
+        if (null == method)
+        {
+            throw new NullPointerException("Method is null");
+        }
+        if (method.getParameterTypes().length != 1 || !Map.class.equals(method.getParameterTypes()[0]))
+        {
+            throw new InvalidParameterException("Method must accept a Map");
+        }
 
-		return new FunctorWithParameter()
-		{
-			public Object process(Map<String, Object> parameters) throws Exception
-			{
-				Object[] _paramList =
-				{
-					parameters
-				};
-				return method.invoke(instance, _paramList);
-			}
-		};
-	}
+        return new FunctorWithParameter()
+        {
+            public Object process(Map<String, Object> parameters) throws Exception
+            {
+                Object[] _paramList =
+                {
+                        parameters
+                };
+                return method.invoke(instance, _paramList);
+            }
+        };
+    }
 
-	/**
-	 * Create a functor with parameter, wrapping a call to another method.
-	 * 
-	 * @param instance
-	 *            instance to call the method upon. Should not be null.
-	 * @param methodName
-	 *            Name of the method, it must exist.
-	 * @return a Functor with parameter that call the specified method on the specified instance.
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	public static FunctorWithParameter instanciateFunctorWithParameterAsAnInstanceMethodWrapper(final Object instance,
-			String methodName) throws Exception
-	{
-		if (null == instance)
-		{
-			throw new NullPointerException("Instance is null");
-		}
-		Method _method = instance.getClass().getMethod(methodName, (Class<?>[]) null);
-		return instanciateFunctorWithParameterAsAMethodWrapper(instance, _method);
-	}
+    /**
+     * Create a functor with parameter, wrapping a call to another method.
+     * 
+     * @param instance
+     *            instance to call the method upon. Should not be null.
+     * @param methodName
+     *            Name of the method, it must exist.
+     * @return a Functor with parameter that call the specified method on the specified instance.
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    public static FunctorWithParameter instanciateFunctorWithParameterAsAnInstanceMethodWrapper(final Object instance,
+            String methodName) throws Exception
+    {
+        if (null == instance)
+        {
+            throw new NullPointerException("Instance is null");
+        }
+        Method _method = instance.getClass().getMethod(methodName, (Class<?>[]) null);
+        return instanciateFunctorWithParameterAsAMethodWrapper(instance, _method);
+    }
 }

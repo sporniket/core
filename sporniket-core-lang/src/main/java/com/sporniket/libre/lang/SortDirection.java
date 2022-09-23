@@ -30,18 +30,18 @@ package com.sporniket.libre.lang;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public enum SortDirection
 {
-	/**
-	 * Ascending order : A to Z, oldest to newest, etc...
-	 */
-	ASCENDING,
-	/**
-	 * Ascending order : Z to A, newest to oldest, etc...
-	 */
-	DESCENDING;
+    /**
+     * Ascending order : A to Z, oldest to newest, etc...
+     */
+    ASCENDING,
+    /**
+     * Ascending order : Z to A, newest to oldest, etc...
+     */
+    DESCENDING;
 }

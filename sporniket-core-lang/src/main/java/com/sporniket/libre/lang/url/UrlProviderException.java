@@ -30,36 +30,36 @@ package com.sporniket.libre.lang.url;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class UrlProviderException extends Exception
 {
 
-	/**
-	 * Serialization ID
-	 */
-	private static final long serialVersionUID = 1487463211181628920L;
+    /**
+     * Serialization ID
+     */
+    private static final long serialVersionUID = 1487463211181628920L;
 
-	public UrlProviderException()
-	{
-		super();
-	}
+    public UrlProviderException()
+    {
+        super();
+    }
 
-	public UrlProviderException(String message)
-	{
-		super(message);
-	}
+    public UrlProviderException(String message)
+    {
+        super(message);
+    }
 
-	public UrlProviderException(Throwable cause)
-	{
-		super(cause);
-	}
+    public UrlProviderException(Throwable cause)
+    {
+        super(cause);
+    }
 
-	public UrlProviderException(String message, Throwable cause)
-	{
-		super(message, cause);
-	}
+    public UrlProviderException(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
 
 }

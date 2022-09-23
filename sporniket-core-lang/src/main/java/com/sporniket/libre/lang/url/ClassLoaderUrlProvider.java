@@ -29,62 +29,65 @@ import java.net.URL;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class ClassLoaderUrlProvider implements UrlProvider
 {
-	private ClassLoader myClassLoader = null;
+    private ClassLoader myClassLoader = null;
 
-	/**
-	 * @param classInstance class used to get the class loader to use.
-	 */
-	public ClassLoaderUrlProvider(Class<?> classInstance)
-	{
-		myClassLoader = classInstance.getClassLoader();
-	}
+    /**
+     * @param classInstance
+     *            class used to get the class loader to use.
+     */
+    public ClassLoaderUrlProvider(Class<?> classInstance)
+    {
+        myClassLoader = classInstance.getClassLoader();
+    }
 
-	/**
-	 * @param classLoader class loader to use.
-	 */
-	public ClassLoaderUrlProvider(ClassLoader classLoader)
-	{
-		myClassLoader = classLoader;
-	}
+    /**
+     * @param classLoader
+     *            class loader to use.
+     */
+    public ClassLoaderUrlProvider(ClassLoader classLoader)
+    {
+        myClassLoader = classLoader;
+    }
 
-	/**
-	 * @param instance instance of an object to get the class loader to use.
-	 */
-	public ClassLoaderUrlProvider(Object instance)
-	{
-		myClassLoader = instance.getClass().getClassLoader();
-	}
+    /**
+     * @param instance
+     *            instance of an object to get the class loader to use.
+     */
+    public ClassLoaderUrlProvider(Object instance)
+    {
+        myClassLoader = instance.getClass().getClassLoader();
+    }
 
-	/**
-	 * Read the classLoader property.
-	 * 
-	 * @return the classLoader
-	 */
-	public ClassLoader getClassLoader()
-	{
-		return myClassLoader;
-	}
+    /**
+     * Read the classLoader property.
+     * 
+     * @return the classLoader
+     */
+    public ClassLoader getClassLoader()
+    {
+        return myClassLoader;
+    }
 
-	public URL getUrl(String path) throws UrlProviderException
-	{
-		return myClassLoader.getResource(path);
-	}
+    public URL getUrl(String path) throws UrlProviderException
+    {
+        return myClassLoader.getResource(path);
+    }
 
-	/**
-	 * Write the classLoader property.
-	 * 
-	 * @param classLoader
-	 *            the classLoader to set
-	 */
-	public void setClassLoader(ClassLoader classLoader)
-	{
-		myClassLoader = classLoader;
-	}
+    /**
+     * Write the classLoader property.
+     * 
+     * @param classLoader
+     *            the classLoader to set
+     */
+    public void setClassLoader(ClassLoader classLoader)
+    {
+        myClassLoader = classLoader;
+    }
 
 }

@@ -37,104 +37,104 @@ import java.util.List;
  */
 public class LayeredObject
 {
-	private int myCounter = 0;
+    private int myCounter = 0;
 
-	private List<Layer> myLayers = new ArrayList<Layer>();
+    private List<Layer> myLayers = new ArrayList<Layer>();
 
-	private boolean myFlagIsAllowedLayerReordering = true;
+    private boolean myFlagIsAllowedLayerReordering = true;
 
-	private int mySelectedLayer;
+    private int mySelectedLayer;
 
-	private boolean mySingleLayerMode = false;
+    private boolean mySingleLayerMode = false;
 
-	/**
-	 * Get a copy of the list of layers.
-	 * 
-	 * @return the list of layers.
-	 */
-	public List<Layer> getLayers()
-	{
-		return new ArrayList<Layer>(myLayers);
-	}
+    /**
+     * Get a copy of the list of layers.
+     * 
+     * @return the list of layers.
+     */
+    public List<Layer> getLayers()
+    {
+        return new ArrayList<Layer>(myLayers);
+    }
 
-	public Layer createNewLayer(Object object)
-	{
-		Layer _result = new Layer();
-		_result.setRank(myCounter);
-		myCounter++;
-		_result.setObject(object);
-		myLayers.add(_result);
+    public Layer createNewLayer(Object object)
+    {
+        Layer _result = new Layer();
+        _result.setRank(myCounter);
+        myCounter++;
+        _result.setObject(object);
+        myLayers.add(_result);
 
-		return _result;
-	}
+        return _result;
+    }
 
-	/**
-	 * Iterate over Layers to change the rank, so that there is no gap.
-	 */
-	public void fixRank()
-	{
-		int _fixedRank = 0;
-		for (Layer _layer : myLayers)
-		{
-			_layer.setRank(_fixedRank);
-			++_fixedRank;
-		}
-	}
+    /**
+     * Iterate over Layers to change the rank, so that there is no gap.
+     */
+    public void fixRank()
+    {
+        int _fixedRank = 0;
+        for (Layer _layer : myLayers)
+        {
+            _layer.setRank(_fixedRank);
+            ++_fixedRank;
+        }
+    }
 
-	public void goDown(int index)
-	{
-		if (isAllowedLayerReordering() && index >= 0 && index < myLayers.size())
-		{
-			Layer _layerSource = myLayers.get(index);
-			Layer _layerDest = myLayers.get(index - 1);
-			int _saveRank = _layerSource.getRank().intValue();
-			_layerSource.setRank(_layerDest.getRank());
-			_layerDest.setRank(_saveRank);
-			Collections.sort(myLayers);
-		}
-	}
+    public void goDown(int index)
+    {
+        if (isAllowedLayerReordering() && index >= 0 && index < myLayers.size())
+        {
+            Layer _layerSource = myLayers.get(index);
+            Layer _layerDest = myLayers.get(index - 1);
+            int _saveRank = _layerSource.getRank().intValue();
+            _layerSource.setRank(_layerDest.getRank());
+            _layerDest.setRank(_saveRank);
+            Collections.sort(myLayers);
+        }
+    }
 
-	public void goUp(int index)
-	{
-		goDown(index + 1);
-	}
+    public void goUp(int index)
+    {
+        goDown(index + 1);
+    }
 
-	public boolean isAllowedLayerReordering()
-	{
-		return myFlagIsAllowedLayerReordering;
-	}
+    public boolean isAllowedLayerReordering()
+    {
+        return myFlagIsAllowedLayerReordering;
+    }
 
-	public void setAllowedLayerReordering(boolean isAllowedLayerReordering)
-	{
-		myFlagIsAllowedLayerReordering = isAllowedLayerReordering;
-	}
+    public void setAllowedLayerReordering(boolean isAllowedLayerReordering)
+    {
+        myFlagIsAllowedLayerReordering = isAllowedLayerReordering;
+    }
 
-	public int getSelectedLayer()
-	{
-		return mySelectedLayer;
-	}
+    public int getSelectedLayer()
+    {
+        return mySelectedLayer;
+    }
 
-	public void setSelectedLayer(int selectedLayer)
-	{
-		mySelectedLayer = selectedLayer;
-		if (0 > mySelectedLayer)
-		{
-			mySelectedLayer = 0;
-		}
-		if (!myLayers.isEmpty() && mySelectedLayer >= myLayers.size())
-		{
-			mySelectedLayer = myLayers.size() - 1;
-		}
-	}
+    public void setSelectedLayer(int selectedLayer)
+    {
+        mySelectedLayer = selectedLayer;
+        if (0 > mySelectedLayer)
+        {
+            mySelectedLayer = 0;
+        }
+        if (!myLayers.isEmpty() && mySelectedLayer >= myLayers.size())
+        {
+            mySelectedLayer = myLayers.size() - 1;
+        }
+    }
 
-	public boolean isSingleLayerMode()
-	{
-		return mySingleLayerMode;
-	}
+    public boolean isSingleLayerMode()
+    {
+        return mySingleLayerMode;
+    }
 
-	public void setSingleLayerMode(boolean singleLayerMode)
-	{
-		mySingleLayerMode = singleLayerMode;
-	}
+    public void setSingleLayerMode(boolean singleLayerMode)
+    {
+        mySingleLayerMode = singleLayerMode;
+    }
 
 }

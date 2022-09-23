@@ -30,40 +30,40 @@ import java.util.Locale;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class SimpleMessageProvider implements MessageProviderInterface
 {
 
-	public String getMessage(String key)
-	{
-		return key;
-	}
+    public String getMessage(String key)
+    {
+        return key;
+    }
 
-	public String getMessage(String key, Locale locale)
-	{
-		return getMessage(key);
-	}
+    public String getMessage(String key, Locale locale)
+    {
+        return getMessage(key);
+    }
 
-	public String getMessage(String key, Locale locale, Object[] parameters)
-	{
-		return getMessage(key, parameters);
-	}
+    public String getMessage(String key, Locale locale, Object[] parameters)
+    {
+        return getMessage(key, parameters);
+    }
 
-	public String getMessage(String key, Object[] parameters)
-	{
-		if (null == parameters)
-		{
-			return getMessage(key);
-		}
-		if (null != key)
-		{
-			MessageFormat _messageFormat = new MessageFormat(key);
-			return _messageFormat.format(parameters);
-		}
-		return null;
-	}
+    public String getMessage(String key, Object[] parameters)
+    {
+        if (null == parameters)
+        {
+            return getMessage(key);
+        }
+        if (null != key)
+        {
+            MessageFormat _messageFormat = new MessageFormat(key);
+            return _messageFormat.format(parameters);
+        }
+        return null;
+    }
 
 }

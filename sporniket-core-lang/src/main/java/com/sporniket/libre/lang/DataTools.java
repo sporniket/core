@@ -30,151 +30,155 @@ import javax.xml.bind.DatatypeConverter;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 15.02.00
  */
 public class DataTools
 {
 
-	/**
-	 * Verify that each byte of a buffer match the corresponding byte of a given sequence, starting from an offset.
-	 * 
-	 * @param sequence
-	 *            the sequence of bytes to match.
-	 * @param buffer
-	 *            the buffer to test.
-	 * @param offset
-	 *            the offset.
-	 * @return <code>true</code> if the first bytes of buffer starting from offset are the same as the provided sequence.
-	 */
-	public static final boolean matchSequence(byte[] sequence, byte[] buffer, int offset)
-	{
-		boolean _result = (sequence.length < (buffer.length - offset));
-		if (_result)
-		{
-			for (int _index = 0; _index < sequence.length; _index++)
-			{
-				if (buffer[_index] != sequence[_index])
-				{
-					_result = false;
-					break;
-				}
-			}
-		}
-		return _result;
-	}
+    /**
+     * Verify that each byte of a buffer match the corresponding byte of a given sequence, starting from an offset.
+     * 
+     * @param sequence
+     *            the sequence of bytes to match.
+     * @param buffer
+     *            the buffer to test.
+     * @param offset
+     *            the offset.
+     * @return <code>true</code> if the first bytes of buffer starting from offset are the same as the provided sequence.
+     */
+    public static final boolean matchSequence(byte[] sequence, byte[] buffer, int offset)
+    {
+        boolean _result = (sequence.length < (buffer.length - offset));
+        if (_result)
+        {
+            for (int _index = 0; _index < sequence.length; _index++)
+            {
+                if (buffer[_index] != sequence[_index])
+                {
+                    _result = false;
+                    break;
+                }
+            }
+        }
+        return _result;
+    }
 
-	/**
-	 * Verify that a buffer start by a sequence of bytes.
-	 * 
-	 * @param sequence
-	 *            the sequence to match.
-	 * @param buffer
-	 *            the buffer to test.
-	 * @return <code>true</code> if the first bytes of buffer the same as the provided sequence.
-	 */
-	public static final boolean matchSequence(byte[] sequence, byte[] buffer)
-	{
-		return matchSequence(sequence, buffer, 0);
-	}
+    /**
+     * Verify that a buffer start by a sequence of bytes.
+     * 
+     * @param sequence
+     *            the sequence to match.
+     * @param buffer
+     *            the buffer to test.
+     * @return <code>true</code> if the first bytes of buffer the same as the provided sequence.
+     */
+    public static final boolean matchSequence(byte[] sequence, byte[] buffer)
+    {
+        return matchSequence(sequence, buffer, 0);
+    }
 
-	/**
-	 * Convert a signed int value into the corresponding unsigned int.
-	 * 
-	 * @param signedValue
-	 *            the signed value to convert.
-	 * @return the converted unsigned value.
-	 */
-	public static long getUnsignedIntValue(int signedValue)
-	{
-		return signedValue & 0xffffffffL;
-	}
+    /**
+     * Convert a signed int value into the corresponding unsigned int.
+     * 
+     * @param signedValue
+     *            the signed value to convert.
+     * @return the converted unsigned value.
+     */
+    public static long getUnsignedIntValue(int signedValue)
+    {
+        return signedValue & 0xffffffffL;
+    }
 
-	/**
-	 * Convert a signed short value into the corresponding unsigned short.
-	 * 
-	 * @param signedValue
-	 *            the signed value to convert.
-	 * @return the converted unsigned value.
-	 */
-	public static int getUnsignedShortValue(short signedValue)
-	{
-		return signedValue & 0xffff;
-	}
+    /**
+     * Convert a signed short value into the corresponding unsigned short.
+     * 
+     * @param signedValue
+     *            the signed value to convert.
+     * @return the converted unsigned value.
+     */
+    public static int getUnsignedShortValue(short signedValue)
+    {
+        return signedValue & 0xffff;
+    }
 
-	/**
-	 * Convert a signed byte value into the corresponding unsigned byte.
-	 * 
-	 * @param signedValue
-	 *            the signed value to convert.
-	 * @return the converted unsigned value.
-	 */
-	public static int getUnsignedByteValue(byte signedValue)
-	{
-		return signedValue & 0xff;
-	}
+    /**
+     * Convert a signed byte value into the corresponding unsigned byte.
+     * 
+     * @param signedValue
+     *            the signed value to convert.
+     * @return the converted unsigned value.
+     */
+    public static int getUnsignedByteValue(byte signedValue)
+    {
+        return signedValue & 0xff;
+    }
 
-	/**
-	 * Convert a byte into a padded hexadecimal string.
-	 * 
-	 * @param value
-	 *            the value to convert.
-	 * @param buffer
-	 *            the buffer to append the result into.
-	 * @return the updated buffer.
-	 * @deprecated use <code>buffer.append(javax.xml.bind.DatatypeConverter.printHexBinary(new byte[] {value}).toLowerCase())</code>
-	 */
-	@Deprecated
-	public static StringBuffer appendByteAsPaddedHexString(byte value, StringBuffer buffer)
-	{
-		return buffer.append(printHexBinary(new byte[] {value}).toLowerCase());
-	}
+    /**
+     * Convert a byte into a padded hexadecimal string.
+     * 
+     * @param value
+     *            the value to convert.
+     * @param buffer
+     *            the buffer to append the result into.
+     * @return the updated buffer.
+     * @deprecated use <code>buffer.append(javax.xml.bind.DatatypeConverter.printHexBinary(new byte[] {value}).toLowerCase())</code>
+     */
+    @Deprecated
+    public static StringBuffer appendByteAsPaddedHexString(byte value, StringBuffer buffer)
+    {
+        return buffer.append(printHexBinary(new byte[]
+        {
+                value
+        }).toLowerCase());
+    }
 
-	/**
-	 * Convert a byte into a padded hexadecimal String.
-	 * 
-	 * @param value
-	 *            the value to convert.
-	 * @return a padded hexadecimal string.
-	 * @deprecated use <code>javax.xml.bind.DatatypeConverter.printHexBinary(new byte[] {value}).toLowerCase()</code>
-	 */
-	@Deprecated
-	public static String convertToPaddedHexString(byte value)
-	{
-		return printHexBinary(new byte[] {value}).toLowerCase();
-	}
+    /**
+     * Convert a byte into a padded hexadecimal String.
+     * 
+     * @param value
+     *            the value to convert.
+     * @return a padded hexadecimal string.
+     * @deprecated use <code>javax.xml.bind.DatatypeConverter.printHexBinary(new byte[] {value}).toLowerCase()</code>
+     */
+    @Deprecated
+    public static String convertToPaddedHexString(byte value)
+    {
+        return printHexBinary(new byte[]
+        {
+                value
+        }).toLowerCase();
+    }
 
+    /**
+     * Convert a sequence of bytes into a padded hexadecimal string.
+     * 
+     * @param values
+     *            the sequence to convert.
+     * @param buffer
+     *            the buffer to append the result into.
+     * @return the updated buffer.
+     * @deprecated use <code>buffer.append(javax.xml.bind.DatatypeConverter.printHexBinary(value).toLowerCase())</code>
+     */
+    @Deprecated
+    public static StringBuffer appendBytesAsPaddedHexString(byte[] values, StringBuffer buffer)
+    {
+        return buffer.append(printHexBinary(values).toLowerCase());
+    }
 
-	/**
-	 * Convert a sequence of bytes into a padded hexadecimal string.
-	 * 
-	 * @param values
-	 *            the sequence to convert.
-	 * @param buffer
-	 *            the buffer to append the result into.
-	 * @return the updated buffer.
-	 * @deprecated use <code>buffer.append(javax.xml.bind.DatatypeConverter.printHexBinary(value).toLowerCase())</code>
-	 */
-	@Deprecated
-	public static StringBuffer appendBytesAsPaddedHexString(byte[] values, StringBuffer buffer)
-	{
-		return buffer.append(printHexBinary(values).toLowerCase());
-	}
-
-
-	/**
-	 * Convert a byte into a padded hexadecimal String.
-	 * 
-	 * @param values
-	 *            the value to convert.
-	 * @return a padded hexadecimal string.
-	 * @deprecated use <code>javax.xml.bind.DatatypeConverter.printHexBinary(value).toLowerCase()</code>
-	 */
-	@Deprecated
-	public static String convertToPaddedHexString(byte[] values)
-	{
-		return printHexBinary(values).toLowerCase();
-	}
+    /**
+     * Convert a byte into a padded hexadecimal String.
+     * 
+     * @param values
+     *            the value to convert.
+     * @return a padded hexadecimal string.
+     * @deprecated use <code>javax.xml.bind.DatatypeConverter.printHexBinary(value).toLowerCase()</code>
+     */
+    @Deprecated
+    public static String convertToPaddedHexString(byte[] values)
+    {
+        return printHexBinary(values).toLowerCase();
+    }
 
 }

@@ -38,161 +38,169 @@ import com.sporniket.libre.lang.CollectionTools;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class ResourceBundleMessageProvider implements MessageProviderInterface
 {
-	/**
-	 * How to deal with missing messages.
-	 */
-	private BehaviourOnMissingMessage myBehaviourOnMissingMessage = BehaviourOnMissingMessage.DEFAULT_BEHAVIOUR;
+    /**
+     * How to deal with missing messages.
+     */
+    private BehaviourOnMissingMessage myBehaviourOnMissingMessage = BehaviourOnMissingMessage.DEFAULT_BEHAVIOUR;
 
-	private Map<Locale, ResourceBundle> myResourceBundleMap = new HashMap<Locale, ResourceBundle>();
-	
-	private String myResourceBundleName = null;
+    private Map<Locale, ResourceBundle> myResourceBundleMap = new HashMap<Locale, ResourceBundle>();
 
-	/**
-	 * Provider using the default behaviour for missing message.
-	 * @param resourceBundleName name of the resource bundle
-	 * @since 12.06.01
-	 */
-	public ResourceBundleMessageProvider(String resourceBundleName)
-	{
-		myResourceBundleName = resourceBundleName;
-	}
+    private String myResourceBundleName = null;
 
-	/**
-	 * @param resourceBundleName name of the resource bundle
-	 * @param behaviourOnMissingMessage behaviour to use when the resource message is missing.
-	 */
-	public ResourceBundleMessageProvider(String resourceBundleName, BehaviourOnMissingMessage behaviourOnMissingMessage)
-	{
-		this(resourceBundleName);
-		setBehaviourOnMissingMessage(behaviourOnMissingMessage);
-	}
+    /**
+     * Provider using the default behaviour for missing message.
+     * 
+     * @param resourceBundleName
+     *            name of the resource bundle
+     * @since 12.06.01
+     */
+    public ResourceBundleMessageProvider(String resourceBundleName)
+    {
+        myResourceBundleName = resourceBundleName;
+    }
 
-	/**
-	 * Get behaviourOnMissingMessage.
-	 * @return the behaviourOnMissingMessage
-	 */
-	public BehaviourOnMissingMessage getBehaviourOnMissingMessage()
-	{
-		return myBehaviourOnMissingMessage;
-	}
+    /**
+     * @param resourceBundleName
+     *            name of the resource bundle
+     * @param behaviourOnMissingMessage
+     *            behaviour to use when the resource message is missing.
+     */
+    public ResourceBundleMessageProvider(String resourceBundleName, BehaviourOnMissingMessage behaviourOnMissingMessage)
+    {
+        this(resourceBundleName);
+        setBehaviourOnMissingMessage(behaviourOnMissingMessage);
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String)
-	 */
-	public String getMessage(String key)
-	{
-		return getMessage(key, Locale.getDefault());
-	}
+    /**
+     * Get behaviourOnMissingMessage.
+     * 
+     * @return the behaviourOnMissingMessage
+     */
+    public BehaviourOnMissingMessage getBehaviourOnMissingMessage()
+    {
+        return myBehaviourOnMissingMessage;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale)
-	 */
-	public String getMessage(String key, Locale locale)
-	{
-		if (null == locale)
-		{
-			return getMessage(key);
-		}
-		return CollectionTools.getString(getResourceBundle(locale), key, getBehaviourOnMissingMessage().getValueOnMissingMessage(key));
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String)
+     */
+    public String getMessage(String key)
+    {
+        return getMessage(key, Locale.getDefault());
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale, java.lang.Object[])
-	 */
-	public String getMessage(String key, Locale locale, Object[] parameters)
-	{
-		if (null == locale)
-		{
-			return getMessage(key, parameters);
-		}
-		if (null == parameters)
-		{
-			return getMessage(key, locale);
-		}
-		if (null != key)
-		{
-			MessageFormat _messageFormat = new MessageFormat(getMessage(key, locale));
-			return _messageFormat.format(parameters);
-		}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale)
+     */
+    public String getMessage(String key, Locale locale)
+    {
+        if (null == locale)
+        {
+            return getMessage(key);
+        }
+        return CollectionTools.getString(getResourceBundle(locale), key,
+                getBehaviourOnMissingMessage().getValueOnMissingMessage(key));
+    }
 
-		return null;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale, java.lang.Object[])
+     */
+    public String getMessage(String key, Locale locale, Object[] parameters)
+    {
+        if (null == locale)
+        {
+            return getMessage(key, parameters);
+        }
+        if (null == parameters)
+        {
+            return getMessage(key, locale);
+        }
+        if (null != key)
+        {
+            MessageFormat _messageFormat = new MessageFormat(getMessage(key, locale));
+            return _messageFormat.format(parameters);
+        }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.lang.Object[])
-	 */
-	public String getMessage(String key, Object[] parameters)
-	{
-		return getMessage(key, Locale.getDefault(), parameters);
-	}
+        return null;
+    }
 
-	private ResourceBundle getResourceBundle(Locale locale)
-	{
-		if (myResourceBundleMap.containsKey(locale))
-		{
-			ResourceBundle _resourceBundle = myResourceBundleMap.get(locale);
-			return _resourceBundle;
-		}
-		else
-		{
-			try
-			{
-				ResourceBundle _resourceBundle = ResourceBundle.getBundle(getResourceBundleName(), locale);
-				myResourceBundleMap.put(locale, _resourceBundle);
-				return _resourceBundle;
-			}
-			catch (Exception _exception)
-			{
-				// silently fails...
-			}
-		}
-		return null;
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.lang.Object[])
+     */
+    public String getMessage(String key, Object[] parameters)
+    {
+        return getMessage(key, Locale.getDefault(), parameters);
+    }
 
-	}
+    private ResourceBundle getResourceBundle(Locale locale)
+    {
+        if (myResourceBundleMap.containsKey(locale))
+        {
+            ResourceBundle _resourceBundle = myResourceBundleMap.get(locale);
+            return _resourceBundle;
+        }
+        else
+        {
+            try
+            {
+                ResourceBundle _resourceBundle = ResourceBundle.getBundle(getResourceBundleName(), locale);
+                myResourceBundleMap.put(locale, _resourceBundle);
+                return _resourceBundle;
+            }
+            catch (Exception _exception)
+            {
+                // silently fails...
+            }
+        }
+        return null;
 
-	/**
-	 * Read the resourceBundleName property.
-	 * 
-	 * @return the resourceBundleName
-	 */
-	public String getResourceBundleName()
-	{
-		return myResourceBundleName;
-	}
+    }
 
-	/**
-	 * Change behaviourOnMissingMessage.
-	 * @param behaviourOnMissingMessage the new value of behaviourOnMissingMessage.
-	 */
-	public void setBehaviourOnMissingMessage(BehaviourOnMissingMessage behaviourOnMissingMessage)
-	{
-		myBehaviourOnMissingMessage = behaviourOnMissingMessage;
-	}
+    /**
+     * Read the resourceBundleName property.
+     * 
+     * @return the resourceBundleName
+     */
+    public String getResourceBundleName()
+    {
+        return myResourceBundleName;
+    }
 
-	/**
-	 * Write the resourceBundleName property.
-	 * 
-	 * @param resourceBundleName
-	 *            the resourceBundleName to set
-	 */
-	public void setResourceBundleName(String resourceBundleName)
-	{
-		myResourceBundleName = resourceBundleName;
-		myResourceBundleMap.clear();
-	}
+    /**
+     * Change behaviourOnMissingMessage.
+     * 
+     * @param behaviourOnMissingMessage
+     *            the new value of behaviourOnMissingMessage.
+     */
+    public void setBehaviourOnMissingMessage(BehaviourOnMissingMessage behaviourOnMissingMessage)
+    {
+        myBehaviourOnMissingMessage = behaviourOnMissingMessage;
+    }
+
+    /**
+     * Write the resourceBundleName property.
+     * 
+     * @param resourceBundleName
+     *            the resourceBundleName to set
+     */
+    public void setResourceBundleName(String resourceBundleName)
+    {
+        myResourceBundleName = resourceBundleName;
+        myResourceBundleMap.clear();
+    }
 
 }

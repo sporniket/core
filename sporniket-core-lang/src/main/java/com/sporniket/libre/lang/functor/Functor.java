@@ -30,17 +30,18 @@ package com.sporniket.libre.lang.functor;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface Functor
 {
-	/**
-	 * The operation to do.
-	 * 
-	 * @return a result (optional)
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	Object process() throws Exception;
+    /**
+     * The operation to do.
+     * 
+     * @return a result (optional)
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    Object process() throws Exception;
 }

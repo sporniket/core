@@ -30,67 +30,69 @@ import java.net.URL;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class BaseUrlUrlProvider implements UrlProvider
 {
 
-	private URL myBaseUrl = null;
+    private URL myBaseUrl = null;
 
-	/**
-	 * @param baseUrl base url.
-	 */
-	public BaseUrlUrlProvider(URL baseUrl)
-	{
-		myBaseUrl = baseUrl;
-	}
+    /**
+     * @param baseUrl
+     *            base url.
+     */
+    public BaseUrlUrlProvider(URL baseUrl)
+    {
+        myBaseUrl = baseUrl;
+    }
 
-	/**
-	 * Read the baseUrl property.
-	 * 
-	 * @return the baseUrl
-	 */
-	public URL getBaseUrl()
-	{
-		return myBaseUrl;
-	}
+    /**
+     * Read the baseUrl property.
+     * 
+     * @return the baseUrl
+     */
+    public URL getBaseUrl()
+    {
+        return myBaseUrl;
+    }
 
-	public URL getUrl(String path) throws UrlProviderException
-	{
-		try
-		{
-			return new URL(myBaseUrl, path);
-		}
-		catch (MalformedURLException _exception)
-		{
-			throw new UrlProviderException("Error getting url [" + path + "] from url base [" + myBaseUrl.toString() + "]",
-					_exception);
-		}
-	}
+    public URL getUrl(String path) throws UrlProviderException
+    {
+        try
+        {
+            return new URL(myBaseUrl, path);
+        }
+        catch (MalformedURLException _exception)
+        {
+            throw new UrlProviderException("Error getting url [" + path + "] from url base [" + myBaseUrl.toString() + "]",
+                    _exception);
+        }
+    }
 
-	/**
-	 * Write the baseUrl property.
-	 * 
-	 * @param baseUrl
-	 *            the baseUrl to set
-	 */
-	public void setBaseUrl(URL baseUrl)
-	{
-		myBaseUrl = baseUrl;
-	}
+    /**
+     * Write the baseUrl property.
+     * 
+     * @param baseUrl
+     *            the baseUrl to set
+     */
+    public void setBaseUrl(URL baseUrl)
+    {
+        myBaseUrl = baseUrl;
+    }
 
-	/**
-	 * Write the baseUrl property.
-	 * 
-	 * @param baseUrl
-	 *            the baseUrl to set
-	 * @throws MalformedURLException if the url is malformed.
-	 */
-	public void setBaseUrl(String baseUrl) throws MalformedURLException
-	{
-		myBaseUrl = new URL(baseUrl);
-	}
+    /**
+     * Write the baseUrl property.
+     * 
+     * @param baseUrl
+     *            the baseUrl to set
+     * @throws MalformedURLException
+     *             if the url is malformed.
+     */
+    public void setBaseUrl(String baseUrl) throws MalformedURLException
+    {
+        myBaseUrl = new URL(baseUrl);
+    }
 
 }

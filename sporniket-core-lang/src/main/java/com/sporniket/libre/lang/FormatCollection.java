@@ -27,21 +27,21 @@ package com.sporniket.libre.lang;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class FormatCollection
 {
-	public static final String SINGLE_DASH_SEPARATED_VALUES_FOR_TWO = "{0} - {1}";
+    public static final String SINGLE_DASH_SEPARATED_VALUES_FOR_TWO = "{0} - {1}";
 
-	public static final String SINGLE_DASH_SEPARATED_VALUES_FOR_THREE = "{0} - {1} - {2}";
+    public static final String SINGLE_DASH_SEPARATED_VALUES_FOR_THREE = "{0} - {1} - {2}";
 
-	public static final String SINGLE_DASH_SEPARATED_VALUES_FOR_FOUR = "{0} - {1} - {2} - {3}";
+    public static final String SINGLE_DASH_SEPARATED_VALUES_FOR_FOUR = "{0} - {1} - {2} - {3}";
 
-	public static final String DOUBLE_DASH_SEPARATED_VALUES_FOR_TWO = "{0} -- {1}";
+    public static final String DOUBLE_DASH_SEPARATED_VALUES_FOR_TWO = "{0} -- {1}";
 
-	public static final String DOUBLE_DASH_SEPARATED_VALUES_FOR_THREE = "{0} -- {1} -- {2}";
+    public static final String DOUBLE_DASH_SEPARATED_VALUES_FOR_THREE = "{0} -- {1} -- {2}";
 
-	public static final String DOUBLE_DASH_SEPARATED_VALUES_FOR_FOUR = "{0} -- {1} -- {2} -- {3}";
+    public static final String DOUBLE_DASH_SEPARATED_VALUES_FOR_FOUR = "{0} -- {1} -- {2} -- {3}";
 }

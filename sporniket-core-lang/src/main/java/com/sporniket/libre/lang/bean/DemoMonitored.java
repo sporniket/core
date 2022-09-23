@@ -30,39 +30,39 @@ import java.beans.PropertyChangeSupport;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class DemoMonitored implements Monitorable
 {
-	private Integer __myEncapsuledObject = 0;
+    private Integer __myEncapsuledObject = 0;
 
-	PropertyChangeSupport __myPcs = new PropertyChangeSupport(this);
+    PropertyChangeSupport __myPcs = new PropertyChangeSupport(this);
 
-	public Integer __getEncapsuledObject()
-	{
-		return __myEncapsuledObject;
-	}
+    public Integer __getEncapsuledObject()
+    {
+        return __myEncapsuledObject;
+    }
 
-	public void addPropertyChangeListener(PropertyChangeListener listener)
-	{
-		__myPcs.addPropertyChangeListener(listener);
-	}
+    public void addPropertyChangeListener(PropertyChangeListener listener)
+    {
+        __myPcs.addPropertyChangeListener(listener);
+    }
 
-	public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener)
-	{
-		__myPcs.addPropertyChangeListener(propertyName, listener);
-	}
+    public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener)
+    {
+        __myPcs.addPropertyChangeListener(propertyName, listener);
+    }
 
-	public void removePropertyChangeListener(PropertyChangeListener listener)
-	{
-		__myPcs.removePropertyChangeListener(listener);
-	}
+    public void removePropertyChangeListener(PropertyChangeListener listener)
+    {
+        __myPcs.removePropertyChangeListener(listener);
+    }
 
-	public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener)
-	{
-		__myPcs.removePropertyChangeListener(propertyName, listener);
-	}
+    public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener)
+    {
+        __myPcs.removePropertyChangeListener(propertyName, listener);
+    }
 
 }

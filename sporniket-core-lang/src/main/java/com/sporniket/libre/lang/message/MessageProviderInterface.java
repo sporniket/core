@@ -35,56 +35,56 @@ import java.util.Locale;
  */
 public interface MessageProviderInterface
 {
-	/**
-	 * Return a message.
-	 * 
-	 * Minimal version.
-	 * 
-	 * @param key
-	 *            the key for retrieving the message.
-	 * @return the message
-	 */
-	String getMessage(String key);
+    /**
+     * Return a message.
+     * 
+     * Minimal version.
+     * 
+     * @param key
+     *            the key for retrieving the message.
+     * @return the message
+     */
+    String getMessage(String key);
 
-	/**
-	 * Return a message.
-	 * 
-	 * light version : specify which locale.
-	 * 
-	 * @param key
-	 *            the key for retrieving the message.
-	 * @param locale
-	 *            the locale to get the appropriate translation of the message.
-	 * @return the message
-	 */
-	String getMessage(String key, Locale locale);
+    /**
+     * Return a message.
+     * 
+     * light version : specify which locale.
+     * 
+     * @param key
+     *            the key for retrieving the message.
+     * @param locale
+     *            the locale to get the appropriate translation of the message.
+     * @return the message
+     */
+    String getMessage(String key, Locale locale);
 
-	/**
-	 * Return a message.
-	 * 
-	 * Full version : specify which locale, and the parameter list.
-	 * 
-	 * @param key
-	 *            the key for retrieving the message.
-	 * @param locale
-	 *            the locale to get the appropriate translation of the message.
-	 * @param parameters
-	 *            optionnal parameter to embed in the message.
-	 * @return the message
-	 */
-	String getMessage(String key, Locale locale, Object[] parameters);
+    /**
+     * Return a message.
+     * 
+     * Full version : specify which locale, and the parameter list.
+     * 
+     * @param key
+     *            the key for retrieving the message.
+     * @param locale
+     *            the locale to get the appropriate translation of the message.
+     * @param parameters
+     *            optionnal parameter to embed in the message.
+     * @return the message
+     */
+    String getMessage(String key, Locale locale, Object[] parameters);
 
-	/**
-	 * Return a message.
-	 * 
-	 * light version : specify the parameter list.
-	 * 
-	 * @param key
-	 *            the key for retrieving the message.
-	 * @param parameters
-	 *            optionnal parameter to embed in the message.
-	 * @return the message
-	 */
-	String getMessage(String key, Object[] parameters);
+    /**
+     * Return a message.
+     * 
+     * light version : specify the parameter list.
+     * 
+     * @param key
+     *            the key for retrieving the message.
+     * @param parameters
+     *            optionnal parameter to embed in the message.
+     * @return the message
+     */
+    String getMessage(String key, Object[] parameters);
 
 }

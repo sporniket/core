@@ -27,83 +27,83 @@ package com.sporniket.libre.lang.layered;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class Layer implements Comparable<Layer>
 {
 
-	private boolean myVisible = true;
+    private boolean myVisible = true;
 
-	/**
-	 * Rank in LayeredObject.
-	 * 
-	 * It is used by the LayeredObject to sort the layers. It is guaranteed to be non null.
-	 */
-	private Integer myRank = new Integer(0);
+    /**
+     * Rank in LayeredObject.
+     * 
+     * It is used by the LayeredObject to sort the layers. It is guaranteed to be non null.
+     */
+    private Integer myRank = new Integer(0);
 
-	/**
-	 * Underlying model that constitute the Layer.
-	 */
-	private Object myObject = null;
+    /**
+     * Underlying model that constitute the Layer.
+     */
+    private Object myObject = null;
 
-	public int compareTo(Layer l)
-	{
-		return (getRank()).compareTo(l.getRank());
-	}
+    public int compareTo(Layer l)
+    {
+        return (getRank()).compareTo(l.getRank());
+    }
 
-	public Object getObject()
-	{
-		return myObject;
-	}
+    public Object getObject()
+    {
+        return myObject;
+    }
 
-	public void setObject(Object object)
-	{
-		myObject = object;
-	}
+    public void setObject(Object object)
+    {
+        myObject = object;
+    }
 
-	/**
-	 * @return an integer, guaranteed to be non null.
-	 */
-	public Integer getRank()
-	{
-		if (null == myRank)
-		{
-			myRank = new Integer(0);
-		}
-		return myRank;
-	}
+    /**
+     * @return an integer, guaranteed to be non null.
+     */
+    public Integer getRank()
+    {
+        if (null == myRank)
+        {
+            myRank = new Integer(0);
+        }
+        return myRank;
+    }
 
-	public void setRank(Integer rank)
-	{
-		myRank = rank;
-	}
+    public void setRank(Integer rank)
+    {
+        myRank = rank;
+    }
 
-	public void setRank(int rank)
-	{
-		myRank = new Integer(rank);
-	}
+    public void setRank(int rank)
+    {
+        myRank = new Integer(rank);
+    }
 
-	/**
-	 * Read the visible property.
-	 * 
-	 * @return the visible
-	 */
-	public boolean isVisible()
-	{
-		return myVisible;
-	}
+    /**
+     * Read the visible property.
+     * 
+     * @return the visible
+     */
+    public boolean isVisible()
+    {
+        return myVisible;
+    }
 
-	/**
-	 * Write the visible property.
-	 * 
-	 * @param visible
-	 *            the visible to set
-	 */
-	public void setVisible(boolean visible)
-	{
-		myVisible = visible;
-	}
+    /**
+     * Write the visible property.
+     * 
+     * @param visible
+     *            the visible to set
+     */
+    public void setVisible(boolean visible)
+    {
+        myVisible = visible;
+    }
 
 }

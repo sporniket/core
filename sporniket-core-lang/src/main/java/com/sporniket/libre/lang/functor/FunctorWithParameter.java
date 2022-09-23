@@ -32,18 +32,20 @@ import java.util.Map;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface FunctorWithParameter
 {
-	/**
-	 * The operation to do.
-	 * 
-	 * @param parameters a map of parameters.
-	 * @return a result (optional)
-	 * @throws Exception if there is a problem to deal with.
-	 */
-	Object process(Map<String, Object> parameters) throws Exception;
+    /**
+     * The operation to do.
+     * 
+     * @param parameters
+     *            a map of parameters.
+     * @return a result (optional)
+     * @throws Exception
+     *             if there is a problem to deal with.
+     */
+    Object process(Map<String, Object> parameters) throws Exception;
 }

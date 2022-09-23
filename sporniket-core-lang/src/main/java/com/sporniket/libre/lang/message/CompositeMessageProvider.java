@@ -30,55 +30,55 @@ import java.util.Locale;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class CompositeMessageProvider implements MessageProviderInterface
 {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String)
-	 */
-	public String getMessage(String key)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String)
+     */
+    public String getMessage(String key)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale)
-	 */
-	public String getMessage(String key, Locale locale)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale)
+     */
+    public String getMessage(String key, Locale locale)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale, java.lang.Object[])
-	 */
-	public String getMessage(String key, Locale locale, Object[] parameters)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.util.Locale, java.lang.Object[])
+     */
+    public String getMessage(String key, Locale locale, Object[] parameters)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.lang.Object[])
-	 */
-	public String getMessage(String key, Object[] parameters)
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.sporniket.libre.lang.MessageProviderTrait#getMessage(java.lang.String, java.lang.Object[])
+     */
+    public String getMessage(String key, Object[] parameters)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

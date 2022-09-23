@@ -33,7 +33,7 @@ import java.text.SimpleDateFormat;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
@@ -41,19 +41,19 @@ import java.text.SimpleDateFormat;
 // pattern, deprecate current dateformat instance.
 public class IsoDateFormat
 {
-	/**
-	 * Long format : date, time up to millisecond.
-	 */
-	public static final DateFormat LONG__MS = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+    /**
+     * Long format : date, time up to millisecond.
+     */
+    public static final DateFormat LONG__MS = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
 
-	/**
-	 * Short format : date.
-	 */
-	public static final DateFormat SHORT__DATE = new SimpleDateFormat("yyyy-MM-dd");
+    /**
+     * Short format : date.
+     */
+    public static final DateFormat SHORT__DATE = new SimpleDateFormat("yyyy-MM-dd");
 
-	/**
-	 * Short format : date, time.
-	 */
-	public static final DateFormat SHORT__DATE_TIME = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    /**
+     * Short format : date, time.
+     */
+    public static final DateFormat SHORT__DATE_TIME = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
 }

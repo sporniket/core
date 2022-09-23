@@ -33,18 +33,18 @@ import java.beans.VetoableChangeListener;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface Constrainable
 {
-	void addVetoableChangeListener(VetoableChangeListener listener);
+    void addVetoableChangeListener(VetoableChangeListener listener);
 
-	void addVetoableChangeListener(String propertyName, VetoableChangeListener listener);
+    void addVetoableChangeListener(String propertyName, VetoableChangeListener listener);
 
-	void removeVetoableChangeListener(VetoableChangeListener listener);
+    void removeVetoableChangeListener(VetoableChangeListener listener);
 
-	void removeVetoableChangeListener(String propertyName, VetoableChangeListener listener);
+    void removeVetoableChangeListener(String propertyName, VetoableChangeListener listener);
 
 }

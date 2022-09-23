@@ -11,9 +11,9 @@ package com.sporniket.libre.lang;
  * This file is part of <i>The Sporniket Core Library &#8211; lang</i>.
  * 
  * <p>
- * <i>The Sporniket Core Library &#8211; lang</i> is free software: you can redistribute it and/or modify it under the terms of
- * the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at
- * your option) any later version.
+ * <i>The Sporniket Core Library &#8211; lang</i> is free software: you can redistribute it and/or modify it under the terms of the
+ * GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your
+ * option) any later version.
  * 
  * <p>
  * <i>The Sporniket Core Library &#8211; lang</i> is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
@@ -26,11 +26,11 @@ package com.sporniket.libre.lang;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 15.02.00
  */
 public final class HashAlgorithmNames
 {
-	public static final String MD5 = "MD5";
+    public static final String MD5 = "MD5";
 }
