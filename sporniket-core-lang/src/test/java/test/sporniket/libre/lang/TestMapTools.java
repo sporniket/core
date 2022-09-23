@@ -62,4 +62,12 @@ public class TestMapTools {
                 .hasSize(1)//
                 .containsEntry("a", "item a") ;
     }
+
+    @Test
+    public void applyShouldChangeExistingKeysAndNotInsertNewEntries() {
+        then(MapTools.apply(asMap("a:item a", "b:item b"), asMap("a:change a", "c:change c")))//
+                .hasSize(2)//
+                .containsEntry("a", "change a")//
+                .containsEntry("b", "item b") ;
+    }
 }

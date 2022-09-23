@@ -43,6 +43,20 @@ import java.util.stream.Collectors ;
 public class MapTools {
 
     /**
+     * Change the values of the given map using the provided map of changes ; only existing keys in the target map are changed, no new entry are inserted.
+     * 
+     * @param target the map to modify.
+     * @param changes a set of changes.
+     * @return the modified map, no new entry inserted.
+     */
+    public static final Map<String, String> apply(Map<String, String> target, Map<String, String> changes) {
+        changes.entrySet().stream()//
+                .filter(e -> target.containsKey(e.getKey()))//
+                .forEach(e -> target.put(e.getKey(), e.getValue())) ;
+        return target ;
+    }
+
+    /**
      * Create a {@link Map} using a list of {@link String}s, each string encoding a pair of key-value.
      * 
      * @param separator the separator char to use.
