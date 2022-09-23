@@ -1,5 +1,7 @@
 # Sporniket-core
 
+![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/com.sporniket.core/sporniket-core?server=https%3A%2F%2Foss.sonatype.org)
+
 > [WARNING] Please read carefully this note before using this project. It contains important facts.
 
 Content
