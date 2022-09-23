@@ -31,135 +31,135 @@ import java.io.Serializable;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 class NamedElement implements Serializable
 {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4132163276775904654L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 4132163276775904654L;
 
-	/**
-	 * Cache for the id value
-	 */
-	private String myId = null;
+    /**
+     * Cache for the id value
+     */
+    private String myId = null;
 
-	/**
-	 * Suffix to add to the name to get an Id for the control.
-	 */
-	private String myIdSuffix = EMPTY_STRING;
+    /**
+     * Suffix to add to the name to get an Id for the control.
+     */
+    private String myIdSuffix = EMPTY_STRING;
 
-	/**
-	 * Name of the field.
-	 */
-	private String myName = null;
+    /**
+     * Name of the field.
+     */
+    private String myName = null;
 
-	public NamedElement()
-	{
-		super();
-	}
+    public NamedElement()
+    {
+        super();
+    }
 
-	/**
-	 * Generate the id attribute html code.
-	 * 
-	 * @return the HTML coding the id attribute.
-	 */
-	public String getHtmlCodeForIdAttribute()
-	{
-		return HtmlUtils.generateAttribute(HtmlUtils.AttributeNames.ID, getId());
-	}
+    /**
+     * Generate the id attribute html code.
+     * 
+     * @return the HTML coding the id attribute.
+     */
+    public String getHtmlCodeForIdAttribute()
+    {
+        return HtmlUtils.generateAttribute(HtmlUtils.AttributeNames.ID, getId());
+    }
 
-	/**
-	 * Generate the name attribute html code.
-	 * 
-	 * @return the HTML coding the name attribute.
-	 */
-	public String getHtmlCodeForNameAttribute()
-	{
-		return HtmlUtils.generateAttribute(HtmlUtils.AttributeNames.NAME, getName());
-	}
+    /**
+     * Generate the name attribute html code.
+     * 
+     * @return the HTML coding the name attribute.
+     */
+    public String getHtmlCodeForNameAttribute()
+    {
+        return HtmlUtils.generateAttribute(HtmlUtils.AttributeNames.NAME, getName());
+    }
 
-	/**
-	 * Read the id property.
-	 * 
-	 * @return the id
-	 */
-	public String getId()
-	{
-		return myId;
-	}
+    /**
+     * Read the id property.
+     * 
+     * @return the id
+     */
+    public String getId()
+    {
+        return myId;
+    }
 
-	/**
-	 * @return the idSuffix
-	 */
-	public String getIdSuffix()
-	{
-		return myIdSuffix;
-	}
+    /**
+     * @return the idSuffix
+     */
+    public String getIdSuffix()
+    {
+        return myIdSuffix;
+    }
 
-	/**
-	 * @return the name
-	 */
-	public String getName()
-	{
-		return myName;
-	}
+    /**
+     * @return the name
+     */
+    public String getName()
+    {
+        return myName;
+    }
 
-	/**
-	 * Re-compute the id of the element.
-	 */
-	private void refreshId()
-	{
-		if (null == getName())
-		{
-			setId(null);
-		}
-		else
-		{
-			if (null == getIdSuffix())
-			{
-				setId(getName());
-			}
-			else
-			{
-				setId(getName() + getIdSuffix());
-			}
-		}
-	}
+    /**
+     * Re-compute the id of the element.
+     */
+    private void refreshId()
+    {
+        if (null == getName())
+        {
+            setId(null);
+        }
+        else
+        {
+            if (null == getIdSuffix())
+            {
+                setId(getName());
+            }
+            else
+            {
+                setId(getName() + getIdSuffix());
+            }
+        }
+    }
 
-	/**
-	 * Write the id property.
-	 * 
-	 * @param id
-	 *            the id to set
-	 */
-	private void setId(String id)
-	{
-		myId = id;
-	}
+    /**
+     * Write the id property.
+     * 
+     * @param id
+     *            the id to set
+     */
+    private void setId(String id)
+    {
+        myId = id;
+    }
 
-	/**
-	 * @param idSuffix
-	 *            the idSuffix to set
-	 */
-	public void setIdSuffix(String idSuffix)
-	{
-		myIdSuffix = idSuffix;
-		refreshId();
-	}
+    /**
+     * @param idSuffix
+     *            the idSuffix to set
+     */
+    public void setIdSuffix(String idSuffix)
+    {
+        myIdSuffix = idSuffix;
+        refreshId();
+    }
 
-	/**
-	 * @param name
-	 *            the name to set
-	 */
-	public void setName(String name)
-	{
-		myName = name;
-		refreshId();
-	}
+    /**
+     * @param name
+     *            the name to set
+     */
+    public void setName(String name)
+    {
+        myName = name;
+        refreshId();
+    }
 
 }

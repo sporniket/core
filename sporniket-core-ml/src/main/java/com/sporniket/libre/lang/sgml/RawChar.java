@@ -28,17 +28,17 @@ package com.sporniket.libre.lang.sgml;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 class RawChar
 {
-	static final String AMPERSAND = "&";
+    static final String AMPERSAND = "&";
 
-	static final String GREATER_THAN = ">";
+    static final String GREATER_THAN = ">";
 
-	static final String LOWER_THAN = "<";
+    static final String LOWER_THAN = "<";
 
-	static final String QUOTE = "\"";
+    static final String QUOTE = "\"";
 }

@@ -33,18 +33,18 @@ package com.sporniket.libre.lang.xml;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface NodeNameProvider
 {
-	/**
-	 * Return the node name according to the nature of data looked for.
-	 * 
-	 * @param dataClass
-	 *            the "class" of data, meaningful only for an application.
-	 * @return the suitable node name.
-	 */
-	String getNodeName(String dataClass);
+    /**
+     * Return the node name according to the nature of data looked for.
+     * 
+     * @param dataClass
+     *            the "class" of data, meaningful only for an application.
+     * @return the suitable node name.
+     */
+    String getNodeName(String dataClass);
 }

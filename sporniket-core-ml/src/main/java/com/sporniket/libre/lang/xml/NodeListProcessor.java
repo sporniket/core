@@ -41,222 +41,222 @@ import org.w3c.dom.NodeList;
  */
 public class NodeListProcessor
 {
-	/**
-	 * Node name for the default action.
-	 */
-	private static final String NODE_NAME__DEFAULT = "";
+    /**
+     * Node name for the default action.
+     */
+    private static final String NODE_NAME__DEFAULT = "";
 
-	/**
-	 * The start position of the processor to scan all the node.
-	 */
-	private static final int POSITION__START_OF_LIST = 0;
+    /**
+     * The start position of the processor to scan all the node.
+     */
+    private static final int POSITION__START_OF_LIST = 0;
 
-	private Map<String, NodeProcessor> myActionPool = new HashMap<String, NodeProcessor>();
+    private Map<String, NodeProcessor> myActionPool = new HashMap<String, NodeProcessor>();
 
-	/**
-	 * The position of the finder in the list, this is the last found node.
-	 */
-	private int myPosition = POSITION__START_OF_LIST;
+    /**
+     * The position of the finder in the list, this is the last found node.
+     */
+    private int myPosition = POSITION__START_OF_LIST;
 
-	private NodeList mySource = null;
+    private NodeList mySource = null;
 
-	/**
-	 * Default constructor, one need a call to {@link #setup(NodeList)} or {@link #setup(NodeList, int)}.
-	 */
-	public NodeListProcessor()
-	{
-		super();
-	}
+    /**
+     * Default constructor, one need a call to {@link #setup(NodeList)} or {@link #setup(NodeList, int)}.
+     */
+    public NodeListProcessor()
+    {
+        super();
+    }
 
-	/**
-	 * Usual constructor, just provide the NodeList to work with.
-	 * 
-	 * @param source
-	 *            the node list to work with.
-	 */
-	public NodeListProcessor(NodeList source)
-	{
-		super();
-		setup(source);
-	}
+    /**
+     * Usual constructor, just provide the NodeList to work with.
+     * 
+     * @param source
+     *            the node list to work with.
+     */
+    public NodeListProcessor(NodeList source)
+    {
+        super();
+        setup(source);
+    }
 
-	/**
-	 * A constructor where one specify the starting position.
-	 * 
-	 * @param source
-	 *            the node list to work with.
-	 * @param position
-	 *            the index in the node list of the first node to scan.
-	 */
-	public NodeListProcessor(NodeList source, int position)
-	{
-		super();
-		setup(source, position);
-	}
+    /**
+     * A constructor where one specify the starting position.
+     * 
+     * @param source
+     *            the node list to work with.
+     * @param position
+     *            the index in the node list of the first node to scan.
+     */
+    public NodeListProcessor(NodeList source, int position)
+    {
+        super();
+        setup(source, position);
+    }
 
-	/**
-	 * Add a default processing that will be applied when no specific processor is found.
-	 * 
-	 * @param processor
-	 *            the default processor.
-	 */
-	public void addDefaultProcessor(NodeProcessor processor)
-	{
-		if (null == processor)
-		{
-			throw new IllegalArgumentException("Processor should not be null.");
-		}
-		getActionPool().put(NODE_NAME__DEFAULT, processor);
-	}
+    /**
+     * Add a default processing that will be applied when no specific processor is found.
+     * 
+     * @param processor
+     *            the default processor.
+     */
+    public void addDefaultProcessor(NodeProcessor processor)
+    {
+        if (null == processor)
+        {
+            throw new IllegalArgumentException("Processor should not be null.");
+        }
+        getActionPool().put(NODE_NAME__DEFAULT, processor);
+    }
 
-	/**
-	 * Add a specific processing that will be applied to nodes having the matching name.
-	 * 
-	 * @param nodeName
-	 *            the name of nodes that will be processed.
-	 * @param processor
-	 *            the processor.
-	 */
-	public void addProcessor(String nodeName, NodeProcessor processor)
-	{
-		if (null == processor)
-		{
-			throw new IllegalArgumentException("Processor should not be null.");
-		}
-		if (IS_EMPTY.test(nodeName))
-		{
-			throw new IllegalArgumentException("The node name should not be empty.");
-		}
-		getActionPool().put(nodeName, processor);
-	}
+    /**
+     * Add a specific processing that will be applied to nodes having the matching name.
+     * 
+     * @param nodeName
+     *            the name of nodes that will be processed.
+     * @param processor
+     *            the processor.
+     */
+    public void addProcessor(String nodeName, NodeProcessor processor)
+    {
+        if (null == processor)
+        {
+            throw new IllegalArgumentException("Processor should not be null.");
+        }
+        if (IS_EMPTY.test(nodeName))
+        {
+            throw new IllegalArgumentException("The node name should not be empty.");
+        }
+        getActionPool().put(nodeName, processor);
+    }
 
-	/**
-	 * Perform the processing on the next available node.
-	 */
-	private void doProcessNext()
-	{
-		int _position = getPosition();
-		Node _current = getSource().item(_position);
+    /**
+     * Perform the processing on the next available node.
+     */
+    private void doProcessNext()
+    {
+        int _position = getPosition();
+        Node _current = getSource().item(_position);
 
-		if (getActionPool().containsKey(_current.getNodeName()))
-		{
-			getActionPool().get(_current.getNodeName()).execute(_current, _position);
-		}
-		else if (getActionPool().containsKey(NODE_NAME__DEFAULT))
-		{
-			getActionPool().get(NODE_NAME__DEFAULT).execute(_current, _position);
-		}
-		// else do nothing...
+        if (getActionPool().containsKey(_current.getNodeName()))
+        {
+            getActionPool().get(_current.getNodeName()).execute(_current, _position);
+        }
+        else if (getActionPool().containsKey(NODE_NAME__DEFAULT))
+        {
+            getActionPool().get(NODE_NAME__DEFAULT).execute(_current, _position);
+        }
+        // else do nothing...
 
-		// done
-		_position++;
-		setPosition(_position);
-	}
+        // done
+        _position++;
+        setPosition(_position);
+    }
 
-	/**
-	 * Read the actionPool property.
-	 * 
-	 * @return the actionPool
-	 */
-	private Map<String, NodeProcessor> getActionPool()
-	{
-		return myActionPool;
-	}
+    /**
+     * Read the actionPool property.
+     * 
+     * @return the actionPool
+     */
+    private Map<String, NodeProcessor> getActionPool()
+    {
+        return myActionPool;
+    }
 
-	/**
-	 * Read the position property.
-	 * 
-	 * @return the position
-	 */
-	public int getPosition()
-	{
-		return myPosition;
-	}
+    /**
+     * Read the position property.
+     * 
+     * @return the position
+     */
+    public int getPosition()
+    {
+        return myPosition;
+    }
 
-	/**
-	 * Read the source property.
-	 * 
-	 * @return the source
-	 */
-	private NodeList getSource()
-	{
-		if (null == mySource)
-		{
-			throw new IllegalStateException("Internal node list should not be null");
-		}
-		return mySource;
-	}
+    /**
+     * Read the source property.
+     * 
+     * @return the source
+     */
+    private NodeList getSource()
+    {
+        if (null == mySource)
+        {
+            throw new IllegalStateException("Internal node list should not be null");
+        }
+        return mySource;
+    }
 
-	/**
-	 * Test whether there are still Node to scan.
-	 * 
-	 * @return <code>true</code> if there are still a Node to scan.
-	 */
-	public boolean hasMoreAvailableElement()
-	{
-		return getPosition() < getSource().getLength();
-	}
+    /**
+     * Test whether there are still Node to scan.
+     * 
+     * @return <code>true</code> if there are still a Node to scan.
+     */
+    public boolean hasMoreAvailableElement()
+    {
+        return getPosition() < getSource().getLength();
+    }
 
-	/**
-	 * Perform the processing on the next available node.
-	 */
-	public void processNext()
-	{
-		if (hasMoreAvailableElement())
-		{
-			doProcessNext();
-		}
-	}
+    /**
+     * Perform the processing on the next available node.
+     */
+    public void processNext()
+    {
+        if (hasMoreAvailableElement())
+        {
+            doProcessNext();
+        }
+    }
 
-	/**
-	 * Write the position property.
-	 * 
-	 * @param position
-	 *            the position to set
-	 */
-	private void setPosition(int position)
-	{
-		myPosition = (position >= POSITION__START_OF_LIST) ? position : POSITION__START_OF_LIST;
-	}
+    /**
+     * Write the position property.
+     * 
+     * @param position
+     *            the position to set
+     */
+    private void setPosition(int position)
+    {
+        myPosition = (position >= POSITION__START_OF_LIST) ? position : POSITION__START_OF_LIST;
+    }
 
-	/**
-	 * Write the source property.
-	 * 
-	 * @param source
-	 *            the source to set
-	 */
-	private void setSource(NodeList source)
-	{
-		if (null == source)
-		{
-			throw new IllegalArgumentException("The node list to search within must not be null.");
-		}
-		mySource = source;
-	}
+    /**
+     * Write the source property.
+     * 
+     * @param source
+     *            the source to set
+     */
+    private void setSource(NodeList source)
+    {
+        if (null == source)
+        {
+            throw new IllegalArgumentException("The node list to search within must not be null.");
+        }
+        mySource = source;
+    }
 
-	/**
-	 * Specify the NodeList to work with, starting from the beginning.
-	 * 
-	 * @param source
-	 *            the node list to work with.
-	 */
-	public void setup(NodeList source)
-	{
-		setup(source, POSITION__START_OF_LIST);
-	}
+    /**
+     * Specify the NodeList to work with, starting from the beginning.
+     * 
+     * @param source
+     *            the node list to work with.
+     */
+    public void setup(NodeList source)
+    {
+        setup(source, POSITION__START_OF_LIST);
+    }
 
-	/**
-	 * Specify the NodeList to work with, and the starting position.
-	 * 
-	 * @param source
-	 *            the node list to work with.
-	 * @param position
-	 *            the index in the node list of the first node to scan.
-	 */
-	public void setup(NodeList source, int position)
-	{
-		setSource(source);
-		setPosition(position);
-	}
+    /**
+     * Specify the NodeList to work with, and the starting position.
+     * 
+     * @param source
+     *            the node list to work with.
+     * @param position
+     *            the index in the node list of the first node to scan.
+     */
+    public void setup(NodeList source, int position)
+    {
+        setSource(source);
+        setPosition(position);
+    }
 
 }

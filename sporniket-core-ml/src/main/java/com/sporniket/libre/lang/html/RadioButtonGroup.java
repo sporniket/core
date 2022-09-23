@@ -43,85 +43,85 @@ import java.util.List;
  */
 public class RadioButtonGroup extends NamedElement
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1292844792597710089L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1292844792597710089L;
 
-	private static final MessageFormat FORMAT__END = new MessageFormat("</ul>");
+    private static final MessageFormat FORMAT__END = new MessageFormat("</ul>");
 
-	private static final MessageFormat FORMAT__ITEM = new MessageFormat("<li>{0}</li>");
+    private static final MessageFormat FORMAT__ITEM = new MessageFormat("<li>{0}</li>");
 
-	/**
-	 * Template for starting the group.
-	 * 
-	 * 
-	 * <ul>
-	 * <li>{0} : id</li>
-	 * <li>{1} : class</li> </lu>
-	 */
-	private static final MessageFormat FORMAT__START = new MessageFormat("<ul {0} {1}>");
+    /**
+     * Template for starting the group.
+     * 
+     * 
+     * <ul>
+     * <li>{0} : id</li>
+     * <li>{1} : class</li> </lu>
+     */
+    private static final MessageFormat FORMAT__START = new MessageFormat("<ul {0} {1}>");
 
-	public static RadioButtonGroup create(String name, String idSuffix, List<RadioButton> options)
-	{
-		RadioButtonGroup _result = new RadioButtonGroup();
-		_result.setName(name);
-		if (IS_NOT_EMPTY.test(idSuffix))
-		{
-			_result.setIdSuffix(idSuffix);
-		}
-		_result.getOptions().addAll(options);
-		return _result;
-	}
+    public static RadioButtonGroup create(String name, String idSuffix, List<RadioButton> options)
+    {
+        RadioButtonGroup _result = new RadioButtonGroup();
+        _result.setName(name);
+        if (IS_NOT_EMPTY.test(idSuffix))
+        {
+            _result.setIdSuffix(idSuffix);
+        }
+        _result.getOptions().addAll(options);
+        return _result;
+    }
 
-	private List<RadioButton> myOptions = new ArrayList<RadioButton>();
+    private List<RadioButton> myOptions = new ArrayList<RadioButton>();
 
-	/**
-	 * @return the options
-	 */
-	public List<RadioButton> getOptions()
-	{
-		return myOptions;
-	}
+    /**
+     * @return the options
+     */
+    public List<RadioButton> getOptions()
+    {
+        return myOptions;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return getHtmlCode();
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        return getHtmlCode();
+    }
 
-	/**
-	 * Generate the html code.
-	 * 
-	 * @return the HTML code.
-	 */
-	public String getHtmlCode()
-	{
-		StringBuffer _buffer = new StringBuffer();
+    /**
+     * Generate the html code.
+     * 
+     * @return the HTML code.
+     */
+    public String getHtmlCode()
+    {
+        StringBuffer _buffer = new StringBuffer();
 
-		Object[] _paramsStart =
-		{
-				getHtmlCodeForIdAttribute(), getHtmlCodeForNameAttribute()
-		};
-		_buffer.append(FORMAT__START.format(_paramsStart));
+        Object[] _paramsStart =
+        {
+                getHtmlCodeForIdAttribute(), getHtmlCodeForNameAttribute()
+        };
+        _buffer.append(FORMAT__START.format(_paramsStart));
 
-		for (RadioButton _radio : getOptions())
-		{
-			Object[] _paramsItem =
-			{
-					_radio.getHtmlCode()
-			};
-			_buffer.append(FORMAT__ITEM.format(_paramsItem));
-		}
+        for (RadioButton _radio : getOptions())
+        {
+            Object[] _paramsItem =
+            {
+                    _radio.getHtmlCode()
+            };
+            _buffer.append(FORMAT__ITEM.format(_paramsItem));
+        }
 
-		Object[] _paramsEnd = {};
-		_buffer.append(FORMAT__END.format(_paramsEnd));
-		return _buffer.toString();
-	}
+        Object[] _paramsEnd = {};
+        _buffer.append(FORMAT__END.format(_paramsEnd));
+        return _buffer.toString();
+    }
 
 }

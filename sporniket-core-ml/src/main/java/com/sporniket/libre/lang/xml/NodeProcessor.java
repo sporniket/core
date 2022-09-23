@@ -29,18 +29,18 @@ import org.w3c.dom.Node;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public interface NodeProcessor
 {
-	/**
-	 * 
-	 * @param source
-	 *            the {@link Node} to process.
-	 * @param position
-	 *            the position of the node in the parent node, for information purpose.
-	 */
-	void execute(Node source, int position);
+    /**
+     * 
+     * @param source
+     *            the {@link Node} to process.
+     * @param position
+     *            the position of the node in the parent node, for information purpose.
+     */
+    void execute(Node source, int position);
 }

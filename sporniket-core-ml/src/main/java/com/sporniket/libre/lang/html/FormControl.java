@@ -27,64 +27,64 @@ package com.sporniket.libre.lang.html;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 class FormControl extends NamedElement
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8486616181041196786L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 8486616181041196786L;
 
-	/**
-	 * The flag to disable the control.
-	 */
-	private boolean myDisabled = false;
+    /**
+     * The flag to disable the control.
+     */
+    private boolean myDisabled = false;
 
-	/**
-	 * Value of the radio button.
-	 */
-	private String myValue;
+    /**
+     * Value of the radio button.
+     */
+    private String myValue;
 
-	public FormControl()
-	{
-		super();
-	}
+    public FormControl()
+    {
+        super();
+    }
 
-	/**
-	 * @return the value
-	 */
-	public String getValue()
-	{
-		return myValue;
-	}
+    /**
+     * @return the value
+     */
+    public String getValue()
+    {
+        return myValue;
+    }
 
-	/**
-	 * @return the disabled
-	 */
-	public boolean isDisabled()
-	{
-		return myDisabled;
-	}
+    /**
+     * @return the disabled
+     */
+    public boolean isDisabled()
+    {
+        return myDisabled;
+    }
 
-	/**
-	 * @param disabled
-	 *            the disabled to set
-	 */
-	public void setDisabled(boolean disabled)
-	{
-		myDisabled = disabled;
-	}
+    /**
+     * @param disabled
+     *            the disabled to set
+     */
+    public void setDisabled(boolean disabled)
+    {
+        myDisabled = disabled;
+    }
 
-	/**
-	 * @param value
-	 *            the value to set
-	 */
-	public void setValue(String value)
-	{
-		myValue = value;
-	}
+    /**
+     * @param value
+     *            the value to set
+     */
+    public void setValue(String value)
+    {
+        myValue = value;
+    }
 
 }

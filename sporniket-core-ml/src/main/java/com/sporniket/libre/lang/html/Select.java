@@ -45,112 +45,117 @@ import java.util.List;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 public class Select extends FormControl
 {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1471620952004489016L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -1471620952004489016L;
 
-	/**
-	 * Template for the code.
-	 * 
-	 * {0} : name {1} : id {2} : content {3} : disabled {4} : preselected option
-	 */
-	private static final MessageFormat FORMAT__SELECT = new MessageFormat("<select {0} {1} {3} {4}>{2}</select>");
+    /**
+     * Template for the code.
+     * 
+     * {0} : name {1} : id {2} : content {3} : disabled {4} : preselected option
+     */
+    private static final MessageFormat FORMAT__SELECT = new MessageFormat("<select {0} {1} {3} {4}>{2}</select>");
 
-	/**
-	 * Create a fully defined selector..
-	 * 
-	 * @param name the name of the selector.
-	 * @param idSuffix the suffix to add to compute the id attribute.
-	 * @param options a list of options.
-	 * @param allowMultipleSelection <code>true</code> to allow multiple selection.
-	 * @param isDisabled disabled attribute.
-	 * @return a fully defined {@link Select}.
-	 */
-	public static Select create(String name, String idSuffix, List<Option> options, boolean allowMultipleSelection,
-			boolean isDisabled)
-	{
-		Select _select = new Select();
-		_select.setName(name);
-		_select.setIdSuffix(idSuffix);
-		_select.setDisabled(isDisabled);
-		_select.setMultiple(allowMultipleSelection);
-		_select.getOptions().addAll(options);
-		return _select;
-	}
+    /**
+     * Create a fully defined selector..
+     * 
+     * @param name
+     *            the name of the selector.
+     * @param idSuffix
+     *            the suffix to add to compute the id attribute.
+     * @param options
+     *            a list of options.
+     * @param allowMultipleSelection
+     *            <code>true</code> to allow multiple selection.
+     * @param isDisabled
+     *            disabled attribute.
+     * @return a fully defined {@link Select}.
+     */
+    public static Select create(String name, String idSuffix, List<Option> options, boolean allowMultipleSelection,
+            boolean isDisabled)
+    {
+        Select _select = new Select();
+        _select.setName(name);
+        _select.setIdSuffix(idSuffix);
+        _select.setDisabled(isDisabled);
+        _select.setMultiple(allowMultipleSelection);
+        _select.getOptions().addAll(options);
+        return _select;
+    }
 
-	/**
-	 * Flag to allow multiple selection.
-	 */
-	private boolean myMultiple = false;
+    /**
+     * Flag to allow multiple selection.
+     */
+    private boolean myMultiple = false;
 
-	/**
-	 * OptionList
-	 */
-	private List<Option> myOptions = new ArrayList<Option>();
+    /**
+     * OptionList
+     */
+    private List<Option> myOptions = new ArrayList<Option>();
 
-	/**
-	 * @return the options
-	 */
-	public List<Option> getOptions()
-	{
-		return myOptions;
-	}
+    /**
+     * @return the options
+     */
+    public List<Option> getOptions()
+    {
+        return myOptions;
+    }
 
-	/**
-	 * @return the multiple
-	 */
-	public boolean isMultiple()
-	{
-		return myMultiple;
-	}
+    /**
+     * @return the multiple
+     */
+    public boolean isMultiple()
+    {
+        return myMultiple;
+    }
 
-	/**
-	 * @param multiple
-	 *            the multiple to set
-	 */
-	public void setMultiple(boolean multiple)
-	{
-		myMultiple = multiple;
-	}
+    /**
+     * @param multiple
+     *            the multiple to set
+     */
+    public void setMultiple(boolean multiple)
+    {
+        myMultiple = multiple;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	public String toString()
-	{
-		return getHtmlCode();
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    public String toString()
+    {
+        return getHtmlCode();
+    }
 
-	/**
-	 * Generate the html code.
-	 * 
-	 * @return
-	 */
-	private String getHtmlCode()
-	{
-		StringBuffer _body = new StringBuffer();
-		for (Option _option : getOptions())
-		{
-			_body.append(_option.getHtmlCode());
-		}
-		Object[] _params =
-		{
-				getHtmlCodeForNameAttribute(),
-				getHtmlCodeForIdAttribute(),
-				_body.toString(),
-				isMultiple() ? HtmlUtils.SpecialAttribute.ALLOW_MULTIPLE_SELECTION : HtmlUtils.SpecialAttribute.NONE,
-				isDisabled() ? HtmlUtils.SpecialAttribute.DISABLED : HtmlUtils.SpecialAttribute.NONE
-		};
-		return FORMAT__SELECT.format(_params);
-	}
+    /**
+     * Generate the html code.
+     * 
+     * @return
+     */
+    private String getHtmlCode()
+    {
+        StringBuffer _body = new StringBuffer();
+        for (Option _option : getOptions())
+        {
+            _body.append(_option.getHtmlCode());
+        }
+        Object[] _params =
+        {
+                getHtmlCodeForNameAttribute(),
+                getHtmlCodeForIdAttribute(),
+                _body.toString(),
+                isMultiple() ? HtmlUtils.SpecialAttribute.ALLOW_MULTIPLE_SELECTION : HtmlUtils.SpecialAttribute.NONE,
+                isDisabled() ? HtmlUtils.SpecialAttribute.DISABLED : HtmlUtils.SpecialAttribute.NONE
+        };
+        return FORMAT__SELECT.format(_params);
+    }
 
 }

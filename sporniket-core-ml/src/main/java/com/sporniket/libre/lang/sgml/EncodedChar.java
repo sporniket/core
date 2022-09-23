@@ -28,17 +28,17 @@ package com.sporniket.libre.lang.sgml;
  * 
  * <hr>
  * 
- * @author David SPORN 
+ * @author David SPORN
  * @version 22.09.00
  * @since 12.06.01
  */
 class EncodedChar
 {
-	static final String AMPERSAND = "&amp;";
+    static final String AMPERSAND = "&amp;";
 
-	static final String GREATER_THAN = "&gt;";
+    static final String GREATER_THAN = "&gt;";
 
-	static final String LOWER_THAN = "&lt;";
+    static final String LOWER_THAN = "&lt;";
 
-	static final String QUOTE = "&quot;";
+    static final String QUOTE = "&quot;";
 }

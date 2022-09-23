@@ -44,133 +44,133 @@ import org.w3c.dom.NodeList;
  */
 public class NodeFinder
 {
-	/**
-	 * The start position of the {@link NodeFinder} to scan all the node.
-	 */
-	private static final int POSITION__START_OF_LIST = 0;
+    /**
+     * The start position of the {@link NodeFinder} to scan all the node.
+     */
+    private static final int POSITION__START_OF_LIST = 0;
 
-	/**
-	 * The position of the finder in the list, this is the last found node.
-	 */
-	private int myPosition = POSITION__START_OF_LIST;
+    /**
+     * The position of the finder in the list, this is the last found node.
+     */
+    private int myPosition = POSITION__START_OF_LIST;
 
-	private NodeList mySource = null;
+    private NodeList mySource = null;
 
-	/**
-	 * Usual constructor, just provide the NodeList to work with.
-	 * 
-	 * @param source
-	 *            node list to scan.
-	 */
-	public NodeFinder(NodeList source)
-	{
-		super();
-		mySource = source;
-	}
+    /**
+     * Usual constructor, just provide the NodeList to work with.
+     * 
+     * @param source
+     *            node list to scan.
+     */
+    public NodeFinder(NodeList source)
+    {
+        super();
+        mySource = source;
+    }
 
-	/**
-	 * A constructor where one specify the starting position.
-	 * 
-	 * @param source
-	 *            node list to scan.
-	 * @param position
-	 *            the index in the node list of the first node to scan.
-	 */
-	public NodeFinder(NodeList source, int position)
-	{
-		super();
-		setSource(source);
-		setPosition(position);
-	}
+    /**
+     * A constructor where one specify the starting position.
+     * 
+     * @param source
+     *            node list to scan.
+     * @param position
+     *            the index in the node list of the first node to scan.
+     */
+    public NodeFinder(NodeList source, int position)
+    {
+        super();
+        setSource(source);
+        setPosition(position);
+    }
 
-	/**
-	 * Read the position property.
-	 * 
-	 * @return the position
-	 */
-	public int getPosition()
-	{
-		return myPosition;
-	}
+    /**
+     * Read the position property.
+     * 
+     * @return the position
+     */
+    public int getPosition()
+    {
+        return myPosition;
+    }
 
-	/**
-	 * Read the source property.
-	 * 
-	 * @return the source
-	 */
-	private NodeList getSource()
-	{
-		if (null == mySource)
-		{
-			throw new IllegalStateException("Internal node list should not be null");
-		}
-		return mySource;
-	}
+    /**
+     * Read the source property.
+     * 
+     * @return the source
+     */
+    private NodeList getSource()
+    {
+        if (null == mySource)
+        {
+            throw new IllegalStateException("Internal node list should not be null");
+        }
+        return mySource;
+    }
 
-	/**
-	 * Test whether there are still Node to scan.
-	 * 
-	 * @return <code>true</code> if there are still a node to scan.
-	 */
-	public boolean hasMoreAvailableElement()
-	{
-		return getPosition() < getSource().getLength();
-	}
+    /**
+     * Test whether there are still Node to scan.
+     * 
+     * @return <code>true</code> if there are still a node to scan.
+     */
+    public boolean hasMoreAvailableElement()
+    {
+        return getPosition() < getSource().getLength();
+    }
 
-	/**
-	 * Write the position property.
-	 * 
-	 * @param position
-	 *            the position to set
-	 */
-	private void setPosition(int position)
-	{
-		myPosition = (position >= POSITION__START_OF_LIST) ? position : POSITION__START_OF_LIST;
-	}
+    /**
+     * Write the position property.
+     * 
+     * @param position
+     *            the position to set
+     */
+    private void setPosition(int position)
+    {
+        myPosition = (position >= POSITION__START_OF_LIST) ? position : POSITION__START_OF_LIST;
+    }
 
-	/**
-	 * Write the source property.
-	 * 
-	 * @param source
-	 *            the source to set
-	 */
-	private void setSource(NodeList source)
-	{
-		if (null == source)
-		{
-			throw new IllegalArgumentException("The node list to search within must not be null.");
-		}
-		mySource = source;
-	}
+    /**
+     * Write the source property.
+     * 
+     * @param source
+     *            the source to set
+     */
+    private void setSource(NodeList source)
+    {
+        if (null == source)
+        {
+            throw new IllegalArgumentException("The node list to search within must not be null.");
+        }
+        mySource = source;
+    }
 
-	/**
-	 * Find the next node having the specified node name.
-	 * 
-	 * @param nodeName
-	 *            name to look for.
-	 * @return <code>null</code> if there are no more node to scan and there was no matching node.
-	 */
-	public Node find(String nodeName)
-	{
-		// Sanity check
-		if (IS_EMPTY.test(nodeName))
-		{
-			throw new IllegalArgumentException("The node name should not be empty");
-		}
-		Node _result = null;
-		while (hasMoreAvailableElement() && (null == _result))
-		{
-			int _position = getPosition();
-			Node _current = getSource().item(_position);
-			_position++;
-			setPosition(_position);
+    /**
+     * Find the next node having the specified node name.
+     * 
+     * @param nodeName
+     *            name to look for.
+     * @return <code>null</code> if there are no more node to scan and there was no matching node.
+     */
+    public Node find(String nodeName)
+    {
+        // Sanity check
+        if (IS_EMPTY.test(nodeName))
+        {
+            throw new IllegalArgumentException("The node name should not be empty");
+        }
+        Node _result = null;
+        while (hasMoreAvailableElement() && (null == _result))
+        {
+            int _position = getPosition();
+            Node _current = getSource().item(_position);
+            _position++;
+            setPosition(_position);
 
-			if (nodeName.equals(_current.getNodeName()))
-			{
-				_result = _current;
-			}
-		}
-		return _result;
-	}
+            if (nodeName.equals(_current.getNodeName()))
+            {
+                _result = _current;
+            }
+        }
+        return _result;
+    }
 
 }
