@@ -26,7 +26,7 @@
  * <hr>
  *
  * @author David SPORN
- * @version 22.09.00
+ * @version 22.09.01
  * @since 19.02.00
  */
 package com.sporniket.strings;

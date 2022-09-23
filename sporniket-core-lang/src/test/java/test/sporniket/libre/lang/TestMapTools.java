@@ -37,7 +37,7 @@ import com.sporniket.libre.lang.MapTools;
  * 
  * @author David SPORN
  * 
- * @version 22.09.00
+ * @version 22.09.01
  * @since 22.09.01
  */
 public class TestMapTools

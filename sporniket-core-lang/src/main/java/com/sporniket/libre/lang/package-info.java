@@ -28,7 +28,7 @@
  * <hr>
  *
  * @author David SPORN
- * @version 22.09.00
+ * @version 22.09.01
  * @since 12.06.01
  */
 package com.sporniket.libre.lang;

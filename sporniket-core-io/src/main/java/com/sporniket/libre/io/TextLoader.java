@@ -40,7 +40,7 @@ import java.util.Map;
  * <hr>
  * 
  * @author David SPORN 
- * @version 22.09.00
+ * @version 22.09.01
  * @since 12.06.01
  */
 // FIXME get an instance for iso-named encoding.

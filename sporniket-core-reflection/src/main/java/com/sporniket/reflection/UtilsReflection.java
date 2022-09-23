@@ -30,7 +30,7 @@ import java.util.Set ;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.00
+ * @version 22.09.01
  * @since 22.09.00
  */
 public class UtilsReflection {

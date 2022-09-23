@@ -35,7 +35,7 @@ import java.net.URL;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.00
+ * @version 22.09.01
  * @since 16.08.02
  */
 public class ClasspathProtocolAwareUrlProvider implements UrlProvider

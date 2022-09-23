@@ -43,7 +43,7 @@ import com.sporniket.libre.ui.icon.IconProvider;
  *            type that store the location of the icon.
  * 
  * @author David SPORN
- * @version 22.09.00
+ * @version 22.09.01
  * @since 12.06.01
  */
 public class AdaptedAction<IconLocationType> extends FunctorBasedAction implements UserInterfaceAction<IconLocationType>

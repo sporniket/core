@@ -62,7 +62,7 @@ import com.sporniket.strings.pipeline.StringTransformation;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.00
+ * @version 22.09.01
  * @since 15.09.00
  */
 public class LineByLinePropertyParser
@@ -95,7 +95,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 22.09.00
+	 * @version 22.09.01
 	 * @since 15.09.00
 	 */
 	private static final class CharacterPattern
@@ -141,7 +141,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 22.09.00
+	 * @version 22.09.01
 	 * @since 15.09.00
 	 */
 	private static enum FinalState
@@ -182,7 +182,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 22.09.00
+	 * @version 22.09.01
 	 * @since 15.09.00
 	 */
 	private static final class FollowUp
@@ -247,7 +247,7 @@ public class LineByLinePropertyParser
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 22.09.00
+	 * @version 22.09.01
 	 * @since 15.09.00
 	 */
 	private static class State
