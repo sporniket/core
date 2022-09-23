@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sporniket.core</groupId>
@@ -21,7 +23,7 @@
 		<version.maven-checkstyle-plugin.checkstyle-runtime>10.3.3</version.maven-checkstyle-plugin.checkstyle-runtime> <!-- required to use recent checkstyle -->
 		<version.maven-pmd-plugin>3.6</version.maven-pmd-plugin>
 		<version.maven-release-plugin>2.5.3</version.maven-release-plugin>
-		
+
 		<!-- shared dependencies version -->
 		<version.junit5>5.9.1</version.junit5>
 	</properties>
