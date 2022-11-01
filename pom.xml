@@ -4,7 +4,7 @@
 	<groupId>com.sporniket.core</groupId>
 	<artifactId>sporniket-core</artifactId>
 	<packaging>pom</packaging>
-	<version>22.09.02-SNAPSHOT</version>
+	<version>22.11.00-SNAPSHOT</version>
 
 	<properties>
 		<url.base>https://github.com/sporniket/core</url.base>
