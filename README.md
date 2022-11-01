@@ -15,6 +15,10 @@ Content
 ## 1. What is **Sporniket-core**, and when to use it ?
 **Sporniket-core** is a collection of libraries containing code that I deemed essential for my projects at one point.
 
+### What's new in v22.11.00
+
+* security maintenance : bump jackson-databind
+
 ### What's new in v22.09.01
 
 * #22 : migrate to junit5 (sporniket-core-lang, sporniket-core-ml) 
