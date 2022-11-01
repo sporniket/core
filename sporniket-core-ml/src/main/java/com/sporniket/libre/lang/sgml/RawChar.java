@@ -29,7 +29,7 @@ package com.sporniket.libre.lang.sgml;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 12.06.01
  */
 class RawChar

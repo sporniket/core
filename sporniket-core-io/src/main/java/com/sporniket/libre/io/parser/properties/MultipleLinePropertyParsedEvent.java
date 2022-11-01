@@ -35,7 +35,7 @@ package com.sporniket.libre.io.parser.properties;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 15.09.00
  */
 public final class MultipleLinePropertyParsedEvent

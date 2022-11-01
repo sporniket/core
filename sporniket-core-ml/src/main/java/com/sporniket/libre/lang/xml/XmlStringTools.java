@@ -35,7 +35,7 @@ import org.w3c.dom.NodeList;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 12.06.01
  */
 public class XmlStringTools
@@ -46,7 +46,7 @@ public class XmlStringTools
      * 
      * @author David SPORN
      * 
-     * @version 22.09.01
+     * @version 22.11.00
      * @since 12.06.01
      */
     public static class NodeSerializer

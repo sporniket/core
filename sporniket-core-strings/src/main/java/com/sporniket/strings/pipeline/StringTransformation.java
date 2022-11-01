@@ -38,7 +38,7 @@ import javax.xml.bind.DatatypeConverter;
  * <hr>
  *
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 19.02.00
  */
 public interface StringTransformation extends Function<String, String>

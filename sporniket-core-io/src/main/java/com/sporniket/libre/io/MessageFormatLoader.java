@@ -36,7 +36,7 @@ import java.text.MessageFormat;
  * <hr>
  * 
  * @author David SPORN 
- * @version 22.09.01
+ * @version 22.11.00
  * @since 12.06.01
  */
 // FIXME provide a loader for File and Reader

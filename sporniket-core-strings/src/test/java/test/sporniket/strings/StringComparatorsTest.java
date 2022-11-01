@@ -49,7 +49,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
  * <hr>
  *
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 19.02.00
  */
 public class StringComparatorsTest extends TestBase

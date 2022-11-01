@@ -48,7 +48,7 @@ import com.sporniket.libre.ui.swing.paper.UnitConverter;
  * <hr>
  * 
  * @author David SPORN 
- * @version 22.09.01
+ * @version 22.11.00
  * @since 12.06.01
  */
 public class MonoStyleText extends PaperContentAdapter

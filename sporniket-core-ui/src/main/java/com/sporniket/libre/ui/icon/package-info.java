@@ -1,7 +1,7 @@
 /**
  * Package of classes for using icons.
  * 
- * @version 22.09.01
+ * @version 22.11.00
  * @since 15.02.00
  */
 

@@ -74,7 +74,7 @@ import java.util.regex.Pattern;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 16.08.00
  */
 public class FormattedInputSimpleParserFactory

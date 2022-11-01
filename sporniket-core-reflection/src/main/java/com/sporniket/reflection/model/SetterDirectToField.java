@@ -33,7 +33,7 @@ import java.math.BigDecimal ;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 22.09.00
  */
 public class SetterDirectToField implements SetterUsingStringValue {

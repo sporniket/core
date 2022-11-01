@@ -34,7 +34,7 @@ import java.util.Comparator;
  * <hr>
  * 
  * @author David SPORN
- * @version 22.09.01
+ * @version 22.11.00
  * @since 15.02.00
  */
 public class FileComparator
@@ -67,7 +67,7 @@ public class FileComparator
 	 * <hr>
 	 * 
 	 * @author David SPORN
-	 * @version 22.09.01
+	 * @version 22.11.00
 	 * @since 15.02.00
 	 */
 	public static class ByAbsolutePath implements Comparator<File>
