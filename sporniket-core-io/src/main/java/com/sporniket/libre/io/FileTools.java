@@ -3,8 +3,8 @@
  */
 package com.sporniket.libre.io;
 
-import static com.sporniket.strings.StringPredicates.IS_EMPTY;
-import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+import static com.sporniket.libre.strings.StringPredicates.IS_EMPTY;
+import static com.sporniket.libre.strings.StringPredicates.IS_NOT_EMPTY;
 
 import java.io.BufferedReader;
 import java.io.File;

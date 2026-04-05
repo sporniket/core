@@ -4,7 +4,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 
-import com.sporniket.strings.pipeline.StringFilter;
+import com.sporniket.libre.strings.pipeline.StringFilter;
 
 /**
  * A filter for AbstractDocument instances.

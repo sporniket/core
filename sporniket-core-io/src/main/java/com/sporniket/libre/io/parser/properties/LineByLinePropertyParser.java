@@ -3,13 +3,13 @@
  */
 package com.sporniket.libre.io.parser.properties;
 
-import static com.sporniket.strings.StringPredicates.IS_NOT_EMPTY;
+import static com.sporniket.libre.strings.StringPredicates.IS_NOT_EMPTY;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.sporniket.strings.pipeline.StringTransformation;
+import com.sporniket.libre.strings.pipeline.StringTransformation;
 
 /**
  * Line oriented property parser.

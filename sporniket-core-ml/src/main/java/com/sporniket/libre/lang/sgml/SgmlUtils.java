@@ -5,8 +5,8 @@ package com.sporniket.libre.lang.sgml;
 
 import java.text.MessageFormat;
 
-import com.sporniket.strings.pipeline.StringPipelineBuilder;
-import com.sporniket.strings.pipeline.StringTransformation;
+import com.sporniket.libre.strings.pipeline.StringPipelineBuilder;
+import com.sporniket.libre.strings.pipeline.StringTransformation;
 
 /**
  * Utility macro for sgml code generation.

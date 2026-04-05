@@ -16,11 +16,6 @@
 
 	<dependencies>
 		<!-- ===INTERNAL DEPENDENCIES -->
-		<dependency>
-			<groupId>com.sporniket.core</groupId>
-			<artifactId>sporniket-core-strings</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 
 		<!-- ===EXTERNAL DEPENDENCIES (non test) -->
 
@@ -42,6 +37,13 @@
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
 			<version>3.23.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Json orm -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.4.1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

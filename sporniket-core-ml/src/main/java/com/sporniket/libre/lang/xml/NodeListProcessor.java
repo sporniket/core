@@ -1,6 +1,6 @@
 package com.sporniket.libre.lang.xml;
 
-import static com.sporniket.strings.StringPredicates.IS_EMPTY;
+import static com.sporniket.libre.strings.StringPredicates.IS_EMPTY;
 
 import java.util.HashMap;
 import java.util.Map;
