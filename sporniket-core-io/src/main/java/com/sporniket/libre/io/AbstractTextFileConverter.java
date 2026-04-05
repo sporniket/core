@@ -28,13 +28,13 @@ import com.sporniket.libre.lang.CollectionTools;
  * </p>
  * <p>
  * However an encoding might be "unsupported" if an instance cannot find out the encoding code used by Java for classes such as
- * <tt>java.io.XxxReader</tt>, <tt>java.io.XxxWriter</tt> and <tt>String</tt>.
+ * <code>java.io.XxxReader</code>, <code>java.io.XxxWriter</code> and <code>String</code>.
  * <p>
  * This mapping is provided with the properties file <i>EncodingName</i>, thus one must add new supported encodings name inside this
  * file.
  * 
  * <p>
- * <i>Subclass of TextFileConverterAdapter <b>MUST</b> implement <tt>doConvertFile(...)</tt> instead of overriding
+ * <i>Subclass of TextFileConverterAdapter <b>MUST</b> implement <code>doConvertFile(...)</code> instead of overriding
  * <code>convertFile(...)</code> </i>
  * 
  * <p>
@@ -352,7 +352,7 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 	/**
 	 * The real processing.
 	 * <p>
-	 * Subclass of this class <b>must</b> implement this method instead of <tt>convertFile()</tt>.
+	 * Subclass of this class <b>must</b> implement this method instead of <code>convertFile()</code>.
 	 * 
 	 * @param reader
 	 *            the input stream.

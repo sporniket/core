@@ -627,8 +627,6 @@ public class XmlStringTools
      * 
      * @param tag
      *            the empty tag to generate.
-     * @param attributes
-     *            the map of attributes
      * @return the empty tag.
      * @since 22.09.01
      */

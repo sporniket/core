@@ -24,7 +24,7 @@ import javax.swing.KeyStroke;
  * respectively</li>
  * </ul>
  * 
- * <table border="1" cellspacing="0">
+ * <table border="1">
  * <caption>Keyboard mapping</caption>
  * <tr>
  * <th>Key</th>
@@ -292,8 +292,8 @@ import javax.swing.KeyStroke;
  * </p>
  * 
  * <ul>
- * <li><b>F12</b> : <tt>000/$12</tt></li>
- * <li><b>Control+Shift+Backpace</b> : <tt>110/$BACKSPACE</tt></li>
+ * <li><b>F12</b> : <code>000/$12</code></li>
+ * <li><b>Control+Shift+Backpace</b> : <code>110/$BACKSPACE</code></li>
  * </ul>
  * 
  * <p>
