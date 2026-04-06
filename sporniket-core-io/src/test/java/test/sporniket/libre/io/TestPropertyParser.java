@@ -3,7 +3,10 @@
  */
 package test.sporniket.libre.io;
 
-import junit.framework.TestCase;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
 
 import com.sporniket.libre.io.parser.properties.LineByLinePropertyParser;
 import com.sporniket.libre.io.parser.properties.MultipleLinePropertyParsedEvent;
@@ -41,7 +44,7 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  * @version 22.11.00
  * @since 15.09.00
  */
-public class TestPropertyParser extends TestCase
+public class TestPropertyParser
 {
 	private static final class RememberLastMultipleLineProperty implements PropertiesParsingListener
 	{
@@ -222,29 +225,34 @@ public class TestPropertyParser extends TestCase
 			"This is madness <<-", null, null
 	};
 
+	@Test
 	public final void testComment__noSpaces()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__COMMENT__NO_SPACES[0], TEST_DESCRIPTION__COMMENT__NO_SPACES[1],
 				TEST_DESCRIPTION__COMMENT__NO_SPACES[2]);
 	}
 
+    @Test
 	public final void testComment__spaces_before__1()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__COMMENT__SPACES_BEFORE__1[0], TEST_DESCRIPTION__COMMENT__SPACES_BEFORE__1[1],
 				TEST_DESCRIPTION__COMMENT__SPACES_BEFORE__1[2]);
 	}
 
+    @Test
 	public final void testComment__spaces_before__2()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__COMMENT__SPACES_BEFORE__2[0], TEST_DESCRIPTION__COMMENT__SPACES_BEFORE__2[1],
 				TEST_DESCRIPTION__COMMENT__SPACES_BEFORE__2[2]);
 	}
 
+    @Test
 	public final void testEmptyLine()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__EMPTY_LINE[0], TEST_DESCRIPTION__EMPTY_LINE[1], TEST_DESCRIPTION__EMPTY_LINE[2]);
 	}
 
+    @Test
 	public final void testErrorManagement()
 	{
 		final LineByLinePropertyParser _parser = new LineByLinePropertyParser();
@@ -277,6 +285,7 @@ public class TestPropertyParser extends TestCase
 
 	}
 
+    @Test
 	public final void testMultipleLineProperties__leftTrim()
 	{
 		doTestMultipleLine(TEST_DESCRIPTION__MULTIPLE_LINE_PROPERTIES__LEFT_TRIM[0],
@@ -285,6 +294,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__MULTIPLE_LINE_PROPERIES__PROPERTY_VALUE__EXPECTED__LEFT_TRIM);
 	}
 
+    @Test
 	public final void testMultipleLineProperties__noLeftTrim()
 	{
 		doTestMultipleLine(TEST_DESCRIPTION__MULTIPLE_LINE_PROPERTIES__NO_LEFT_TRIM[0],
@@ -294,12 +304,14 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__MULTIPLE_LINE_PROPERIES__PROPERTY_VALUE__SOURCE);
 	}
 
+    @Test
 	public final void testSingleLineProperties__emptyValue()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__EMPTY_VALUE[0],
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__EMPTY_VALUE[1], TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__EMPTY_VALUE[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__emptyValue()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__EMPTY_VALUE[0],
@@ -307,6 +319,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__EMPTY_VALUE[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__mixedWhitespaces()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__MIXED_WHITESPACES[0],
@@ -314,6 +327,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__MIXED_WHITESPACES[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__noSpaces()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__NO_SPACES[0],
@@ -321,6 +335,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__NO_SPACES[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__spacesAfter__1()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_AFTER__1[0],
@@ -328,6 +343,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_AFTER__1[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__spacesAfter__2()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_AFTER__2[0],
@@ -335,6 +351,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_AFTER__2[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__spacesBefore__1()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_BEFORE__1[0],
@@ -342,6 +359,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_BEFORE__1[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__leftTrim__spacesBefore__2()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_BEFORE__2[0],
@@ -349,12 +367,14 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__LEFT_TRIM__SPACES_BEFORE__2[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__noSpaces()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__NO_SPACES[0],
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__NO_SPACES[1], TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__NO_SPACES[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__spacesAfter__1()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_AFTER__1[0],
@@ -362,6 +382,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_AFTER__1[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__spacesAfter__2()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_AFTER__2[0],
@@ -369,6 +390,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_AFTER__2[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__spacesBefore__1()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_BEFORE__1[0],
@@ -376,6 +398,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_BEFORE__1[2]);
 	}
 
+    @Test
 	public final void testSingleLineProperties__spacesBefore__2()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_BEFORE__2[0],
@@ -383,6 +406,7 @@ public class TestPropertyParser extends TestCase
 				TEST_DESCRIPTION__SINGLE_LINE_PROPERTIES__SPACES_BEFORE__2[2]);
 	}
 
+    @Test
 	public final void testSyntaxError()
 	{
 		doTestSingleLine(TEST_DESCRIPTION__SYNTAX_ERROR[0], TEST_DESCRIPTION__SYNTAX_ERROR[1], TEST_DESCRIPTION__SYNTAX_ERROR[2]);

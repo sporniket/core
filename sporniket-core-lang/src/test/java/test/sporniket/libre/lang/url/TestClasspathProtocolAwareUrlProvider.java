@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test.sporniket.libre.lang;
+package test.sporniket.libre.lang.url;
 
 import static org.junit.jupiter.api.Assertions.fail;
 

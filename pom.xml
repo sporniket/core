@@ -12,18 +12,22 @@
 		<version.jdk>21</version.jdk>
 
 		<!-- maven plugins version -->
-		<version.maven-compiler-plugin>3.5.1</version.maven-compiler-plugin>
-		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
-		<version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
-		<version.maven-project-info-reports-plugin>2.6</version.maven-project-info-reports-plugin>
-		<version.maven-surefire-report-plugin>2.22.2</version.maven-surefire-report-plugin>
-		<version.maven-checkstyle-plugin>3.0.0</version.maven-checkstyle-plugin>
-		<version.maven-checkstyle-plugin.checkstyle-runtime>10.3.3</version.maven-checkstyle-plugin.checkstyle-runtime> <!-- required to use recent checkstyle -->
-		<version.maven-pmd-plugin>3.6</version.maven-pmd-plugin>
-		<version.maven-release-plugin>2.5.3</version.maven-release-plugin>
+		<version.maven-compiler-plugin>3.15.0</version.maven-compiler-plugin>
+		<version.maven-source-plugin>3.4.0</version.maven-source-plugin>
+		<version.maven-javadoc-plugin>3.12.0</version.maven-javadoc-plugin>
+		<version.maven-project-info-reports-plugin>3.9.0</version.maven-project-info-reports-plugin>
+		<version.maven-surefire-plugin>3.5.5</version.maven-surefire-plugin>
+		<version.maven-surefire-report-plugin>3.5.5</version.maven-surefire-report-plugin>
+		<version.maven-checkstyle-plugin>3.6.0</version.maven-checkstyle-plugin>
+		<version.maven-checkstyle-plugin.checkstyle-runtime>13.4.0</version.maven-checkstyle-plugin.checkstyle-runtime> <!-- required to use recent checkstyle -->
+		<version.maven-pmd-plugin>3.28.0</version.maven-pmd-plugin>
+		<version.maven-release-plugin>3.3.1</version.maven-release-plugin>
+		<version.maven-gpg-plugin>3.2.8</version.maven-gpg-plugin>
 
 		<!-- shared dependencies version -->
-		<version.junit5>5.9.1</version.junit5>
+		<version.junit5>6.1.0-M1</version.junit5>
+		<version.assertj>4.0.0-M1</version.assertj>
+		<version.jackson-databind>2.21.2</version.jackson-databind>
 	</properties>
 
 	<name>sporniket-core</name>
@@ -37,6 +41,19 @@
 		<module>./sporniket-core-ui</module>
 		<module>./sporniket-core-reflection</module>
 	</modules>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${version.junit5}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
 	<build>
 		<plugins>
 			<!-- Version of Java supported -->
@@ -93,7 +110,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.2</version>
+					<version>${version.maven-surefire-plugin}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -230,7 +247,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.6</version>
+						<version>${version.maven-gpg-plugin}</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>

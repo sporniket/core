@@ -3,10 +3,12 @@
  */
 package test.sporniket.libre.ui;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.awt.event.KeyEvent;
 import java.lang.reflect.Field;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 import com.sporniket.libre.ui.KeyboardRepresentationTable;
 
@@ -40,18 +42,14 @@ import com.sporniket.libre.ui.KeyboardRepresentationTable;
  * @author David SPORN 
  * @version 22.11.00
  */
-public class TestKeyboardRepresentationTable extends TestCase
+public class TestKeyboardRepresentationTable
 {
-	@Override
-	protected void setUp() throws Exception
-	{
-		super.setUp();
-	}
 
 	/**
 	 * Test the KeyEvent representations for letters and digits.
 	 */
-	public final void testAlphaNumKeyEventValues()
+    @Test
+	public final void testAlphaNumKeyEventValues() throws Exception
 	{
 		String _valuesToTest = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		for (int _i = 0; _i < _valuesToTest.length(); _i++)
@@ -64,7 +62,8 @@ public class TestKeyboardRepresentationTable extends TestCase
 	/**
 	 * Test the KeyEvent representations for function keys.
 	 */
-	public final void testFunctionKeysKeyEventValues()
+    @Test
+	public final void testFunctionKeysKeyEventValues() throws Exception
 	{
 		for (int _i = 1; _i <= 12; _i++)
 		{
@@ -76,7 +75,8 @@ public class TestKeyboardRepresentationTable extends TestCase
 	/**
 	 * Test the KeyEvent representations for special keys.
 	 */
-	public final void testSpecialKeysKeyEventValues()
+    @Test
+	public final void testSpecialKeysKeyEventValues() throws Exception
 	{
 		String[] _tests =
 		{
@@ -115,7 +115,7 @@ public class TestKeyboardRepresentationTable extends TestCase
 	 *            prefix to add to <code>value</code> to obtain the name of the constant in {@link KeyEvent} without
 	 *            <code>VK_</code>.
 	 */
-	private void doTestKeyEvent(String value, String prefixRepresentation, String prefixReflection)
+	private void doTestKeyEvent(String value, String prefixRepresentation, String prefixReflection) throws Exception
 	{
 		String _representationName = prefixRepresentation + value;
 		String _referenceName = prefixReflection + value;
@@ -130,7 +130,7 @@ public class TestKeyboardRepresentationTable extends TestCase
 	 * @param referenceName
 	 *            name of the constant in {@link KeyEvent} without <code>VK_</code>.
 	 */
-	private void doTestKeyEventRepresentationAgainstReference(String representationName, String referenceName)
+	private void doTestKeyEventRepresentationAgainstReference(String representationName, String referenceName) throws Exception
 	{
 		try
 		{
@@ -159,6 +159,7 @@ public class TestKeyboardRepresentationTable extends TestCase
 	 * @throws IllegalAccessException if there is a problem to deal with.
 	 * @throws IllegalArgumentException if there is a problem to deal with.
 	 */
+    @Test
 	public final int retrieveKeyEventConstant(String name) throws SecurityException, NoSuchFieldException,
 			IllegalArgumentException, IllegalAccessException
 	{

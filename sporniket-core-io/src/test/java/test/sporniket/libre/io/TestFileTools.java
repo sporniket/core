@@ -3,6 +3,9 @@
  */
 package test.sporniket.libre.io;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +15,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 import com.sporniket.libre.io.Encoding;
 import com.sporniket.libre.io.FileTools;
@@ -48,13 +51,14 @@ import com.sporniket.libre.io.parser.properties.SyntaxErrorException;
  * @version 22.11.00
  * @since 15.02.00
  */
-public class TestFileTools extends TestCase
+public class TestFileTools
 {
 	private static final String NEWLINE = "\n";
 
 	/**
 	 * Test normal behaviour of {@link FileTools#createFileBalancingDirectoryDescriptor(java.io.File, String, int, int)}.
 	 */
+	@Test
 	public final void testCreateFileBalancingDirectoryDescriptor()
 	{
 		File _startingPoint = new File(".");
@@ -71,6 +75,7 @@ public class TestFileTools extends TestCase
 	 * {@link FileTools#createFileBalancingDirectoryDescriptor(java.io.File, String, int, int)} must fail if the file name is not
 	 * long enough to create the subdirectories.
 	 */
+	@Test
 	public final void testCreateFileBalancingDirectoryDescriptor__fileNameTooShort()
 	{
 		File _startingPoint = new File(".");
@@ -96,6 +101,7 @@ public class TestFileTools extends TestCase
 	 *             when there is a problem.
 	 * @since 16.08.02
 	 */
+	@Test
 	public final void testLoadBundle() throws IOException, SyntaxErrorException
 	{
 		List<URL> _bundle = new ArrayList<URL>(2);
@@ -116,6 +122,7 @@ public class TestFileTools extends TestCase
 	 *             when there is a problem.
 	 * @since 16.08.01
 	 */
+	@Test
 	public final void testLoadProperties() throws IOException, SyntaxErrorException
 	{
 		InputStream _fileLocation = getClass().getClassLoader().getResourceAsStream("test/filetools/SampleProperties.properties");
@@ -135,6 +142,7 @@ public class TestFileTools extends TestCase
 	 *             when there is a problem.
 	 * @since 16.08.02
 	 */
+    @Test
 	public final void testLoadResourceBundle() throws IOException, SyntaxErrorException
 	{
 		Map<String, String> _properties = FileTools.loadResourceBundle("test.filetools.bundle", Encoding.ISO_8859_1, NEWLINE,
