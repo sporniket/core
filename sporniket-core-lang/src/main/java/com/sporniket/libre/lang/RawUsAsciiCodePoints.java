@@ -31,7 +31,7 @@ package com.sporniket.libre.lang;
  * @version 22.11.00
  * @since 12.06.01
  */
-public final class CharacterCodePoints
+public final class RawUsAsciiCodePoints
 {
     public static final Byte HTAB = 9;
 
