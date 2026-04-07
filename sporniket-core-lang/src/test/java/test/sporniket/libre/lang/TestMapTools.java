@@ -76,6 +76,15 @@ public class TestMapTools
 					.containsEntry("a", "item a")//
 					.containsEntry("b", "item b");
 		}
+
+		@Test
+		void should_reject_given_string_when_separator_not_found()
+		{
+			then(asMap("a item a", "b|item b", "c item c:", ":d item d")) //
+					.hasSize(2) //
+					.containsEntry("c item c", "") //
+					.containsEntry("", "d item d");
+		}
 	}
 
 	@Nested
