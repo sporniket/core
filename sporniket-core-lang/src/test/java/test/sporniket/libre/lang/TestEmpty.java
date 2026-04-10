@@ -6,10 +6,10 @@ import static org.assertj.core.api.BDDAssertions.then;
 
 import org.junit.jupiter.api.Test;
 
-import com.sporniket.libre.lang.DataTools;
+import com.sporniket.libre.lang.Empty;
 
 /**
- * Test suite for {@link DataTools}.
+ * Test suite for {@link Empty}.
  *
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
