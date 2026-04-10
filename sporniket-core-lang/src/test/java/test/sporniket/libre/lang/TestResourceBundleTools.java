@@ -2,16 +2,17 @@ package test.sporniket.libre.lang;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import com.sporniket.libre.lang.CollectionTools;
+import com.sporniket.libre.lang.ResourceBundleTools;
 
 /**
- * Test suite for {@link CollectionTools}.
+ * Test suite for {@link ResourceBundleTools}.
  *
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
@@ -41,7 +42,7 @@ import com.sporniket.libre.lang.CollectionTools;
  * @version 22.11.00
  * @since 12.06.01
  */
-public class TestCollectionTools
+public class TestResourceBundleTools
 {
 
 	private static final String VALUE__BUNDLE_TEST = "Property 1";
@@ -56,6 +57,8 @@ public class TestCollectionTools
 
 	private ResourceBundle myTestBundle;
 
+	private final Map<String, Object> myTestMap = Map.of("1", (Integer) 1, "2", (Integer) 2);
+
 	@BeforeEach
 	public void setup()
 	{
@@ -68,14 +71,32 @@ public class TestCollectionTools
 		@Test
 		public final void should_return_existing_values()
 		{
-			then(CollectionTools.getString(myTestBundle, KEY__BUNDLE_TEST, VALUE__WHEN_NOT_FOUND)) //
+			then(ResourceBundleTools.getString(myTestBundle, KEY__BUNDLE_TEST, VALUE__WHEN_NOT_FOUND)) //
 					.isEqualTo(VALUE__BUNDLE_TEST);
 		}
 
 		@Test
 		public final void should_return_default_value_when_requested_value_does_not_exists()
 		{
-			then(CollectionTools.getString(myTestBundle, KEY__BUNDLE_TEST__NOT_EXISTING, VALUE__WHEN_NOT_FOUND)) //
+			then(ResourceBundleTools.getString(myTestBundle, KEY__BUNDLE_TEST__NOT_EXISTING, VALUE__WHEN_NOT_FOUND)) //
+					.isEqualTo(VALUE__WHEN_NOT_FOUND);
+		}
+	}
+
+	@Nested
+	class GetObject
+	{
+		@Test
+		public final void should_return_existing_values()
+		{
+			then(ResourceBundleTools.getObject(myTestBundle, KEY__BUNDLE_TEST, VALUE__WHEN_NOT_FOUND)) //
+					.isEqualTo(VALUE__BUNDLE_TEST);
+		}
+
+		@Test
+		public final void should_return_default_value_when_requested_value_does_not_exists()
+		{
+			then(ResourceBundleTools.getObject(myTestBundle, KEY__BUNDLE_TEST__NOT_EXISTING, VALUE__WHEN_NOT_FOUND)) //
 					.isEqualTo(VALUE__WHEN_NOT_FOUND);
 		}
 	}

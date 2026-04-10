@@ -15,7 +15,7 @@ import java.io.Writer;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import com.sporniket.libre.lang.CollectionTools;
+import com.sporniket.libre.lang.ResourceBundleTools;
 
 /**
  * The Base Class for converting text files.
@@ -141,9 +141,9 @@ public abstract class AbstractTextFileConverter implements FileConverterInterfac
 		{
 			_exception.printStackTrace();
 		} // catch (MissingResourceException _exception)
-		theMessageUnsupportedEncoding = CollectionTools.getString(theTextFileConverterAdapterResource, KEY_UNSUPPORTED_ENCODING,
+		theMessageUnsupportedEncoding = ResourceBundleTools.getString(theTextFileConverterAdapterResource, KEY_UNSUPPORTED_ENCODING,
 				KEY_UNSUPPORTED_ENCODING);
-		theMessageErrorTranslatingEncoding = CollectionTools.getString(theTextFileConverterAdapterResource,
+		theMessageErrorTranslatingEncoding = ResourceBundleTools.getString(theTextFileConverterAdapterResource,
 				KEY_ERROR_TRANSLATING_ENCODING, KEY_ERROR_TRANSLATING_ENCODING);
 	}
 

@@ -9,7 +9,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import com.sporniket.libre.lang.CollectionTools;
+import com.sporniket.libre.lang.ResourceBundleTools;
 
 /**
  * ResourceBundle based message provider.
@@ -108,7 +108,7 @@ public class ResourceBundleMessageProvider implements MessageProviderInterface
         {
             return getMessage(key);
         }
-        return CollectionTools.getString(getResourceBundle(locale), key,
+        return ResourceBundleTools.getString(getResourceBundle(locale), key,
                 getBehaviourOnMissingMessage().getValueOnMissingMessage(key));
     }
 
