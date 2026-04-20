@@ -1,16 +1,13 @@
 /**
  * 
  */
-package test.sporniket.libre.strings;
+package com.sporniket.libre.lang.strings.pipeline;
 
-import java.io.IOException;
-
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
- * Base class for test, when one needs some utilities.
+ * Fluent builder of {@link StringPipeline}.
  * 
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
@@ -40,24 +37,22 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @version 22.11.00
  * @since 19.02.00
  */
-public class TestBase
+public class StringPipelineBuilder
 {
-	private ObjectMapper mapper = new ObjectMapper();
+	private List<StringTransformation> myTransformers = new LinkedList<>();
 
-	/**
-	 * Reads a JSON resource file.
-	 * 
-	 * @param relativePath
-	 *            the path relative to the current class
-	 * @param type
-	 *            the type to obtain
-	 * @return the extracted object
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
-	 */
-	protected <T> T loadJsonData(String relativePath, Class<T> type) throws JsonParseException, JsonMappingException, IOException
+	public StringPipelineBuilder pipeThrough(StringTransformation transformer)
 	{
-		return mapper.readValue(getClass().getClassLoader().getResourceAsStream(relativePath), type);
+		if (null == transformer)
+		{
+			throw new IllegalArgumentException("transformer MUST be defined");
+		}
+		myTransformers.add(transformer);
+		return this;
+	}
+
+	public StringPipeline done()
+	{
+		return new StringPipeline(myTransformers);
 	}
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sporniket.libre.strings;
+package com.sporniket.libre.lang.strings;
 
 import java.text.MessageFormat;
 import java.util.LinkedList;

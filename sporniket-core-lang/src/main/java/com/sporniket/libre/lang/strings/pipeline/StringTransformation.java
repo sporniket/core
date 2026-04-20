@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sporniket.libre.strings.pipeline;
+package com.sporniket.libre.lang.strings.pipeline;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

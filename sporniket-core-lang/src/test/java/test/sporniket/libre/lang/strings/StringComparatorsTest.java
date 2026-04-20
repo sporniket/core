@@ -1,9 +1,9 @@
-package test.sporniket.libre.strings;
+package test.sporniket.libre.lang.strings;
 
-import static com.sporniket.libre.strings.StringComparators.STRING_COMPARATOR_NATURAL;
-import static com.sporniket.libre.strings.StringComparators.STRING_COMPARATOR_NATURAL_IGNORE_CASE;
-import static com.sporniket.libre.strings.StringComparators.STRING_COMPARATOR_REVERSE;
-import static com.sporniket.libre.strings.StringComparators.STRING_COMPARATOR_REVERSE_IGNORE_CASE;
+import static com.sporniket.libre.lang.strings.StringComparators.STRING_COMPARATOR_NATURAL;
+import static com.sporniket.libre.lang.strings.StringComparators.STRING_COMPARATOR_NATURAL_IGNORE_CASE;
+import static com.sporniket.libre.lang.strings.StringComparators.STRING_COMPARATOR_REVERSE;
+import static com.sporniket.libre.lang.strings.StringComparators.STRING_COMPARATOR_REVERSE_IGNORE_CASE;
 import static java.lang.Integer.signum;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;

@@ -1,8 +1,8 @@
-package test.sporniket.libre.strings.pipeline ;
+package test.sporniket.libre.lang.strings.pipeline ;
 
-import static com.sporniket.libre.strings.pipeline.StringTransformation.NULL_TO_EMPTY;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TO_LOWERCASE;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TRIM;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.NULL_TO_EMPTY;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TO_LOWERCASE;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TRIM;
 import static java.util.Arrays.asList ;
 import static org.assertj.core.api.BDDAssertions.then ;
 import static org.junit.jupiter.api.Assertions.assertThrows ;
@@ -14,8 +14,8 @@ import org.junit.jupiter.api.DynamicTest ;
 import org.junit.jupiter.api.Test ;
 import org.junit.jupiter.api.TestFactory ;
 
-import com.sporniket.libre.strings.pipeline.StringPipeline;
-import com.sporniket.libre.strings.pipeline.StringPipelineBuilder;
+import com.sporniket.libre.lang.strings.pipeline.StringPipeline;
+import com.sporniket.libre.lang.strings.pipeline.StringPipelineBuilder;
 
 /**
  * 

@@ -1,15 +1,15 @@
 /**
  * 
  */
-package test.sporniket.libre.strings.pipeline;
+package test.sporniket.libre.lang.strings.pipeline;
 
-import static com.sporniket.libre.strings.pipeline.StringTransformation.NULL_TO_EMPTY;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TO_HASH_MD5;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TO_LOWERCASE;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TO_UPPERCASE;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TRIM;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TRIM_END;
-import static com.sporniket.libre.strings.pipeline.StringTransformation.TRIM_START;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.NULL_TO_EMPTY;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TO_HASH_MD5;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TO_LOWERCASE;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TO_UPPERCASE;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TRIM;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TRIM_END;
+import static com.sporniket.libre.lang.strings.pipeline.StringTransformation.TRIM_START;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.BDDAssertions.then;

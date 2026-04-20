@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.sporniket.libre.strings.parsers;
+package com.sporniket.libre.lang.strings.parsers;
 
-import static com.sporniket.libre.strings.StringPredicates.IS_EMPTY;
-import static com.sporniket.libre.strings.StringPredicates.IS_NOT_EMPTY;
+import static com.sporniket.libre.lang.strings.StringPredicates.IS_EMPTY;
+import static com.sporniket.libre.lang.strings.StringPredicates.IS_NOT_EMPTY;
 
 import java.util.Map;
 import java.util.TreeMap;

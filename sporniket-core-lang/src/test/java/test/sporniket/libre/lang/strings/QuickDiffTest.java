@@ -1,9 +1,9 @@
 /**
  * 
  */
-package test.sporniket.libre.strings;
+package test.sporniket.libre.lang.strings;
 
-import static com.sporniket.libre.strings.QuickDiff.reportDiff;
+import static com.sporniket.libre.lang.strings.QuickDiff.reportDiff;
 import static java.lang.String.format;
 import static java.lang.String.join;
 import static java.util.Arrays.asList;
@@ -20,7 +20,7 @@ import org.junit.jupiter.api.TestFactory;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.sporniket.libre.strings.QuickDiff;
+import com.sporniket.libre.lang.strings.QuickDiff;
 
 /**
  * Test suite for {@link QuickDiff}.

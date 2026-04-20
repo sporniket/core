@@ -1,13 +1,18 @@
 /**
  * 
  */
-package com.sporniket.libre.strings.pipeline;
+package com.sporniket.libre.lang.strings;
 
-import java.util.LinkedList;
-import java.util.List;
+import static java.lang.String.CASE_INSENSITIVE_ORDER;
+import static java.util.Comparator.naturalOrder;
+import static java.util.Comparator.nullsFirst;
+import static java.util.Comparator.reverseOrder;
+
+import java.util.Comparator;
 
 /**
- * Fluent builder of {@link StringPipeline}.
+ * Ready to use Locale insensitive string comparators, safely handling <code>null</code> values as less than a non <code>null</code>
+ * value.
  * 
  * <p>
  * &copy; Copyright 2002-2022 David Sporn
@@ -37,22 +42,13 @@ import java.util.List;
  * @version 22.11.00
  * @since 19.02.00
  */
-public class StringPipelineBuilder
+public final class StringComparators
 {
-	private List<StringTransformation> myTransformers = new LinkedList<>();
+	public static final Comparator<String> STRING_COMPARATOR_NATURAL = nullsFirst(naturalOrder());
 
-	public StringPipelineBuilder pipeThrough(StringTransformation transformer)
-	{
-		if (null == transformer)
-		{
-			throw new IllegalArgumentException("transformer MUST be defined");
-		}
-		myTransformers.add(transformer);
-		return this;
-	}
+	public static final Comparator<String> STRING_COMPARATOR_NATURAL_IGNORE_CASE = nullsFirst(CASE_INSENSITIVE_ORDER);
 
-	public StringPipeline done()
-	{
-		return new StringPipeline(myTransformers);
-	}
+	public static final Comparator<String> STRING_COMPARATOR_REVERSE = nullsFirst(reverseOrder());
+
+	public static final Comparator<String> STRING_COMPARATOR_REVERSE_IGNORE_CASE = nullsFirst(CASE_INSENSITIVE_ORDER.reversed());
 }

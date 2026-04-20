@@ -1,9 +1,9 @@
-package test.sporniket.libre.strings.pipeline;
+package test.sporniket.libre.lang.strings.pipeline;
 
 import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.Test;
 
-import com.sporniket.libre.strings.pipeline.StringFilter;
+import com.sporniket.libre.lang.strings.pipeline.StringFilter;
 
 /**
  * 

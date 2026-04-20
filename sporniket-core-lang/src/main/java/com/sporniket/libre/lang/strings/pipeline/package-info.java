@@ -29,4 +29,4 @@
  * @version 22.11.00
  * @since 19.02.00
  */
-package com.sporniket.libre.strings.pipeline;
+package com.sporniket.libre.lang.strings.pipeline;

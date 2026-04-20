@@ -1,9 +1,9 @@
-package test.sporniket.libre.strings;
+package test.sporniket.libre.lang.strings;
 
-import static com.sporniket.libre.strings.StringPredicates.IS_BLANK;
-import static com.sporniket.libre.strings.StringPredicates.IS_EMPTY;
-import static com.sporniket.libre.strings.StringPredicates.IS_NOT_BLANK;
-import static com.sporniket.libre.strings.StringPredicates.IS_NOT_EMPTY;
+import static com.sporniket.libre.lang.strings.StringPredicates.IS_BLANK;
+import static com.sporniket.libre.lang.strings.StringPredicates.IS_EMPTY;
+import static com.sporniket.libre.lang.strings.StringPredicates.IS_NOT_BLANK;
+import static com.sporniket.libre.lang.strings.StringPredicates.IS_NOT_EMPTY;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;

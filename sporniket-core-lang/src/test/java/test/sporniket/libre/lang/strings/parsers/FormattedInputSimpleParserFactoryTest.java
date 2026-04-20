@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test.sporniket.libre.strings.parsers;
+package test.sporniket.libre.lang.strings.parsers;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.Test;
 
-import com.sporniket.libre.strings.parsers.FormattedInputSimpleParserFactory;
+import com.sporniket.libre.lang.strings.parsers.FormattedInputSimpleParserFactory;
 
 /**
  * Test suite for the {@link FormattedInputSimpleParserFactory}.
